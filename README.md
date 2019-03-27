@@ -8,7 +8,8 @@ This project might help you to learn about Flutter if you are a beginner in this
 My experience with flutter has been great thus far.</br> 
 I hope you like it too.
 </br>The project is developed in [Dart](https://www.dartlang.org/) language.</br>
-All the files are listed in the [/lib](https://github.com/annshsingh/flutter-widget-guide/tree/master/lib) folder. 
+All the files are listed in the [/lib](https://github.com/annshsingh/flutter-widget-guide/tree/master/lib) folder.</br>
+#### :star: the repo to show some :heart: and motivate me to work on the project :smiley:
 
 ## Learn more on Flutter
 [Official Flutter documentation](https://flutter.dev/docs)</br>
