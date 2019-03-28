@@ -11,6 +11,36 @@ I hope you like it too.
 All the files are listed in the [/lib](https://github.com/annshsingh/flutter-widget-guide/tree/master/lib) folder.</br>
 #### :star: the repo to show some :heart: and motivate me to work on the project :smiley:
 
+## Widget List
+   1. [Safe Area](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/safe_area.dart)
+   2. [Expanded](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart)
+   3. [Wrap](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/wrap.dart)
+   4. [Animated Container](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_container.dart)
+   5. [Opacity](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/opacity.dart)
+   6. [Future Builder](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/future_builder.dart)
+   7. [Fade Transition](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/fade_transition.dart)
+   8. [Floating Action Button](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/floating_action_button.dart)
+   9. [Page View](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/page_view.dart)
+   10. [Table](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/table.dart)
+   11. [Sliver App Bar](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sliver_app_bar.dart)
+   12. [Sliver List](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sliver_list.dart)
+   13. [Sliver Grid](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sliver_grid.dart)
+   14. [Fade In Image](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/fade_in_image.dart)
+   15. [Stream Builder](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/stream_builder.dart)
+   16. [Inherited Model](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/inherited_model.dart)
+   17. [ClipRRect](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/clip_r_rect.dart)
+   18. [Hero](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/hero.dart)
+   19. [Custom Paint](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/custom_paint.dart)
+   20. [Tooltip](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/tooltip.dart)
+   21. [Fitted Box](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/fitted_box.dart)
+   22. [Layout Builder](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/layout_builder.dart)
+   23. [Absorb Pointer](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/absorb_pointer.dart)
+   24. [Transform](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/transform.dart)
+   25. [Back Drop Filter](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/backdrop_filter.dart)
+   26. [Align](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/align.dart)
+   27. [Animated Builder](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_builder.dart)
+#### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
+
 ## Learn more on Flutter
 [Official Flutter documentation](https://flutter.dev/docs)</br>
 [Flutter widget list](https://flutter.dev/docs/development/ui/widgets)</br>
