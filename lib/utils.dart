@@ -65,8 +65,13 @@ class Utils {
       "\nWrap your main widget with this widget to prevent unnecessary clipping and overlapping."
       "\nIt uses MediaQuery to measure the screen dimensions and create necessary padding for your app on the devices (both iOS and Android). "
       "\nFor more info click the link below";
-  static const String expandedDescription = "Custom description will be here";
-  static const String wrapDescription = "Custom description will be here";
+  static const String expandedDescription = "The most common layout widgets used in flutter are rows and columns."
+      "\nYou can adjust the children of these parent layouts in many ways like placing them together, distribute the"
+      "\navailable space equally etc. If a child is wrapped in Expanded widget then it'll stretch to occupy the left over space. "
+      "\nThe priority of expansion is set using the flex value.";
+  static const String wrapDescription = "This widget is just like a column or a row widget. The difference is just that it does not face"
+      "issues like running out of room on the screen."
+      "\nWhat is does is it wraps to the next line when it runs out of space.";
   static const String animatedContainerDescription = "Custom description will be here";
   static const String opacityDescription = "Custom description will be here";
   static const String futureBuilderDescription = "Custom description will be here";
