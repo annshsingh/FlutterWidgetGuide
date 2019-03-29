@@ -72,7 +72,8 @@ class Utils {
   static const String wrapDescription = "This widget is just like a column or a row widget. The difference is just that it does not face"
       "issues like running out of room on the screen."
       "\nWhat is does is it wraps to the next line when it runs out of space.";
-  static const String animatedContainerDescription = "Custom description will be here";
+  static const String animatedContainerDescription = "This is one of flutter's implicit animation widget. Make changes to this widget itself"
+      " to perform animations or wrap another widget with this one to animate it.\nEvery change made will be reflected with an animation.";
   static const String opacityDescription = "Custom description will be here";
   static const String futureBuilderDescription = "Custom description will be here";
   static const String fadeTransitionDescription = "Custom description will be here";
