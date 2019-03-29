@@ -12,7 +12,6 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
   var _animatedHeight = 200.0;
   var _animatedWidth = 400.0;
   var _animatedColor = Colors.red;
-  var _text = "ANIMATE";
   var _isAnimated = false;
 
   @override
