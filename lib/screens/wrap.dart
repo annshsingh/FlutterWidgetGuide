@@ -41,7 +41,7 @@ class _WrapWidgetState extends State<WrapWidget> {
                         'Without Wrap widget',
                         style: TextStyle(
                             color: Colors.black87,
-                            fontSize: 24.0,
+                            fontSize: 18.0,
                             fontWeight: FontWeight.bold,
                             fontFamily: Utils.ubuntuRegularFont),
                       ),
@@ -90,7 +90,7 @@ class _WrapWidgetState extends State<WrapWidget> {
                         'With Wrap widget',
                         style: TextStyle(
                             color: Colors.black87,
-                            fontSize: 24.0,
+                            fontSize: 18.0,
                             fontWeight: FontWeight.bold,
                             fontFamily: Utils.ubuntuRegularFont),
                       ),

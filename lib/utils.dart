@@ -76,8 +76,10 @@ class Utils {
       " to perform animations or wrap another widget with this one to animate it.\nEvery change made will be reflected with an animation.";
   static const String opacityDescription = "This widget is used to change the visibility of a widget. The change can be sudden or with an animation.";
   static const String futureBuilderDescription = "Custom description will be here";
-  static const String fadeTransitionDescription = "Custom description will be here";
-  static const String floatingActionButtonDescription = "Custom description will be here";
+  static const String fadeTransitionDescription = "This widget lets you fade another widget in and out. You add a child and provide it with an"
+      " animation. We use Animation Controller to control the animation.";
+  static const String floatingActionButtonDescription = "This widget lets to place a FAB on the screen. It works really well with the BottomAppBar."
+      " You can change the shape, size and position of the FAB according to your needs.";
   static const String pageViewDescription = "Custom description will be here";
   static const String tableDescription = "Custom description will be here";
   static const String sliverAppBarDescription = "Custom description will be here";

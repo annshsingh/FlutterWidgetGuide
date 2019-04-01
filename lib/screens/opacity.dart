@@ -41,7 +41,7 @@ class _OpacityWidgetState extends State<OpacityWidget> {
                     'Without Animation',
                     style: TextStyle(
                         color: Colors.black87,
-                        fontSize: 24.0,
+                        fontSize: 18.0,
                         fontWeight: FontWeight.bold,
                         fontFamily: Utils.ubuntuRegularFont),
                   ),
@@ -112,7 +112,7 @@ class _OpacityWidgetState extends State<OpacityWidget> {
                     'With Animation',
                     style: TextStyle(
                         color: Colors.black87,
-                        fontSize: 24.0,
+                        fontSize: 18.0,
                         fontWeight: FontWeight.bold,
                         fontFamily: Utils.ubuntuRegularFont),
                   ),
@@ -168,8 +168,6 @@ class _OpacityWidgetState extends State<OpacityWidget> {
 }
 
 Container divider(BuildContext context) => Container(
-  height: 1,
-  width: MediaQuery.of(context).size.width,
-  color: Colors.grey[350],
+  child: Divider(),
   margin: EdgeInsets.only(left: 10, right: 10, top: 28, bottom: 28),
 );
