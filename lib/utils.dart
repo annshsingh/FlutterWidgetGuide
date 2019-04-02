@@ -80,7 +80,8 @@ class Utils {
       " animation. We use Animation Controller to control the animation.";
   static const String floatingActionButtonDescription = "This widget lets to place a FAB on the screen. It works really well with the BottomAppBar."
       " You can change the shape, size and position of the FAB according to your needs.";
-  static const String pageViewDescription = "Custom description will be here";
+  static const String pageViewDescription = "This widget is used to create a screen with multiple pages. You can easily swipe through them. You can"
+      " also control the scroll direction property and set it to horizontal or vertical.";
   static const String tableDescription = "Custom description will be here";
   static const String sliverAppBarDescription = "Custom description will be here";
   static const String sliverListDescription = "Custom description will be here";
