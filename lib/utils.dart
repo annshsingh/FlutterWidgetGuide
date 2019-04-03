@@ -82,7 +82,8 @@ class Utils {
       " You can change the shape, size and position of the FAB according to your needs.";
   static const String pageViewDescription = "This widget is used to create a screen with multiple pages. You can easily swipe through them. You can"
       " also control the scroll direction property and set it to horizontal or vertical.";
-  static const String tableDescription = "Custom description will be here";
+  static const String tableDescription = "If you have a group of widgets with varying dimentions then it can be difficult to create a custom table of diffrent"
+      " rows and columns. Here is when Table Widget comes to the rescue. This widget accomodates all of its children easily.";
   static const String sliverAppBarDescription = "Custom description will be here";
   static const String sliverListDescription = "Custom description will be here";
   static const String sliverGridDescription = "Custom description will be here";
