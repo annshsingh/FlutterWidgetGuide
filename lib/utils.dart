@@ -75,7 +75,8 @@ class Utils {
   static const String animatedContainerDescription = "This is one of flutter's implicit animation widget. Make changes to this widget itself"
       " to perform animations or wrap another widget with this one to animate it.\nEvery change made will be reflected with an animation.";
   static const String opacityDescription = "This widget is used to change the visibility of a widget. The change can be sudden or with an animation.";
-  static const String futureBuilderDescription = "Custom description will be here";
+  static const String futureBuilderDescription = "This widget lets you control your UI depending on the state of the Future connected with it. You "
+      "can show a widget while your future is busy and then another one when data is available.";
   static const String fadeTransitionDescription = "This widget lets you fade another widget in and out. You add a child and provide it with an"
       " animation. We use Animation Controller to control the animation.";
   static const String floatingActionButtonDescription = "This widget lets to place a FAB on the screen. It works really well with the BottomAppBar."
