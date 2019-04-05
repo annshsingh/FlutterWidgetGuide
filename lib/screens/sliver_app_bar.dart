@@ -15,6 +15,7 @@ class SliverAppBarWidget extends StatelessWidget {
             floating: false,
             pinned: true,
             expandedHeight: 200.0,
+
             ///Properties of the App Bar when it is expanded
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
@@ -38,43 +39,43 @@ class SliverAppBarWidget extends StatelessWidget {
             delegate: SliverChildListDelegate(
               [
                 listItem(
-                  Colors.red,
+                  Colors.white,
                   "List item 1",
                 ),
                 listItem(
-                  Colors.green,
+                  Colors.white,
                   "List item 2",
                 ),
                 listItem(
-                  Colors.purple,
+                  Colors.white,
                   "List item 3",
                 ),
                 listItem(
-                  Colors.amber,
+                  Colors.white,
                   "List item 4",
                 ),
                 listItem(
-                  Colors.pink,
+                  Colors.white,
                   "List item 5",
                 ),
                 listItem(
-                  Colors.orange,
+                  Colors.white,
                   "List item 6",
                 ),
                 listItem(
-                  Colors.grey,
+                  Colors.white,
                   "List item 7",
                 ),
                 listItem(
-                  Colors.black87,
+                  Colors.white,
                   "List item 8",
                 ),
                 listItem(
-                  Colors.deepPurple,
+                  Colors.white,
                   "List item 9",
                 ),
                 listItem(
-                  Colors.redAccent,
+                  Colors.white,
                   "List item 10",
                 ),
               ],
@@ -86,13 +87,20 @@ class SliverAppBarWidget extends StatelessWidget {
   }
 
   Widget listItem(Color color, String title) => Container(
-        color: color,
+        decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(
+              color: Colors.black26,
+              width: 1.0,
+            ),
+          ),
+        ),
         child: Center(
           child: Text(
             "$title",
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: Colors.white,
+                color: Colors.black87,
                 fontSize: 14.0,
                 fontWeight: FontWeight.bold,
                 fontFamily: Utils.ubuntuRegularFont),
