@@ -1,6 +1,7 @@
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
+import 'dart:math' as math;
 
 class Utils {
 
@@ -15,6 +16,9 @@ class Utils {
       throw 'Could not launch $url';
     }
   }
+
+  ///Method to get a random color
+  static getRandomColor() => Color((math.Random().nextDouble() * 0xFFFFFF).toInt() << 0).withOpacity(1.0);
 
   static List<Color> buttonGradient = [
     Colors.cyan.shade600,
@@ -41,6 +45,7 @@ class Utils {
   static const String inheritedModel = "/Inherited Model";
   static const String clipRRect = "/ClipRRect";
   static const String hero = "/Hero";
+  static const String hero2 = "/Hero2";
   static const String customPaint = "/Custom Paint";
   static const String tooltip = "/Tooltip";
   static const String fittedBox = "/Fitted Box";
@@ -49,7 +54,9 @@ class Utils {
   static const String transform = "/Transform";
   static const String backDropFilter = "/Back Drop Filter";
   static const String align = "/Align";
+  static const String positioned = "/Positioned";
   static const String animatedBuilder = "/Animated Builder";
+  static const String dismissible = "/Dismissible";
 
   //strings
   static const String appName = "Flutter Widget Guide";
@@ -85,23 +92,45 @@ class Utils {
       " also control the scroll direction property and set it to horizontal or vertical.";
   static const String tableDescription = "If you have a group of widgets with varying dimentions then it can be difficult to create a custom table of diffrent"
       " rows and columns. Here is when Table Widget comes to the rescue. This widget accomodates all of its children easily.";
-  static const String sliverAppBarDescription = "Custom description will be here";
-  static const String sliverListDescription = "Custom description will be here";
-  static const String sliverGridDescription = "Custom description will be here";
-  static const String fadeInImageDescription = "Custom description will be here";
-  static const String streamBuilderDescription = "Custom description will be here";
-  static const String inheritedModelDescription = "Custom description will be here";
-  static const String clipRRectDescription = "Custom description will be here";
-  static const String heroDescription = "Custom description will be here";
-  static const String customPaintDescription = "Custom description will be here";
-  static const String tooltipDescription = "Custom description will be here";
-  static const String fittedBoxDescription = "Custom description will be here";
-  static const String layoutBuilderDescription = "Custom description will be here";
-  static const String absorbPointerDescription = "Custom description will be here";
-  static const String transformDescription = "Custom description will be here";
-  static const String backDropFilterDescription = "Custom description will be here";
-  static const String alignDescription = "Custom description will be here";
-  static const String animatedBuilderDescription = "Custom description will be here";
+  static const String sliverAppBarDescription = "This widget allows you to create a collapsing app bar that animates as you scroll. This widget is used"
+      " with CustomScrollView Widget to provide the scroll behaviour for the app bar.";
+  static const String sliverListDescription = "This widget lets you build a list of items. It generates it's item lazily as they scroll into view and is"
+      " efficient for a list with large dataset.";
+  static const String sliverGridDescription = "This widget lets you build a list of items that you can arrange in form of a Grid. It generates it's item"
+      " lazily as they scroll into view and is efficient for a list with large dataset.";
+  static const String fadeInImageDescription = "This widget lets you display a placeholder while your app fetches image from the network. You can use this"
+      " in your list of feed or while loading profile image in you app.";
+  static const String streamBuilderDescription = "This widget lets you build you UI while listning to a stream of data. It rebuilds itsrlf for every new event";
+  static const String inheritedModelDescription = "This widget lets you control properties of decendent widgets depending on the properties of the ancestor widget"
+      " This can be of use in case of nested widgets.";
+  static const String clipRRectDescription = "This widget lets you smooth out the corners of your other widgets. You can specify a radius value and"
+      " the corners will be clipped. You can specify the clicp behaviour as well";
+  static const String heroDescription = "This widget lets you perform hero transition in your app. This helps user to know that they have switched screens"
+      " while maintaining the focus. You can change the shape of widgets as well and this widget will create smooth shape transitions as you go from "
+      " one screen to another";
+  static const String customPaintDescription = "This widget lets you create your own custom UI elements. You can build Lines, paths, ectangles, circles"
+      " arcs, images etc. You have the full control of the properties of this widget.";
+  static const String tooltipDescription = "This widget lets you provide additional information of a widget. People with impared vision can long press on"
+      " a widget to get an audio feedback of what it is. Similarly, you can provide information for an icon as to what will happen if a user"
+      " clicks on it.";
+  static const String fittedBoxDescription = "This widget lets you define the rules for the child widgets to follow while adjusting themselves to fit inside"
+      " the parent widget. The child widget might scale or have to be clipped depending on the fit type.";
+  static const String layoutBuilderDescription = "This widget lets you make smrt decisions regarding your layout. You can make use of constraints and decide what kind"
+      " of a layout you want your users to see.";
+  static const String absorbPointerDescription = "This widget lets you control the touch events for the widgets. If enabled, none of the widgets wrapped"
+      " with this widget will be able to detect user touch events.";
+  static const String transformDescription = "This widget lets you transform a widget's scaling, ratation or positional properties. These are some basic ones"
+      ", you can create some really cool animations with this widget as well.";
+  static const String backDropFilterDescription = "This widget lets you apply a filter over other widgets. For example, if you want to blur out a specific"
+      " part of an image. This widget works best with a Stack widget.";
+  static const String alignDescription = "This widget lets you position a child widget inside it's parent widget. You can place the child widget at the center,"
+      " left corner or right corner to name a few.";
+  static const String positionedDescription = "This widget lets you positon a widget inside a Stack. You can provide a widget with custom positions with the help of"
+      " properties like - top, bottom, left, right";
+  static const String animatedBuilderDescription = "This widget lets you change properties of a widget like size, roatation etc with an animation.";
+  static const String dismissibleDescription = "This widget lets you create a dismissible list item. You can cutomize the left and right swipe gestures"
+      " in terms of the UI";
+
 
   //urls
   static const String safeAreaURL = "https://docs.flutter.io/flutter/widgets/SafeArea-class.html";
@@ -130,7 +159,9 @@ class Utils {
   static const String transformURL = "https://docs.flutter.io/flutter/widgets/Transform-class.html";
   static const String backDropFilterURL = "https://docs.flutter.io/flutter/widgets/BackdropFilter-class.html";
   static const String alignURL = "https://docs.flutter.io/flutter/widgets/Align-class.html";
+  static const String positionedURL = "https://docs.flutter.io/flutter/widgets/Positioned-class.html";
   static const String animatedBuilderURL = "https://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html";
+  static const String dismissibleURL = "https://docs.flutter.io/flutter/widgets/Dismissible-class.html";
 
   static const String expandedSourceURL = "https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart";
 
