@@ -1,3 +1,5 @@
+![Header](https://github.com/annshsingh/flutter-widget-guide/blob/master/Header_fwg.png)
+
 # Flutter Widget Guide
 
 A flutter appliction listing all the widgets covered in [Flutter widget of the week playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE)
