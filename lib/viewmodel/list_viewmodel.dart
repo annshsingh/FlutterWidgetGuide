@@ -114,9 +114,17 @@ class ListViewModel {
           description: "${Utils.alignDescription}",
           url: "${Utils.alignURL}"),
       ListItem(
+          title: "${Utils.positioned.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.positionedDescription}",
+          url: "${Utils.positionedURL}"),
+      ListItem(
           title: "${Utils.animatedBuilder.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.animatedBuilderDescription}",
           url: "${Utils.animatedBuilderURL}"),
+      ListItem(
+          title: "${Utils.dismissible.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.dismissibleDescription}",
+          url: "${Utils.dismissibleURL}"),
     ];
   }
 }

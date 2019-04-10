@@ -41,14 +41,16 @@ class _ExpandedWidgetState extends State<ExpandedWidget> {
                         title: Center(
                           child: Column(
                             children: <Widget>[
-                              Text("Description",
+                              Text(
+                                "Description",
                                 style: TextStyle(
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: Utils.ubuntuRegularFont),
                               ),
                               FlatButton(
-                                onPressed: () => Utils.launchURL(Utils.expandedSourceURL),
+                                onPressed: () =>
+                                    Utils.launchURL(Utils.expandedSourceURL),
                                 splashColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 // makes highlight invisible too
@@ -75,99 +77,101 @@ class _ExpandedWidgetState extends State<ExpandedWidget> {
           ),
         ],
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Container(
-            color: Color(0xFFe0e0e0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  flex: _flexFactor0,
-                  child: FittedBox(
-                    fit: BoxFit.contain,
-                    child: GestureDetector(
-                      child: Container(
-                        child: Center(
-                          child: Text(
-                            '$_flexFactor0',
-                            style: TextStyle(color: Colors.white),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Container(
+              color: Color(0xFFe0e0e0),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    flex: _flexFactor0,
+                    child: FittedBox(
+                      fit: BoxFit.contain,
+                      child: GestureDetector(
+                        child: Container(
+                          child: Center(
+                            child: Text(
+                              '$_flexFactor0',
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
+                          margin: const EdgeInsets.all(10.0),
+                          color: const Color(0xFF2196f3),
+                          width: 48.0,
+                          height: 48.0,
                         ),
-                        margin: const EdgeInsets.all(10.0),
-                        color: const Color(0xFF2196f3),
-                        width: 48.0,
-                        height: 48.0,
+                        onTap: () => setState(() {
+                              _flexFactor0++;
+                            }),
                       ),
-                      onTap: () => setState(() {
-                            _flexFactor0++;
-                          }),
                     ),
                   ),
-                ),
-                Expanded(
-                  flex: _flexFactor1,
-                  child: FittedBox(
-                    fit: BoxFit.contain,
-                    child: GestureDetector(
-                      child: Container(
-                        child: Center(
-                          child: Text(
-                            '$_flexFactor1',
-                            style: TextStyle(color: Colors.white),
+                  Expanded(
+                    flex: _flexFactor1,
+                    child: FittedBox(
+                      fit: BoxFit.contain,
+                      child: GestureDetector(
+                        child: Container(
+                          child: Center(
+                            child: Text(
+                              '$_flexFactor1',
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
+                          margin: const EdgeInsets.all(10.0),
+                          color: const Color(0xFF673ab7),
+                          width: 48.0,
+                          height: 48.0,
                         ),
-                        margin: const EdgeInsets.all(10.0),
-                        color: const Color(0xFF673ab7),
-                        width: 48.0,
-                        height: 48.0,
+                        onTap: () => setState(() {
+                              _flexFactor1++;
+                            }),
                       ),
-                      onTap: () => setState(() {
-                            _flexFactor1++;
-                          }),
                     ),
                   ),
-                ),
-                Expanded(
-                  flex: _flexFactor2,
-                  child: FittedBox(
-                    fit: BoxFit.contain,
-                    child: GestureDetector(
-                      child: Container(
-                        child: Center(
-                          child: Text(
-                            '$_flexFactor2',
-                            style: TextStyle(color: Colors.white),
+                  Expanded(
+                    flex: _flexFactor2,
+                    child: FittedBox(
+                      fit: BoxFit.contain,
+                      child: GestureDetector(
+                        child: Container(
+                          child: Center(
+                            child: Text(
+                              '$_flexFactor2',
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
+                          margin: const EdgeInsets.all(10.0),
+                          color: const Color(0xFF009688),
+                          width: 48.0,
+                          height: 48.0,
                         ),
-                        margin: const EdgeInsets.all(10.0),
-                        color: const Color(0xFF009688),
-                        width: 48.0,
-                        height: 48.0,
+                        onTap: () => setState(() {
+                              _flexFactor2++;
+                            }),
                       ),
-                      onTap: () => setState(() {
-                            _flexFactor2++;
-                          }),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          Container(
-            margin: EdgeInsets.all(16.0),
-            child: RaisedButton(
-              textColor: Colors.white,
-              color: Colors.red,
-              onPressed: () => setState(() {
-                    _flexFactor0 = 1;
-                    _flexFactor1 = 2;
-                    _flexFactor2 = 1;
-                  }),
-              child: Text('RESET'),
+            Container(
+              margin: EdgeInsets.all(16.0),
+              child: RaisedButton(
+                textColor: Colors.white,
+                color: Colors.red,
+                onPressed: () => setState(() {
+                      _flexFactor0 = 1;
+                      _flexFactor1 = 2;
+                      _flexFactor2 = 1;
+                    }),
+                child: Text('RESET'),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

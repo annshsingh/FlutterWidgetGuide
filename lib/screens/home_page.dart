@@ -28,13 +28,16 @@ class HomePage extends StatelessWidget {
         builder: (context, snapshot) {
           return snapshot.hasData
               ? CustomScrollView(
-                  //THis is to contain Sliver Elements
+                  //This is to contain Sliver Elements
                   slivers: <Widget>[
                     appBar(),
                     SliverPadding(
                       padding: EdgeInsets.all(4.0),
                     ),
-                    bodyList(snapshot.data),
+                    SliverPadding(
+                      sliver: bodyList(snapshot.data),
+                      padding: EdgeInsets.only(bottom: 12.0),
+                    ),
                   ],
                 )
               : Center(child: CircularProgressIndicator());

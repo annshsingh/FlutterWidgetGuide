@@ -15,6 +15,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="Flutter Widget Guide"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -90,17 +90,22 @@ class _OpacityWidgetState extends State<OpacityWidget> {
                 ),
               ],
             ),
-            Slider(
-              value: _value,
-              activeColor: Colors.lightBlue,
-              inactiveColor: Colors.lightBlue[50],
-              min: 0.0,
-              max: 1.0,
-              onChanged: (double value) {
-                setState(() {
-                  _value = value;
-                });
-              },
+            Container(
+              margin: EdgeInsets.only(top: 24),
+              child: Slider(
+                value: _value,
+                activeColor: Colors.lightBlue,
+                inactiveColor: Colors.lightBlue[50],
+                min: 0.0,
+                max: 1.0,
+                divisions: 100,
+                label: "${_value.abs()}",
+                onChanged: (double value) {
+                  setState(() {
+                    _value = value;
+                  });
+                },
+              ),
             ),
             const Text('Drag to change opacity'),
             divider(context),
