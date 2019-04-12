@@ -8,8 +8,11 @@ class ExpandedWidget extends StatefulWidget {
 }
 
 class _ExpandedWidgetState extends State<ExpandedWidget> {
+  ///Flex factor for 1st widget
   int _flexFactor0 = 1;
+  ///Flex factor for 2nd widget
   int _flexFactor1 = 2;
+  ///Flex factor for 3rd widget
   int _flexFactor2 = 1;
 
   @override
@@ -79,12 +82,12 @@ class _ExpandedWidgetState extends State<ExpandedWidget> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
               color: Color(0xFFe0e0e0),
               child: Row(
                 children: <Widget>[
+                  ///First flexible widget
                   Expanded(
                     flex: _flexFactor0,
                     child: FittedBox(
@@ -108,6 +111,7 @@ class _ExpandedWidgetState extends State<ExpandedWidget> {
                       ),
                     ),
                   ),
+                  ///Second flexible widget
                   Expanded(
                     flex: _flexFactor1,
                     child: FittedBox(
@@ -131,6 +135,7 @@ class _ExpandedWidgetState extends State<ExpandedWidget> {
                       ),
                     ),
                   ),
+                  ///Third flexible widget
                   Expanded(
                     flex: _flexFactor2,
                     child: FittedBox(
@@ -157,6 +162,7 @@ class _ExpandedWidgetState extends State<ExpandedWidget> {
                 ],
               ),
             ),
+            ///Click on this button to RESET the values of flex values
             Container(
               margin: EdgeInsets.all(16.0),
               child: RaisedButton(
