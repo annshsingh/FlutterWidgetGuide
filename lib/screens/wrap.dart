@@ -61,6 +61,8 @@ class _WrapWidgetState extends State<WrapWidget> {
                     ],
                   ),
                 ),
+
+                ///This will create an overflow error
                 Row(
                   children: <Widget>[
                     chipDesign("Food", Color(0xFF4fc3f7)),
@@ -111,6 +113,8 @@ class _WrapWidgetState extends State<WrapWidget> {
                     ],
                   ),
                 ),
+
+                ///This will handle itself to get rid of the overflow error
                 Wrap(
                   spacing: 0.0, // gap between adjacent chips
                   runSpacing: 0.0, // gap between lines
@@ -135,6 +139,9 @@ class _WrapWidgetState extends State<WrapWidget> {
   }
 }
 
+
+///Common method to design a chip with different properties
+///like label and background color
 Widget chipDesign(String label, Color color) => Container(
       child: Chip(
         label: Text(
@@ -150,9 +157,8 @@ Widget chipDesign(String label, Color color) => Container(
       margin: EdgeInsets.only(left: 12, right: 12, top: 2, bottom: 2),
     );
 
+///Method to create a divider with added margin
 Container divider(BuildContext context) => Container(
-      height: 1,
-      width: MediaQuery.of(context).size.width,
-      color: Colors.grey[350],
-      margin: EdgeInsets.only(left: 10, right: 10, top: 28, bottom: 28),
+  child: Divider(),
+  margin: EdgeInsets.only(left: 10, right: 10, top: 28, bottom: 28),
 );
