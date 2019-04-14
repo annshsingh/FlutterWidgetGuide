@@ -7,8 +7,12 @@ class OpacityWidget extends StatefulWidget {
 }
 
 class _OpacityWidgetState extends State<OpacityWidget> {
+
+  ///Initial Slider widget value
   var _value = 0.50;
+  ///Initial AnimatedOpacity widget value
   var _animOpacityValue = 1.0;
+
   var _bgColor = Colors.black87;
   var _textColor = Colors.white;
 
@@ -61,6 +65,8 @@ class _OpacityWidgetState extends State<OpacityWidget> {
                 ),
               ],
             ),
+            ///Stack widget to blend FlutterLogo widget with a container
+            ///with varying opacity controlled by a Slider Widget
             Stack(
               children: <Widget>[
                 Container(
@@ -90,15 +96,22 @@ class _OpacityWidgetState extends State<OpacityWidget> {
                 ),
               ],
             ),
+            ///Slider widget to set opacity value
             Container(
               margin: EdgeInsets.only(top: 24),
               child: Slider(
                 value: _value,
+                ///Color for active side of Slider
                 activeColor: Colors.lightBlue,
+                ///Color for inactive side of Slider
                 inactiveColor: Colors.lightBlue[50],
+                ///Minimum value of the slider
                 min: 0.0,
+                ///Maximum value of the slider
                 max: 1.0,
+                ///No.Of divisions from min to max value on the Slider
                 divisions: 100,
+                ///Value indicator above the slider
                 label: "${_value.abs()}",
                 onChanged: (double value) {
                   setState(() {
@@ -135,6 +148,7 @@ class _OpacityWidgetState extends State<OpacityWidget> {
                     textAlign: TextAlign.center,
                   ),
                 ),
+                ///Widget to make a Container detect clicks
                 GestureDetector(
                   child: Container(
                     margin: EdgeInsets.only(top: 24, bottom: 24),
@@ -144,6 +158,7 @@ class _OpacityWidgetState extends State<OpacityWidget> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25.0),
                         color: _bgColor),
+                    ///Widget to animate the change in opacity
                     child: AnimatedOpacity(
                       opacity: _animOpacityValue,
                       duration: Duration(seconds: 1),
