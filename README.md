@@ -59,6 +59,13 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/Apache-2.0)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/iampawan/Flutter-UI-Kit/blob/master/licence.txt)
 
+## Support
+
+If you learned something from the source code of this project and want to thank me, you can support by buying me a cup of :coffee: or a :doughnut:
+
+[PayPal](https://www.paypal.me/annshsingh) </br>
+Google Pay **(annsh29-1@okhdfcbank)**
+
 ## License
 
 ```
