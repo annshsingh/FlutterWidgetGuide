@@ -14,12 +14,12 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
 #### :star: the repo to show some :heart: and motivate me to work on the project :smiley:
 
 ## Widget List
-   1. [Safe Area](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/safe_area.dart)
-   2. [Expanded](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart)
-   3. [Wrap](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/wrap.dart)
-   4. [Animated Container](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_container.dart)
-   5. [Opacity](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/opacity.dart)
-   6. [Future Builder](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/future_builder.dart)
+   1. [Safe Area](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/safe_area.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-safearea-widget-in-5-mins-or-less-df4620a7d08f)
+   2. [Expanded](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-expanded-widget-in-5-mins-or-less-7fac99839658)
+   3. [Wrap](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/wrap.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-wrap-widget-in-5-mins-or-less-f77ad249c176)
+   4. [Animated Container](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_container.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-animatedcontainer-widget-in-5-mins-or-less-347b69eaad0f)
+   5. [Opacity](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/opacity.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-opacity-widget-in-5-mins-or-less-969c3f635437)
+   6. [Future Builder](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/future_builder.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-futurebuilder-widget-in-5-mins-or-less-3bef3e5e1bff)
    7. [Fade Transition](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/fade_transition.dart)
    8. [Floating Action Button](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/floating_action_button.dart)
    9. [Page View](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/page_view.dart)
