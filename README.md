@@ -20,7 +20,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    4. [Animated Container](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_container.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-animatedcontainer-widget-in-5-mins-or-less-347b69eaad0f)
    5. [Opacity](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/opacity.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-opacity-widget-in-5-mins-or-less-969c3f635437)
    6. [Future Builder](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/future_builder.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-futurebuilder-widget-in-5-mins-or-less-3bef3e5e1bff)
-   7. [Fade Transition](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/fade_transition.dart)
+   7. [Fade Transition](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/fade_transition.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-fadetransition-widget-in-5-mins-or-less-78e714ba722)
    8. [Floating Action Button](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/floating_action_button.dart)
    9. [Page View](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/page_view.dart)
    10. [Table](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/table.dart)
