@@ -43,6 +43,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    27. [Positioned](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/positioned.dart)
    28. [Animated Builder](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_builder.dart)
    29. [Dismissible](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/dismissible.dart)
+   30. [SizedWidget](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sized_box.dart)
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
 ## Learn more on Flutter
