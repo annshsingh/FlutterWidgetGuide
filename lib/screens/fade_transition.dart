@@ -6,6 +6,7 @@ class FadeTransitionWidget extends StatefulWidget {
   _FadeTransitionWidgetState createState() => _FadeTransitionWidgetState();
 }
 
+
 class _FadeTransitionWidgetState extends State<FadeTransitionWidget>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
@@ -14,18 +15,29 @@ class _FadeTransitionWidgetState extends State<FadeTransitionWidget>
 
   @override
   void initState() {
+
+    ///An animation controller lets you control the
+    ///duration of an animation
+    ///Here the ticker for vsync provider is provided
+    ///by the SingleTickerProviderStateMixin
     _controller = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: 500),
     );
 
+    ///Providing our animation with a curve (Parent here is the controller
+    ///above)
     _curve = CurvedAnimation(parent: _controller, curve: Curves.easeIn);
 
+    ///Creating a Tween animation with start and end values for the
+    ///opacity and providing it with our animation controller
     _animation = Tween(
       begin: 0.0,
       end: 1.0,
     ).animate(_curve);
 
+    ///Set a status listener to our animation to control the behaviour
+    ///of our animation
     _animation.addStatusListener((status) {
       if (status == AnimationStatus.completed)
         _controller.reverse();
@@ -37,6 +49,7 @@ class _FadeTransitionWidgetState extends State<FadeTransitionWidget>
 
   @override
   void dispose() {
+    ///Don't forget to clean up resources when you are done using it
     _controller.dispose();
     super.dispose();
   }
@@ -60,6 +73,7 @@ class _FadeTransitionWidgetState extends State<FadeTransitionWidget>
       ),
       body: Center(
         child: FadeTransition(
+          ///Providing our animation to opacity property
           opacity: _animation,
           child: Icon(
             Icons.favorite,
@@ -72,6 +86,7 @@ class _FadeTransitionWidgetState extends State<FadeTransitionWidget>
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: Colors.lightBlue,
         onPressed: () => setState(() {
+              ///We start the animation by calling this
               _controller.forward();
             }),
         icon: Icon(
