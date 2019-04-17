@@ -30,6 +30,7 @@ import 'package:flutter_widget_guide/screens/table.dart';
 import 'package:flutter_widget_guide/screens/tooltip.dart';
 import 'package:flutter_widget_guide/screens/transform.dart';
 import 'package:flutter_widget_guide/screens/wrap.dart';
+import 'package:flutter_widget_guide/screens/sized_box.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
 class MyApp extends StatelessWidget {
@@ -92,7 +93,8 @@ class MyApp extends StatelessWidget {
       Utils.align: (BuildContext context) => AlignWidget(),
       Utils.positioned: (BuildContext context) => PositionedWidget(),
       Utils.animatedBuilder: (BuildContext context) => AnimatedBuilderWidget(),
-      Utils.dismissible: (BuildContext context) => DismissibleWidget()
+      Utils.dismissible: (BuildContext context) => DismissibleWidget(),
+      Utils.sizedBox: (BuildContext context) => SizedBoxWidget()
     },
   );
 

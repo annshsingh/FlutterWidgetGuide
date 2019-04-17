@@ -125,6 +125,10 @@ class ListViewModel {
           title: "${Utils.dismissible.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.dismissibleDescription}",
           url: "${Utils.dismissibleURL}"),
+      ListItem(
+          title: "${Utils.sizedBox.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.sizedBoxDescription}",
+          url: "${Utils.sizedBoxURL}")
     ];
   }
 }

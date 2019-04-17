@@ -57,6 +57,7 @@ class Utils {
   static const String positioned = "/Positioned";
   static const String animatedBuilder = "/Animated Builder";
   static const String dismissible = "/Dismissible";
+  static const String sizedBox = "/Sized Box";
 
   //strings
   static const String appName = "Flutter Widget Guide";
@@ -130,6 +131,7 @@ class Utils {
   static const String animatedBuilderDescription = "This widget lets you change properties of a widget like size, roatation etc with an animation.";
   static const String dismissibleDescription = "This widget lets you create a dismissible list item. You can cutomize the left and right swipe gestures"
       " in terms of the UI";
+  static const String sizedBoxDescription = "";
 
 
   //urls
@@ -162,6 +164,7 @@ class Utils {
   static const String positionedURL = "https://docs.flutter.io/flutter/widgets/Positioned-class.html";
   static const String animatedBuilderURL = "https://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html";
   static const String dismissibleURL = "https://docs.flutter.io/flutter/widgets/Dismissible-class.html";
+  static const String sizedBoxURL = "https://docs.flutter.io/flutter/widgets/SizedBox-class.html";
 
   static const String expandedSourceURL = "https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart";
 
