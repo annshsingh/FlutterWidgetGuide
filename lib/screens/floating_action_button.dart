@@ -76,6 +76,8 @@ class _FloatingActionButtonWidgetState
               ),
             ),
           ),
+
+          ///Container containing all the Radio buttons
           Container(
             margin: EdgeInsets.all(18),
             child: Wrap(
@@ -112,22 +114,27 @@ class _FloatingActionButtonWidgetState
     );
   }
 
+  ///method called whenever a radio button is clicked on to change position
   _onLocationChanged(FloatingActionButtonLocation value) => setState(() {
     _fabLocation = value;
   });
 
+  ///method called whenever you want to change size
   _onSizeChange(bool value) => setState(() {
     _isMini = value;
   });
 
 }
 
-///Class to create an option for the user to select for any type.
-///Value -> The value that the radio button will set when it is clicked
-///Group value -> A value common to a group of radio buttons that is related to the
-///kind of values that each group member can set eg a boolean value or a
-///FloatingActionButtonLocation value etc.
-///onChanged -> the method that is to be called when clicked on a radio button
+/// Class to create an option for the user to select for any <T> type.
+/// Value -> The value that the radio button will set when it is clicked
+/// Group value -> A value common to a group of radio buttons that is related to the
+/// kind of values that each group member can set eg a boolean value or a
+/// FloatingActionButtonLocation value etc.
+/// onChanged -> the method that is to be called when clicked on a radio button
+///
+/// When the Group value and Value of a Radio button is same, that radio button
+/// is marked as Selected
 class _OptionItem<T> extends StatelessWidget {
   const _OptionItem(this.value, this.groupValue, this.onChanged, this.title);
 
