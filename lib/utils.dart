@@ -131,7 +131,8 @@ class Utils {
   static const String animatedBuilderDescription = "This widget lets you change properties of a widget like size, roatation etc with an animation.";
   static const String dismissibleDescription = "This widget lets you create a dismissible list item. You can cutomize the left and right swipe gestures"
       " in terms of the UI";
-  static const String sizedBoxDescription = "";
+  static const String sizedBoxDescription = "This widget lets you give a fixed size to the child widget. This widget can also be used to create a gap between"
+      " two widgets.";
 
 
   //urls
