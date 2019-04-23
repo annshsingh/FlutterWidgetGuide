@@ -61,6 +61,11 @@ class _PageViewWidgetState extends State<PageViewWidget> {
       body: PageView(
         controller: controller,
         scrollDirection: scrollDirection,
+        ///Enable physics property to provide your PageView with a
+        ///custom scroll behaviour
+        ///Here BouncingScrollPhysics will pull back the boundary
+        ///item (first or last) if the user tries to scroll further.
+        //physics: BouncingScrollPhysics(),
         pageSnapping: true,
         children: <Widget>[
           Container(
