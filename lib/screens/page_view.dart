@@ -9,6 +9,7 @@ class PageViewWidget extends StatefulWidget {
 class _PageViewWidgetState extends State<PageViewWidget> {
   static final GlobalKey<ScaffoldState> _scaffoldKey =
       GlobalKey<ScaffoldState>();
+  ///Page Controller for the PageView
   final controller = PageController(
     initialPage: 0,
   );
@@ -56,6 +57,7 @@ class _PageViewWidgetState extends State<PageViewWidget> {
               }),
         ],
       ),
+      ///A Page View with 3 children
       body: PageView(
         controller: controller,
         scrollDirection: scrollDirection,
