@@ -21,7 +21,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    5. [Opacity](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/opacity.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-opacity-widget-in-5-mins-or-less-969c3f635437)
    6. [Future Builder](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/future_builder.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-futurebuilder-widget-in-5-mins-or-less-3bef3e5e1bff)
    7. [Fade Transition](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/fade_transition.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-fadetransition-widget-in-5-mins-or-less-78e714ba722)
-   8. [Floating Action Button](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/floating_action_button.dart)
+   8. [Floating Action Button](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/floating_action_button.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-fab-widget-in-5-mins-or-less-bbf84db22d3c)
    9. [Page View](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/page_view.dart)
    10. [Table](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/table.dart)
    11. [Sliver App Bar](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sliver_app_bar.dart)
