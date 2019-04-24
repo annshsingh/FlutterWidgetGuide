@@ -27,6 +27,7 @@ Widget listItemDesign(BuildContext context, ListItem item) => Card(
                         title: Center(
                           child: Text(
                             "${item.title} Widget",
+                            textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 20.0,
                                 fontWeight: FontWeight.bold,

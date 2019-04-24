@@ -58,6 +58,7 @@ class Utils {
   static const String animatedBuilder = "/Animated Builder";
   static const String dismissible = "/Dismissible";
   static const String sizedBox = "/Sized Box";
+  static const String valueListenableBuilder = "/Value Listenable Builder";
 
   //strings
   static const String appName = "Flutter Widget Guide";
@@ -133,6 +134,7 @@ class Utils {
       " in terms of the UI";
   static const String sizedBoxDescription = "This widget lets you give a fixed size to the child widget. This widget can also be used to create a gap between"
       " two widgets.";
+  static const String valueListenableBuilderDescription = "";
 
 
   //urls
@@ -166,6 +168,7 @@ class Utils {
   static const String animatedBuilderURL = "https://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html";
   static const String dismissibleURL = "https://docs.flutter.io/flutter/widgets/Dismissible-class.html";
   static const String sizedBoxURL = "https://docs.flutter.io/flutter/widgets/SizedBox-class.html";
+  static const String valueListenableBuilderURL = "https://docs.flutter.io/flutter/widgets/ValueListenableBuilder-class.html";
 
   static const String expandedSourceURL = "https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart";
 
