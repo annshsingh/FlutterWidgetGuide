@@ -45,6 +45,7 @@ class _TableWidgetState extends State<TableWidget> {
           border: _isBorderEnabled ? TableBorder.all() : null,
           defaultVerticalAlignment: TableCellVerticalAlignment.top,
           children: <TableRow>[
+            ///First table row with 3 children
             TableRow(children: <Widget>[
               FittedBox(
                 fit: BoxFit.contain,
@@ -104,6 +105,7 @@ class _TableWidgetState extends State<TableWidget> {
                 ),
               ),
             ]),
+            ///Second table row with 3 children
             TableRow(children: <Widget>[
               FittedBox(
                 fit: BoxFit.contain,
