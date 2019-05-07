@@ -23,7 +23,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    7. [Fade Transition](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/fade_transition.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-fadetransition-widget-in-5-mins-or-less-78e714ba722)
    8. [Floating Action Button](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/floating_action_button.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-fab-widget-in-5-mins-or-less-bbf84db22d3c)
    9. [Page View](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/page_view.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-pageview-widget-in-5-mins-or-less-bc7968f264ac)
-   10. [Table](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/table.dart)
+   10. [Table](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/table.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-table-widget-in-5-mins-or-less-9b7f7f796014)
    11. [Sliver App Bar](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sliver_app_bar.dart)
    12. [Sliver List](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sliver_list.dart)
    13. [Sliver Grid](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sliver_grid.dart)
