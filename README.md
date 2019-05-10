@@ -46,6 +46,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    30. [Sized Widget](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sized_box.dart)
    31. Value Listnable Builder (coming soon)
    32. Draggable (coming soon)
+   33. AnimatedList (coming soon)
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
 ## Learn more on Flutter
