@@ -11,8 +11,16 @@ class SliverAppBarWidget extends StatelessWidget {
           ///First sliver is the App Bar
           SliverAppBar(
             ///Properties of app bar
+            ///
+            /// Color of app bar when it is collapsed
             backgroundColor: Colors.white,
+            /// Set to false so that appbar is always invisible after
+            /// collapsing
+            /// If set to true here, the app bar will expand as soon as you
+            /// start scrolling up even if you haven't reached the top
             floating: false,
+            /// To make the app bar visible at all times after collapsing
+            /// we set pinned to true
             pinned: true,
             expandedHeight: 200.0,
 
@@ -33,7 +41,9 @@ class SliverAppBarWidget extends StatelessWidget {
             ),
           ),
 
-          ///Next sliver is the Sliver list that
+          ///Next sliver is the Sliver list that is used here to
+          ///allow the user to scroll and observe the collapsing
+          ///behaviour of SliverAppBar widget
           SliverFixedExtentList(
             itemExtent: 100.0,
             delegate: SliverChildListDelegate(
