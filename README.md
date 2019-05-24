@@ -48,6 +48,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    32. Draggable (coming soon)
    33. AnimatedList (coming soon)
    34. Flexible (coming soon)
+   35. MediaQuery (coming soon)
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
 ## Learn more on Flutter
