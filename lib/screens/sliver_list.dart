@@ -39,6 +39,9 @@ class SliverListWidget extends StatelessWidget {
             ),
           ),
           SliverList(
+            ///Use SliverChildListDelegate and provide a list
+            ///of widgets if the count is limited
+            ///
             ///Lazy building of list
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
