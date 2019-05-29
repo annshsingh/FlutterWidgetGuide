@@ -25,7 +25,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    9. [Page View](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/page_view.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-pageview-widget-in-5-mins-or-less-bc7968f264ac)
    10. [Table](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/table.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-table-widget-in-5-mins-or-less-9b7f7f796014)
    11. [Sliver App Bar](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sliver_app_bar.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-sliverappbar-widget-in-5-mins-or-less-d39ae4bf98c8)
-   12. [Sliver List](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sliver_list.dart)
+   12. [Sliver List](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sliver_list.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-sliverlist-widget-in-5-mins-or-less-d1215c677388)
    13. [Sliver Grid](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sliver_grid.dart)
    14. [Fade In Image](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/fade_in_image.dart)
    15. [Stream Builder](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/stream_builder.dart)
