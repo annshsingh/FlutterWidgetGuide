@@ -130,9 +130,14 @@ class ListViewModel {
           description: "${Utils.sizedBoxDescription}",
           url: "${Utils.sizedBoxURL}"),
       ListItem(
-          title: "${Utils.valueListenableBuilder.replaceAll(new RegExp(r'/'), '')}",
+          title:
+              "${Utils.valueListenableBuilder.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.valueListenableBuilderDescription}",
-          url: "${Utils.valueListenableBuilderURL}")
+          url: "${Utils.valueListenableBuilderURL}"),
+      ListItem(
+          title: "${Utils.flexible.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.flexibleDescription}",
+          url: "${Utils.flexibleURL}")
     ];
   }
 }

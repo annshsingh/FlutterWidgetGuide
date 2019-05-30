@@ -11,6 +11,7 @@ import 'package:flutter_widget_guide/screens/expanded.dart';
 import 'package:flutter_widget_guide/screens/fade_in_image.dart';
 import 'package:flutter_widget_guide/screens/fade_transition.dart';
 import 'package:flutter_widget_guide/screens/fitted_box.dart';
+import 'package:flutter_widget_guide/screens/flexible.dart';
 import 'package:flutter_widget_guide/screens/floating_action_button.dart';
 import 'package:flutter_widget_guide/screens/future_builder.dart';
 import 'package:flutter_widget_guide/screens/hero.dart';
@@ -49,9 +50,11 @@ class MyApp extends StatelessWidget {
       primaryTextTheme: TextTheme(
         body1: TextStyle(color: Colors.white),
       ),
+
       ///For slider label
       accentTextTheme: TextTheme(
-        body2: TextStyle(color: Colors.white, backgroundColor: Colors.lightBlue),
+        body2:
+            TextStyle(color: Colors.white, backgroundColor: Colors.lightBlue),
       ),
     ),
     debugShowCheckedModeBanner: false,
@@ -96,7 +99,9 @@ class MyApp extends StatelessWidget {
       Utils.animatedBuilder: (BuildContext context) => AnimatedBuilderWidget(),
       Utils.dismissible: (BuildContext context) => DismissibleWidget(),
       Utils.sizedBox: (BuildContext context) => SizedBoxWidget(),
-      Utils.valueListenableBuilder: (BuildContext context) => ValueListenableBuilderWidget()
+      Utils.valueListenableBuilder: (BuildContext context) =>
+          ValueListenableBuilderWidget(),
+      Utils.flexible: (BuildContext context) => FlexibleWidget()
     },
   );
 
