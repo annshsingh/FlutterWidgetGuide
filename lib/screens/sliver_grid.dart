@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
-import 'dart:math' as math;
 
 class SliverGridWidget extends StatelessWidget {
   @override
@@ -41,6 +40,7 @@ class SliverGridWidget extends StatelessWidget {
           ),
           SliverGrid(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              ///no.of items in the horizontal axis
               crossAxisCount: 4,
             ),
             ///Lazy building of list
