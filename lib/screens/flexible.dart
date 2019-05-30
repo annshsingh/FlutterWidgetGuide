@@ -127,10 +127,6 @@ class _FlexibleWidgetState extends State<FlexibleWidget>
               flex: 2,
               child: Container(
                 color: Colors.indigo,
-                width: double.maxFinite,
-                child: Center(
-                  child: Text('Three'),
-                ),
               ),
             ),
           ],
@@ -148,6 +144,10 @@ class _FlexibleWidgetState extends State<FlexibleWidget>
             Container(
               height: 100,
               color: Colors.redAccent,
+              width: double.maxFinite,
+              child: Center(
+                child: Text('Three'),
+              ),
             ),
             Flexible(
               flex: 1,
