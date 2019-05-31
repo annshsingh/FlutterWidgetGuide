@@ -32,14 +32,21 @@ class _FadeInImageWidgetState extends State<FadeInImageWidget> {
       ///Will pop scope is used to detect if the user pressed back button
       body: WillPopScope(
         child: Stack(children: <Widget>[
+          ///We can choose to show an indicator as well to let user know that
+          ///something is being loaded
           Center(
               child: CircularProgressIndicator(
+                  ///this is to specify the color of the CircularProgressIndicator
                   valueColor: AlwaysStoppedAnimation<Color>(Colors.blue))),
           Center(
             child: Container(
               child: FadeInImage.memoryNetwork(
+                  ///Specifying dimensions of the image before and after
+                  ///loading
                   height: 350,
                   width: 350,
+                  ///we are using the transparent_image package
+                  ///to show a transparent image as a placeholder.
                   placeholder: kTransparentImage,
                   image: _url),
             ),
@@ -47,8 +54,8 @@ class _FadeInImageWidgetState extends State<FadeInImageWidget> {
         ]),
         onWillPop: () {
           ///clear image cache and exit screen
-          ///this is done so that the image loads everytime you open the
-          ///screen.
+          ///this is done so that the image loads every time you open the
+          ///screen. (it is cached otherwise)
           painting.imageCache.clear();
           Navigator.of(context).pop(true);
         },
