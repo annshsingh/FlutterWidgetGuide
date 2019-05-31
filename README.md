@@ -49,6 +49,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    33. AnimatedList (coming soon)
    34. Flexible (coming soon)
    35. MediaQuery (coming soon)
+   36. Spacer (coming soon)
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
 ## Learn more on Flutter
@@ -64,6 +65,9 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
 
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/Apache-2.0)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/iampawan/Flutter-UI-Kit/blob/master/licence.txt)
+
+## Contribution Guidelines
+This project is a fully open source project, and contributions are welcome. Information on how to get started can be found at the [contributor guide](https://github.com/annshsingh/flutter-widget-guide/blob/master/CONTRIBUTING.md).
 
 ## Support
 
