@@ -32,6 +32,7 @@ import 'package:flutter_widget_guide/screens/transform.dart';
 import 'package:flutter_widget_guide/screens/wrap.dart';
 import 'package:flutter_widget_guide/screens/sized_box.dart';
 import 'package:flutter_widget_guide/screens/value_listenable_builder.dart';
+import 'package:flutter_widget_guide/CodeScreen.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
 class MyApp extends StatelessWidget {
@@ -62,6 +63,7 @@ class MyApp extends StatelessWidget {
 
     //all the app routes are listed here
     routes: <String, WidgetBuilder>{
+      Utils.codeRoute: (BuildContext context) => CodeScreen(),
       Utils.homeRoute: (BuildContext context) => HomePage(),
       Utils.safeArea: (BuildContext context) => SafeAreaWidget(),
       Utils.expanded: (BuildContext context) => ExpandedWidget(),
