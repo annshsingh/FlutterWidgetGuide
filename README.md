@@ -27,7 +27,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    11. [Sliver App Bar](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sliver_app_bar.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-sliverappbar-widget-in-5-mins-or-less-d39ae4bf98c8)
    12. [Sliver List](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sliver_list.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-sliverlist-widget-in-5-mins-or-less-d1215c677388)
    13. [Sliver Grid](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sliver_grid.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-slivergrid-widget-in-5-mins-or-less-e6a95d6c4e76)
-   14. [Fade In Image](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/fade_in_image.dart)
+   14. [Fade In Image](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/fade_in_image.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-fadeinimage-widget-in-5-mins-or-less-2659a9aa5bfd)
    15. [Stream Builder](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/stream_builder.dart)
    16. [Inherited Model](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/inherited_model.dart)
    17. [ClipRRect](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/clip_r_rect.dart)
