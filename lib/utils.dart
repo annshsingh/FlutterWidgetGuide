@@ -18,7 +18,9 @@ class Utils {
   }
 
   ///Method to get a random color
-  static getRandomColor() => Color((math.Random().nextDouble() * 0xFFFFFF).toInt() << 0).withOpacity(1.0);
+  static getRandomColor() =>
+      Color((math.Random().nextDouble() * 0xFFFFFF).toInt() << 0).withOpacity(
+          1.0);
 
   static List<Color> buttonGradient = [
     Colors.cyan.shade600,
@@ -26,6 +28,7 @@ class Utils {
   ];
 
   //routes
+  static const String codeRoute = "/code";
   static const String homeRoute = "/home";
   static const String safeArea = "/Safe Area";
   static const String expanded = "/Expanded";
