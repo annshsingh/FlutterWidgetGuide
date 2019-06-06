@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_guide/Code.dart';
+import 'package:flutter_widget_guide/CodeScreen.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
 class WrapWidget extends StatefulWidget {
@@ -7,7 +9,6 @@ class WrapWidget extends StatefulWidget {
 }
 
 class _WrapWidgetState extends State<WrapWidget> {
-
   BuildContext context; //global context
 
   @override
@@ -15,18 +16,25 @@ class _WrapWidgetState extends State<WrapWidget> {
     this.context = context;
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Center(
-            child: Text(
-              'Wrap Widget',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
-          ),
-          margin: EdgeInsets.only(right: 48),
+        centerTitle: true,
+        title: Text(
+          'Wrap Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CodeScreen(code: Code.wrapCode),
+                  ),
+                ),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -78,9 +86,7 @@ class _WrapWidgetState extends State<WrapWidget> {
                 ),
               ],
             ),
-
             divider(context),
-
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -139,7 +145,6 @@ class _WrapWidgetState extends State<WrapWidget> {
   }
 }
 
-
 ///Common method to design a chip with different properties
 ///like label and background color
 Widget chipDesign(String label, Color color) => Container(
@@ -159,6 +164,6 @@ Widget chipDesign(String label, Color color) => Container(
 
 ///Method to create a divider with added margin
 Container divider(BuildContext context) => Container(
-  child: Divider(),
-  margin: EdgeInsets.only(left: 10, right: 10, top: 28, bottom: 28),
-);
+      child: Divider(),
+      margin: EdgeInsets.only(left: 10, right: 10, top: 28, bottom: 28),
+    );
