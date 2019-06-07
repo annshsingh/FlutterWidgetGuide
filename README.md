@@ -52,6 +52,10 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    36. Spacer (coming soon)
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
+## App Screenshots
+<img src="https://github.com/annshsingh/flutter-widget-guide/blob/master/screen_1.png" alt="Screen1" width="153px" height="280px"><img src="https://github.com/annshsingh/flutter-widget-guide/blob/master/screen_2.png" alt="Screen2" width="153px" height="280px"><img src="https://github.com/annshsingh/flutter-widget-guide/blob/master/screen_4.png" alt="Screen4" width="153px" height="280px"><img src="https://github.com/annshsingh/flutter-widget-guide/blob/master/screen_3.png" alt="Screen3" width="320px" height="153px">
+</br>&nbsp; &nbsp; &nbsp;List of Widgets&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Explore a Widget&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; Widget Video&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Source Code
+
 ## Learn more on Flutter
 [Official Flutter documentation](https://flutter.dev/docs)</br>
 [Flutter widget list](https://flutter.dev/docs/development/ui/widgets)</br>
