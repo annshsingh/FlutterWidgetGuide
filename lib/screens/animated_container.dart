@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_guide/Code.dart';
+import 'package:flutter_widget_guide/CodeScreen.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
 class AnimatedContainerWidget extends StatefulWidget {
@@ -20,18 +22,25 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Center(
-            child: Text(
-              'Animated Container Widget',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
-          ),
-          margin: EdgeInsets.only(right: 48),
+        centerTitle: true,
+        title: Text(
+          'Animated Container Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.animatedContainerCode),
+              ),
+            ),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Container(
