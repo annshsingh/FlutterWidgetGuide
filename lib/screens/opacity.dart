@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class OpacityWidget extends StatefulWidget {
   @override
   _OpacityWidgetState createState() => _OpacityWidgetState();
 }
 
 class _OpacityWidgetState extends State<OpacityWidget> {
-
   ///Initial Slider widget value
   var _value = 0.50;
+
   ///Initial AnimatedOpacity widget value
   var _animOpacityValue = 1.0;
 
@@ -20,18 +23,25 @@ class _OpacityWidgetState extends State<OpacityWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Center(
-            child: Text(
-              'Opacity Widget',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
-          ),
-          margin: EdgeInsets.only(right: 48),
+        centerTitle: true,
+        title: Text(
+          'Opacity Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CodeScreen(code: Code.opacityCode),
+                  ),
+                ),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -54,7 +64,7 @@ class _OpacityWidgetState extends State<OpacityWidget> {
                   padding: EdgeInsets.only(left: 12, right: 12, bottom: 12),
                   child: Text(
                     'Slide the slider widget to change the value of opacity\n'
-                        'to observe changes on the widget with gradient',
+                    'to observe changes on the widget with gradient',
                     style: TextStyle(
                         color: Colors.grey[400],
                         fontSize: 14.0,
@@ -65,6 +75,7 @@ class _OpacityWidgetState extends State<OpacityWidget> {
                 ),
               ],
             ),
+
             ///Stack widget to blend FlutterLogo widget with a container
             ///with varying opacity controlled by a Slider Widget
             Stack(
@@ -96,21 +107,28 @@ class _OpacityWidgetState extends State<OpacityWidget> {
                 ),
               ],
             ),
+
             ///Slider widget to set opacity value
             Container(
               margin: EdgeInsets.only(top: 24),
               child: Slider(
                 value: _value,
+
                 ///Color for active side of Slider
                 activeColor: Colors.lightBlue,
+
                 ///Color for inactive side of Slider
                 inactiveColor: Colors.lightBlue[50],
+
                 ///Minimum value of the slider
                 min: 0.0,
+
                 ///Maximum value of the slider
                 max: 1.0,
+
                 ///No.Of divisions from min to max value on the Slider
                 divisions: 100,
+
                 ///Value indicator above the slider
                 label: "${_value.abs()}",
                 onChanged: (double value) {
@@ -139,7 +157,7 @@ class _OpacityWidgetState extends State<OpacityWidget> {
                   padding: EdgeInsets.only(left: 12, right: 12, bottom: 12),
                   child: Text(
                     'Click on the widget below to observe changes in opacity of the\n'
-                        'text widget with Animation',
+                    'text widget with Animation',
                     style: TextStyle(
                         color: Colors.grey[400],
                         fontSize: 14.0,
@@ -148,6 +166,7 @@ class _OpacityWidgetState extends State<OpacityWidget> {
                     textAlign: TextAlign.center,
                   ),
                 ),
+
                 ///Widget to make a Container detect clicks
                 GestureDetector(
                   child: Container(
@@ -158,6 +177,7 @@ class _OpacityWidgetState extends State<OpacityWidget> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25.0),
                         color: _bgColor),
+
                     ///Widget to animate the change in opacity
                     child: AnimatedOpacity(
                       opacity: _animOpacityValue,
@@ -173,10 +193,10 @@ class _OpacityWidgetState extends State<OpacityWidget> {
                     ),
                   ),
                   onTap: () => setState(() {
-                    _animOpacityValue == 1.0
-                        ? _animOpacityValue = 0.0
-                        : _animOpacityValue = 1.0;
-                  }),
+                        _animOpacityValue == 1.0
+                            ? _animOpacityValue = 0.0
+                            : _animOpacityValue = 1.0;
+                      }),
                 ),
               ],
             ),
@@ -188,6 +208,6 @@ class _OpacityWidgetState extends State<OpacityWidget> {
 }
 
 Container divider(BuildContext context) => Container(
-  child: Divider(),
-  margin: EdgeInsets.only(left: 10, right: 10, top: 28, bottom: 28),
-);
+      child: Divider(),
+      margin: EdgeInsets.only(left: 10, right: 10, top: 28, bottom: 28),
+    );
