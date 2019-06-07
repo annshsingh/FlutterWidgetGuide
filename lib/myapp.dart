@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_guide/CodeScreen.dart';
 import 'package:flutter_widget_guide/screens/absorb_pointer.dart';
 import 'package:flutter_widget_guide/screens/align.dart';
 import 'package:flutter_widget_guide/screens/animated_builder.dart';
@@ -22,6 +23,7 @@ import 'package:flutter_widget_guide/screens/opacity.dart';
 import 'package:flutter_widget_guide/screens/page_view.dart';
 import 'package:flutter_widget_guide/screens/positioned.dart';
 import 'package:flutter_widget_guide/screens/safe_area.dart';
+import 'package:flutter_widget_guide/screens/sized_box.dart';
 import 'package:flutter_widget_guide/screens/sliver_app_bar.dart';
 import 'package:flutter_widget_guide/screens/sliver_grid.dart';
 import 'package:flutter_widget_guide/screens/sliver_list.dart';
@@ -29,11 +31,11 @@ import 'package:flutter_widget_guide/screens/stream_builder.dart';
 import 'package:flutter_widget_guide/screens/table.dart';
 import 'package:flutter_widget_guide/screens/tooltip.dart';
 import 'package:flutter_widget_guide/screens/transform.dart';
-import 'package:flutter_widget_guide/screens/wrap.dart';
-import 'package:flutter_widget_guide/screens/sized_box.dart';
 import 'package:flutter_widget_guide/screens/value_listenable_builder.dart';
-import 'package:flutter_widget_guide/CodeScreen.dart';
+import 'package:flutter_widget_guide/screens/wrap.dart';
 import 'package:flutter_widget_guide/utils.dart';
+
+import 'VideoView.dart';
 
 class MyApp extends StatelessWidget {
   final materialApp = MaterialApp(
@@ -50,9 +52,11 @@ class MyApp extends StatelessWidget {
       primaryTextTheme: TextTheme(
         body1: TextStyle(color: Colors.white),
       ),
+
       ///For slider label
       accentTextTheme: TextTheme(
-        body2: TextStyle(color: Colors.white, backgroundColor: Colors.lightBlue),
+        body2:
+            TextStyle(color: Colors.white, backgroundColor: Colors.lightBlue),
       ),
     ),
     debugShowCheckedModeBanner: false,
@@ -63,7 +67,11 @@ class MyApp extends StatelessWidget {
 
     //all the app routes are listed here
     routes: <String, WidgetBuilder>{
-      Utils.codeRoute: (BuildContext context) => CodeScreen(),
+      Utils.codeRoute: (BuildContext context) => CodeScreen(code: ""),
+      Utils.codeRoute: (BuildContext context) => VideoView(
+            videoUrl: "",
+            title: "",
+          ),
       Utils.homeRoute: (BuildContext context) => HomePage(),
       Utils.safeArea: (BuildContext context) => SafeAreaWidget(),
       Utils.expanded: (BuildContext context) => ExpandedWidget(),
@@ -98,7 +106,8 @@ class MyApp extends StatelessWidget {
       Utils.animatedBuilder: (BuildContext context) => AnimatedBuilderWidget(),
       Utils.dismissible: (BuildContext context) => DismissibleWidget(),
       Utils.sizedBox: (BuildContext context) => SizedBoxWidget(),
-      Utils.valueListenableBuilder: (BuildContext context) => ValueListenableBuilderWidget()
+      Utils.valueListenableBuilder: (BuildContext context) =>
+          ValueListenableBuilderWidget()
     },
   );
 

@@ -3,6 +3,8 @@ import 'package:flutter_widget_guide/Code.dart';
 import 'package:flutter_widget_guide/CodeScreen.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../VideoView.dart';
+
 class WrapWidget extends StatefulWidget {
   @override
   _WrapWidgetState createState() => _WrapWidgetState();
@@ -25,6 +27,22 @@ class _WrapWidgetState extends State<WrapWidget> {
               fontFamily: Utils.ubuntuRegularFont),
         ),
         actions: <Widget>[
+          IconButton(
+            icon: Padding(
+              padding: const EdgeInsets.only(bottom: 4.0),
+              child: Icon(
+                Icons.live_tv,
+                size: 20,
+              ),
+            ),
+            onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        VideoView(videoUrl: Utils.wrapVideoUrl, title: "Wrap"),
+                  ),
+                ),
+          ),
           IconButton(
             icon: Icon(Icons.code),
             onPressed: () => Navigator.push(
@@ -57,7 +75,7 @@ class _WrapWidgetState extends State<WrapWidget> {
                         padding: EdgeInsets.only(left: 12, right: 12, top: 8),
                         child: Text(
                           'Here we observe that the layout is overflowing to the right\n'
-                              'which results in a broken widget',
+                          'which results in a broken widget',
                           style: TextStyle(
                               color: Colors.grey[400],
                               fontSize: 14.0,
@@ -106,8 +124,8 @@ class _WrapWidgetState extends State<WrapWidget> {
                         padding: EdgeInsets.only(left: 12, right: 12, top: 8),
                         child: Text(
                           'Here we observe that chips are contained inside a Wrap '
-                              'widget.\nIt adjusts all the children according to the space'
-                              ' available\nand automatically wraps to the next line',
+                          'widget.\nIt adjusts all the children according to the space'
+                          ' available\nand automatically wraps to the next line',
                           style: TextStyle(
                               color: Colors.grey[400],
                               fontSize: 14.0,
