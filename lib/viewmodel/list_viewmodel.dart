@@ -11,128 +11,159 @@ class ListViewModel {
       ListItem(
           title: "${Utils.safeArea.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.safeAreaDescription}",
-          url: "${Utils.safeAreaURL}"),
+          url: "${Utils.safeAreaURL}",
+          videoUrl: "${Utils.safeAreaVideoUrl}"),
       ListItem(
           title: "${Utils.expanded.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.expandedDescription}",
-          url: "${Utils.expandedURL}"),
+          url: "${Utils.expandedURL}",
+          videoUrl: "${Utils.expandedVideoUrl}"),
       ListItem(
           title: "${Utils.wrap.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.wrapDescription}",
-          url: "${Utils.wrapURL}"),
+          url: "${Utils.wrapURL}",
+          videoUrl: "${Utils.wrapVideoUrl}"),
       ListItem(
           title: "${Utils.animatedContainer.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.animatedContainerDescription}",
-          url: "${Utils.animatedContainerURL}"),
+          url: "${Utils.animatedContainerURL}",
+          videoUrl: "${Utils.animatedContainerVideoUrl}"),
       ListItem(
           title: "${Utils.opacity.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.opacityDescription}",
-          url: "${Utils.opacityURL}"),
+          url: "${Utils.opacityURL}",
+          videoUrl: "${Utils.opacityVideoUrl}"),
       ListItem(
           title: "${Utils.futureBuilder.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.futureBuilderDescription}",
-          url: "${Utils.futureBuilderURL}"),
+          url: "${Utils.futureBuilderURL}",
+          videoUrl: "${Utils.futureBuilderVideoUrl}"),
       ListItem(
           title: "${Utils.fadeTransition.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.fadeTransitionDescription}",
-          url: "${Utils.fadeTransitionURL}"),
+          url: "${Utils.fadeTransitionURL}",
+          videoUrl: "${Utils.fadeTransitionVideoUrl}"),
       ListItem(
           title:
               "${Utils.floatingActionButton.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.floatingActionButtonDescription}",
-          url: "${Utils.floatingActionButtonURL}"),
+          url: "${Utils.floatingActionButtonURL}",
+          videoUrl: "${Utils.fabVideoUrl}"),
       ListItem(
           title: "${Utils.pageView.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.pageViewDescription}",
-          url: "${Utils.pageViewURL}"),
+          url: "${Utils.pageViewURL}",
+          videoUrl: "${Utils.pageViewURL}"),
       ListItem(
           title: "${Utils.table.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.tableDescription}",
-          url: "${Utils.tableURL}"),
+          url: "${Utils.tableURL}",
+          videoUrl: "${Utils.tableVideoUrl}"),
       ListItem(
           title: "${Utils.sliverAppBar.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.sliverAppBarDescription}",
-          url: "${Utils.sliverAppBarURL}"),
+          url: "${Utils.sliverAppBarURL}",
+          videoUrl: "${Utils.sliverAppBarVideoUrl}"),
       ListItem(
           title: "${Utils.sliverList.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.sliverListDescription}",
-          url: "${Utils.sliverListURL}"),
+          url: "${Utils.sliverListURL}",
+          videoUrl: "${Utils.sliverListVideoUrl}"),
       ListItem(
           title: "${Utils.sliverGrid.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.sliverGridDescription}",
-          url: "${Utils.sliverGridURL}"),
+          url: "${Utils.sliverGridURL}",
+          videoUrl: "${Utils.sliverGridVideoUrl}"),
       ListItem(
           title: "${Utils.fadeInImage.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.fadeInImageDescription}",
-          url: "${Utils.fadeInImageURL}"),
+          url: "${Utils.fadeInImageURL}",
+          videoUrl: "${Utils.fadeInImageVideoUrl}"),
       ListItem(
           title: "${Utils.streamBuilder.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.streamBuilderDescription}",
-          url: "${Utils.streamBuilderURL}"),
+          url: "${Utils.streamBuilderURL}",
+          videoUrl: "${Utils.streamBuilderVideoUrl}"),
       ListItem(
           title: "${Utils.inheritedModel.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.inheritedModelDescription}",
-          url: "${Utils.inheritedModelURL}"),
+          url: "${Utils.inheritedModelURL}",
+          videoUrl: "${Utils.inheritedModelVideoUrl}"),
       ListItem(
           title: "${Utils.clipRRect.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.clipRRectDescription}",
-          url: "${Utils.clipRRectURL}"),
+          url: "${Utils.clipRRectURL}",
+          videoUrl: "${Utils.clipRrectVideoUrl}"),
       ListItem(
           title: "${Utils.hero.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.heroDescription}",
-          url: "${Utils.heroURL}"),
+          url: "${Utils.heroURL}",
+          videoUrl: "${Utils.heroVideoUrl}"),
       ListItem(
           title: "${Utils.customPaint.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.customPaintDescription}",
-          url: "${Utils.customPaintURL}"),
+          url: "${Utils.customPaintURL}",
+          videoUrl: "${Utils.customPaintVideoUrl}"),
       ListItem(
           title: "${Utils.tooltip.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.tooltipDescription}",
-          url: "${Utils.tooltipURL}"),
+          url: "${Utils.tooltipURL}",
+          videoUrl: "${Utils.toolTipVideoUrl}"),
       ListItem(
           title: "${Utils.fittedBox.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.fittedBoxDescription}",
-          url: "${Utils.fittedBoxURL}"),
+          url: "${Utils.fittedBoxURL}",
+          videoUrl: "${Utils.fittedBoxVideoUrl}"),
       ListItem(
           title: "${Utils.layoutBuilder.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.layoutBuilderDescription}",
-          url: "${Utils.layoutBuilderURL}"),
+          url: "${Utils.layoutBuilderURL}",
+          videoUrl: "${Utils.layoutBuilderVideoUrl}"),
       ListItem(
           title: "${Utils.absorbPointer.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.absorbPointerDescription}",
-          url: "${Utils.absorbPointerURL}"),
+          url: "${Utils.absorbPointerURL}",
+          videoUrl: "${Utils.absorbPointerVideoUrl}"),
       ListItem(
           title: "${Utils.transform.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.transformDescription}",
-          url: "${Utils.transformURL}"),
+          url: "${Utils.transformURL}",
+          videoUrl: "${Utils.transformVideoUrl}"),
       ListItem(
           title: "${Utils.backDropFilter.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.backDropFilterDescription}",
-          url: "${Utils.backDropFilterURL}"),
+          url: "${Utils.backDropFilterURL}",
+          videoUrl: "${Utils.backdropVideoUrl}"),
       ListItem(
           title: "${Utils.align.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.alignDescription}",
-          url: "${Utils.alignURL}"),
+          url: "${Utils.alignURL}",
+          videoUrl: "${Utils.alignVideoUrl}"),
       ListItem(
           title: "${Utils.positioned.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.positionedDescription}",
-          url: "${Utils.positionedURL}"),
+          url: "${Utils.positionedURL}",
+          videoUrl: "${Utils.positionedVideoUrl}"),
       ListItem(
           title: "${Utils.animatedBuilder.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.animatedBuilderDescription}",
-          url: "${Utils.animatedBuilderURL}"),
+          url: "${Utils.animatedBuilderURL}",
+          videoUrl: "${Utils.animatedBuilderVideoUrl}"),
       ListItem(
           title: "${Utils.dismissible.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.dismissibleDescription}",
-          url: "${Utils.dismissibleURL}"),
+          url: "${Utils.dismissibleURL}",
+          videoUrl: "${Utils.dismissibleVideoUrl}"),
       ListItem(
           title: "${Utils.sizedBox.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.sizedBoxDescription}",
-          url: "${Utils.sizedBoxURL}"),
+          url: "${Utils.sizedBoxURL}",
+          videoUrl: "${Utils.sizedBoxVideoUrl}"),
       ListItem(
           title: "${Utils.valueListenableBuilder.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.valueListenableBuilderDescription}",
-          url: "${Utils.valueListenableBuilderURL}")
+          url: "${Utils.valueListenableBuilderURL}",
+          videoUrl: "${Utils.valueListenableBuilderVideoUrl}")
     ];
   }
 }

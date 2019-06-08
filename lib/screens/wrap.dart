@@ -28,22 +28,6 @@ class _WrapWidgetState extends State<WrapWidget> {
         ),
         actions: <Widget>[
           IconButton(
-            icon: Padding(
-              padding: const EdgeInsets.only(bottom: 4.0),
-              child: Icon(
-                Icons.live_tv,
-                size: 20,
-              ),
-            ),
-            onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        VideoView(videoUrl: Utils.wrapVideoUrl, title: "Wrap"),
-                  ),
-                ),
-          ),
-          IconButton(
             icon: Icon(Icons.code),
             onPressed: () => Navigator.push(
                   context,
