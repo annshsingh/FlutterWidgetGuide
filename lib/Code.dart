@@ -1,8 +1,6 @@
-
 /// This class consists of all the Code data for different widgets
 
-class Code{
-
+class Code {
   static const String safeAreaCode = '''
     class SafeAreaWidget extends StatefulWidget {
       @override
@@ -59,7 +57,6 @@ class Code{
         );
       }
     } ''';
-
 
   static const String expandedCode = ''' 
     class ExpandedWidget extends StatefulWidget {
@@ -517,7 +514,6 @@ class Code{
       }
     }''';
 
-
   static const String opacityCode = ''' 
     class OpacityWidget extends StatefulWidget {
       @override
@@ -710,4 +706,109 @@ class Code{
       margin: EdgeInsets.only(left: 10, right: 10, top: 28, bottom: 28),
     );''';
 
+  static const String futurBuilderCode = ''' 
+    class FutureBuilderWidget extends StatefulWidget {
+      @override
+      _FutureBuilderWidgetState createState() => _FutureBuilderWidgetState();
+    }
+    
+    class _FutureBuilderWidgetState extends State<FutureBuilderWidget> {
+      bool _isButtonClicked = false;
+      var _buttonIcon = Icons.cloud_download;
+      var _buttonText = "Fetch Data";
+      var _buttonColor = Colors.green;
+    
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            title: Container(
+              child: Center(
+                child: Text(
+                  'Future Builder Widget',
+                  style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: Utils.ubuntuRegularFont),
+                ),
+              ),
+              margin: EdgeInsets.only(right: 48),
+            ),
+          ),
+          body: Center(
+            child: FutureBuilder<Demo>(
+              ///If future is null then API will not be called as soon as the screen
+              ///loads. This can be used to make this Future Builder dependent
+              ///on a button click.
+              future: _isButtonClicked ? getDemoResponse() : null,
+              builder: (context, snapshot) {
+                switch (snapshot.connectionState) {
+    
+                    ///when the future is null
+                  case ConnectionState.none:
+                    return Text(
+                      'Press the button to fetch data',
+                      textAlign: TextAlign.center,
+                    );
+    
+                  case ConnectionState.active:
+    
+                    ///when data is being fetched
+                  case ConnectionState.waiting:
+                    return CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation<Color>(Colors.blue));
+    
+                  case ConnectionState.done:
+                    ///task is complete with an error (eg. When you
+                    ///are offline)
+                    if (snapshot.hasError)
+                      return Text(
+                        'Error:snapshot.error',
+                        textAlign: TextAlign.center,
+                      );
+                    ///task is complete with some data
+                    return Text(
+                      'Fetched Data:snapshot.data.title',
+                      textAlign: TextAlign.center,
+                    );
+                }
+              },
+            ),
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+          floatingActionButton: FloatingActionButton.extended(
+            backgroundColor: _buttonColor,
+            onPressed: () {
+              ///Calling method to fetch data from the server
+              getDemoResponse();
+    
+              ///You need to reset UI by calling setState.
+              setState(() {
+                _isButtonClicked == false
+                    ? _isButtonClicked = true
+                    : _isButtonClicked = false;
+    
+                if (!_isButtonClicked) {
+                  _buttonIcon = Icons.cloud_download;
+                  _buttonColor = Colors.green;
+                  _buttonText = "Fetch Data";
+                } else {
+                  _buttonIcon = Icons.replay;
+                  _buttonColor = Colors.deepOrange;
+                  _buttonText = "Reset";
+                }
+              });
+            },
+            icon: Icon(
+              _buttonIcon,
+              color: Colors.white,
+            ),
+            label: Text(
+              _buttonText,
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        );
+      }
+    }''';
 }

@@ -3,6 +3,9 @@ import 'package:flutter_widget_guide/model/demo_model.dart';
 import 'package:flutter_widget_guide/network/api.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class FutureBuilderWidget extends StatefulWidget {
   @override
   _FutureBuilderWidgetState createState() => _FutureBuilderWidgetState();
@@ -18,18 +21,24 @@ class _FutureBuilderWidgetState extends State<FutureBuilderWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Center(
-            child: Text(
-              'Future Builder Widget',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
-          ),
-          margin: EdgeInsets.only(right: 48),
+        title: Text(
+          'Future Builder Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CodeScreen(code: Code.futurBuilderCode),
+                  ),
+                ),
+          )
+        ],
       ),
       body: Center(
         child: FutureBuilder<Demo>(
@@ -40,7 +49,7 @@ class _FutureBuilderWidgetState extends State<FutureBuilderWidget> {
           builder: (context, snapshot) {
             switch (snapshot.connectionState) {
 
-                ///when the future is null
+              ///when the future is null
               case ConnectionState.none:
                 return Text(
                   'Press the button to fetch data',
@@ -49,7 +58,7 @@ class _FutureBuilderWidgetState extends State<FutureBuilderWidget> {
 
               case ConnectionState.active:
 
-                ///when data is being fetched
+              ///when data is being fetched
               case ConnectionState.waiting:
                 return CircularProgressIndicator(
                     valueColor: AlwaysStoppedAnimation<Color>(Colors.blue));
@@ -62,6 +71,7 @@ class _FutureBuilderWidgetState extends State<FutureBuilderWidget> {
                     'Error:\n\n${snapshot.error}',
                     textAlign: TextAlign.center,
                   );
+
                 ///task is complete with some data
                 return Text(
                   'Fetched Data:\n\n${snapshot.data.title}',
