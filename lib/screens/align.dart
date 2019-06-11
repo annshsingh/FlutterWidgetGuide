@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class AlignWidget extends StatefulWidget {
   @override
   _AlignWidgetState createState() => _AlignWidgetState();
@@ -13,18 +16,25 @@ class _AlignWidgetState extends State<AlignWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Center(
-            child: Text(
-              'Align Widget',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
-          ),
-          margin: EdgeInsets.only(right: 48),
+        centerTitle: true,
+        title: Text(
+          'Align Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CodeScreen(code: Code.alignCode),
+                  ),
+                ),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class StreamBuilderWidget extends StatefulWidget {
   @override
   _StreamBuilderWidgetState createState() => _StreamBuilderWidgetState();
@@ -17,18 +20,26 @@ class _StreamBuilderWidgetState extends State<StreamBuilderWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Center(
-            child: Text(
-              'StreamBuilder Widget',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
-          ),
-          margin: EdgeInsets.only(right: 48),
+        centerTitle: true,
+        title: Text(
+          'StreamBuilder Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        CodeScreen(code: Code.streamBuilderCode),
+                  ),
+                ),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -41,7 +52,7 @@ class _StreamBuilderWidgetState extends State<StreamBuilderWidget> {
 //                  child: CircularProgressIndicator(
 //                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
 //                  ),
-                );
+                    );
               }
               return Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -64,9 +75,7 @@ class _StreamBuilderWidgetState extends State<StreamBuilderWidget> {
                           child: Text(
                             "Height: ${snapshot.data}",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18),
+                            style: TextStyle(color: Colors.black, fontSize: 18),
                           ),
                         ),
                         Container(
@@ -74,9 +83,7 @@ class _StreamBuilderWidgetState extends State<StreamBuilderWidget> {
                           child: Text(
                             "Width: ${snapshot.data}",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18),
+                            style: TextStyle(color: Colors.black, fontSize: 18),
                           ),
                         )
                       ],
@@ -91,14 +98,16 @@ class _StreamBuilderWidgetState extends State<StreamBuilderWidget> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: Colors.green,
-        onPressed: _isButtonClicked == false ? () {
-          ///You need to reset UI by calling setState.
-          setState(() {
-            _isButtonClicked == false
-                ? _isButtonClicked = true
-                : _isButtonClicked = false;
-          });
-        } : null,
+        onPressed: _isButtonClicked == false
+            ? () {
+                ///You need to reset UI by calling setState.
+                setState(() {
+                  _isButtonClicked == false
+                      ? _isButtonClicked = true
+                      : _isButtonClicked = false;
+                });
+              }
+            : null,
         icon: Icon(
           Icons.linear_scale,
           color: Colors.white,
@@ -107,7 +116,6 @@ class _StreamBuilderWidgetState extends State<StreamBuilderWidget> {
           "Start Stream",
           style: TextStyle(color: Colors.white),
         ),
-
       ),
     );
   }

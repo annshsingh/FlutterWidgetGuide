@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class PageViewWidget extends StatefulWidget {
   @override
   _PageViewWidgetState createState() => _PageViewWidgetState();
@@ -23,15 +26,13 @@ class _PageViewWidgetState extends State<PageViewWidget> {
       key: _scaffoldKey,
       appBar: AppBar(
         centerTitle: true,
-        title: Container(
-          child: Text(
+        title: Text(
             'Page View Widget',
             style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
                 fontFamily: Utils.ubuntuRegularFont),
           ),
-        ),
         actions: <Widget>[
           IconButton(
               icon: Icon(actionIcon),
@@ -55,6 +56,15 @@ class _PageViewWidgetState extends State<PageViewWidget> {
                         ? _screenSize.height
                         : _screenSize.width);
               }),
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.pageViewCode),
+              ),
+            ),
+          )
         ],
       ),
       ///A Page View with 3 children

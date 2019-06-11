@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class SliverAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -39,6 +42,17 @@ class SliverAppBarWidget extends StatelessWidget {
                 color: Colors.lightBlue,
               ),
             ),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.code),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CodeScreen(code: Code.sliverAppBarCode),
+                  ),
+                ),
+              )
+            ],
           ),
 
           ///Next sliver is the Sliver list that is used here to

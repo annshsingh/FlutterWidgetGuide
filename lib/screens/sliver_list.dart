@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class SliverListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -37,6 +40,17 @@ class SliverListWidget extends StatelessWidget {
                 ),
               ),
             ),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.code),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CodeScreen(code: Code.sliverListCode),
+                  ),
+                ),
+              )
+            ],
           ),
           SliverList(
             ///Use SliverChildListDelegate and provide a list

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class ClipRRectWidget extends StatefulWidget {
   @override
   _ClipRRectWidgetState createState() => _ClipRRectWidgetState();
@@ -13,18 +16,25 @@ class _ClipRRectWidgetState extends State<ClipRRectWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Center(
-            child: Text(
+        centerTitle: true,
+        title: Text(
               'ClipRRect Widget',
               style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
                   fontFamily: Utils.ubuntuRegularFont),
             ),
-          ),
-          margin: EdgeInsets.only(right: 48),
-        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.clipRrectCode),
+              ),
+            ),
+          )
+        ],
       ),
       body: ListView(children: <Widget>[
         Container(

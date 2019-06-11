@@ -2,23 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class HeroWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Center(
-            child: Text(
+        centerTitle: true,
+        title: Text(
               'Hero Widget',
               style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
                   fontFamily: Utils.ubuntuRegularFont),
             ),
-          ),
-          margin: EdgeInsets.only(right: 48),
-        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.heroCode),
+              ),
+            ),
+          )
+        ],
       ),
       body: WillPopScope(
         child: GestureDetector(

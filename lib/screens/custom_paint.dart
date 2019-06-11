@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class CustomPaintWidget extends StatefulWidget {
   @override
   _CustomPaintWidgetState createState() => _CustomPaintWidgetState();
@@ -30,6 +33,15 @@ class _CustomPaintWidgetState extends State<CustomPaintWidget> {
                         : _bgColor = Colors.white;
                   }),
             ),
+            IconButton(
+              icon: Icon(Icons.code),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CodeScreen(code: Code.customPaintCode),
+                ),
+              ),
+            )
           ]),
       body: CustomPaint(
         size: Size(MediaQuery.of(context).size.width,

@@ -3,6 +3,9 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class AnimatedBuilderWidget extends StatefulWidget {
   @override
   _AnimatedBuilderWidgetState createState() => _AnimatedBuilderWidgetState();
@@ -58,18 +61,26 @@ class _AnimatedBuilderWidgetState extends State<AnimatedBuilderWidget>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Center(
-            child: Text(
-              'AnimatedBuilder Widget',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
-          ),
-          margin: EdgeInsets.only(right: 48),
+        centerTitle: true,
+        title: Text(
+          'AnimatedBuilder Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        CodeScreen(code: Code.animatedBuilderCode),
+                  ),
+                ),
+          )
+        ],
       ),
       body: ListView(
         children: <Widget>[

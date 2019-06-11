@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class TransformWidget extends StatefulWidget {
   @override
   _TransformWidgetState createState() => _TransformWidgetState();
@@ -25,6 +28,17 @@ class _TransformWidgetState extends State<TransformWidget> {
                 fontFamily: Utils.ubuntuRegularFont),
           ),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.transformCode),
+              ),
+            ),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Center(

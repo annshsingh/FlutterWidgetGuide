@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class SizedBoxWidget extends StatefulWidget {
   @override
   _SizedBoxWidgetState createState() => _SizedBoxWidgetState();
 }
 
 class _SizedBoxWidgetState extends State<SizedBoxWidget> {
-
   ///Using a list to control both the dimensions at once
   List<double> _dimentions = [100.0, 100.0];
   List<double> _dimentions1 = [200.0, 200.0];
@@ -15,23 +17,29 @@ class _SizedBoxWidgetState extends State<SizedBoxWidget> {
   List<double> _dimentions3 = [200.0, double.infinity];
   List<double> _dimentions4 = [300.0, 300.0];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Center(
-            child: Text(
-              'SizedBox Widget',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
-          ),
-          margin: EdgeInsets.only(right: 48),
+        centerTitle: true,
+        title: Text(
+          'SizedBox Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CodeScreen(code: Code.sizedCode),
+                  ),
+                ),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -61,14 +69,14 @@ class _SizedBoxWidgetState extends State<SizedBoxWidget> {
               margin: EdgeInsets.only(left: 12, right: 12),
               child: Wrap(
                 children: <Widget>[
-                  _OptionItem(_dimentions1, _dimentions,
-                      _onDimentionsChanged, 'h: 200 | w: 200'),
-                  _OptionItem(_dimentions2, _dimentions,
-                      _onDimentionsChanged, 'h: 300 | w: 100'),
-                  _OptionItem(_dimentions3, _dimentions,
-                      _onDimentionsChanged, 'h: 200 | w: double.infinity'),
-                  _OptionItem(_dimentions4, _dimentions,
-                      _onDimentionsChanged, 'h: 300 | w: 300'),
+                  _OptionItem(_dimentions1, _dimentions, _onDimentionsChanged,
+                      'h: 200 | w: 200'),
+                  _OptionItem(_dimentions2, _dimentions, _onDimentionsChanged,
+                      'h: 300 | w: 100'),
+                  _OptionItem(_dimentions3, _dimentions, _onDimentionsChanged,
+                      'h: 200 | w: double.infinity'),
+                  _OptionItem(_dimentions4, _dimentions, _onDimentionsChanged,
+                      'h: 300 | w: 300'),
                 ],
               ),
             )
@@ -109,7 +117,7 @@ class _OptionItem<T> extends StatelessWidget {
           child: Text(
             title,
             style:
-            TextStyle(fontSize: 14.0, fontFamily: Utils.ubuntuRegularFont),
+                TextStyle(fontSize: 14.0, fontFamily: Utils.ubuntuRegularFont),
           ),
         ),
       ],
@@ -118,6 +126,6 @@ class _OptionItem<T> extends StatelessWidget {
 }
 
 Container divider(BuildContext context) => Container(
-  child: Divider(),
-  margin: EdgeInsets.only(left: 10, right: 10, top: 14),
-);
+      child: Divider(),
+      margin: EdgeInsets.only(left: 10, right: 10, top: 14),
+    );

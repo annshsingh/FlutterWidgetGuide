@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class DismissibleWidget extends StatefulWidget {
   @override
   _DismissibleWidgetState createState() => _DismissibleWidgetState();
@@ -13,18 +16,25 @@ class _DismissibleWidgetState extends State<DismissibleWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Center(
-            child: Text(
+        centerTitle: true,
+        title: Text(
               'Dismissible Widget',
               style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
                   fontFamily: Utils.ubuntuRegularFont),
             ),
-          ),
-          margin: EdgeInsets.only(right: 48),
-        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.dismissibleCode),
+              ),
+            ),
+          )
+        ],
       ),
       body: ListView.builder(
         itemCount: items.length,

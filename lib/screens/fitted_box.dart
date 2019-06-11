@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class FittedBoxWidget extends StatefulWidget {
   @override
   _FittedBoxWidgetState createState() => _FittedBoxWidgetState();
@@ -15,18 +18,25 @@ class _FittedBoxWidgetState extends State<FittedBoxWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Center(
-            child: Text(
+        centerTitle: true,
+        title: Text(
               'FittedBox Widget',
               style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
                   fontFamily: Utils.ubuntuRegularFont),
             ),
-          ),
-          margin: EdgeInsets.only(right: 48),
-        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.fittedBoxCode),
+              ),
+            ),
+          )
+        ],
       ),
       body: ListView(children: <Widget>[
         Center(

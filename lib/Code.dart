@@ -811,4 +811,65 @@ class Code {
         );
       }
     }''';
+
+  static const String fadeTransitionCode = ''' ''';
+
+  static const String fabCode = ''' ''';
+
+  static const String pageViewCode = ''' ''';
+
+  static const String tableCode = ''' ''';
+
+  static const String sliverAppBarCode = ''' ''';
+
+  static const String sliverListCode = ''' ''';
+
+  static const String sliverGridCode = ''' ''';
+
+  static const String fadeInImageCode = ''' ''';
+
+  static const String streamBuilderCode = ''' ''';
+
+  static const String inheritedModelCode = ''' ''';
+
+  static const String clipRrectCode = ''' ''';
+
+  static const String heroCode = ''' ''';
+
+  static const String customPaintCode = ''' ''';
+
+  static const String tooltipCode = ''' ''';
+
+  static const String fittedBoxCode = ''' ''';
+
+  static const String layoutBuilderCode = ''' ''';
+
+  static const String absorbPointerCode = ''' ''';
+
+  static const String transformCode = ''' ''';
+
+  static const String backDropFilterCode = ''' ''';
+
+  static const String alignCode = ''' ''';
+
+  static const String positionedCode = ''' ''';
+
+  static const String animatedBuilderCode = ''' ''';
+
+  static const String dismissibleCode = ''' ''';
+
+  static const String sizedCode = ''' ''';
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

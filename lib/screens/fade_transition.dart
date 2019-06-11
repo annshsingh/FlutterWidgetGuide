@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class FadeTransitionWidget extends StatefulWidget {
   @override
   _FadeTransitionWidgetState createState() => _FadeTransitionWidgetState();
 }
-
 
 class _FadeTransitionWidgetState extends State<FadeTransitionWidget>
     with SingleTickerProviderStateMixin {
@@ -15,7 +17,6 @@ class _FadeTransitionWidgetState extends State<FadeTransitionWidget>
 
   @override
   void initState() {
-
     ///An animation controller lets you control the
     ///duration of an animation
     ///Here the ticker for vsync provider is provided
@@ -58,18 +59,25 @@ class _FadeTransitionWidgetState extends State<FadeTransitionWidget>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Center(
-            child: Text(
-              'Fade Transition Widget',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
-          ),
-          margin: EdgeInsets.only(right: 48),
+        centerTitle: true,
+        title: Text(
+          'Fade Transition Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CodeScreen(code: Code.fadeTransitionCode),
+                  ),
+                ),
+          )
+        ],
       ),
       body: Center(
         child: FadeTransition(

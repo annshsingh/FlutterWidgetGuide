@@ -21,6 +21,7 @@ class _FutureBuilderWidgetState extends State<FutureBuilderWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           'Future Builder Widget',
           style: TextStyle(

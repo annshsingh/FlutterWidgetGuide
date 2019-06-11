@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class PositionedWidget extends StatefulWidget {
   @override
   _PositionedWidgetState createState() => _PositionedWidgetState();
@@ -14,18 +17,25 @@ class _PositionedWidgetState extends State<PositionedWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Center(
-            child: Text(
-              'Positioned Widget',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
-          ),
-          margin: EdgeInsets.only(right: 48),
+        centerTitle: true,
+        title: Text(
+          'Positioned Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CodeScreen(code: Code.positionedCode),
+                  ),
+                ),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -54,7 +64,7 @@ class _PositionedWidgetState extends State<PositionedWidget> {
               margin: EdgeInsets.all(20),
               child: Text(
                 'Drag the slider below to change the value of position of Flutter widget'
-                    ' from the top of the container',
+                ' from the top of the container',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.grey[400],
@@ -83,7 +93,7 @@ class _PositionedWidgetState extends State<PositionedWidget> {
               margin: EdgeInsets.all(20),
               child: Text(
                 'Drag the slider below to change the value of position of Flutter widget'
-                    ' from the left of the container',
+                ' from the left of the container',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.grey[400],

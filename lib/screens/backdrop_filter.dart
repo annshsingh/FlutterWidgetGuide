@@ -1,6 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
-import 'dart:ui';
+
+import '../Code.dart';
+import '../CodeScreen.dart';
 
 class BackdropFilterWidget extends StatefulWidget {
   @override
@@ -8,25 +12,32 @@ class BackdropFilterWidget extends StatefulWidget {
 }
 
 class _BackdropFilterWidgetState extends State<BackdropFilterWidget> {
-
   var _blurValue = 0.0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          child: Center(
-            child: Text(
-              'BackdropFilter Widget',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
-          ),
-          margin: EdgeInsets.only(right: 48),
+        centerTitle: true,
+        title: Text(
+          'BackdropFilter Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        CodeScreen(code: Code.backDropFilterCode),
+                  ),
+                ),
+          )
+        ],
       ),
       body: Column(
         children: <Widget>[
@@ -41,6 +52,7 @@ class _BackdropFilterWidgetState extends State<BackdropFilterWidget> {
                   textColor: Colors.white,
                 ),
               ),
+
               /// This is to make sure the filter covers the widget beneath it
               Positioned.fill(
                 child: BackdropFilter(
@@ -48,6 +60,7 @@ class _BackdropFilterWidgetState extends State<BackdropFilterWidget> {
                     sigmaX: _blurValue,
                     sigmaY: _blurValue,
                   ),
+
                   /// Child is not affected by the filter, only the widgets
                   /// beneath it will be affected by the filter.
                   /// So we use an empty container to demonstrate the changes
@@ -73,7 +86,6 @@ class _BackdropFilterWidgetState extends State<BackdropFilterWidget> {
               });
             },
           ),
-
           Container(
             margin: EdgeInsets.all(12),
             child: Text(
