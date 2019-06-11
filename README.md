@@ -43,7 +43,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    27. [Positioned](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/positioned.dart)
    28. [Animated Builder](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_builder.dart)
    29. [Dismissible](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/dismissible.dart)
-   30. [Sized Widget](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sized_box.dart)
+   30. [SizedBox Widget](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/sized_box.dart)
    31. Value Listnable Builder (coming soon)
    32. Draggable (coming soon)
    33. AnimatedList (coming soon)
