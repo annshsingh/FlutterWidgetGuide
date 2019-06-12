@@ -59,16 +59,22 @@ class HomePage extends StatelessWidget {
         expandedHeight: 80.0,
         flexibleSpace: FlexibleSpaceBar(
           titlePadding:
-              EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 16.0),
+              EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 14.0),
           centerTitle: true,
           title: Row(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              FlutterLogo(
-                colors: Colors.cyan,
-                textColor: Colors.white,
+              Padding(
+                padding: const EdgeInsets.only(right: 18.0),
+                child: GestureDetector(
+                  child: FlutterLogo(
+                    colors: Colors.cyan,
+                    textColor: Colors.white,
+                  ),
+                  onTap: () => Utils.launchURL("https://flutter.dev"),
+                ),
               ),
               //To give a margin
               SizedBox(
@@ -79,23 +85,26 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(
                     fontFamily: Utils.ubuntuRegularFont, fontSize: 16),
               ),
+              SizedBox(
+                width: 5.0,
+              ),
+              GestureDetector(
+                child: Padding(
+                  padding: EdgeInsets.only(left: 16.0),
+                  child: CircleAvatar(
+                    radius: 14.0,
+                    backgroundImage: AssetImage('assets/images/dp.png'),
+                  ),
+                ),
+                onTap: () => showModalBottomSheet(
+                    context: context, builder: (context) => ProfileScreen()),
+              ),
             ],
           ),
         ),
-        actions: <Widget>[
-          GestureDetector(
-            child: Padding(
-              padding:
-                  const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 16.0),
-              child: CircleAvatar(
-                radius: 20.0,
-                backgroundImage: AssetImage('assets/images/dp.png'),
-              ),
-            ),
-            onTap: () => showModalBottomSheet(
-                context: context, builder: (context) => ProfileScreen()),
-          ),
-        ],
+//        actions: <Widget>[
+//
+//        ],
       );
 
   /*
