@@ -4,6 +4,8 @@ import 'package:flutter_widget_guide/model/list_Item.dart';
 import 'package:flutter_widget_guide/utils.dart';
 import 'package:flutter_widget_guide/widgets/home_list_item.dart';
 
+import '../profile_screen.dart';
+
 class HomePage extends StatelessWidget {
   BuildContext _buildContext;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -30,7 +32,7 @@ class HomePage extends StatelessWidget {
               ? CustomScrollView(
                   //This is to contain Sliver Elements
                   slivers: <Widget>[
-                    appBar(),
+                    appBar(context),
                     SliverPadding(
                       padding: EdgeInsets.all(4.0),
                     ),
@@ -49,7 +51,7 @@ class HomePage extends StatelessWidget {
    * This is to give the effect of Collapsing App Bar (android)
    */
 
-  Widget appBar() => SliverAppBar(
+  Widget appBar(BuildContext context) => SliverAppBar(
         backgroundColor: Colors.white,
         pinned: true,
         elevation: 3.0,
@@ -80,6 +82,20 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
+        actions: <Widget>[
+          GestureDetector(
+            child: Padding(
+              padding:
+                  const EdgeInsets.only(top: 8.0, bottom: 8.0, right: 16.0),
+              child: CircleAvatar(
+                radius: 20.0,
+                backgroundImage: AssetImage('assets/images/dp.png'),
+              ),
+            ),
+            onTap: () => showModalBottomSheet(
+                context: context, builder: (context) => ProfileScreen()),
+          ),
+        ],
       );
 
   /*

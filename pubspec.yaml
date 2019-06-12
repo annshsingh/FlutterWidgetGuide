@@ -21,6 +21,7 @@ dependencies:
   http: ^0.12.0+1
   youtube_player: ^3.4.1
   transparent_image: ^1.0.0
+  package_info: ^0.4.0+4
 
 dev_dependencies:
   flutter_test:
@@ -39,6 +40,10 @@ flutter:
 
   assets:
       - assets/images/expanded_info.svg
+      - assets/images/dp.png
+      - assets/images/github.png
+      - assets/images/linkedin.png
+      - assets/images/twitter.png
 
   fonts:
       - family: Ubuntu
