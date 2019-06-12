@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
-class ValueListenableBuilderWidget extends StatefulWidget {
+class InheritedWidgett extends StatefulWidget {
   @override
-  _ValueListenableBuilderWidgetState createState() => _ValueListenableBuilderWidgetState();
+  _InheritedWidgettState createState() => _InheritedWidgettState();
 }
 
-class _ValueListenableBuilderWidgetState extends State<ValueListenableBuilderWidget> {
+class _InheritedWidgettState extends State<InheritedWidgett> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          'ValueListenableBuilder Widget',
+          'Inherited Widget',
           style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold,

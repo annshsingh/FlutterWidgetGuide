@@ -62,6 +62,12 @@ class Utils {
   static const String dismissible = "/Dismissible";
   static const String sizedBox = "/Sized Box";
   static const String valueListenableBuilder = "/Value Listenable Builder";
+  static const String draggable = "/Draggable";
+  static const String animatedList = "/AnimatedList";
+  static const String flexible = "/Flexible";
+  static const String mediaQuery = "/MediaQuery";
+  static const String spacer = "/Spacer";
+  static const String inheritedWidget = "/InheritedWidget";
 
   //strings
   static const String appName = "Flutter Widget Guide";
@@ -167,7 +173,13 @@ class Utils {
   static const String sizedBoxDescription =
       "This widget lets you give a fixed size to the child widget. This widget can also be used to create a gap between"
       " two widgets.";
-  static const String valueListenableBuilderDescription = "";
+  static const String valueListenableBuilderDescription = "Coming Soon :)";
+  static const String draggableDescription = "Coming Soon :)";
+  static const String animatedListDescription = "Coming Soon :)";
+  static const String flexibleDescription = "Coming Soon :)";
+  static const String mediaQueryDescription = "Coming Soon :)";
+  static const String spacerDescription = "Coming Soon :)";
+  static const String inheritedWidgetDescription = "Coming Soon :)";
 
   //urls
   static const String safeAreaURL =
@@ -232,6 +244,18 @@ class Utils {
       "https://docs.flutter.io/flutter/widgets/SizedBox-class.html";
   static const String valueListenableBuilderURL =
       "https://docs.flutter.io/flutter/widgets/ValueListenableBuilder-class.html";
+  static const String draggableURL =
+      "https://docs.flutter.io/flutter/widgets/Draggable-class.html";
+  static const String animatedListURL =
+      "https://docs.flutter.io/flutter/widgets/AnimatedList-class.html";
+  static const String flexibleURL =
+      "https://docs.flutter.io/flutter/widgets/Flexible-class.html";
+  static const String mediaQueryURL =
+      "https://docs.flutter.io/flutter/widgets/MediaQuery-class.html";
+  static const String spacerURL =
+      "https://docs.flutter.io/flutter/widgets/Spacer-class.html";
+  static const String inheritedWidgetURL =
+      "https://docs.flutter.io/flutter/widgets/InheritedWidget-class.html";
 
   static const String expandedSourceURL =
       "https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart";
@@ -309,6 +333,8 @@ class Utils {
       "https://www.youtube.com/watch?v=A3WrA4zAaPw&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=35";
   static const String spacerVideoUrl =
       "https://www.youtube.com/watch?v=7FJgd7QN1zI&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=36";
+  static const String inheritedWidgetVideoUrl =
+      "https://www.youtube.com/watch?v=1t-8rBCGBYw&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=37";
 
   //images
   static const String imageDir = "assets/images";

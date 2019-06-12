@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
-class ValueListenableBuilderWidget extends StatefulWidget {
+class MediaQueryWidget extends StatefulWidget {
   @override
-  _ValueListenableBuilderWidgetState createState() => _ValueListenableBuilderWidgetState();
+  _MediaQueryWidgetState createState() => _MediaQueryWidgetState();
 }
 
-class _ValueListenableBuilderWidgetState extends State<ValueListenableBuilderWidget> {
+class _MediaQueryWidgetState extends State<MediaQueryWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          'ValueListenableBuilder Widget',
+          'MediaQuery Widget',
           style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold,

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
-class ValueListenableBuilderWidget extends StatefulWidget {
+class SpacerWidget extends StatefulWidget {
   @override
-  _ValueListenableBuilderWidgetState createState() => _ValueListenableBuilderWidgetState();
+  _SpacerWidgetState createState() => _SpacerWidgetState();
 }
 
-class _ValueListenableBuilderWidgetState extends State<ValueListenableBuilderWidget> {
+class _SpacerWidgetState extends State<SpacerWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          'ValueListenableBuilder Widget',
+          'Spacer Widget',
           style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold,

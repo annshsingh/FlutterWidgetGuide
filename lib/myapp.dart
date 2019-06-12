@@ -4,14 +4,17 @@ import 'package:flutter_widget_guide/screens/absorb_pointer.dart';
 import 'package:flutter_widget_guide/screens/align.dart';
 import 'package:flutter_widget_guide/screens/animated_builder.dart';
 import 'package:flutter_widget_guide/screens/animated_container.dart';
+import 'package:flutter_widget_guide/screens/animated_list.dart';
 import 'package:flutter_widget_guide/screens/backdrop_filter.dart';
 import 'package:flutter_widget_guide/screens/clip_r_rect.dart';
 import 'package:flutter_widget_guide/screens/custom_paint.dart';
 import 'package:flutter_widget_guide/screens/dismissible.dart';
+import 'package:flutter_widget_guide/screens/draggable.dart';
 import 'package:flutter_widget_guide/screens/expanded.dart';
 import 'package:flutter_widget_guide/screens/fade_in_image.dart';
 import 'package:flutter_widget_guide/screens/fade_transition.dart';
 import 'package:flutter_widget_guide/screens/fitted_box.dart';
+import 'package:flutter_widget_guide/screens/flexible.dart';
 import 'package:flutter_widget_guide/screens/floating_action_button.dart';
 import 'package:flutter_widget_guide/screens/future_builder.dart';
 import 'package:flutter_widget_guide/screens/hero.dart';
@@ -19,6 +22,7 @@ import 'package:flutter_widget_guide/screens/hero2.dart';
 import 'package:flutter_widget_guide/screens/home_page.dart';
 import 'package:flutter_widget_guide/screens/inherited_model.dart';
 import 'package:flutter_widget_guide/screens/layout_builder.dart';
+import 'package:flutter_widget_guide/screens/media_query.dart';
 import 'package:flutter_widget_guide/screens/opacity.dart';
 import 'package:flutter_widget_guide/screens/page_view.dart';
 import 'package:flutter_widget_guide/screens/positioned.dart';
@@ -27,12 +31,14 @@ import 'package:flutter_widget_guide/screens/sized_box.dart';
 import 'package:flutter_widget_guide/screens/sliver_app_bar.dart';
 import 'package:flutter_widget_guide/screens/sliver_grid.dart';
 import 'package:flutter_widget_guide/screens/sliver_list.dart';
+import 'package:flutter_widget_guide/screens/spacer.dart';
 import 'package:flutter_widget_guide/screens/stream_builder.dart';
 import 'package:flutter_widget_guide/screens/table.dart';
 import 'package:flutter_widget_guide/screens/tooltip.dart';
 import 'package:flutter_widget_guide/screens/transform.dart';
 import 'package:flutter_widget_guide/screens/value_listenable_builder.dart';
 import 'package:flutter_widget_guide/screens/wrap.dart';
+import 'package:flutter_widget_guide/screens/inherited_widget.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
 import 'VideoView.dart';
@@ -68,7 +74,7 @@ class MyApp extends StatelessWidget {
     //all the app routes are listed here
     routes: <String, WidgetBuilder>{
       Utils.codeRoute: (BuildContext context) => CodeScreen(code: ""),
-      Utils.codeRoute: (BuildContext context) => VideoView(
+      Utils.videoView: (BuildContext context) => VideoView(
             videoUrl: "",
             title: "",
           ),
@@ -107,7 +113,13 @@ class MyApp extends StatelessWidget {
       Utils.dismissible: (BuildContext context) => DismissibleWidget(),
       Utils.sizedBox: (BuildContext context) => SizedBoxWidget(),
       Utils.valueListenableBuilder: (BuildContext context) =>
-          ValueListenableBuilderWidget()
+          ValueListenableBuilderWidget(),
+      Utils.draggable: (BuildContext context) => DraggableWidget(),
+      Utils.animatedList: (BuildContext context) => AnimatedListWidget(),
+      Utils.flexible: (BuildContext context) => FlexibleWidget(),
+      Utils.mediaQuery: (BuildContext context) => MediaQueryWidget(),
+      Utils.spacer: (BuildContext context) => SpacerWidget(),
+      Utils.inheritedWidget: (BuildContext context) => InheritedWidgett()
     },
   );
 

@@ -163,7 +163,37 @@ class ListViewModel {
           title: "${Utils.valueListenableBuilder.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.valueListenableBuilderDescription}",
           url: "${Utils.valueListenableBuilderURL}",
-          videoUrl: "${Utils.valueListenableBuilderVideoUrl}")
+          videoUrl: "${Utils.valueListenableBuilderVideoUrl}"),
+      ListItem(
+          title: "${Utils.draggable.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.draggableDescription}",
+          url: "${Utils.draggableURL}",
+          videoUrl: "${Utils.draggableVideoUrl}"),
+      ListItem(
+          title: "${Utils.animatedList.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.animatedListDescription}",
+          url: "${Utils.animatedListURL}",
+          videoUrl: "${Utils.animatedListVideoUrl}"),
+      ListItem(
+          title: "${Utils.flexible.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.flexibleDescription}",
+          url: "${Utils.flexibleURL}",
+          videoUrl: "${Utils.flexibleVideoUrl}"),
+      ListItem(
+          title: "${Utils.mediaQuery.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.mediaQueryDescription}",
+          url: "${Utils.mediaQueryURL}",
+          videoUrl: "${Utils.mediaqueryVideoUrl}"),
+      ListItem(
+          title: "${Utils.spacer.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.spacerDescription}",
+          url: "${Utils.spacerURL}",
+          videoUrl: "${Utils.spacerVideoUrl}"),
+      ListItem(
+          title: "${Utils.inheritedWidget.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.inheritedWidgetDescription}",
+          url: "${Utils.inheritedWidgetURL}",
+          videoUrl: "${Utils.inheritedWidgetVideoUrl}")
     ];
   }
 }

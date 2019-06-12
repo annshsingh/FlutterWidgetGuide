@@ -1,0 +1,34 @@
+PODS:
+  - Flutter (1.0.0)
+  - share (0.5.2):
+    - Flutter
+  - url_launcher (0.0.1):
+    - Flutter
+  - youtube_player (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `.symlinks/flutter/ios`)
+  - share (from `.symlinks/plugins/share/ios`)
+  - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
+  - youtube_player (from `.symlinks/plugins/youtube_player/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: ".symlinks/flutter/ios"
+  share:
+    :path: ".symlinks/plugins/share/ios"
+  url_launcher:
+    :path: ".symlinks/plugins/url_launcher/ios"
+  youtube_player:
+    :path: ".symlinks/plugins/youtube_player/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
+  share: 222b5dcc8031238af9d7de91149df65bad1aef75
+  url_launcher: 92b89c1029a0373879933c21642958c874539095
+  youtube_player: d62ec45e4304c691738f7319d7a6f1876ceedfb8
+
+PODFILE CHECKSUM: b7d0755641915265774624f3b3be49c5c073d379
+
+COCOAPODS: 1.5.3
