@@ -67,7 +67,7 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(right: 18.0),
+                padding: const EdgeInsets.only(right: 12.0, left: 8.0),
                 child: GestureDetector(
                   child: FlutterLogo(
                     colors: Colors.cyan,
@@ -78,7 +78,7 @@ class HomePage extends StatelessWidget {
               ),
               //To give a margin
               SizedBox(
-                width: 5.0,
+                width: 0.0,
               ),
               Text(
                 Utils.appName,
@@ -86,11 +86,11 @@ class HomePage extends StatelessWidget {
                     fontFamily: Utils.ubuntuRegularFont, fontSize: 16),
               ),
               SizedBox(
-                width: 5.0,
+                width: 0.0,
               ),
               GestureDetector(
                 child: Padding(
-                  padding: EdgeInsets.only(left: 16.0),
+                  padding: EdgeInsets.only(left: 10.0, right: 8.0),
                   child: CircleAvatar(
                     radius: 14.0,
                     backgroundImage: AssetImage('assets/images/dp.png'),

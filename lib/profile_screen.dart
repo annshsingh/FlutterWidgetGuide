@@ -61,29 +61,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 24.0, bottom: 24.0),
+            padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
             child: Column(
               children: <Widget>[
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                Wrap(
+                  spacing: 0.0, // gap between adjacent chips
+                  runSpacing: 0.0, // ga
+                  runAlignment: WrapAlignment.center,// p be
+                  alignment: WrapAlignment.center,/// tween lines
                   children: <Widget>[
-                    socialMediaLinks("Github", 'assets/images/github.png',
-                        "https://github.com/annshsingh"),
-                    Container(
-                      height: 24,
-                      width: 2,
-                      color: Colors.black12,
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+                      child: socialMediaLinks("Github", 'assets/images/github.png',
+                          "https://github.com/annshsingh"),
                     ),
-                    socialMediaLinks("LinkedIn", 'assets/images/linkedin.png',
-                        "https://www.linkedin.com/in/annsh/"),
-                    Container(
-                      height: 24,
-                      width: 2,
-                      color: Colors.black12,
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+                      child: socialMediaLinks("LinkedIn", 'assets/images/linkedin.png',
+                          "https://www.linkedin.com/in/annsh/"),
                     ),
-                    socialMediaLinks("Twitter", 'assets/images/twitter.png',
-                        "https://twitter.com/annsh2013"),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+                      child: socialMediaLinks("Twitter", 'assets/images/twitter.png',
+                          "https://twitter.com/annsh2013"),
+                    ),
                   ],
                 ),
               ],
@@ -209,6 +210,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         textColor: Colors.black87,
         color: Colors.white,
         child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
               margin: EdgeInsets.only(right: 10.0),
@@ -221,7 +224,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Text(
               label,
               style: TextStyle(
-                fontSize: 14.0,
+                fontSize: 12.0,
                 fontFamily: Utils.ubuntuRegularFont,
               ),
             ),

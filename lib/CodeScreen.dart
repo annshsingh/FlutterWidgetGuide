@@ -43,29 +43,31 @@ class CodeScreenState extends State<CodeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: _bgColor,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'Code',
-          style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              fontFamily: Utils.ubuntuRegularFont),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: _bgColor,
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            'Code',
+            style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+                fontFamily: Utils.ubuntuRegularFont),
+          ),
+          actions: <Widget>[
+            IconButton(
+                icon: Icon(_actionIcon),
+                onPressed: () => setDarkTheme(_isDarkThemeSet ? false : true))
+          ],
         ),
-        actions: <Widget>[
-          IconButton(
-              icon: Icon(_actionIcon),
-              onPressed: () => setDarkTheme(_isDarkThemeSet ? false : true))
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          width: double.infinity,
-          padding: EdgeInsets.all(8.0),
-          child:
-              RichText(text: DartSyntaxHighlighter(_style).format(widget.code)),
+        body: SingleChildScrollView(
+          child: Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(8.0),
+            child:
+                RichText(text: DartSyntaxHighlighter(_style).format(widget.code)),
+          ),
         ),
       ),
     );
