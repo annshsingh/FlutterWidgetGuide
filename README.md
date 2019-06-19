@@ -4,6 +4,8 @@
 
 A flutter appliction listing all the widgets covered in [Flutter widget of the week playlist](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
+#### Get the app - [Play Store Link](https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide&hl=en)
+
 ## About
 I created this project to improve my skills with dart and flutter as a development platform. I am used to developing native android apps so I'll be focusing on designing this project for android platform.</br> 
 This project might help you to learn about Flutter if you are a beginner in this space.</br>
