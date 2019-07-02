@@ -53,6 +53,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    35. MediaQuery (coming soon)
    36. Spacer (coming soon)
    37. InheritedWidget (coming soon)
+   38. Placeholder (coming soon)
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
 ## App Screenshots
