@@ -76,7 +76,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
 ([Twitter](https://mobile.twitter.com/annsh2013))
 
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/Apache-2.0)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/iampawan/Flutter-UI-Kit/blob/master/licence.txt)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/annshsingh/flutter-widget-guide/blob/master/LICENSE)
 
 ## Contribution Guidelines
 This project is a fully open source project, and contributions are welcome. Information on how to get started can be found at the [contributor guide](https://github.com/annshsingh/flutter-widget-guide/blob/master/CONTRIBUTING.md).
