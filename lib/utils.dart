@@ -74,6 +74,15 @@ class Utils {
   static const String mediaQuery = "/MediaQuery";
   static const String spacer = "/Spacer";
   static const String inheritedWidget = "/InheritedWidget";
+  static const String animatedIcon = "/AnimatedIcon";
+  static const String aspectRatio = "/AspectRatio";
+  static const String limitedBox = "/LimitedBox";
+  static const String placeholder = "/Placeholder";
+  static const String richText = "/RichText";
+  static const String reorderableListView = "/ReorderableListView";
+  static const String animatedSwitcher = "/AnimatedSwitcher";
+  static const String animatedPositioned = "/AnimatedPositioned";
+  static const String animatedPadding = "/AnimatedPadding";
 
   //strings
   static const String appName = "Flutter Widget Guide";
@@ -186,82 +195,109 @@ class Utils {
   static const String mediaQueryDescription = "Coming Soon :)";
   static const String spacerDescription = "Coming Soon :)";
   static const String inheritedWidgetDescription = "Coming Soon :)";
+  static const String animatedIconDescription = "Coming Soon :)";
+  static const String aspectRatioDescription = "Coming Soon :)";
+  static const String limitedBoxDescription = "Coming Soon :)";
+  static const String placeholderDescription = "Coming Soon :)";
+  static const String richTextDescription = "Coming Soon :)";
+  static const String reorderableListViewDescription = "Coming Soon :)";
+  static const String animatedSwitcherDescription = "Coming Soon :)";
+  static const String animatedPositionedDescription = "Coming Soon :)";
+  static const String animatedPaddingDescription = "Coming Soon :)";
 
   //urls
   static const String safeAreaURL =
-      "https://docs.flutter.io/flutter/widgets/SafeArea-class.html";
+      "https://api.flutter.dev/flutter/widgets/SafeArea-class.html";
   static const String expandedURL =
-      "https://docs.flutter.io/flutter/widgets/Expanded-class.html";
+      "https://api.flutter.dev/flutter/widgets/Expanded-class.html";
   static const String wrapURL =
-      "https://docs.flutter.io/flutter/widgets/Wrap-class.html";
+      "https://api.flutter.dev/flutter/widgets/Wrap-class.html";
   static const String animatedContainerURL =
-      "https://docs.flutter.io/flutter/widgets/AnimatedContainer-class.html";
+      "https://api.flutter.dev/flutter/widgets/AnimatedContainer-class.html";
   static const String opacityURL =
-      "https://docs.flutter.io/flutter/widgets/Opacity-class.html";
+      "https://api.flutter.dev/flutter/widgets/Opacity-class.html";
   static const String futureBuilderURL =
-      "https://docs.flutter.io/flutter/widgets/FutureBuilder-class.html";
+      "https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html";
   static const String fadeTransitionURL =
-      "https://docs.flutter.io/flutter/widgets/FadeTransition-class.html";
+      "https://api.flutter.dev/flutter/widgets/FadeTransition-class.html";
   static const String floatingActionButtonURL =
-      "https://docs.flutter.io/flutter/material/FloatingActionButton-class.html";
+      "https://api.flutter.dev/flutter/material/FloatingActionButton-class.html";
   static const String pageViewURL =
-      "https://docs.flutter.io/flutter/widgets/PageView-class.html";
+      "https://api.flutter.dev/flutter/widgets/PageView-class.html";
   static const String tableURL =
-      "https://docs.flutter.io/flutter/widgets/Table-class.html";
+      "https://api.flutter.dev/flutter/widgets/Table-class.html";
   static const String sliverAppBarURL =
-      "https://docs.flutter.io/flutter/material/SliverAppBar-class.html";
+      "https://api.flutter.dev/flutter/material/SliverAppBar-class.html";
   static const String sliverListURL =
-      "https://docs.flutter.io/flutter/widgets/SliverList-class.html";
+      "https://api.flutter.dev/flutter/widgets/SliverList-class.html";
   static const String sliverGridURL =
-      "https://docs.flutter.io/flutter/widgets/SliverGrid-class.html";
+      "https://api.flutter.dev/flutter/widgets/SliverGrid-class.html";
   static const String fadeInImageURL =
-      "https://docs.flutter.io/flutter/widgets/FadeInImage-class.html";
+      "https://api.flutter.dev/flutter/widgets/FadeInImage-class.html";
   static const String streamBuilderURL =
-      "https://docs.flutter.io/flutter/widgets/StreamBuilder-class.html";
+      "https://api.flutter.dev/flutter/widgets/StreamBuilder-class.html";
   static const String inheritedModelURL =
-      "https://docs.flutter.io/flutter/widgets/InheritedModel-class.html";
+      "https://api.flutter.dev/flutter/widgets/InheritedModel-class.html";
   static const String clipRRectURL =
-      "https://docs.flutter.io/flutter/widgets/ClipRRect-class.html";
+      "https://api.flutter.dev/flutter/widgets/ClipRRect-class.html";
   static const String heroURL =
-      "https://docs.flutter.io/flutter/widgets/Hero-class.html";
+      "https://api.flutter.dev/flutter/widgets/Hero-class.html";
   static const String customPaintURL =
-      "https://docs.flutter.io/flutter/widgets/CustomPaint-class.html";
+      "https://api.flutter.dev/flutter/widgets/CustomPaint-class.html";
   static const String tooltipURL =
-      "https://docs.flutter.io/flutter/material/Tooltip-class.html";
+      "https://api.flutter.dev/flutter/material/Tooltip-class.html";
   static const String fittedBoxURL =
-      "https://docs.flutter.io/flutter/widgets/FittedBox-class.html";
+      "https://api.flutter.dev/flutter/widgets/FittedBox-class.html";
   static const String layoutBuilderURL =
-      "https://docs.flutter.io/flutter/widgets/LayoutBuilder-class.html";
+      "https://api.flutter.dev/flutter/widgets/LayoutBuilder-class.html";
   static const String absorbPointerURL =
-      "https://docs.flutter.io/flutter/widgets/AbsorbPointer-class.html";
+      "https://api.flutter.dev/flutter/widgets/AbsorbPointer-class.html";
   static const String transformURL =
-      "https://docs.flutter.io/flutter/widgets/Transform-class.html";
+      "https://api.flutter.dev/flutter/widgets/Transform-class.html";
   static const String backDropFilterURL =
-      "https://docs.flutter.io/flutter/widgets/BackdropFilter-class.html";
+      "https://api.flutter.dev/flutter/widgets/BackdropFilter-class.html";
   static const String alignURL =
-      "https://docs.flutter.io/flutter/widgets/Align-class.html";
+      "https://api.flutter.dev/flutter/widgets/Align-class.html";
   static const String positionedURL =
-      "https://docs.flutter.io/flutter/widgets/Positioned-class.html";
+      "https://api.flutter.dev/flutter/widgets/Positioned-class.html";
   static const String animatedBuilderURL =
-      "https://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html";
+      "https://api.flutter.dev/flutter/widgets/AnimatedBuilder-class.html";
   static const String dismissibleURL =
-      "https://docs.flutter.io/flutter/widgets/Dismissible-class.html";
+      "https://api.flutter.dev/flutter/widgets/Dismissible-class.html";
   static const String sizedBoxURL =
-      "https://docs.flutter.io/flutter/widgets/SizedBox-class.html";
+      "https://api.flutter.dev/flutter/widgets/SizedBox-class.html";
   static const String valueListenableBuilderURL =
-      "https://docs.flutter.io/flutter/widgets/ValueListenableBuilder-class.html";
+      "https://api.flutter.dev/flutter/widgets/ValueListenableBuilder-class.html";
   static const String draggableURL =
-      "https://docs.flutter.io/flutter/widgets/Draggable-class.html";
+      "https://api.flutter.dev/flutter/widgets/Draggable-class.html";
   static const String animatedListURL =
-      "https://docs.flutter.io/flutter/widgets/AnimatedList-class.html";
+      "https://api.flutter.dev/flutter/widgets/AnimatedList-class.html";
   static const String flexibleURL =
-      "https://docs.flutter.io/flutter/widgets/Flexible-class.html";
+      "https://api.flutter.dev/flutter/widgets/Flexible-class.html";
   static const String mediaQueryURL =
-      "https://docs.flutter.io/flutter/widgets/MediaQuery-class.html";
+      "https://api.flutter.dev/flutter/widgets/MediaQuery-class.html";
   static const String spacerURL =
-      "https://docs.flutter.io/flutter/widgets/Spacer-class.html";
+      "https://api.flutter.dev/flutter/widgets/Spacer-class.html";
   static const String inheritedWidgetURL =
-      "https://docs.flutter.io/flutter/widgets/InheritedWidget-class.html";
+      "https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html";
+  static const String animatedIconURL =
+      "https://api.flutter.dev/flutter/material/AnimatedIcon-class.html";
+  static const String aspectRatioURL =
+      "https://api.flutter.dev/flutter/widgets/AspectRatio-class.html";
+  static const String limitedBoxURL =
+      "https://api.flutter.dev/flutter/widgets/LimitedBox-class.html";
+  static const String placeholderURL =
+      "https://api.flutter.dev/flutter/widgets/Placeholder-class.html";
+  static const String richTextURL =
+      "https://api.flutter.dev/flutter/widgets/RichText-class.html";
+  static const String reorderableListViewURL =
+      "https://api.flutter.dev/flutter/widgets/ReorderableListView-class.html";
+  static const String animatedSwitcherURL =
+      "https://api.flutter.dev/flutter/widgets/AnimatedSwitcher-class.html";
+  static const String animatedPositionedURL =
+      "https://api.flutter.dev/flutter/widgets/AnimatedPositioned-class.html";
+  static const String animatedPaddingURL =
+      "https://api.flutter.dev/flutter/widgets/AnimatedPadding-class.html";
 
   static const String expandedSourceURL =
       "https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart";
@@ -341,6 +377,24 @@ class Utils {
       "https://www.youtube.com/watch?v=7FJgd7QN1zI&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=36";
   static const String inheritedWidgetVideoUrl =
       "https://www.youtube.com/watch?v=1t-8rBCGBYw&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=37";
+  static const String animatedIconVideoUrl =
+      "https://www.youtube.com/watch?v=pJcbh8pbvJs&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=38";
+  static const String aspectRatioVideoUrl =
+      "https://www.youtube.com/watch?v=XcnP3_mO_Ms&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=39";
+  static const String limitedBoxVideoUrl =
+      "https://www.youtube.com/watch?v=uVki2CIzBTs&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=40";
+  static const String placeholderVideoUrl =
+      "https://www.youtube.com/watch?v=LPe56fezmoo&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=41";
+  static const String richTextVideoUrl =
+      "https://www.youtube.com/watch?v=rykDVh-QFfw&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=42";
+  static const String reorderableListViewVideoUrl =
+      "https://www.youtube.com/watch?v=3fB1mxOsqJE&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=43";
+  static const String animatedSwitcherVideoUrl =
+      "https://www.youtube.com/watch?v=2W7POjFb88g&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=44";
+  static const String animatedPositionedVideoUrl =
+      "https://www.youtube.com/watch?v=hC3s2YdtWt8&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=45";
+  static const String animatedPaddingVideoUrl =
+      "https://www.youtube.com/watch?v=PY2m0fhGNz4&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=46";
 
   //images
   static const String imageDir = "assets/images";

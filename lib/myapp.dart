@@ -39,6 +39,15 @@ import 'package:flutter_widget_guide/screens/transform.dart';
 import 'package:flutter_widget_guide/screens/value_listenable_builder.dart';
 import 'package:flutter_widget_guide/screens/wrap.dart';
 import 'package:flutter_widget_guide/screens/inherited_widget.dart';
+import 'package:flutter_widget_guide/screens/animated_icon.dart';
+import 'package:flutter_widget_guide/screens/aspect_ratio.dart';
+import 'package:flutter_widget_guide/screens/limited_box.dart';
+import 'package:flutter_widget_guide/screens/placeholder.dart';
+import 'package:flutter_widget_guide/screens/rich_text.dart';
+import 'package:flutter_widget_guide/screens/reorderable_listiew.dart';
+import 'package:flutter_widget_guide/screens/animated_switcher.dart';
+import 'package:flutter_widget_guide/screens/animated_positioned.dart';
+import 'package:flutter_widget_guide/screens/animated_padding.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
 import 'VideoView.dart';
@@ -119,7 +128,16 @@ class MyApp extends StatelessWidget {
       Utils.flexible: (BuildContext context) => FlexibleWidget(),
       Utils.mediaQuery: (BuildContext context) => MediaQueryWidget(),
       Utils.spacer: (BuildContext context) => SpacerWidget(),
-      Utils.inheritedWidget: (BuildContext context) => InheritedWidgett()
+      Utils.inheritedWidget: (BuildContext context) => InheritedWidgett(),
+      Utils.animatedIcon: (BuildContext context) => AnimatedIconWidget(),
+      Utils.aspectRatio: (BuildContext context) => AspectRatioWidget(),
+      Utils.limitedBox: (BuildContext context) => LimitedBoxWidget(),
+      Utils.placeholder: (BuildContext context) => PlaceholderWidget(),
+      Utils.richText: (BuildContext context) => RichTextWidget(),
+      Utils.reorderableListView: (BuildContext context) => ReorderableListViewWidget(),
+      Utils.animatedSwitcher: (BuildContext context) => AnimatedSwitcherWidget(),
+      Utils.animatedPositioned: (BuildContext context) => AnimatedPositionedWidget(),
+      Utils.animatedPadding: (BuildContext context) => AnimatedPaddingWidget(),
     },
   );
 
