@@ -68,7 +68,10 @@ Widget listItemDesign(BuildContext context, ListItem item) => Card(
                               fontWeight: FontWeight.w300),
                         ),
                         FlatButton(
-                          onPressed: () => Utils.launchURL(item.url),
+                          onPressed: () => {
+                            Utils.launchURL(item.url),
+                            Navigator.pop(context)
+                          },
                           splashColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           // makes highlight invisible too
@@ -79,42 +82,48 @@ Widget listItemDesign(BuildContext context, ListItem item) => Card(
                                   fontFamily: Utils.crimsonRegularFont,
                                   color: Colors.cyan)),
                         ),
-                        item.mediumUrl.length != 0 ?
-                        Container(
-                          width: 200.0,
-                          child: OutlineButton(
-                            borderSide: BorderSide(color: Colors.black87),
-                            highlightedBorderColor: Colors.black12,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30.0)),
-                            onPressed: () => Utils.launchURL(item.mediumUrl),
-                            splashColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            child: Center(
-                              child: Row(
-                                children: <Widget>[
-                                  SizedBox(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: SvgPicture.asset(
-                                        Utils.medium_img,
-                                        semanticsLabel: "Medium Icon",
-                                      ),
+                        item.mediumUrl.length != 0
+                            ? Container(
+                                width: 200.0,
+                                child: OutlineButton(
+                                  borderSide: BorderSide(color: Colors.black87),
+                                  highlightedBorderColor: Colors.black12,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(30.0)),
+                                  onPressed: () => {
+                                    Utils.launchURL(item.mediumUrl),
+                                    Navigator.pop(context)
+                                  },
+                                  splashColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  child: Center(
+                                    child: Row(
+                                      children: <Widget>[
+                                        SizedBox(
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: SvgPicture.asset(
+                                              Utils.medium_img,
+                                              semanticsLabel: "Medium Icon",
+                                            ),
+                                          ),
+                                          width: 48.0,
+                                          height: 48.0,
+                                        ),
+                                        Text('My Medium Post',
+                                            style: TextStyle(
+                                                fontSize: 14.0,
+                                                fontWeight: FontWeight.w600,
+                                                fontFamily:
+                                                    Utils.crimsonRegularFont,
+                                                color: Colors.black87)),
+                                      ],
                                     ),
-                                    width: 48.0,
-                                    height: 48.0,
                                   ),
-                                  Text('My Medium Post',
-                                      style: TextStyle(
-                                          fontSize: 14.0,
-                                          fontWeight: FontWeight.w600,
-                                          fontFamily: Utils.crimsonRegularFont,
-                                          color: Colors.black87)),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ) : Container(),
+                                ),
+                              )
+                            : Container(),
                       ],
                     ),
                   ),

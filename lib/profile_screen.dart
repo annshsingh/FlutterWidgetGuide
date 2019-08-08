@@ -8,6 +8,7 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   var versionNumber;
+  String appLink = "https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide";
 
   @override
   void initState() {
@@ -61,30 +62,67 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+            padding: const EdgeInsets.only(top: 20.0, bottom: 10.0),
             child: Column(
               children: <Widget>[
                 Wrap(
-                  spacing: 0.0, // gap between adjacent chips
-                  runSpacing: 0.0, // ga
-                  runAlignment: WrapAlignment.center,// p be
-                  alignment: WrapAlignment.center,/// tween lines
+                  spacing: 0.0,
+                  // gap between adjacent chips
+                  runSpacing: 10.0,
+                  // ga
+                  runAlignment: WrapAlignment.center,
+                  // p be
+                  alignment: WrapAlignment.center,
+
+                  /// tween lines
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.only(right: 8.0, left: 8.0),
-                      child: socialMediaLinks("Github", 'assets/images/github.png',
+                      child: socialMediaLinks(
+                          "Github",
+                          'assets/images/github.png',
                           "https://github.com/annshsingh"),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 8.0, left: 8.0),
-                      child: socialMediaLinks("LinkedIn", 'assets/images/linkedin.png',
+                      child: socialMediaLinks(
+                          "LinkedIn",
+                          'assets/images/linkedin.png',
                           "https://www.linkedin.com/in/annsh/"),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 8.0, left: 8.0),
-                      child: socialMediaLinks("Twitter", 'assets/images/twitter.png',
+                      child: socialMediaLinks(
+                          "Twitter",
+                          'assets/images/twitter.png',
                           "https://twitter.com/annsh2013"),
                     ),
+                    RaisedButton(
+                      textColor: Colors.black87,
+                      color: Colors.blue[500],
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.only(right: 10.0),
+                            child: Icon(Icons.star, color: Colors.amber,)
+                          ),
+                          Text(
+                            "Rate the app",
+                            style: TextStyle(
+                              fontSize: 12.0,
+                              color: Colors.white,
+                              fontFamily: Utils.ubuntuRegularFont,
+                            ),
+                          ),
+                        ],
+                      ),
+                      onPressed: () => Utils.launchURL(appLink),
+                      shape: new RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(30.0),
+                      ),
+                    )
                   ],
                 ),
               ],
