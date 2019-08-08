@@ -4,7 +4,11 @@
 
 A flutter appliction listing all the widgets covered in [Flutter widget of the week playlist](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
-#### Get the app - [Play Store Link](https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide&hl=en)
+## Get the app
+
+Click on the image below to download 
+
+<a href='https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide&hl=en&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="250"/></a>
 
 ## About
 I created this project to improve my skills with dart and flutter as a development platform. I am used to developing native android apps so I'll be focusing on designing this project for android platform.</br> 
@@ -53,9 +57,15 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    35. MediaQuery (coming soon)
    36. Spacer (coming soon)
    37. InheritedWidget (coming soon)
-   38. Placeholder (coming soon)
-   39. RichText (coming soon)
-   40. ReorderableListView (coming soon)
+   38. AnimatedIcon (coming soon)
+   39. AspectRatio (coming soon)
+   40. LimitedBox (coming soon)
+   41. Placeholder (coming soon)
+   42. RichText (coming soon)
+   43. ReorderableListView (coming soon)
+   44. AnimatedSwitcher (coming soon)
+   45. AnimatedPositioned (coming soon)
+   46. AnimatedPadding (coming soon)
    
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
@@ -75,7 +85,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
 ([Twitter](https://mobile.twitter.com/annsh2013))
 
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/Apache-2.0)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/iampawan/Flutter-UI-Kit/blob/master/licence.txt)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/annshsingh/flutter-widget-guide/blob/master/LICENSE)
 
 ## Contribution Guidelines
 This project is a fully open source project, and contributions are welcome. Information on how to get started can be found at the [contributor guide](https://github.com/annshsingh/flutter-widget-guide/blob/master/CONTRIBUTING.md).
