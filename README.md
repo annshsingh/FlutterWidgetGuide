@@ -57,12 +57,15 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    35. MediaQuery (coming soon)
    36. Spacer (coming soon)
    37. InheritedWidget (coming soon)
-   38. Placeholder (coming soon)
-   39. RichText (coming soon)
-   40. ReorderableListView (coming soon)
-   41. AnimatedSwitcher (coming soon)
-   42. AnimatedPositioned (coming soon)
-   43. AnimatedPadding (coming soon)
+   38. AnimatedIcon (coming soon)
+   39. AspectRatio (coming soon)
+   40. LimitedBox (coming soon)
+   41. Placeholder (coming soon)
+   42. RichText (coming soon)
+   43. ReorderableListView (coming soon)
+   44. AnimatedSwitcher (coming soon)
+   45. AnimatedPositioned (coming soon)
+   46. AnimatedPadding (coming soon)
    
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
