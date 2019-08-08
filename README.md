@@ -4,7 +4,11 @@
 
 A flutter appliction listing all the widgets covered in [Flutter widget of the week playlist](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
-#### Get the app - [Play Store Link](https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide&hl=en)
+## Get the app
+
+Click on the image below to download 
+
+<a href='https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide&hl=en&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="250"/></a>
 
 ## About
 I created this project to improve my skills with dart and flutter as a development platform. I am used to developing native android apps so I'll be focusing on designing this project for android platform.</br> 
