@@ -62,6 +62,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    40. ReorderableListView (coming soon)
    41. AnimatedSwitcher (coming soon)
    42. AnimatedPositioned (coming soon)
+   43. AnimatedPadding (coming soon)
    
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
