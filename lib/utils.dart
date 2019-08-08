@@ -205,7 +205,7 @@ class Utils {
   static const String animatedPositionedDescription = "Coming Soon :)";
   static const String animatedPaddingDescription = "Coming Soon :)";
 
-  //urls
+  //official urls
   static const String safeAreaURL =
       "https://api.flutter.dev/flutter/widgets/SafeArea-class.html";
   static const String expandedURL =
@@ -396,7 +396,70 @@ class Utils {
   static const String animatedPaddingVideoUrl =
       "https://www.youtube.com/watch?v=PY2m0fhGNz4&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=46";
 
+  //medium urls
+  static const String safeAreaMediumUrl =
+      "https://medium.com/flutter-community/flutter-widget-guide-safearea-widget-in-5-mins-or-less-df4620a7d08f";
+  static const String expandedMediumUrl =
+      "https://medium.com/flutter-community/flutter-widget-guide-expanded-widget-in-5-mins-or-less-7fac99839658";
+  static const String wrapMediumUrl =
+      "https://medium.com/flutter-community/flutter-widget-guide-wrap-widget-in-5-mins-or-less-f77ad249c176";
+  static const String animatedContainerMediumUrl =
+      "https://medium.com/flutter-community/flutter-widget-guide-animatedcontainer-widget-in-5-mins-or-less-347b69eaad0f";
+  static const String opacityMediumUrl =
+      "https://medium.com/flutter-community/flutter-widget-guide-opacity-widget-in-5-mins-or-less-969c3f635437";
+  static const String futureBuilderMediumUrl =
+      "https://medium.com/flutter-community/flutter-widget-guide-futurebuilder-widget-in-5-mins-or-less-3bef3e5e1bff";
+  static const String fadeTransitionMediumUrl =
+      "https://medium.com/flutter-community/flutter-widget-guide-fadetransition-widget-in-5-mins-or-less-78e714ba722";
+  static const String fabMediumUrl =
+      "https://medium.com/flutter-community/flutter-widget-guide-fab-widget-in-5-mins-or-less-bbf84db22d3c";
+  static const String pageViewMediumUrl =
+      "https://medium.com/flutter-community/flutter-widget-guide-pageview-widget-in-5-mins-or-less-bc7968f264ac";
+  static const String tableMediumUrl =
+      "https://medium.com/flutter-community/flutter-widget-guide-table-widget-in-5-mins-or-less-9b7f7f796014";
+  static const String sliverAppBarMediumUrl =
+      "https://medium.com/flutter-community/flutter-widget-guide-sliverappbar-widget-in-5-mins-or-less-d39ae4bf98c8";
+  static const String sliverListMediumUrl =
+      "https://medium.com/flutter-community/flutter-widget-guide-sliverlist-widget-in-5-mins-or-less-d1215c677388";
+  static const String sliverGridMediumUrl =
+      "https://medium.com/flutter-community/flutter-widget-guide-slivergrid-widget-in-5-mins-or-less-e6a95d6c4e76";
+  static const String fadeInImageMediumUrl =
+      "https://medium.com/flutter-community/flutter-widget-guide-fadeinimage-widget-in-5-mins-or-less-2659a9aa5bfd";
+  static const String streamBuilderMediumUrl = "";
+  static const String inheritedModelMediumUrl = "";
+  static const String clipRrectMediumUrl = "";
+  static const String heroMediumUrl = "";
+  static const String customPaintMediumUrl = "";
+  static const String toolTipMediumUrl = "";
+  static const String fittedBoxMediumUrl = "";
+  static const String layoutBuilderMediumUrl = "";
+  static const String absorbPointerMediumUrl = "";
+  static const String transformMediumUrl = "";
+  static const String backdropMediumUrl = "";
+  static const String alignMediumUrl = "";
+  static const String positionedMediumUrl = "";
+  static const String animatedBuilderMediumUrl = "";
+  static const String dismissibleMediumUrl = "";
+  static const String sizedBoxMediumUrl = "";
+  static const String valueListenableBuilderMediumUrl = "";
+  static const String draggableMediumUrl = "";
+  static const String animatedListMediumUrl = "";
+  static const String flexibleMediumUrl = "";
+  static const String mediaqueryMediumUrl = "";
+  static const String spacerMediumUrl = "";
+  static const String inheritedWidgetMediumUrl = "";
+  static const String animatedIconMediumUrl = "";
+  static const String aspectRatioMediumUrl = "";
+  static const String limitedBoxMediumUrl = "";
+  static const String placeholderMediumUrl = "";
+  static const String richTextMediumUrl = "";
+  static const String reorderableListViewMediumUrl = "";
+  static const String animatedSwitcherMediumUrl = "";
+  static const String animatedPositionedMediumUrl = "";
+  static const String animatedPaddingMediumUrl = "";
+
   //images
   static const String imageDir = "assets/images";
   static const String expanded_img = "$imageDir/expanded_info.svg";
+  static const String medium_img = "$imageDir/medium_icon.svg";
 }

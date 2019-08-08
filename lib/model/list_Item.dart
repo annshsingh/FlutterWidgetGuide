@@ -4,6 +4,7 @@ class ListItem {
   String title;
   String description;
   String url;
+  String mediumUrl;
   String videoUrl;
   BuildContext context;
   Color menuColor;
@@ -13,6 +14,7 @@ class ListItem {
         this.context,
         this.description,
         this.url,
+        this.mediumUrl,
         this.videoUrl,
         this.menuColor = Colors.white});
 }
