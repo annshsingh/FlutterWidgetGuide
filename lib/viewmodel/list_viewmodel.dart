@@ -193,7 +193,52 @@ class ListViewModel {
           title: "${Utils.inheritedWidget.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.inheritedWidgetDescription}",
           url: "${Utils.inheritedWidgetURL}",
-          videoUrl: "${Utils.inheritedWidgetVideoUrl}")
+          videoUrl: "${Utils.inheritedWidgetVideoUrl}"),
+      ListItem(
+          title: "${Utils.animatedIcon.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.animatedIconDescription}",
+          url: "${Utils.animatedIconURL}",
+          videoUrl: "${Utils.animatedIconVideoUrl}"),
+      ListItem(
+          title: "${Utils.aspectRatio.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.aspectRatioDescription}",
+          url: "${Utils.aspectRatioURL}",
+          videoUrl: "${Utils.aspectRatioVideoUrl}"),
+      ListItem(
+          title: "${Utils.limitedBox.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.limitedBoxDescription}",
+          url: "${Utils.limitedBoxURL}",
+          videoUrl: "${Utils.limitedBoxVideoUrl}"),
+      ListItem(
+          title: "${Utils.placeholder.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.placeholderDescription}",
+          url: "${Utils.placeholderURL}",
+          videoUrl: "${Utils.placeholderVideoUrl}"),
+      ListItem(
+          title: "${Utils.richText.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.richTextDescription}",
+          url: "${Utils.richTextURL}",
+          videoUrl: "${Utils.richTextVideoUrl}"),
+      ListItem(
+          title: "${Utils.reorderableListView.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.reorderableListViewDescription}",
+          url: "${Utils.reorderableListViewURL}",
+          videoUrl: "${Utils.reorderableListViewVideoUrl}"),
+      ListItem(
+          title: "${Utils.animatedSwitcher.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.animatedSwitcherDescription}",
+          url: "${Utils.animatedSwitcherURL}",
+          videoUrl: "${Utils.animatedSwitcherVideoUrl}"),
+      ListItem(
+          title: "${Utils.animatedPositioned.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.animatedPositionedDescription}",
+          url: "${Utils.animatedPositionedURL}",
+          videoUrl: "${Utils.animatedPositionedVideoUrl}"),
+      ListItem(
+          title: "${Utils.animatedPadding.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.animatedPaddingDescription}",
+          url: "${Utils.animatedPaddingURL}",
+          videoUrl: "${Utils.animatedPaddingVideoUrl}"),
     ];
   }
 }
