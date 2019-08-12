@@ -35,6 +35,7 @@ class Utils {
   //routes
   static const String codeRoute = "/code";
   static const String videoView = "/video";
+  static const String webView = "/webview";
   static const String homeRoute = "/home";
   static const String safeArea = "/Safe Area";
   static const String expanded = "/Expanded";

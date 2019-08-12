@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/CodeScreen.dart';
+import 'package:flutter_widget_guide/screens/WebViewWidget.dart';
 import 'package:flutter_widget_guide/screens/absorb_pointer.dart';
 import 'package:flutter_widget_guide/screens/align.dart';
 import 'package:flutter_widget_guide/screens/animated_builder.dart';
@@ -87,6 +88,7 @@ class MyApp extends StatelessWidget {
             videoUrl: "",
             title: "",
           ),
+      Utils.webView: (BuildContext context) => WebViewWidget(url: ""),
       Utils.homeRoute: (BuildContext context) => HomePage(),
       Utils.safeArea: (BuildContext context) => SafeAreaWidget(),
       Utils.expanded: (BuildContext context) => ExpandedWidget(),

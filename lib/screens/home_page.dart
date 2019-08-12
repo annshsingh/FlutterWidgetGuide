@@ -6,6 +6,7 @@ import 'package:flutter_widget_guide/utils.dart';
 import 'package:flutter_widget_guide/widgets/home_list_item.dart';
 
 import '../profile_screen.dart';
+import 'WebViewWidget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -88,7 +89,13 @@ class _HomePageState extends State<HomePage> {
                     colors: Colors.cyan,
                     textColor: Colors.white,
                   ),
-                  onTap: () => Utils.launchURL("https://flutter.dev"),
+                  onTap: () =>  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => WebViewWidget(
+                          url: "https://flutter.dev"),
+                    ),
+                  ),
                 ),
               ),
               //To give a margin

@@ -25,6 +25,7 @@ dependencies:
   firebase_core: ^0.4.0+1
   firebase_analytics: ^4.0.2
   firebase_remote_config: ^0.2.0+5
+  webview_flutter: ^0.3.11+2
 
 dev_dependencies:
   flutter_test:
