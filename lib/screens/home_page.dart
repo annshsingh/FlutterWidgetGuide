@@ -1,3 +1,4 @@
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/bloc/list_bloc.dart';
 import 'package:flutter_widget_guide/model/list_Item.dart';
@@ -6,9 +7,25 @@ import 'package:flutter_widget_guide/widgets/home_list_item.dart';
 
 import '../profile_screen.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   BuildContext _buildContext;
+  var versionNumber;
+  String appLink = "https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide";
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    Utils.getVersion().then((value) {
+      versionNumber = value;
+    });
+    setupRemoteConfig();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +37,10 @@ class HomePage extends StatelessWidget {
         data: Theme.of(context).copyWith(
           canvasColor: Colors.transparent,
         ),
-        child: Scaffold(key: _scaffoldKey, body: sliverWidgetList()),
+        child: Scaffold(
+          key: _scaffoldKey,
+          body: sliverWidgetList(),
+        ),
       );
 
   Widget sliverWidgetList() {
@@ -45,11 +65,6 @@ class HomePage extends StatelessWidget {
               : Center(child: CircularProgressIndicator());
         });
   }
-
-  /*
-   * Setting up appbar -> Sliver App bar
-   * This is to give the effect of Collapsing App Bar (android)
-   */
 
   Widget appBar(BuildContext context) => SliverAppBar(
         backgroundColor: Colors.white,
@@ -107,13 +122,45 @@ class HomePage extends StatelessWidget {
 //        ],
       );
 
-  /*
-   * Defining a List -> Sliver List for Sliver App Bar
-   */
-
   Widget bodyList(List<ListItem> listItems) => SliverList(
         delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
           return listItemDesign(context, listItems[index]);
         }, childCount: listItems.length),
       );
+
+  /// Setup remote config and fetch value of key: current_version
+  setupRemoteConfig() async {
+    final RemoteConfig remoteConfig = await RemoteConfig.instance;
+    // Enable developer mode to relax fetch throttling
+    // TODO: remove in prod
+    remoteConfig.setConfigSettings(RemoteConfigSettings(debugMode: true));
+    /// if network is weak and fetching fails, set default value
+    remoteConfig.setDefaults(<String, dynamic>{
+      'current_version': versionNumber,
+    });
+    await remoteConfig.fetch(expiration: const Duration(hours: 5));
+    await remoteConfig.activateFetched();
+    if (remoteConfig.getString("current_version") != versionNumber) {
+      print("Here");
+      buildSnakbar();
+    } else {
+      //do nothing
+    }
+  }
+
+
+  /// Build a snackbar to notify user that a new update is available
+  buildSnakbar() {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text("Update Available"),
+      duration: Duration(seconds: 10),
+      backgroundColor: Colors.green,
+      action: SnackBarAction(
+        label: 'UPDATE',
+        onPressed: () {
+          Utils.launchURL(appLink);
+        },
+      ),
+    ));
+  }
 }

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "788616053454",
+    "firebase_url": "https://flutter-widget-guide.firebaseio.com",
+    "project_id": "flutter-widget-guide",
+    "storage_bucket": "flutter-widget-guide.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788616053454:android:afaa575f80ae1fca",
+        "android_client_info": {
+          "package_name": "com.annsh.flutterwidgetguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788616053454-6no5qfac5do5fkon4cek4jm3fd3oltt0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaGJvR2ZzjGmbbQFNpcGJtd8EAb6Z46Yg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788616053454-6no5qfac5do5fkon4cek4jm3fd3oltt0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

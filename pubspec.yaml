@@ -22,6 +22,9 @@ dependencies:
   youtube_player: ^3.5.0
   transparent_image: ^1.0.0
   package_info: ^0.4.0+6
+  firebase_core: ^0.4.0+1
+  firebase_analytics: ^4.0.2
+  firebase_remote_config: ^0.2.0+5
 
 dev_dependencies:
   flutter_test:
