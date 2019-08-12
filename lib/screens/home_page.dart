@@ -148,7 +148,6 @@ class _HomePageState extends State<HomePage> {
     await remoteConfig.fetch(expiration: const Duration(hours: 5));
     await remoteConfig.activateFetched();
     if (remoteConfig.getString("current_version") != versionNumber) {
-      print("Here");
       buildSnakbar();
     } else {
       //do nothing
