@@ -21,21 +21,37 @@ class _SpacerWidgetState extends State<SpacerWidget> {
         ),
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Container(
-            color: Colors.white,
-            child: Text(
-              "This widget will be added soon",
-              style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
+          child: Row(
+        children: <Widget>[
+          /// Empty space with flex = 2
+          Spacer(
+            flex: 2,
           ),
-        ),
-      ),
+          Container(
+            height: 100,
+            width: 100,
+            color: Colors.green,
+          ),
+          /// Empty space with default flex = 1
+          Spacer(),
+          Container(
+            height: 100,
+            width: 100,
+            color: Colors.blue,
+          ),
+          /// Empty space with default flex = 1
+          Spacer(),
+          Container(
+            height: 100,
+            width: 100,
+            color: Colors.orange,
+          ),
+          /// Empty space with default flex = 2
+          Spacer(
+            flex: 2,
+          ),
+        ],
+      )),
     );
   }
 }
