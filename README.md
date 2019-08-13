@@ -66,6 +66,11 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    44. [AnimatedSwitcher](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_switcher.dart) (coming soon)
    45. [AnimatedPositioned](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_positioned.dart) (coming soon)
    46. [AnimatedPadding](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_padding.dart) (coming soon)
+
+## Additional Features
+   1. Flutter webview implementation
+   2. Youtube Video Player
+   3. Firebase RemoteConfig
    
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
