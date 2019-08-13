@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
+import 'package:flutter/services.dart';
 
 class FlexibleWidget extends StatefulWidget {
   @override
@@ -7,6 +8,16 @@ class FlexibleWidget extends StatefulWidget {
 }
 
 class _FlexibleWidgetState extends State<FlexibleWidget> {
+
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
