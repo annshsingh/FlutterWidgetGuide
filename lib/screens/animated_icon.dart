@@ -6,7 +6,19 @@ class AnimatedIconWidget extends StatefulWidget {
   _AnimatedIconWidgetState createState() => _AnimatedIconWidgetState();
 }
 
-class _AnimatedIconWidgetState extends State<AnimatedIconWidget> {
+class _AnimatedIconWidgetState extends State<AnimatedIconWidget>
+    with TickerProviderStateMixin {
+  AnimationController _controller1;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller1 = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,21 +33,152 @@ class _AnimatedIconWidgetState extends State<AnimatedIconWidget> {
         ),
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Container(
-            color: Colors.white,
-            child: Text(
-              "This widget will be added soon",
-              style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            /// First row
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: animatedIconRow(_controller1, AnimatedIcons.add_event,
+                  AnimatedIcons.arrow_menu, AnimatedIcons.close_menu),
             ),
-          ),
+
+            /// Second row
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: animatedIconRow(
+                  _controller1,
+                  AnimatedIcons.ellipsis_search,
+                  AnimatedIcons.event_add,
+                  AnimatedIcons.home_menu),
+            ),
+
+            /// Third row
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: animatedIconRow(_controller1, AnimatedIcons.list_view,
+                  AnimatedIcons.menu_arrow, AnimatedIcons.menu_close),
+            ),
+
+            /// Fourth row
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: animatedIconRow(_controller1, AnimatedIcons.menu_home,
+                  AnimatedIcons.pause_play, AnimatedIcons.play_pause),
+            ),
+
+            /// Fifth row
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  AnimatedIcon(
+                    size: 34.0,
+                    icon: AnimatedIcons.search_ellipsis,
+                    progress: _controller1,
+                  ),
+                  AnimatedIcon(
+                    size: 34.0,
+                    icon: AnimatedIcons.view_list,
+                    progress: _controller1,
+                  ),
+                ],
+              ),
+            ),
+            Stack(
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 24.0),
+
+                    /// Fab to control animation direction
+                    child: FloatingActionButton.extended(
+                      heroTag: "direction",
+                      backgroundColor: Colors.green,
+                      onPressed: () => setState(() {
+                        _controller1.forward();
+                        _controller1.status == AnimationStatus.completed
+                            ? _controller1.reverse()
+                            : _controller1.forward();
+                      }),
+                      icon: Icon(
+                        Icons.movie_filter,
+                        color: Colors.white,
+                      ),
+                      label: Text(
+                        "Animate",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 24.0),
+
+                    /// Fab to control animation speed
+                    child: FloatingActionButton.extended(
+                      heroTag: "speed",
+                      backgroundColor: Colors.white,
+                      onPressed: () => setState(() {
+                        _controller1.duration.inSeconds == 2
+                            ? _controller1.duration =
+                                const Duration(seconds: 10)
+                            : _controller1.duration =
+                                const Duration(seconds: 2);
+                      }),
+                      icon: Icon(
+                        Icons.slow_motion_video,
+                        color: Colors.black,
+                      ),
+                      label: Text(
+                        "Slowly",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
   }
+
+  @override
+  void dispose() {
+    _controller1.dispose();
+    super.dispose();
+  }
 }
+
+Widget animatedIconRow(AnimationController controller, AnimatedIconData icon1,
+        AnimatedIconData icon2, AnimatedIconData icon3) =>
+    Row(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        AnimatedIcon(
+          size: 34.0,
+          icon: icon1,
+          progress: controller,
+        ),
+        AnimatedIcon(
+          size: 34.0,
+          icon: icon2,
+          progress: controller,
+        ),
+        AnimatedIcon(
+          size: 34.0,
+          icon: icon3,
+          progress: controller,
+        ),
+      ],
+    );

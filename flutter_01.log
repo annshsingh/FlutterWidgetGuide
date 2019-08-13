@@ -1,0 +1,163 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color run --machine --track-widget-creation --device-id=FA6AJ0300758 lib/main.dart
+
+## exception
+
+RpcException: JSON-RPC error -32000: There are no running service protocol handlers.
+
+```
+package:json_rpc_2/src/client.dart 110:64              Client.sendRequest
+package:json_rpc_2/src/peer.dart 79:15                 Peer.sendRequest
+package:flutter_tools/src/vmservice.dart 316:13        VMService._sendRequest
+package:flutter_tools/src/vmservice.dart 851:60        VM.invokeRpcRaw
+===== asynchronous gap ===========================
+package:flutter_tools/src/vmservice.dart 872:49        VM.invokeRpc
+===== asynchronous gap ===========================
+package:flutter_tools/src/vmservice.dart 941:12        VM.runInView
+package:flutter_tools/src/vmservice.dart 1455:20       FlutterView.runFromSource
+===== asynchronous gap ===========================
+package:flutter_tools/src/run_hot.dart 343:24          HotRunner._launchInView
+package:flutter_tools/src/run_hot.dart 358:19          HotRunner._launchFromDevFS
+===== asynchronous gap ===========================
+package:flutter_tools/src/run_hot.dart 429:11          HotRunner._restartFromSources
+===== asynchronous gap ===========================
+package:flutter_tools/src/run_hot.dart 574:22          HotRunner._fullRestartHelper
+===== asynchronous gap ===========================
+package:flutter_tools/src/run_hot.dart 529:44          HotRunner.restart
+===== asynchronous gap ===========================
+package:flutter_tools/src/commands/daemon.dart 874:19  AppInstance.restart
+package:flutter_tools/src/commands/daemon.dart 543:18  AppDomain.restart.<fn>
+package:flutter_tools/src/base/context.dart 154:29     AppContext.run.<fn>
+===== asynchronous gap ===========================
+dart:async/zone.dart 1124:13                           _rootRun
+dart:async/zone.dart 1021:19                           _CustomZone.run
+dart:async/zone.dart 1516:10                           _runZoned
+dart:async/zone.dart 1463:12                           runZoned
+package:flutter_tools/src/base/context.dart 153:18     AppContext.run
+===== asynchronous gap ===========================
+package:flutter_tools/src/commands/daemon.dart 887:20  AppInstance._runInZone
+package:flutter_tools/src/commands/daemon.dart 542:32  AppDomain.restart
+===== asynchronous gap ===========================
+package:flutter_tools/src/commands/daemon.dart 189:34  Domain.handleCommand.<fn>
+dart:async/future.dart 224:31                          new Future.sync
+package:flutter_tools/src/commands/daemon.dart 186:77  Domain.handleCommand
+package:flutter_tools/src/commands/daemon.dart 145:26  Daemon._handleRequest
+dart:async/zone.dart 1132:38                           _rootRunUnary
+dart:async/zone.dart 1029:19                           _CustomZone.runUnary
+dart:async/zone.dart 931:7                             _CustomZone.runUnaryGuarded
+dart:async/stream_impl.dart 336:11                     _BufferingStreamSubscription._sendData
+dart:async/stream_impl.dart 263:7                      _BufferingStreamSubscription._add
+dart:async/stream_pipe.dart 132:11                     _ForwardingStreamSubscription._add
+dart:async/stream_pipe.dart 232:10                     _MapStream._handleData
+dart:async/stream_pipe.dart 164:13                     _ForwardingStreamSubscription._handleData
+dart:async/zone.dart 1132:38                           _rootRunUnary
+dart:async/zone.dart 1029:19                           _CustomZone.runUnary
+dart:async/zone.dart 931:7                             _CustomZone.runUnaryGuarded
+dart:async/stream_impl.dart 336:11                     _BufferingStreamSubscription._sendData
+dart:async/stream_impl.dart 263:7                      _BufferingStreamSubscription._add
+dart:async/stream_pipe.dart 132:11                     _ForwardingStreamSubscription._add
+dart:async/stream_pipe.dart 207:12                     _WhereStream._handleData
+dart:async/stream_pipe.dart 164:13                     _ForwardingStreamSubscription._handleData
+dart:async/zone.dart 1132:38                           _rootRunUnary
+dart:async/zone.dart 1029:19                           _CustomZone.runUnary
+dart:async/zone.dart 931:7                             _CustomZone.runUnaryGuarded
+dart:async/stream_impl.dart 336:11                     _BufferingStreamSubscription._sendData
+dart:async/stream_impl.dart 263:7                      _BufferingStreamSubscription._add
+dart:async/stream_transformers.dart 68:11              _SinkTransformerStreamSubscription._add
+dart:async/stream_transformers.dart 15:11              _EventSinkWrapper.add
+dart:convert/string_conversion.dart 236:11             _StringAdapterSink.add
+dart:convert/line_splitter.dart 150:13                 _LineSplitterSink._addLines
+dart:convert/line_splitter.dart 125:5                  _LineSplitterSink.addSlice
+dart:convert/string_conversion.dart 163:5              StringConversionSinkMixin.add
+dart:async/stream_transformers.dart 120:24             _SinkTransformerStreamSubscription._handleData
+dart:async/zone.dart 1132:38                           _rootRunUnary
+dart:async/zone.dart 1029:19                           _CustomZone.runUnary
+dart:async/zone.dart 931:7                             _CustomZone.runUnaryGuarded
+dart:async/stream_impl.dart 336:11                     _BufferingStreamSubscription._sendData
+dart:async/stream_impl.dart 263:7                      _BufferingStreamSubscription._add
+dart:async/stream_transformers.dart 68:11              _SinkTransformerStreamSubscription._add
+dart:async/stream_transformers.dart 15:11              _EventSinkWrapper.add
+dart:convert/string_conversion.dart 236:11             _StringAdapterSink.add
+dart:convert/string_conversion.dart 241:7              _StringAdapterSink.addSlice
+dart:convert/string_conversion.dart 312:20             _Utf8ConversionSink.addSlice
+dart:convert/string_conversion.dart 305:5              _Utf8ConversionSink.add
+dart:convert/chunked_conversion.dart 72:18             _ConverterStreamEventSink.add
+dart:async/stream_transformers.dart 120:24             _SinkTransformerStreamSubscription._handleData
+dart:async/zone.dart 1132:38                           _rootRunUnary
+dart:async/zone.dart 1029:19                           _CustomZone.runUnary
+dart:async/zone.dart 931:7                             _CustomZone.runUnaryGuarded
+dart:async/stream_impl.dart 336:11                     _BufferingStreamSubscription._sendData
+dart:async/stream_impl.dart 263:7                      _BufferingStreamSubscription._add
+dart:async/stream_controller.dart 764:19               _SyncStreamController._sendData
+dart:async/stream_controller.dart 640:7                _StreamController._add
+dart:async/stream_controller.dart 586:5                _StreamController.add
+dart:io-patch/socket_patch.dart 1789:41                _Socket._onData
+dart:async/zone.dart 1136:13                           _rootRunUnary
+dart:async/zone.dart 1029:19                           _CustomZone.runUnary
+dart:async/zone.dart 931:7                             _CustomZone.runUnaryGuarded
+dart:async/stream_impl.dart 336:11                     _BufferingStreamSubscription._sendData
+dart:async/stream_impl.dart 263:7                      _BufferingStreamSubscription._add
+dart:async/stream_controller.dart 764:19               _SyncStreamController._sendData
+dart:async/stream_controller.dart 640:7                _StreamController._add
+dart:async/stream_controller.dart 586:5                _StreamController.add
+dart:io-patch/socket_patch.dart 1337:33                new _RawSocket.<fn>
+dart:io-patch/socket_patch.dart 858:14                 _NativeSocket.issueReadEvent.issue
+dart:async/schedule_microtask.dart 41:21               _microtaskLoop
+dart:async/schedule_microtask.dart 50:5                _startMicrotaskLoop
+dart:isolate-patch/isolate_patch.dart 116:13           _runPendingImmediateCallback
+dart:isolate-patch/isolate_patch.dart 173:5            _RawReceivePortImpl._handleMessage
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel dev, v1.8.4, on Mac OS X 10.14.5 18F132, locale en-IN)
+    • Flutter version 1.8.4 at /Users/MacBook/Desktop/flutter
+    • Framework revision 954714c967 (11 days ago), 2019-08-02 10:10:39 -0700
+    • Engine revision 26368225b5
+    • Dart version 2.5.0 (build 2.5.0-dev.1.0 bd049f5b53)
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 28.0.3)
+    • Android SDK at /Users/MacBook/Library/Android/sdk
+    • Android NDK location not configured (optional; useful for native profiling support)
+    • Platform android-28, build-tools 28.0.3
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1343-b01)
+    • All Android licenses accepted.
+
+[!] Xcode - develop for iOS and macOS (Xcode 10.2.1)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Xcode 10.2.1, Build version 10E1001
+    ! CocoaPods out of date (1.6.0 is recommended).
+        CocoaPods is used to retrieve the iOS and macOS platform side's plugin code that responds to your plugin usage on the Dart side.
+        Without CocoaPods, plugins will not work on iOS or macOS.
+        For more info, see https://flutter.dev/platform-plugins
+      To upgrade:
+        sudo gem install cocoapods
+        pod setup
+
+[✓] Android Studio (version 3.4)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin version 37.1.1
+    • Dart plugin version 183.6270
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1343-b01)
+
+[!] IntelliJ IDEA Community Edition (version 2018.3.3)
+    • IntelliJ at /Applications/IntelliJ IDEA CE.app
+    ✗ Flutter plugin not installed; this adds Flutter specific functionality.
+    ✗ Dart plugin not installed; this adds Dart specific functionality.
+    • For information about installing plugins, see
+      https://flutter.dev/intellij-setup/#installing-the-plugins
+
+[✓] VS Code (version 1.30.2)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension version 2.22.2
+
+[✓] Connected device (1 available)
+    • Pixel • FA6AJ0300758 • android-arm64 • Android 9 (API 28)
+
+! Doctor found issues in 2 categories.
+```
