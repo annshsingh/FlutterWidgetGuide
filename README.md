@@ -57,7 +57,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    35. [MediaQuery](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/media_query.dart)
    36. [Spacer](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/spacer.dart)
    37. [InheritedWidget](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/inherited_widget.dart) (coming soon)
-   38. [AnimatedIcon](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_icon.dart) (coming soon)
+   38. [AnimatedIcon](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_icon.dart)
    39. [AspectRatio](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/aspect_ratio.dart) (coming soon)
    40. [LimitedBox](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/limited_box.dart) (coming soon)
    41. [Placeholder](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/placeholder.dart) (coming soon)
