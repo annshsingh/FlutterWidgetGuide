@@ -195,16 +195,16 @@ class Utils {
   static const String flexibleDescription = "Coming Soon :)";
   static const String mediaQueryDescription = "Coming Soon :)";
   static const String spacerDescription = "Coming Soon :)";
-  static const String inheritedWidgetDescription = "Coming Soon :)";
+  static const String inheritedWidgetDescription = "";
   static const String animatedIconDescription = "Coming Soon :)";
   static const String aspectRatioDescription = "Coming Soon :)";
   static const String limitedBoxDescription = "Coming Soon :)";
   static const String placeholderDescription = "Coming Soon :)";
   static const String richTextDescription = "Coming Soon :)";
-  static const String reorderableListViewDescription = "Coming Soon :)";
-  static const String animatedSwitcherDescription = "Coming Soon :)";
-  static const String animatedPositionedDescription = "Coming Soon :)";
-  static const String animatedPaddingDescription = "Coming Soon :)";
+  static const String reorderableListViewDescription = "";
+  static const String animatedSwitcherDescription = "";
+  static const String animatedPositionedDescription = "";
+  static const String animatedPaddingDescription = "";
 
   //official urls
   static const String safeAreaURL =

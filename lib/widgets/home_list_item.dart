@@ -9,7 +9,7 @@ import '../VideoView.dart';
  * Defining a widget for list item
  */
 
-Widget listItemDesign(BuildContext context, ListItem item) => Card(
+Widget listItemDesign(BuildContext context, ListItem item, int index) => Card(
       shape: BeveledRectangleBorder(
         borderRadius: BorderRadius.circular(8.0),
       ),
@@ -18,10 +18,32 @@ Widget listItemDesign(BuildContext context, ListItem item) => Card(
         splashColor: Colors.cyan[100],
         highlightColor: Colors.transparent,
         child: ListTile(
-          title: Text(
-            '${item.title}',
-            style: TextStyle(color: Colors.black, fontSize: 16.0),
-          ),
+          title: item.description.isNotEmpty
+              ? Text(
+                  '${index + 1}. ${item.title}',
+                  style: TextStyle(color: Colors.black, fontSize: 16.0),
+                )
+              : RichText(
+                  text: TextSpan(
+                    /// A default style for all the TextSpans below.
+                    style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      fontSize: 16.0,
+                      color: Colors.black,
+                    ),
+                    children: <TextSpan>[
+                      TextSpan(text: "${index + 1}. ${item.title} "),
+                      TextSpan(
+                        text: "(coming soon)",
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 10.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[

@@ -62,7 +62,7 @@ class ListViewModel {
           description: "${Utils.pageViewDescription}",
           url: "${Utils.pageViewURL}",
           mediumUrl: "${Utils.pageViewMediumUrl}",
-          videoUrl: "${Utils.pageViewURL}"),
+          videoUrl: "${Utils.pageViewVideoUrl}"),
       ListItem(
           title: "${Utils.table.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.tableDescription}",

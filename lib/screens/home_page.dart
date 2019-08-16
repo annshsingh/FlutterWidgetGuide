@@ -131,7 +131,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget bodyList(List<ListItem> listItems) => SliverList(
         delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
-          return listItemDesign(context, listItems[index]);
+          return listItemDesign(context, listItems[index], index);
         }, childCount: listItems.length),
       );
 
