@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class LimitedBoxWidget extends StatefulWidget {
   @override
   _LimitedBoxWidgetState createState() => _LimitedBoxWidgetState();
@@ -19,6 +22,17 @@ class _LimitedBoxWidgetState extends State<LimitedBoxWidget> {
                 fontWeight: FontWeight.bold,
                 fontFamily: Utils.ubuntuRegularFont),
           ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.code),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CodeScreen(code: Code.limitedBoxCode),
+                ),
+              ),
+            )
+          ],
         ),
         body: MediaQuery.of(context).orientation == Orientation.portrait
             ? portraitLayout(context)

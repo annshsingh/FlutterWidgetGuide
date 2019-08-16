@@ -4676,5 +4676,615 @@ class Code {
       }
     }''';
 
-  static const String animatedIconCode = ''' ''';
+  static const String animatedIconCode = ''' 
+    class AnimatedIconWidget extends StatefulWidget {
+      @override
+      _AnimatedIconWidgetState createState() => _AnimatedIconWidgetState();
+    }
+    
+    class _AnimatedIconWidgetState extends State<AnimatedIconWidget>
+        with TickerProviderStateMixin {
+      AnimationController _controller1;
+      String speedFabText = "Slowly";
+    
+      @override
+      void initState() {
+        super.initState();
+        _controller1 = AnimationController(
+          duration: const Duration(seconds: 2),
+          vsync: this,
+        );
+        SystemChrome.setPreferredOrientations([
+          DeviceOrientation.portraitUp,
+          DeviceOrientation.portraitDown,
+        ]);
+      }
+    
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'AnimatedIcon Widget',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.code),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CodeScreen(code: Code.animatedIconCode),
+                  ),
+                ),
+              )
+            ],
+          ),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                /// First row
+                Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: animatedIconRow(_controller1, AnimatedIcons.add_event,
+                      AnimatedIcons.arrow_menu, AnimatedIcons.close_menu),
+                ),
+    
+                /// Second row
+                Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: animatedIconRow(
+                      _controller1,
+                      AnimatedIcons.ellipsis_search,
+                      AnimatedIcons.event_add,
+                      AnimatedIcons.home_menu),
+                ),
+    
+                /// Third row
+                Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: animatedIconRow(_controller1, AnimatedIcons.list_view,
+                      AnimatedIcons.menu_arrow, AnimatedIcons.menu_close),
+                ),
+    
+                /// Fourth row
+                Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: animatedIconRow(_controller1, AnimatedIcons.menu_home,
+                      AnimatedIcons.pause_play, AnimatedIcons.play_pause),
+                ),
+    
+                /// Fifth row
+                Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      AnimatedIcon(
+                        size: 34.0,
+                        icon: AnimatedIcons.search_ellipsis,
+                        progress: _controller1,
+                      ),
+                      AnimatedIcon(
+                        size: 34.0,
+                        icon: AnimatedIcons.view_list,
+                        progress: _controller1,
+                      ),
+                    ],
+                  ),
+                ),
+                Stack(
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 24.0),
+    
+                        /// Fab to control animation direction
+                        child: FloatingActionButton.extended(
+                          heroTag: "direction",
+                          backgroundColor: Colors.green,
+                          onPressed: () => setState(() {
+                            _controller1.forward();
+                            _controller1.status == AnimationStatus.completed
+                                ? _controller1.reverse()
+                                : _controller1.forward();
+                          }),
+                          icon: Icon(
+                            Icons.movie_filter,
+                            color: Colors.white,
+                          ),
+                          label: Text(
+                            "Animate",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 24.0),
+    
+                        /// Fab to control animation speed
+                        child: FloatingActionButton.extended(
+                          heroTag: "speed",
+                          backgroundColor: Colors.white,
+                          onPressed: () => setState(() {
+                            _controller1.duration.inSeconds == 2
+                                ? _controller1.duration =
+                                    const Duration(seconds: 10)
+                                : _controller1.duration =
+                                    const Duration(seconds: 2);
+    
+                            _controller1.duration.inSeconds == 2
+                                ? speedFabText = "Slowly"
+                                : speedFabText = "Normal";
+                          }),
+                          icon: Icon(
+                            Icons.slow_motion_video,
+                            color: Colors.black,
+                          ),
+                          label: Text(
+                            speedFabText,
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      }
+    
+      @override
+      void dispose() {
+        _controller1.dispose();
+        super.dispose();
+      }
+    }
+    
+    Widget animatedIconRow(AnimationController controller, AnimatedIconData icon1,
+            AnimatedIconData icon2, AnimatedIconData icon3) =>
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            AnimatedIcon(
+              size: 34.0,
+              icon: icon1,
+              progress: controller,
+            ),
+            AnimatedIcon(
+              size: 34.0,
+              icon: icon2,
+              progress: controller,
+            ),
+            AnimatedIcon(
+              size: 34.0,
+              icon: icon3,
+              progress: controller,
+            ),
+          ],
+      );''';
+
+  static const String aspectRatioCode = ''' 
+    class AspectRatioWidget extends StatefulWidget {
+      @override
+      _AspectRatioWidgetState createState() => _AspectRatioWidgetState();
+    }
+    
+    class _AspectRatioWidgetState extends State<AspectRatioWidget> {
+      double aspectRatio = 1 / 1;
+      double aspectRatio1 = 16 / 9;
+      double aspectRatio2 = 3 / 2;
+    
+      @override
+      void initState() {
+        super.initState();
+        /// Fix portrait mode
+        SystemChrome.setPreferredOrientations([
+          DeviceOrientation.portraitUp,
+          DeviceOrientation.portraitDown,
+        ]);
+      }
+    
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+            appBar: AppBar(
+              centerTitle: true,
+              title: Text(
+                'AspectRatio Widget',
+                style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: Utils.ubuntuRegularFont),
+              ),
+            ),
+            body: Column(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  /// Aspect Ratio widget sizes itself freely
+                  /// depending on available space
+                  child: AspectRatio(
+                    aspectRatio: aspectRatio,
+                    child: Container(
+                      color: Colors.blueAccent,
+                    ),
+                  ),
+                ),
+                divider(context),
+                Container(
+                  margin: EdgeInsets.only(left: 12, right: 12),
+                  child: Wrap(
+                    children: <Widget>[
+                      _OptionItem(
+                          aspectRatio1, aspectRatio, _onRatioChanged, 'Ratio: 16/9'),
+                      _OptionItem(aspectRatio2, aspectRatio, _onRatioChanged,
+                          'Ratio: 3/2'),
+                    ],
+                  ),
+                )
+              ],
+            ));
+      }
+    
+      _onRatioChanged(double ratio) => setState(() {
+            aspectRatio = ratio;
+          });
+    }
+    
+    class _OptionItem<T> extends StatelessWidget {
+      const _OptionItem(this.value, this.groupValue, this.onChanged, this.title);
+    
+      final String title;
+      final T value;
+      final T groupValue;
+      final ValueChanged<T> onChanged;
+    
+      @override
+      Widget build(BuildContext context) {
+        return Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Radio<T>(
+                value: value,
+                groupValue: groupValue,
+                activeColor: Colors.lightBlue,
+                onChanged: onChanged),
+            GestureDetector(
+              onTap: () {
+                onChanged(value);
+              },
+              child: Text(
+                title,
+                style:
+                    TextStyle(fontSize: 14.0, fontFamily: Utils.ubuntuRegularFont),
+              ),
+            ),
+          ],
+        );
+      }
+    }
+    
+    Container divider(BuildContext context) => Container(
+          child: Divider(),
+          margin: EdgeInsets.only(left: 10, right: 10, top: 14),
+    );''';
+
+  static const String limitedBoxCode = ''' 
+    class LimitedBoxWidget extends StatefulWidget {
+      @override
+      _LimitedBoxWidgetState createState() => _LimitedBoxWidgetState();
+    }
+    
+    class _LimitedBoxWidgetState extends State<LimitedBoxWidget> {
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+            appBar: AppBar(
+              centerTitle: true,
+              title: Text(
+                'LimitedBox Widget',
+                style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: Utils.ubuntuRegularFont),
+              ),
+            ),
+            body: MediaQuery.of(context).orientation == Orientation.portrait
+                ? portraitLayout(context)
+                : landscapeLayout(context));
+      }
+    }
+    
+    Widget portraitLayout(context) => ListView(
+          children: <Widget>[
+            /// The size of the container is 0 in unconstrained environment
+            /// So Wrapping it with a LimitedBox will force its bounds
+            /// to set maxHeight or maxWidth.
+            /// Limited Box doesn't follow constraints when the parent is already
+            /// Bounded by constraints. It doesn't follow maxHeight of width
+            /// in that case
+            LimitedBox(
+              maxHeight: 200,
+              child: Container(
+                color: Colors.amber,
+                child: Center(
+                  child: Text(
+                    "I am wrapped inside a Limited Box with maxHeight set to 200\n"
+                        "This is necessary as my parent (ListView) is unconstrained\n"
+                        "Flip screen to see the other case",
+                    style: TextStyle(color: Colors.black),
+                    textAlign: TextAlign.center,
+                  ),
+              ),
+            ),
+            ),
+          ],
+        );
+    
+    Widget landscapeLayout(context) => Container(
+          color: Colors.indigo,
+          child: LimitedBox(
+            maxWidth: 20,
+            child: Container(
+              color: Colors.amber,
+              child: Center(
+                child: Text(
+                  "I am wrapped inside a Limited Box with maxWidth set to 20\n"
+                  "But as my parent (Container) is already constrained, LimitedBox is respecting\n"
+                  "those constrains.",
+                  style: TextStyle(color: Colors.black),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ),
+     );''';
+
+  static const String placeholderCode = ''' 
+    class PlaceholderWidget extends StatefulWidget {
+      @override
+      _PlaceholderWidgetState createState() => _PlaceholderWidgetState();
+    }
+    
+    class _PlaceholderWidgetState extends State<PlaceholderWidget> {
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'Placeholder Widget',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          body: Column(
+            children: <Widget>[
+              Stack(
+                children: <Widget>[
+                  /// Placeholder for cover image of the user
+                  Center(
+                    child: Placeholder(
+                      fallbackHeight: 250,
+                      color: Colors.black,
+                      strokeWidth: 5,
+                    ),
+                  ),
+                  Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: <Widget>[
+                        /// Placeholder for user DP
+                        SizedBox(
+                          width: 100,
+                          height: 100,
+                          child: Placeholder(
+                            color: Colors.amber,
+                            strokeWidth: 2,
+                          ),
+                        ),
+    
+                        /// Placeholder for user bio
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: SizedBox(
+                            height: 50,
+                            width: 250,
+                            child: Placeholder(
+                              color: Colors.red,
+                              strokeWidth: 2,
+                            ),
+                          ),
+                        ),
+                        /// Placeholder for user social media links
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              SizedBox(
+                                height: 30,
+                                width: 30,
+                                child: Placeholder(
+                                  color: Colors.green,
+                                  strokeWidth: 2,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 30,
+                                width: 30,
+                                child: Placeholder(
+                                  color: Colors.green,
+                                  strokeWidth: 2,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 30,
+                                width: 30,
+                                child: Placeholder(
+                                  color: Colors.green,
+                                  strokeWidth: 2,
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        );
+      }
+    }''';
+
+  static const String richTextCode = ''' 
+    class RichTextWidget extends StatefulWidget {
+      @override
+      _RichTextWidgetState createState() => _RichTextWidgetState();
+    }
+    
+    class _RichTextWidgetState extends State<RichTextWidget> {
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'RichText Widget',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          body: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: RichText(
+              text: TextSpan(
+                /// A default style for all the TextSpans below.
+                style: TextStyle(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 14.0,
+                  color: Colors.black,
+                  height: 1.5,
+                ),
+                children: <TextSpan>[
+                  TextSpan(text: "This is a normal text "),
+                  TextSpan(
+                    text: "which suddenly switches to a bold text ",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.0),
+                  ),
+                  TextSpan(
+                    text:
+                        "which is now italic as well. But what if it was colored ",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic,
+                        fontSize: 14.0),
+                  ),
+                  TextSpan(
+                    text: "like this text. ",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.green,
+                        fontSize: 14.0),
+                  ),
+                  TextSpan(
+                    text: "Might as well underline it.\n",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.green,
+                        decoration: TextDecoration.underline,
+                        fontSize: 14.0),
+                  ),
+                  TextSpan(
+                    text:
+                        "Let us now increase the font size so that you can read it properly.",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.green,
+                        decoration: TextDecoration.underline,
+                        fontSize: 18.0),
+                  ),
+                  TextSpan(
+                    text: "\n\nI wonder what more can we do before ending this. ",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.green,
+                        decoration: TextDecoration.underline,
+                        fontSize: 18.0),
+                  ),
+                  TextSpan(
+                    text:
+                        "Oh yes, Let's give this text a background color to highlight it",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.green,
+                        decoration: TextDecoration.underline,
+                        backgroundColor: Colors.yellowAccent,
+                        fontSize: 18.0),
+                  ),
+                  TextSpan(
+                    text: "\n\nOne more thing, You can add links as well. Click ",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.green,
+                        fontSize: 18.0),
+                  ),
+                  TextSpan(
+                      text: "here",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic,
+                          color: Colors.blueAccent,
+                          decoration: TextDecoration.underline,
+                          fontSize: 18.0),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          launch(
+                              "https://github.com/annshsingh/flutter-widget-guide");
+                        }),
+                  TextSpan(
+                    text: " to see how it works",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.green,
+                        fontSize: 18.0),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      }
+    }''';
 }

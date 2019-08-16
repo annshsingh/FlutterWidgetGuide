@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_guide/CodeScreen.dart';
 import 'package:flutter_widget_guide/utils.dart';
+
+import '../Code.dart';
 
 class PlaceholderWidget extends StatefulWidget {
   @override
@@ -19,6 +22,17 @@ class _PlaceholderWidgetState extends State<PlaceholderWidget> {
               fontWeight: FontWeight.bold,
               fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.placeholderCode),
+              ),
+            ),
+          )
+        ],
       ),
       body: Column(
         children: <Widget>[

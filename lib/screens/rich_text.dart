@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class RichTextWidget extends StatefulWidget {
   @override
   _RichTextWidgetState createState() => _RichTextWidgetState();
@@ -21,6 +24,17 @@ class _RichTextWidgetState extends State<RichTextWidget> {
               fontWeight: FontWeight.bold,
               fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.richTextCode),
+              ),
+            ),
+          )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
