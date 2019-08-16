@@ -285,6 +285,12 @@ class ListViewModel {
           url: "${Utils.animatedPaddingURL}",
           mediumUrl: "${Utils.animatedPaddingMediumUrl}",
           videoUrl: "${Utils.animatedPaddingVideoUrl}"),
+      ListItem(
+          title: "${Utils.indexedStack.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.indexedStackDescription}",
+          url: "${Utils.indexedStackURL}",
+          mediumUrl: "${Utils.indexedStackMediumUrl}",
+          videoUrl: "${Utils.indexedStackVideoUrl}"),
     ];
   }
 }

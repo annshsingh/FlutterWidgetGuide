@@ -84,6 +84,7 @@ class Utils {
   static const String animatedSwitcher = "/AnimatedSwitcher";
   static const String animatedPositioned = "/AnimatedPositioned";
   static const String animatedPadding = "/AnimatedPadding";
+  static const String indexedStack = "/IndexedStack";
 
   //strings
   static const String appName = "Flutter Widget Guide";
@@ -217,6 +218,7 @@ class Utils {
   static const String animatedSwitcherDescription = "";
   static const String animatedPositionedDescription = "";
   static const String animatedPaddingDescription = "";
+  static const String indexedStackDescription = "";
 
   //official urls
   static const String safeAreaURL =
@@ -311,6 +313,8 @@ class Utils {
       "https://api.flutter.dev/flutter/widgets/AnimatedPositioned-class.html";
   static const String animatedPaddingURL =
       "https://api.flutter.dev/flutter/widgets/AnimatedPadding-class.html";
+  static const String indexedStackURL =
+      "https://api.flutter.dev/flutter/widgets/IndexedStack-class.html";
 
   static const String expandedSourceURL =
       "https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart";
@@ -408,6 +412,8 @@ class Utils {
       "https://www.youtube.com/watch?v=hC3s2YdtWt8&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=45";
   static const String animatedPaddingVideoUrl =
       "https://www.youtube.com/watch?v=PY2m0fhGNz4&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=46";
+  static const String indexedStackVideoUrl =
+      "https://www.youtube.com/watch?v=_O0PPD1Xfbk&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=47";
 
   //medium urls
   static const String safeAreaMediumUrl =
@@ -470,6 +476,7 @@ class Utils {
   static const String animatedSwitcherMediumUrl = "";
   static const String animatedPositionedMediumUrl = "";
   static const String animatedPaddingMediumUrl = "";
+  static const String indexedStackMediumUrl = "";
 
   //images
   static const String imageDir = "assets/images";

@@ -52,6 +52,7 @@ import 'package:flutter_widget_guide/screens/animated_padding.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
 import 'VideoView.dart';
+import 'screens/indexed_stack.dart';
 
 class MyApp extends StatelessWidget {
   final materialApp = MaterialApp(
@@ -140,6 +141,7 @@ class MyApp extends StatelessWidget {
       Utils.animatedSwitcher: (BuildContext context) => AnimatedSwitcherWidget(),
       Utils.animatedPositioned: (BuildContext context) => AnimatedPositionedWidget(),
       Utils.animatedPadding: (BuildContext context) => AnimatedPaddingWidget(),
+      Utils.indexedStack: (BuildContext context) => IndexedStackWidget(),
     },
   );
 
