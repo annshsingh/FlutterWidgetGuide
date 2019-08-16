@@ -189,18 +189,30 @@ class Utils {
   static const String sizedBoxDescription =
       "This widget lets you give a fixed size to the child widget. This widget can also be used to create a gap between"
       " two widgets.";
-  static const String valueListenableBuilderDescription = "Coming Soon :)";
-  static const String draggableDescription = "Coming Soon :)";
-  static const String animatedListDescription = "Coming Soon :)";
-  static const String flexibleDescription = "Coming Soon :)";
-  static const String mediaQueryDescription = "Coming Soon :)";
-  static const String spacerDescription = "Coming Soon :)";
+  static const String valueListenableBuilderDescription =
+      "Use ValueListenableBuilder to update your UI whenever the data changes. You can also use it to animate widgets";
+  static const String draggableDescription =
+      "Use Draggable to move and drag your widgets around. You can use it to build UIs for swapping around email addresses in an email or documents to a new folder.";
+  static const String animatedListDescription =
+      "Use AnimatedList to make your lists more dynamic. You can use it to animate your lists when inserting or removing items.";
+  static const String flexibleDescription =
+      "Use Flexible for resizing your widgets in rows and columns. You can use it to adjust how much space different child widgets take up relative to their parent widgets.";
+  static const String mediaQueryDescription =
+      "Use MediaQuery to adjust your app’s UI layout based on different screen sizes. You can also use it to make UI adjustments based on user layout preferences.";
+  static const String spacerDescription =
+      "The Spacer widget can help you control how much space appears between widgets in a Row or Column. Just add it between two widgets and set its flex property to customize.";
   static const String inheritedWidgetDescription = "";
-  static const String animatedIconDescription = "Coming Soon :)";
-  static const String aspectRatioDescription = "Coming Soon :)";
-  static const String limitedBoxDescription = "Coming Soon :)";
-  static const String placeholderDescription = "Coming Soon :)";
-  static const String richTextDescription = "Coming Soon :)";
+  static const String animatedIconDescription =
+      "Use the AnimatedIcon widget to drop an animated icon straight into your app. Flutter also has a great set of inanimate icons to choose from.";
+  static const String aspectRatioDescription =
+      "The AspectRatio widget can be used to adjust the aspect ratio of widgets in your app. Use it to keep the ratio of your widget’s width and height consistent when changing dimensions.";
+  static const String limitedBoxDescription =
+      "Ever had a widget that misbehaved when given unlimited size to grow? The LimitedBox widget provides size constraints to widgets in cases where their dimensions are unbounded.";
+  static const String placeholderDescription =
+      "Need something to stand in for a widget you're not finished composing? Placeholder is here to help. It's a simple widget that draws an X where your widget will ultimately go!";
+  static const String richTextDescription =
+      "Do you want to show a line or paragraph that combines multiple styles? The RichText widget allows you to style your text. "
+      "Whether you want to emphasize one word in bold and display another in a different color or font, RichText can help!";
   static const String reorderableListViewDescription = "";
   static const String animatedSwitcherDescription = "";
   static const String animatedPositionedDescription = "";
