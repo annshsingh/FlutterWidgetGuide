@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class AnimatedListWidget extends StatefulWidget {
   @override
   _AnimatedListWidgetState createState() => _AnimatedListWidgetState();
@@ -25,6 +28,17 @@ class _AnimatedListWidgetState extends State<AnimatedListWidget> {
                 fontWeight: FontWeight.bold,
                 fontFamily: Utils.ubuntuRegularFont),
           ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.code),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CodeScreen(code: Code.animatedListCode),
+                ),
+              ),
+            )
+          ],
         ),
         body: AnimatedList(
           /// Key to call remove and insert item methods from anywhere

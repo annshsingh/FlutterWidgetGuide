@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class ValueListenableBuilderWidget extends StatefulWidget {
   @override
   _ValueListenableBuilderWidgetState createState() =>
@@ -24,6 +27,17 @@ class _ValueListenableBuilderWidgetState
               fontWeight: FontWeight.bold,
               fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.valueListenableBuilderCode),
+              ),
+            ),
+          )
+        ],
       ),
       body: Center(
         child: ValueListenableBuilder(

@@ -3890,4 +3890,791 @@ class Code {
           child: Divider(),
           margin: EdgeInsets.only(left: 10, right: 10, top: 14),
     );''';
+
+  static const String valueListenableBuilderCode = '''
+    class ValueListenableBuilderWidget extends StatefulWidget {
+      @override
+      _ValueListenableBuilderWidgetState createState() =>
+          _ValueListenableBuilderWidgetState();
+    }
+    
+    class _ValueListenableBuilderWidgetState
+        extends State<ValueListenableBuilderWidget> {
+      /// This is the value you want your widgets to listen to.
+      final ValueNotifier<int> _counter = ValueNotifier<int>(2);
+    
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'ValueListenableBuilder Widget',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          body: Center(
+            child: ValueListenableBuilder(
+              builder: (BuildContext context, int value, Widget child) {
+                // This builder will only get called when the _counter
+                // is updated.
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Text(
+                        value,
+                        style:
+                            TextStyle(fontWeight: FontWeight.bold, fontSize: 34.0),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'The number is now ',
+                        style: TextStyle(
+                            fontWeight: FontWeight.normal, fontSize: 18.0),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: value.remainder(2) == 0
+                            ? Text(
+                                "Even",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 24.0),
+                              )
+                            : Text(
+                                "Odd",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 24.0),
+                              ),
+                      ),
+                    ),
+                    child,
+                  ],
+                );
+              },
+              valueListenable: _counter,
+              // The child parameter is most helpful if the child is
+              // expensive to build and does not depend on the value from
+              // the notifier.
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("I dont care about the value"),
+              ),
+            ),
+          ),
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.plus_one),
+            backgroundColor: Colors.blue,
+            foregroundColor: Colors.white,
+            onPressed: () => _counter.value += 1,
+          ),
+        );
+      }
+    } ''';
+
+  static const String draggableCode = ''' 
+    class DraggableWidget extends StatefulWidget {
+      @override
+      _DraggableWidgetState createState() => _DraggableWidgetState();
+    }
+    
+    class _DraggableWidgetState extends State<DraggableWidget> {
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'Draggable Widget',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          body: Builder(
+            builder: (context) => Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisSize: MainAxisSize.max,
+                    children: <Widget>[
+                      createDraggable(Colors.blue, "blue"),
+                      createDraggable(Colors.amber, "amber"),
+                    ],
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      createDragtarget(context, Colors.blue, "blue"),
+                      createDragtarget(context, Colors.amber, "amber"),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      }
+    }
+    
+    Widget createDraggable(MaterialColor color, String data) => Draggable(
+          child: Container(
+            height: 100,
+            width: 100,
+            color: color,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                child: Text(
+                  "Drag me to my color name",
+                  style: TextStyle(color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ),
+          feedback: Container(
+            height: 100,
+            width: 100,
+            color: color,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                /// Reason for adding Material widget here is that the
+                /// text widget needs material theme otherwise it'll show
+                /// two yellow lines beneath itself. We have scaffold in the
+                /// widget tree but when the "feedback" widget is floating then
+                /// it disconnects with the Scaffold.
+                /// Check related issue here : https://github.com/flutter/flutter/issues/30647
+                child: Material(
+                  type: MaterialType.transparency,
+                  child: Text(
+                    "I am being dragged",
+                    style: TextStyle(color: Colors.white),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          childWhenDragging: Container(
+            height: 100,
+            width: 100,
+            color: Colors.grey,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                child: Text(
+                  "Original place",
+                  style: TextStyle(color: Colors.black),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ),
+          data: data,
+          onDragStarted: () => print("Drag Started"),
+          onDragCompleted: () => print("Drag Completed"),
+        );
+    
+    Widget createDragtarget(
+            BuildContext context, MaterialColor color, String dataOfDragged) =>
+        DragTarget(
+          builder: (context, List<String> candidateData, rejectedData) {
+            return Container(
+              height: 100,
+              width: 100,
+              color: color,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: Text(
+                    "Drag block here",
+                    style: TextStyle(color: Colors.white),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            );
+          },
+          onWillAccept: (data) {
+            if (data == dataOfDragged) {
+              return true;
+            } else {
+              return false;
+            }
+          },
+    
+          /// If the Draggable is dropped onto the DragTarget and onWillAccept returns true, then onAccept is called.
+          onAccept: (data) {
+            Scaffold.of(context).showSnackBar(SnackBar(
+              content: Text('Accepted!!'),
+              backgroundColor: Colors.green,
+              duration: Duration(seconds: 1),
+            ));
+          },
+    
+          /// If the Draggable is dropped onto the DragTarget and onWillAccept returns false, then onLeave is called.
+          onLeave: (data) {
+            Scaffold.of(context).showSnackBar(SnackBar(
+              content: Text('Rejected!!'),
+              backgroundColor: Colors.red,
+              duration: Duration(seconds: 1),
+            ));
+          },
+      );''';
+
+  static const String animatedListCode = ''' 
+    class AnimatedListWidget extends StatefulWidget {
+      @override
+      _AnimatedListWidgetState createState() => _AnimatedListWidgetState();
+    }
+    
+    class _AnimatedListWidgetState extends State<AnimatedListWidget> {
+      // the GlobalKey is needed to animate the list
+      final GlobalKey<AnimatedListState> _listKey = GlobalKey();
+    
+      // backing data
+      List<String> _data = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Last Item'];
+    
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+            appBar: AppBar(
+              centerTitle: true,
+              title: Text(
+                'AnimatedList Widget',
+                style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: Utils.ubuntuRegularFont),
+              ),
+            ),
+            body: AnimatedList(
+              /// Key to call remove and insert item methods from anywhere
+              key: _listKey,
+              initialItemCount: _data.length,
+              itemBuilder: (context, index, animation) {
+                return _buildItem(_data[index], animation, index);
+              },
+            ),
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.playlist_add),
+            backgroundColor: Colors.blue,
+            foregroundColor: Colors.white,
+            onPressed: () => _insertSingleItem(),
+          ),
+        );
+      }
+    
+      Widget _buildItem(String item, Animation animation, int index) {
+        return SizeTransition(
+          sizeFactor: animation,
+          child: Card(
+            elevation: 5.0,
+            child: ListTile(
+              title: Text(
+                item,
+                style: TextStyle(fontSize: 20),
+              ),
+              trailing: GestureDetector(
+                child: Icon(
+                  Icons.remove_circle,
+                  color: Colors.red,
+                ),
+                onTap: (){
+                  _removeSingleItems(index);
+                },
+              ),
+            ),
+          ),
+        );
+      }
+    
+    
+      /// Method to add an item to an index in a list
+      void _insertSingleItem() {
+        int insertIndex;
+        if(_data.length > 0 ) {
+          insertIndex = _data.length;
+        }else{
+          insertIndex = 0;
+        }
+        String item = "Item insertIndex + 1";
+        _data.insert(insertIndex, item);
+        _listKey.currentState.insertItem(insertIndex);
+      }
+    
+      /// Method to remove an item at an index from the list
+      void _removeSingleItems(int removeAt) {
+        int removeIndex = removeAt;
+        String removedItem = _data.removeAt(removeIndex);
+        // This builder is just so that the animation has something
+        // to work with before it disappears from view since the original
+        // has already been deleted.
+        AnimatedListRemovedItemBuilder builder = (context, animation) {
+          // A method to build the Card widget.
+          return _buildItem(removedItem, animation, removeAt);
+        };
+        _listKey.currentState.removeItem(removeIndex, builder);
+      }
+    }''';
+
+  static const String flexibleCode = ''' 
+    class FlexibleWidget extends StatefulWidget {
+      @override
+      _FlexibleWidgetState createState() => _FlexibleWidgetState();
+    }
+    
+    class _FlexibleWidgetState extends State<FlexibleWidget> {
+    
+      @override
+      void initState() {
+        super.initState();
+        SystemChrome.setPreferredOrientations([
+          DeviceOrientation.portraitUp,
+          DeviceOrientation.portraitDown,
+        ]);
+      }
+    
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'Flexible Widget',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Flexible(
+                flex: 2,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.only(left: 12.0, top: 12.0, right: 12.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    child: Container(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "1/3",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 28.0),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              "(2 Flex / 6 Total)",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16.0),
+                            ),
+                          ),
+                        ],
+                      ),
+                      color: Colors.cyan,
+                    ),
+                  ),
+                ),
+              ),
+              Flexible(
+                flex: 3,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.only(left: 12.0, top: 12.0, right: 12.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    child: Container(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "1/2",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 28.0),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              "(3 Flex / 6 Total)",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16.0),
+                            ),
+                          ),
+                        ],
+                      ),
+                      color: Colors.teal,
+                    ),
+                  ),
+                ),
+              ),
+              Flexible(
+                flex: 1,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      left: 12.0, top: 12.0, right: 12.0, bottom: 12.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    child: Container(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "1/6",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 28.0),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              "(1 Flex)",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16.0),
+                            ),
+                          ),
+                        ],
+                      ),
+                      color: Colors.indigo,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      }
+    }''';
+
+  static const String mediaQueryCode = ''' 
+    class MediaQueryWidget extends StatefulWidget {
+      @override
+      _MediaQueryWidgetState createState() => _MediaQueryWidgetState();
+    }
+    
+    class _MediaQueryWidgetState extends State<MediaQueryWidget> {
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'MediaQuery Widget',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          body: MediaQuery.of(context).orientation == Orientation.portrait ?
+              singleColumnLayout(context) :
+              doubleColumnLayout(context)
+        );
+      }
+    }
+    
+    Widget singleColumnLayout(BuildContext context) => Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "My device info - ",
+              style: TextStyle(
+                  fontSize: 24.0,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Height: MediaQuery.of(context).size.height",
+              style: TextStyle(
+                  fontSize: 14.0,
+                  color: Colors.black,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Width: MediaQuery.of(context).size.width",
+              style: TextStyle(
+                  fontSize: 14.0,
+                  color: Colors.black,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Orientation: MediaQuery.of(context).orientation",
+              style: TextStyle(
+                  fontSize: 14.0,
+                  color: Colors.black,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Brightness: MediaQuery.of(context).platformBrightness",
+              style: TextStyle(
+                  fontSize: 14.0,
+                  color: Colors.black,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "System Padding: MediaQuery.of(context).padding",
+              style: TextStyle(
+                  fontSize: 14.0,
+                  color: Colors.black,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Device Pixel Ratio: MediaQuery.of(context).devicePixelRatio",
+              style: TextStyle(
+                  fontSize: 14.0,
+                  color: Colors.black,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+        ],
+      ),
+    );
+    
+    Widget doubleColumnLayout(BuildContext context) => Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisSize: MainAxisSize.max,
+      children: <Widget>[
+        Center(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "My device info - ",
+              style: TextStyle(
+                  fontSize: 24.0,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+        ),
+        Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Height: MediaQuery.of(context).size.height",
+                style: TextStyle(
+                    fontSize: 14.0,
+                    color: Colors.black,
+                    fontFamily: Utils.ubuntuRegularFont),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Width: MediaQuery.of(context).size.width",
+                style: TextStyle(
+                    fontSize: 14.0,
+                    color: Colors.black,
+                    fontFamily: Utils.ubuntuRegularFont),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Orientation: MediaQuery.of(context).orientation",
+                style: TextStyle(
+                    fontSize: 14.0,
+                    color: Colors.black,
+                    fontFamily: Utils.ubuntuRegularFont),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Brightness: MediaQuery.of(context).platformBrightness",
+                style: TextStyle(
+                    fontSize: 14.0,
+                    color: Colors.black,
+                    fontFamily: Utils.ubuntuRegularFont),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "System Padding: MediaQuery.of(context).padding",
+                style: TextStyle(
+                    fontSize: 14.0,
+                    color: Colors.black,
+                    fontFamily: Utils.ubuntuRegularFont),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Device Pixel Ratio: MediaQuery.of(context).devicePixelRatio",
+                style: TextStyle(
+                    fontSize: 14.0,
+                    color: Colors.black,
+                    fontFamily: Utils.ubuntuRegularFont),
+              ),
+            ),
+          ],
+        )
+      ],
+    );''';
+
+  static const String spacerCode = ''' 
+    class SpacerWidget extends StatefulWidget {
+      @override
+      _SpacerWidgetState createState() => _SpacerWidgetState();
+    }
+    
+    class _SpacerWidgetState extends State<SpacerWidget> {
+      bool isSpacerEnabled = true;
+    
+      MaterialColor fabColor = Colors.red;
+    
+      String fabText = "Remove Spacer";
+    
+      IconData fabIcon = Icons.cancel;
+    
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'Spacer Widget',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 18.0),
+                  child: Text(
+                      "Empty spaces between the boxes below are Spacer widgets"),
+                ),
+                Row(
+                  children: <Widget>[
+                    /// Empty space with flex = 2
+                    isSpacerEnabled
+                        ? Spacer(
+                            flex: 2,
+                          )
+                        : Container(),
+                    Container(
+                      height: 100,
+                      width: 100,
+                      color: Colors.green,
+                    ),
+    
+                    /// Empty space with default flex = 1
+                    isSpacerEnabled ? Spacer() : Container(),
+                    Container(
+                      height: 100,
+                      width: 100,
+                      color: Colors.blue,
+                    ),
+    
+                    /// Empty space with default flex = 1
+                    isSpacerEnabled ? Spacer() : Container(),
+                    Container(
+                      height: 100,
+                      width: 100,
+                      color: Colors.orange,
+                    ),
+    
+                    /// Empty space with default flex = 2
+                    isSpacerEnabled
+                        ? Spacer(
+                            flex: 2,
+                          )
+                        : Container(),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+          floatingActionButton: FloatingActionButton.extended(
+            backgroundColor: fabColor,
+            onPressed: () => setState(() {
+              isSpacerEnabled == true ? isSpacerEnabled = false : isSpacerEnabled = true;
+              isSpacerEnabled ? fabColor = Colors.red : fabColor = Colors.green;
+              isSpacerEnabled ? fabIcon = Icons.cancel : fabIcon = Icons.add_circle;
+              isSpacerEnabled ? fabText = "Remove Spacer" : fabText = "Add Spacer";
+            }),
+            icon: Icon(
+              fabIcon,
+              color: Colors.white,
+            ),
+            label: Text(
+              fabText,
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        );
+      }
+    }''';
+
+  static const String animatedIconCode = ''' ''';
 }

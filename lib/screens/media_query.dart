@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class MediaQueryWidget extends StatefulWidget {
   @override
   _MediaQueryWidgetState createState() => _MediaQueryWidgetState();
@@ -19,6 +22,17 @@ class _MediaQueryWidgetState extends State<MediaQueryWidget> {
               fontWeight: FontWeight.bold,
               fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.mediaQueryCode),
+              ),
+            ),
+          )
+        ],
       ),
       body: MediaQuery.of(context).orientation == Orientation.portrait ?
           singleColumnLayout(context) :

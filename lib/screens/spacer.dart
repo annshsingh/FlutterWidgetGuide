@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class SpacerWidget extends StatefulWidget {
   @override
   _SpacerWidgetState createState() => _SpacerWidgetState();
@@ -27,6 +30,17 @@ class _SpacerWidgetState extends State<SpacerWidget> {
               fontWeight: FontWeight.bold,
               fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.spacerCode),
+              ),
+            ),
+          )
+        ],
       ),
       body: Center(
         child: Column(

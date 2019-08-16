@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_widget_guide/utils.dart';
+
+import '../Code.dart';
+import '../CodeScreen.dart';
 
 class AnimatedIconWidget extends StatefulWidget {
   @override
@@ -9,6 +13,7 @@ class AnimatedIconWidget extends StatefulWidget {
 class _AnimatedIconWidgetState extends State<AnimatedIconWidget>
     with TickerProviderStateMixin {
   AnimationController _controller1;
+  String speedFabText = "Slowly";
 
   @override
   void initState() {
@@ -17,6 +22,10 @@ class _AnimatedIconWidgetState extends State<AnimatedIconWidget>
       duration: const Duration(seconds: 2),
       vsync: this,
     );
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
   }
 
   @override
@@ -31,6 +40,17 @@ class _AnimatedIconWidgetState extends State<AnimatedIconWidget>
               fontWeight: FontWeight.bold,
               fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.animatedIconCode),
+              ),
+            ),
+          )
+        ],
       ),
       body: Center(
         child: Column(
@@ -132,13 +152,17 @@ class _AnimatedIconWidgetState extends State<AnimatedIconWidget>
                                 const Duration(seconds: 10)
                             : _controller1.duration =
                                 const Duration(seconds: 2);
+
+                        _controller1.duration.inSeconds == 2
+                            ? speedFabText = "Slowly"
+                            : speedFabText = "Normal";
                       }),
                       icon: Icon(
                         Icons.slow_motion_video,
                         color: Colors.black,
                       ),
                       label: Text(
-                        "Slowly",
+                        speedFabText,
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
