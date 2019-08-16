@@ -15,6 +15,7 @@ class _AspectRatioWidgetState extends State<AspectRatioWidget> {
   @override
   void initState() {
     super.initState();
+    /// Fix portrait mode
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
