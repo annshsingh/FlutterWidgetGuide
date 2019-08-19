@@ -73,6 +73,14 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    1. Flutter webview implementation
    2. Youtube Video Player
    3. Firebase RemoteConfig
+   
+## Things to work on in the Future
+   1. Save favourite widgets in "Favourites" section - Using SQFlite.
+   2. Collection based view insted of a list - Change Home Page layout. 
+   3. Search functionality in list - Add "Search" action on Home Page.
+   4. Mark your favourite widget - Firebase cloudstore functionality.
+   5. Add Firebase Analytics to track screen views.
+   6. Reduce app size by 25% or more.
   
 ## App Screenshots
 <img src="https://github.com/annshsingh/flutter-widget-guide/blob/master/Screen_1.png" alt="Screen1" width="153px" height="280px"><img src="https://github.com/annshsingh/flutter-widget-guide/blob/master/screen_2.png" alt="Screen2" width="153px" height="280px"><img src="https://github.com/annshsingh/flutter-widget-guide/blob/master/screen_4.png" alt="Screen4" width="153px" height="280px"><img src="https://github.com/annshsingh/flutter-widget-guide/blob/master/screen_3.png" alt="Screen3" width="320px" height="153px">
