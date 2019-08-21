@@ -139,8 +139,8 @@ class _HomePageState extends State<HomePage> {
   setupRemoteConfig() async {
     final RemoteConfig remoteConfig = await RemoteConfig.instance;
     // Enable developer mode to relax fetch throttling
-    // TODO: remove in prod
-    remoteConfig.setConfigSettings(RemoteConfigSettings(debugMode: true));
+    // TODO: remove in prod / Enable in debug mode for faster testing
+    //remoteConfig.setConfigSettings(RemoteConfigSettings(debugMode: true));
     /// if network is weak and fetching fails, set default value
     remoteConfig.setDefaults(<String, dynamic>{
       'current_version': versionNumber,
