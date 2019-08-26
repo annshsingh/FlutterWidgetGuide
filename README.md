@@ -6,6 +6,8 @@ A flutter appliction listing all the widgets covered in [Flutter widget of the w
 
 ## Get the app
 
+### Now featured on [itsallwidgets.com](https://itsallwidgets.com) - [Have a look!](https://itsallwidgets.com/flutter-app/flutter-widget-guide) :tada:
+
 Click on the image below to download 
 
 <a href='https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide&hl=en&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="250"/></a>
