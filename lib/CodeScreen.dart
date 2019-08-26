@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
 import 'syntax_highlighter.dart';
@@ -18,28 +17,6 @@ class CodeScreenState extends State<CodeScreen> {
   var _actionIcon = Icons.brightness_low;
   var _isDarkThemeSet = false;
   var _bgColor = Colors.white;
-
-  ///Change orientation to landscape
-  @override
-  void initState() {
-    super.initState();
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeRight,
-      DeviceOrientation.landscapeLeft,
-    ]);
-  }
-
-  ///Change orientation to portrait
-  @override
-  dispose() {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeRight,
-      DeviceOrientation.landscapeLeft,
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,12 +38,28 @@ class CodeScreenState extends State<CodeScreen> {
                 onPressed: () => setDarkTheme(_isDarkThemeSet ? false : true))
           ],
         ),
-        body: SingleChildScrollView(
-          child: Container(
-            width: double.infinity,
-            padding: EdgeInsets.all(8.0),
-            child:
-                RichText(text: DartSyntaxHighlighter(_style).format(widget.code)),
+        /// Scrollbar widget to show scrollbar while scrolling
+        body: Scrollbar(
+          /// For horizontal scrolling
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: SizedBox(
+              width: 800.0,
+              child: Scrollbar(
+                /// For vertical scrolling
+                child: ListView.builder(
+                  itemCount: 1,
+                  itemBuilder: (BuildContext context, int i) {
+                    return Container(
+                      padding: EdgeInsets.all(8.0),
+                      child: RichText(
+                        text: DartSyntaxHighlighter(_style).format(widget.code),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
           ),
         ),
       ),
