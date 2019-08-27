@@ -7,6 +7,17 @@ class AnimatedSwitcherWidget extends StatefulWidget {
 }
 
 class _AnimatedSwitcherWidgetState extends State<AnimatedSwitcherWidget> {
+  bool switched = false;
+
+  Widget _myAnimatedWidget = Container(
+    /// Add unique key to the widgets if they are same
+    /// In this case all 3 are Container Widgets
+    key: ValueKey(1),
+    width: 250.0,
+    height: 250.0,
+    color: Colors.blue,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,19 +32,46 @@ class _AnimatedSwitcherWidgetState extends State<AnimatedSwitcherWidget> {
         ),
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Container(
-            color: Colors.white,
-            child: Text(
-              "This widget will be added soon",
-              style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
-          ),
+        child: AnimatedSwitcher(
+            duration: Duration(seconds: 1),
+            /// Various other animations available
+            /// Here we have used the Scale animation
+            /// By default, a FadeTransiton will appear between two widgets
+            transitionBuilder: (Widget child, Animation<double> animation) =>
+                ScaleTransition(
+                  child: child,
+                  scale: animation,
+                ),
+            child: _myAnimatedWidget),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: Colors.green,
+        onPressed: () => setState(() {
+          _myAnimatedWidget = switched
+              ? Container(
+                  /// Add unique key to the widgets if they are same
+                  key: ValueKey(2),
+                  width: 250.0,
+                  height: 250.0,
+                  color: Colors.blue,
+                )
+              : Container(
+                  /// Add unique key to the widgets if they are same
+                  key: ValueKey(3),
+                  width: 250.0,
+                  height: 250.0,
+                  color: Colors.red,
+                );
+          switched ? switched = false : switched = true;
+        }),
+        icon: Icon(
+          Icons.swap_horiz,
+          color: Colors.white,
+        ),
+        label: Text(
+          "Switch Widgets",
+          style: TextStyle(color: Colors.white),
         ),
       ),
     );
