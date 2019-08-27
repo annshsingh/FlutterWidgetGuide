@@ -214,7 +214,7 @@ class Utils {
   static const String richTextDescription =
       "Do you want to show a line or paragraph that combines multiple styles? The RichText widget allows you to style your text. "
       "Whether you want to emphasize one word in bold and display another in a different color or font, RichText can help!";
-  static const String reorderableListViewDescription = "";
+  static const String reorderableListViewDescription = "The ReorderableListView widget presents a list of items that users can reorder just by dragging things where they want them to go. ";
   static const String animatedSwitcherDescription = "";
   static const String animatedPositionedDescription = "";
   static const String animatedPaddingDescription = "";
