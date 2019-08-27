@@ -31,18 +31,27 @@ class _AnimatedSwitcherWidgetState extends State<AnimatedSwitcherWidget> {
               fontFamily: Utils.ubuntuRegularFont),
         ),
       ),
-      body: Center(
-        child: AnimatedSwitcher(
-            duration: Duration(seconds: 1),
-            /// Various other animations available
-            /// Here we have used the Scale animation
-            /// By default, a FadeTransiton will appear between two widgets
-            transitionBuilder: (Widget child, Animation<double> animation) =>
-                ScaleTransition(
-                  child: child,
-                  scale: animation,
-                ),
-            child: _myAnimatedWidget),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(top: 24.0),
+            child: AnimatedSwitcher(
+                duration: Duration(seconds: 1),
+
+                /// Various other animations available
+                /// Here we have used the Scale animation
+                /// By default, a FadeTransiton will appear between two widgets
+                transitionBuilder:
+                    (Widget child, Animation<double> animation) =>
+                        ScaleTransition(
+                          child: child,
+                          scale: animation,
+                        ),
+                child: _myAnimatedWidget),
+          ),
+        ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(

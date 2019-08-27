@@ -7,6 +7,8 @@ class AnimatedPaddingWidget extends StatefulWidget {
 }
 
 class _AnimatedPaddingWidgetState extends State<AnimatedPaddingWidget> {
+  double padValue = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,19 +23,31 @@ class _AnimatedPaddingWidgetState extends State<AnimatedPaddingWidget> {
         ),
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Container(
-            color: Colors.white,
-            child: Text(
-              "This widget will be added soon",
-              style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            AnimatedPadding(
+              padding: EdgeInsets.all(padValue),
+              duration: Duration(seconds: 1),
+              child: Container(height: 150, width: 150, color: Colors.blue),
             ),
-          ),
+            AnimatedPadding(
+              padding: EdgeInsets.all(padValue),
+              duration: Duration(seconds: 1),
+              child: Container(height: 150, width: 150, color: Colors.red),
+            )
+          ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: Colors.green,
+        onPressed: () => setState(() {
+          padValue == 0 ? padValue = 10 : padValue = 0;
+        }),
+        label: Text(
+          padValue == 0 ? "Add Padding" : "Remove Padding",
+          style: TextStyle(color: Colors.white),
         ),
       ),
     );
