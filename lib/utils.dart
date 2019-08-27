@@ -85,6 +85,7 @@ class Utils {
   static const String animatedPositioned = "/AnimatedPositioned";
   static const String animatedPadding = "/AnimatedPadding";
   static const String indexedStack = "/IndexedStack";
+  static const String semantics = "/Semantics";
 
   //strings
   static const String appName = "Flutter Widget Guide";
@@ -214,12 +215,16 @@ class Utils {
   static const String richTextDescription =
       "Do you want to show a line or paragraph that combines multiple styles? The RichText widget allows you to style your text. "
       "Whether you want to emphasize one word in bold and display another in a different color or font, RichText can help!";
-  static const String reorderableListViewDescription = "The ReorderableListView widget presents a list of items that users can reorder just by dragging things where they want them to go. ";
-  static const String animatedSwitcherDescription = "The AnimatedSwitcher widget allows you to switch between two or more widgets with an animation as you transition.";
+  static const String reorderableListViewDescription =
+      "The ReorderableListView widget presents a list of items that users can reorder just by dragging things where they want them to go. ";
+  static const String animatedSwitcherDescription =
+      "The AnimatedSwitcher widget allows you to switch between two or more widgets with an animation as you transition.";
   static const String animatedPositionedDescription = "";
-  static const String animatedPaddingDescription = "AnimatedPadding is a great way to provide smooth buffers and spaces between widgets and screen borders."
+  static const String animatedPaddingDescription =
+      "AnimatedPadding is a great way to provide smooth buffers and spaces between widgets and screen borders."
       "Use this to dynamically change the padding of the widget and have it animate between the two values.";
   static const String indexedStackDescription = "";
+  static const String semanticsDescription = "";
 
   //official urls
   static const String safeAreaURL =
@@ -316,6 +321,8 @@ class Utils {
       "https://api.flutter.dev/flutter/widgets/AnimatedPadding-class.html";
   static const String indexedStackURL =
       "https://api.flutter.dev/flutter/widgets/IndexedStack-class.html";
+  static const String semanticsURL =
+      "https://api.flutter.dev/flutter/widgets/Semantics-class.html";
 
   static const String expandedSourceURL =
       "https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart";
@@ -415,6 +422,8 @@ class Utils {
       "https://www.youtube.com/watch?v=PY2m0fhGNz4&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=46";
   static const String indexedStackVideoUrl =
       "https://www.youtube.com/watch?v=_O0PPD1Xfbk&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=47";
+  static const String semanticsVideoURL =
+      "https://www.youtube.com/watch?v=NvtMt_DtFrQ&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=48";
 
   //medium urls
   static const String safeAreaMediumUrl =
@@ -478,6 +487,7 @@ class Utils {
   static const String animatedPositionedMediumUrl = "";
   static const String animatedPaddingMediumUrl = "";
   static const String indexedStackMediumUrl = "";
+  static const String semanticsMediumURL = "";
 
   //images
   static const String imageDir = "assets/images";

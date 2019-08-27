@@ -190,7 +190,8 @@ class ListViewModel {
           mediumUrl: "${Utils.sizedBoxMediumUrl}",
           videoUrl: "${Utils.sizedBoxVideoUrl}"),
       ListItem(
-          title: "${Utils.valueListenableBuilder.replaceAll(new RegExp(r'/'), '')}",
+          title:
+              "${Utils.valueListenableBuilder.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.valueListenableBuilderDescription}",
           url: "${Utils.valueListenableBuilderURL}",
           mediumUrl: "${Utils.valueListenableBuilderMediumUrl}",
@@ -262,7 +263,8 @@ class ListViewModel {
           mediumUrl: "${Utils.richTextMediumUrl}",
           videoUrl: "${Utils.richTextVideoUrl}"),
       ListItem(
-          title: "${Utils.reorderableListView.replaceAll(new RegExp(r'/'), '')}",
+          title:
+              "${Utils.reorderableListView.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.reorderableListViewDescription}",
           url: "${Utils.reorderableListViewURL}",
           mediumUrl: "${Utils.reorderableListViewMediumUrl}",
@@ -291,6 +293,12 @@ class ListViewModel {
           url: "${Utils.indexedStackURL}",
           mediumUrl: "${Utils.indexedStackMediumUrl}",
           videoUrl: "${Utils.indexedStackVideoUrl}"),
+      ListItem(
+          title: "${Utils.semantics.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.semanticsDescription}",
+          url: "${Utils.semanticsURL}",
+          mediumUrl: "${Utils.semanticsMediumURL}",
+          videoUrl: "${Utils.semanticsVideoURL}"),
     ];
   }
 }
