@@ -66,7 +66,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    42. [RichText](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/rich_text.dart)
    43. [ReorderableListView](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/reorderable_listiew.dart)
    44. [AnimatedSwitcher](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_switcher.dart)
-   45. [AnimatedPositioned](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_positioned.dart) (coming soon)
+   45. [AnimatedPositioned](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_positioned.dart)
    46. [AnimatedPadding](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_padding.dart)
    47. [Indexed Stack](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/indexed_stack.dart) (coming soon)
    48. Semantics (coming soon)
