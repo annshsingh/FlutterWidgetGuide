@@ -219,11 +219,12 @@ class Utils {
       "The ReorderableListView widget presents a list of items that users can reorder just by dragging things where they want them to go. ";
   static const String animatedSwitcherDescription =
       "The AnimatedSwitcher widget allows you to switch between two or more widgets with an animation as you transition.";
-  static const String animatedPositionedDescription = "";
+  static const String animatedPositionedDescription = "AnimatedPositioned automatically transitions the child's position over a given duration whenever the given position changes. ";
   static const String animatedPaddingDescription =
       "AnimatedPadding is a great way to provide smooth buffers and spaces between widgets and screen borders."
       "Use this to dynamically change the padding of the widget and have it animate between the two values.";
-  static const String indexedStackDescription = "";
+  static const String indexedStackDescription = "Want your users to easily switch between widgets in your app? IndexedStack has you covered! "
+      "Swap between widgets, without animation, and the state of the widgets is preserved. ";
   static const String semanticsDescription = "";
 
   //official urls
