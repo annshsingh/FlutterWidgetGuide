@@ -49,7 +49,8 @@ class _SpacerWidgetState extends State<SpacerWidget> {
             Padding(
               padding: const EdgeInsets.only(bottom: 18.0),
               child: Text(
-                  "Empty spaces between the boxes below are Spacer widgets"),
+                  "Empty spaces between the boxes below are Spacer widgets",
+              textAlign: TextAlign.center,),
             ),
             Row(
               children: <Widget>[

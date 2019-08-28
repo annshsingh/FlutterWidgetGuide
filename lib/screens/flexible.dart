@@ -142,7 +142,7 @@ class _FlexibleWidgetState extends State<FlexibleWidget> {
                             fontSize: 28.0),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.only(top: 8.0, right: 8.0, left: 8.0),
                         child: Text(
                           "(1 Flex)",
                           style: TextStyle(
