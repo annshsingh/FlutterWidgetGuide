@@ -5384,6 +5384,93 @@ class Code {
       }
     }''';
 
+  static const String animatedSwitcherCode = ''' 
+    class AnimatedSwitcherWidget extends StatefulWidget {
+      @override
+      _AnimatedSwitcherWidgetState createState() => _AnimatedSwitcherWidgetState();
+    }
+    
+    class _AnimatedSwitcherWidgetState extends State<AnimatedSwitcherWidget> {
+      bool switched = false;
+    
+      Widget _myAnimatedWidget = Container(
+        /// Add unique key to the widgets if they are same
+        /// In this case all 3 are Container Widgets
+        key: ValueKey(1),
+        width: 250.0,
+        height: 250.0,
+        color: Colors.blue,
+      );
+    
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'AnimatedSwitcher Widget',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          body: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top: 24.0),
+                child: AnimatedSwitcher(
+                    duration: Duration(seconds: 1),
+    
+                    /// Various other animations available
+                    /// Here we have used the Scale animation
+                    /// By default, a FadeTransiton will appear between two widgets
+                    transitionBuilder:
+                        (Widget child, Animation<double> animation) =>
+                            ScaleTransition(
+                              child: child,
+                              scale: animation,
+                            ),
+                    child: _myAnimatedWidget),
+              ),
+            ],
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+          floatingActionButton: FloatingActionButton.extended(
+            backgroundColor: Colors.green,
+            onPressed: () => setState(() {
+              _myAnimatedWidget = switched
+                  ? Container(
+                      /// Add unique key to the widgets if they are same
+                      key: ValueKey(2),
+                      width: 250.0,
+                      height: 250.0,
+                      color: Colors.blue,
+                    )
+                  : Container(
+                      /// Add unique key to the widgets if they are same
+                      key: ValueKey(3),
+                      width: 250.0,
+                      height: 250.0,
+                      color: Colors.red,
+                    );
+              switched ? switched = false : switched = true;
+            }),
+            icon: Icon(
+              Icons.swap_horiz,
+              color: Colors.white,
+            ),
+            label: Text(
+              "Switch Widgets",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        );
+      }
+    }''';
+
   static const String animatedPositionedCode = ''' 
     class AnimatedPositionedWidget extends StatefulWidget {
       @override
@@ -5573,7 +5660,150 @@ class Code {
     }''';
 
   static const String indexedStackCode = ''' 
-  ''';
+    class IndexedStackWidget extends StatefulWidget {
+      @override
+      _IndexedStackWidgetState createState() => _IndexedStackWidgetState();
+    }
+    
+    class _IndexedStackWidgetState extends State<IndexedStackWidget> {
+      int count = 0;
+      int _widgetIndex = 0;
+      Color _imageColor = Colors.blue;
+    
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'IndexedStack Widget',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.code),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CodeScreen(code: Code.indexedStackCode),
+                  ),
+                ),
+              )
+            ],
+          ),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top: 12.0, left: 12.0, right: 12.0),
+                child: Text(
+                  "The states of all the widgets will be maintained as you switch"
+                      "between the indexes in an Indexed Stack. Increase the count or "
+                      "change the Flutter logo color by tapping it to observe it.",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14.0,
+                      fontFamily: Utils.ubuntuRegularFont),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  children: <Widget>[
+                    /// 3 widgets stacked (Index 0, 1 & 2)
+                    /// State will be preserved while switching
+                    IndexedStack(
+                      index: _widgetIndex,
+                      children: <Widget>[
+                        Container(
+                          width: 250,
+                          height: 250,
+                          color: Colors.blue,
+                        ),
+                        Container(
+                          width: 250,
+                          height: 250,
+                          color: Colors.red,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                "count",
+                                style:
+                                    TextStyle(color: Colors.white, fontSize: 48.0),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(18.0),
+                                child: RaisedButton(
+                                  onPressed: () =>
+                                      setState(() => count = count = count + 1),
+                                  color: Colors.black,
+                                  textColor: Colors.white,
+                                  child: Text("Press me"),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          width: 250,
+                          height: 250,
+                          color: Colors.white,
+                          child: GestureDetector(
+                            child: FlutterLogo(
+                              duration: Duration(milliseconds: 500),
+                              colors: _imageColor,
+                              curve: Curves.easeInOut,
+                            ),
+                            onTap: () => setState(() => _imageColor == Colors.blue
+                                ? _imageColor = Colors.amber
+                                : _imageColor = Colors.blue),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  RaisedButton(
+                    onPressed: () =>
+                        _widgetIndex == 0 ? null : setState(() => _widgetIndex = 0),
+                    color: _widgetIndex == 0 ? Colors.grey : Colors.blue,
+                    textColor: Colors.white,
+                    child: Text("Index 0"),
+                  ),
+                  RaisedButton(
+                    onPressed: () =>
+                        _widgetIndex == 1 ? null : setState(() => _widgetIndex = 1),
+                    color: _widgetIndex == 1 ? Colors.grey : Colors.blue,
+                    textColor: Colors.white,
+                    child: Text("Index 1"),
+                  ),
+                  RaisedButton(
+                    onPressed: () =>
+                        _widgetIndex == 2 ? null : setState(() => _widgetIndex = 2),
+                    color: _widgetIndex == 2 ? Colors.grey : Colors.blue,
+                    textColor: Colors.white,
+                    child: Text("Index 2"),
+                  ),
+                ],
+              )
+            ],
+          ),
+        );
+      }
+    }''';
 
   static const String semanticsCode = ''' 
     class SemanticsWidget extends StatefulWidget {
