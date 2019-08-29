@@ -225,7 +225,7 @@ class Utils {
       "Use this to dynamically change the padding of the widget and have it animate between the two values.";
   static const String indexedStackDescription = "Want your users to easily switch between widgets in your app? IndexedStack has you covered! "
       "Swap between widgets, without animation, and the state of the widgets is preserved. ";
-  static const String semanticsDescription = "";
+  static const String semanticsDescription = "Flutter's Semantics widget can annotate an app's UI with information about the meaning of other widgets.";
 
   //official urls
   static const String safeAreaURL =

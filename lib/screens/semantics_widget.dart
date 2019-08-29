@@ -20,21 +20,39 @@ class _SemanticsWidgetState extends State<SemanticsWidget> {
               fontFamily: Utils.ubuntuRegularFont),
         ),
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Container(
-            color: Colors.white,
-            child: Text(
-              "This widget will be added soon",
-              style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
+      body: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Center(
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  width: 300,
+                  height: 300,
+                  color: Colors.amber,
+                ),
+                Semantics(
+                  child: FlutterLogo(
+                    size: 250,
+                  ),
+                  label: "Flutter Logo",
+                  enabled: true,
+                ),
+              ],
             ),
           ),
-        ),
+          Padding(
+            padding: const EdgeInsets.all(14.0),
+            child: Text(
+              "If you enable Talkback feature from your devices Accessibility settings"
+              "and click on the Flutter Logo, the device will announce whatever you have"
+              "written on the label tag in Semantics widget",
+              style:
+                  TextStyle(fontFamily: Utils.ubuntuRegularFont, fontSize: 16.0),
+              textAlign: TextAlign.center,
+            ),
+          )
+        ],
       ),
     );
   }
