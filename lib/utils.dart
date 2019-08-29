@@ -87,6 +87,8 @@ class Utils {
   static const String indexedStack = "/IndexedStack";
   static const String semantics = "/Semantics";
 
+  static const String rateApp = "/Rate the App";
+
   //strings
   static const String appName = "Flutter Widget Guide";
 
@@ -227,6 +229,8 @@ class Utils {
       "Swap between widgets, without animation, and the state of the widgets is preserved. ";
   static const String semanticsDescription = "Flutter's Semantics widget can annotate an app's UI with information about the meaning of other widgets.";
 
+  static const String rateAppDescription = ".";
+
   //official urls
   static const String safeAreaURL =
       "https://api.flutter.dev/flutter/widgets/SafeArea-class.html";
@@ -328,6 +332,8 @@ class Utils {
   static const String expandedSourceURL =
       "https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart";
 
+  static const String rateAppURL = "https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide";
+
   //video urls
   static const String safeAreaVideoUrl =
       "https://www.youtube.com/watch?v=lkF0TQJO0bA&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=2";
@@ -426,6 +432,8 @@ class Utils {
   static const String semanticsVideoURL =
       "https://www.youtube.com/watch?v=NvtMt_DtFrQ&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=48";
 
+  static const String rateAppVideoURL = ".";
+
   //medium urls
   static const String safeAreaMediumUrl =
       "https://medium.com/flutter-community/flutter-widget-guide-safearea-widget-in-5-mins-or-less-df4620a7d08f";
@@ -489,6 +497,8 @@ class Utils {
   static const String animatedPaddingMediumUrl = "";
   static const String indexedStackMediumUrl = "";
   static const String semanticsMediumURL = "";
+
+  static const String rateAppMediumURL = ".";
 
   //images
   static const String imageDir = "assets/images";

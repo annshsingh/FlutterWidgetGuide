@@ -294,11 +294,11 @@ class ListViewModel {
           mediumUrl: "${Utils.indexedStackMediumUrl}",
           videoUrl: "${Utils.indexedStackVideoUrl}"),
       ListItem(
-          title: "${Utils.semantics.replaceAll(new RegExp(r'/'), '')}",
-          description: "${Utils.semanticsDescription}",
-          url: "${Utils.semanticsURL}",
-          mediumUrl: "${Utils.semanticsMediumURL}",
-          videoUrl: "${Utils.semanticsVideoURL}"),
+          title: "${Utils.rateApp.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.rateAppDescription}",
+          url: "${Utils.rateAppURL}",
+          mediumUrl: "${Utils.rateAppMediumURL}",
+          videoUrl: "${Utils.rateAppVideoURL}"),
     ];
   }
 }
