@@ -53,12 +53,15 @@ Widget portraitLayout(context) => ListView(
           child: Container(
             color: Colors.amber,
             child: Center(
-              child: Text(
-                "I am wrapped inside a Limited Box with maxHeight set to 200\n"
-                    "This is necessary as my parent (ListView) is unconstrained\n"
-                    "Flip screen to see the other case",
-                style: TextStyle(color: Colors.black),
-                textAlign: TextAlign.center,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "I am wrapped inside a Limited Box with maxHeight set to 200\n"
+                      "This is necessary as my parent (ListView) is unconstrained\n"
+                      "Flip screen to see the other case",
+                  style: TextStyle(color: Colors.black),
+                  textAlign: TextAlign.center,
+                ),
               ),
           ),
         ),
@@ -73,12 +76,15 @@ Widget landscapeLayout(context) => Container(
         child: Container(
           color: Colors.amber,
           child: Center(
-            child: Text(
-              "I am wrapped inside a Limited Box with maxWidth set to 20\n"
-              "But as my parent (Container) is already constrained, LimitedBox is respecting\n"
-              "those constrains.",
-              style: TextStyle(color: Colors.black),
-              textAlign: TextAlign.center,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "I am wrapped inside a Limited Box with maxWidth set to 20\n"
+                "But as my parent (Container) is already constrained, LimitedBox is respecting\n"
+                "those constrains.",
+                style: TextStyle(color: Colors.black),
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
         ),

@@ -5287,4 +5287,349 @@ class Code {
         );
       }
     }''';
+
+  static const String reorderableListviewCode = ''' 
+    class ReorderableListViewWidget extends StatefulWidget {
+      @override
+      _ReorderableListViewWidgetState createState() =>
+          _ReorderableListViewWidgetState();
+    }
+    
+    class _ReorderableListViewWidgetState extends State<ReorderableListViewWidget> {
+      final List _items = <String>[
+        'A',
+        'B',
+        'C',
+        'D',
+        'E',
+        'F',
+        'G',
+        'H',
+        'I',
+        'J',
+        'K',
+        'L',
+        'M',
+        'N',
+      ];
+    
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'ReorderableListView Widget',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          body: ReorderableListView(
+            children: <Widget>[
+              for (final item in _items)
+                Container(
+                  width: double.infinity,
+                  height: 100.0,
+    
+                  /// Unique key for each item so that reorderable list can
+                  /// identify them
+                  key: ValueKey(item),
+                  decoration: BoxDecoration(
+                    border: Border(
+                      top: BorderSide(
+                        color: Colors.black26,
+                        width: 0.5,
+                      ),
+                      bottom: BorderSide(
+                        color: Colors.black26,
+                        width: 0.5,
+                      ),
+                    ),
+                  ),
+                  child: Center(
+                    child: ListTile(
+                      title: Text("Item item"),
+                      leading: Icon(
+                        Icons.drag_handle,
+                        color: Colors.grey[400],
+                      ),
+                    ),
+                  ),
+                )
+            ],
+            header: Padding(
+              padding: const EdgeInsets.only(
+                  top: 16.0, bottom: 24.0, left: 16.0, right: 16.0),
+              child: Text(
+                "This is an optional header. Long press and drag any item"
+                " below to move it",
+                textAlign: TextAlign.center,
+              ),
+            ),
+            onReorder: (oldIndex, newIndex) {
+              setState(
+                () {
+                  if (newIndex > oldIndex) {
+                    newIndex -= 1;
+                  }
+                  final item = _items.removeAt(oldIndex);
+                  _items.insert(newIndex, item);
+                },
+              );
+            },
+          ),
+        );
+      }
+    }''';
+
+  static const String animatedPositionedCode = ''' 
+    class AnimatedPositionedWidget extends StatefulWidget {
+      @override
+      _AnimatedPositionedWidgetState createState() =>
+          _AnimatedPositionedWidgetState();
+    }
+    
+    class _AnimatedPositionedWidgetState extends State<AnimatedPositionedWidget> {
+      bool showMessage = false;
+      String appLink =
+          "https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide";
+    
+      @override
+      void initState() {
+        super.initState();
+        SystemChrome.setPreferredOrientations([
+          DeviceOrientation.portraitUp,
+          DeviceOrientation.portraitDown,
+        ]);
+      }
+    
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'AnimatedPositioned Widget',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          body: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Stack(
+              children: <Widget>[
+                Container(width: double.infinity, height: 250, color: Colors.blue),
+                Positioned(
+                    bottom: 50,
+                    right: 50,
+                    child: RichText(
+                        text: TextSpan(
+    
+                            /// A default style for all the TextSpans below.
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 14.0,
+                              color: Colors.black,
+                              height: 1.5,
+                            ),
+                            children: <TextSpan>[
+                          TextSpan(
+                            text: "Click  ",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontStyle: FontStyle.italic,
+                                color: Colors.white,
+                                fontSize: 18.0),
+                          ),
+                          TextSpan(
+                              text: "here",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.orange,
+                                  decoration: TextDecoration.underline,
+                                  fontSize: 18.0),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  launch(appLink);
+                                }),
+                          TextSpan(
+                            text: "  to rate the App",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontStyle: FontStyle.italic,
+                                color: Colors.white,
+                                fontSize: 18.0),
+                          ),
+                        ]))),
+                AnimatedPositioned(
+                  duration: Duration(milliseconds: 500),
+                  bottom: showMessage ? 100 : 20,
+                  right: 45,
+                  child: Container(
+                    width: 220,
+                    height: 100,
+                    color: Colors.blue[900],
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          showMessage ? Icons.arrow_downward : Icons.arrow_upward,
+                          color: Colors.grey,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            showMessage
+                                ? "Click button below to move me DOWN"
+                                : "Click button below to move me UP",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+          floatingActionButton: FloatingActionButton.extended(
+            backgroundColor: Colors.green,
+            onPressed: () => setState(() {
+              showMessage ? showMessage = false : showMessage = true;
+            }),
+            icon: Icon(
+              Icons.slideshow,
+              color: Colors.white,
+            ),
+            label: Text(
+              showMessage ? "Hide Message" : "Reveal Message",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        );
+      }
+    }''';
+
+  static const String animatedPaddingCode = ''' 
+    class AnimatedPaddingWidget extends StatefulWidget {
+      @override
+      _AnimatedPaddingWidgetState createState() => _AnimatedPaddingWidgetState();
+    }
+    
+    class _AnimatedPaddingWidgetState extends State<AnimatedPaddingWidget> {
+      double padValue = 0;
+    
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'AnimatedPadding Widget',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          body: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                AnimatedPadding(
+                  padding: EdgeInsets.all(padValue),
+                  duration: Duration(seconds: 1),
+                  child: Container(height: 150, width: 150, color: Colors.blue),
+                ),
+                AnimatedPadding(
+                  padding: EdgeInsets.all(padValue),
+                  duration: Duration(seconds: 1),
+                  child: Container(height: 150, width: 150, color: Colors.red),
+                )
+              ],
+            ),
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+          floatingActionButton: FloatingActionButton.extended(
+            backgroundColor: Colors.green,
+            onPressed: () => setState(() {
+              padValue == 0 ? padValue = 10 : padValue = 0;
+            }),
+            label: Text(
+              padValue == 0 ? "Add Padding" : "Remove Padding",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        );
+      }
+    }''';
+
+  static const String indexedStackCode = ''' 
+  ''';
+
+  static const String semanticsCode = ''' 
+    class SemanticsWidget extends StatefulWidget {
+      @override
+      _SemanticsWidgetState createState() => _SemanticsWidgetState();
+    }
+    
+    class _SemanticsWidgetState extends State<SemanticsWidget> {
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'Semantics Widget',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+          ),
+          body: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Center(
+                child: Stack(
+                  children: <Widget>[
+                    Container(
+                      width: 300,
+                      height: 300,
+                      color: Colors.amber,
+                    ),
+                    Semantics(
+                      child: FlutterLogo(
+                        size: 250,
+                      ),
+                      label: "Flutter Logo",
+                      enabled: true,
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(14.0),
+                child: Text(
+                  "If you enable Talkback feature from your devices Accessibility settings"
+                  "and click on the Flutter Logo, the device will announce whatever you have"
+                  "written on the label tag in Semantics widget",
+                  style:
+                      TextStyle(fontFamily: Utils.ubuntuRegularFont, fontSize: 16.0),
+                  textAlign: TextAlign.center,
+                ),
+              )
+            ],
+          ),
+        );
+      }
+    }''';
 }

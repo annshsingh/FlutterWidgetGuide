@@ -4,6 +4,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_widget_guide/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class AnimatedPositionedWidget extends StatefulWidget {
   @override
   _AnimatedPositionedWidgetState createState() =>
@@ -36,6 +39,17 @@ class _AnimatedPositionedWidgetState extends State<AnimatedPositionedWidget> {
               fontWeight: FontWeight.bold,
               fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.animatedPositionedCode),
+              ),
+            ),
+          )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class AnimatedPaddingWidget extends StatefulWidget {
   @override
   _AnimatedPaddingWidgetState createState() => _AnimatedPaddingWidgetState();
@@ -21,6 +24,17 @@ class _AnimatedPaddingWidgetState extends State<AnimatedPaddingWidget> {
               fontWeight: FontWeight.bold,
               fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.animatedPaddingCode),
+              ),
+            ),
+          )
+        ],
       ),
       body: Center(
         child: Row(

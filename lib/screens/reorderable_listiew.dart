@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class ReorderableListViewWidget extends StatefulWidget {
   @override
   _ReorderableListViewWidgetState createState() =>
@@ -39,6 +42,17 @@ class _ReorderableListViewWidgetState extends State<ReorderableListViewWidget> {
               fontWeight: FontWeight.bold,
               fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.reorderableListviewCode),
+              ),
+            ),
+          )
+        ],
       ),
       body: ReorderableListView(
         children: <Widget>[

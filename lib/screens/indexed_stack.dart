@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Code.dart';
+import '../CodeScreen.dart';
+
 class IndexedStackWidget extends StatefulWidget {
   @override
   _IndexedStackWidgetState createState() => _IndexedStackWidgetState();
@@ -23,10 +26,34 @@ class _IndexedStackWidgetState extends State<IndexedStackWidget> {
               fontWeight: FontWeight.bold,
               fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.indexedStackCode),
+              ),
+            ),
+          )
+        ],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(top: 12.0, left: 12.0, right: 12.0),
+            child: Text(
+              "The states of all the widgets will be maintained as you switch"
+                  "between the indexes in an Indexed Stack. Increase the count or "
+                  "change the Flutter logo color by tapping it to observe it.",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14.0,
+                  fontFamily: Utils.ubuntuRegularFont),
+              textAlign: TextAlign.center,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: Row(
