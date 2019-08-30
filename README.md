@@ -12,6 +12,8 @@ Click on the image below to download
 
 <a href='https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide&hl=en&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="250"/></a>
 
+### ![slack](slack_logo.png) Want to Join the Slack Community? - [Send me an invite](https://join.slack.com/t/flutter-worldwide/shared_invite/enQtNzMyMjM3Nzc2Njc0LTdmYWI5ZGU5YjgxNjliYzhjZTU0MWNkZTA5MjY4ZmJiMjg4ZGQ2ZDQwNDdiOTdiOWVkZDA2NjY5YjllMGQ1M2M)
+ 
 ## About
 I created this project to improve my skills with dart and flutter as a development platform. I am used to developing native android apps so I'll be focusing on designing this project for android platform.</br> 
 This project might help you to learn about Flutter if you are a beginner in this space.</br>
