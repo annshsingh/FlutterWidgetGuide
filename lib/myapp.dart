@@ -8,6 +8,7 @@ import 'package:flutter_widget_guide/screens/animated_container.dart';
 import 'package:flutter_widget_guide/screens/animated_list.dart';
 import 'package:flutter_widget_guide/screens/backdrop_filter.dart';
 import 'package:flutter_widget_guide/screens/clip_r_rect.dart';
+import 'package:flutter_widget_guide/screens/constrained_box.dart';
 import 'package:flutter_widget_guide/screens/custom_paint.dart';
 import 'package:flutter_widget_guide/screens/dismissible.dart';
 import 'package:flutter_widget_guide/screens/draggable.dart';
@@ -144,6 +145,7 @@ class MyApp extends StatelessWidget {
       Utils.animatedPadding: (BuildContext context) => AnimatedPaddingWidget(),
       Utils.indexedStack: (BuildContext context) => IndexedStackWidget(),
       Utils.semantics: (BuildContext context) => SemanticsWidget(),
+      Utils.constrainedBox: (BuildContext context) => ConstrainedBoxWidget(),
     },
   );
 

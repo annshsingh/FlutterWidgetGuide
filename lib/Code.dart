@@ -5862,4 +5862,6 @@ class Code {
         );
       }
     }''';
+
+  static const String constrainedBoxCode = ''' ''';
 }

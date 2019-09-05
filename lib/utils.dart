@@ -86,6 +86,7 @@ class Utils {
   static const String animatedPadding = "/AnimatedPadding";
   static const String indexedStack = "/IndexedStack";
   static const String semantics = "/Semantics";
+  static const String constrainedBox = "/ConstrainedBox";
 
   static const String rateApp = "/Rate the App";
   static const String slack_invite = "https://join.slack.com/t/flutter-worldwide/shared_invite/enQtNzMyMjM3Nzc2Njc0LTdmYWI5ZGU5YjgxNjliYzhjZTU0MWNkZTA5MjY4ZmJiMjg4ZGQ2ZDQwNDdiOTdiOWVkZDA2NjY5YjllMGQ1M2M";
@@ -229,6 +230,8 @@ class Utils {
   static const String indexedStackDescription = "Want your users to easily switch between widgets in your app? IndexedStack has you covered! "
       "Swap between widgets, without animation, and the state of the widgets is preserved. ";
   static const String semanticsDescription = "Flutter's Semantics widget can annotate an app's UI with information about the meaning of other widgets.";
+  static const String constrainedBoxDescription = "Flutter's ConstrainedBox widget is great to add requirements for a widget's sizing behavior. "
+      "Wrapping widgets in a ConstrainedBox lets you specify their min and max width and heights.";
 
   static const String rateAppDescription = ".";
 
@@ -329,6 +332,8 @@ class Utils {
       "https://api.flutter.dev/flutter/widgets/IndexedStack-class.html";
   static const String semanticsURL =
       "https://api.flutter.dev/flutter/widgets/Semantics-class.html";
+  static const String constrainedBoxURL =
+      "https://api.flutter.dev/flutter/widgets/ConstrainedBox-class.html";
 
   static const String expandedSourceURL =
       "https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart";
@@ -432,6 +437,8 @@ class Utils {
       "https://www.youtube.com/watch?v=_O0PPD1Xfbk&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=47";
   static const String semanticsVideoURL =
       "https://www.youtube.com/watch?v=NvtMt_DtFrQ&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=48";
+  static const String constrainedBoxVideoURL =
+      "https://www.youtube.com/watch?v=o2KveVr7adg&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=49";
 
   static const String rateAppVideoURL = ".";
 
@@ -498,6 +505,7 @@ class Utils {
   static const String animatedPaddingMediumUrl = "";
   static const String indexedStackMediumUrl = "";
   static const String semanticsMediumURL = "";
+  static const String constrainedBoxMediumURL = "";
 
   static const String rateAppMediumURL = ".";
 
