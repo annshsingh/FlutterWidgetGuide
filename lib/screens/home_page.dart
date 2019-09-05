@@ -6,6 +6,7 @@ import 'package:flutter_widget_guide/bloc/list_bloc.dart';
 import 'package:flutter_widget_guide/model/list_Item.dart';
 import 'package:flutter_widget_guide/utils.dart';
 import 'package:flutter_widget_guide/widgets/home_list_item.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../profile_screen.dart';
 import 'WebViewWidget.dart';
@@ -19,7 +20,9 @@ class _HomePageState extends State<HomePage> {
   BuildContext _buildContext;
   var versionNumber;
   bool isFabVisible = true;
+  bool hasJoinedSlack = false;
   ScrollController _hideButtonController;
+  bool isCheckBoxChecked = false;
   String appLink =
       "https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide";
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -31,10 +34,11 @@ class _HomePageState extends State<HomePage> {
       versionNumber = value;
     });
     setupRemoteConfig();
+    _getValueFromSP();
     isFabVisible = true;
     _hideButtonController = new ScrollController();
     _hideButtonController.addListener(
-      () {
+          () {
         if (_hideButtonController.position.userScrollDirection ==
             ScrollDirection.reverse) {
           if (isFabVisible == true) {
@@ -58,7 +62,8 @@ class _HomePageState extends State<HomePage> {
     return homePageScaffold(context);
   }
 
-  Widget homePageScaffold(BuildContext context) => Theme(
+  Widget homePageScaffold(BuildContext context) =>
+      Theme(
         data: Theme.of(context).copyWith(
           canvasColor: Colors.transparent,
         ),
@@ -66,9 +71,9 @@ class _HomePageState extends State<HomePage> {
           key: _scaffoldKey,
           body: sliverWidgetList(),
           floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerFloat,
+          FloatingActionButtonLocation.centerFloat,
           floatingActionButton: Visibility(
-            visible: isFabVisible,
+            visible: isFabVisible && !hasJoinedSlack,
             child: FloatingActionButton.extended(
               backgroundColor: Color(0xFFffffff),
               icon: Container(
@@ -80,11 +85,88 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               label: Text(
-                "Get Invite",
+                "Join us",
                 style: TextStyle(
                     color: Colors.black87, fontFamily: Utils.ubuntuRegularFont),
               ),
-              onPressed: () => Utils.launchURL("${Utils.slack_invite}")
+              onPressed: () =>
+              {
+                showDialog(
+                  context: context,
+
+                  /// StatefulBuilder is used here to make setState work on AlertDialog
+                  /// For checkbox state functionality
+                  builder: (context) =>
+                      StatefulBuilder(
+                        builder: (context, setState) {
+                          return AlertDialog(
+                            title: Center(
+                              child: Text(
+                                "Join us at\nFlutter Worldwide",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: Utils.ubuntuRegularFont),
+                              ),
+                            ),
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  "My main motive here is to create a community of flutter developers"
+                                      " from all around the world. Join us to expand your knowledge on Flutter"
+                                      " with the rest of the world.",
+                                  style: TextStyle(
+                                    fontSize: 14.0,
+                                    fontFamily: Utils.ubuntuRegularFont,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: OutlineButton(
+                                      child: Text("Get an Invite"),
+                                      onPressed: () =>
+                                          Utils.launchURL(
+                                              "${Utils.slack_invite}"),
+                                      borderSide: BorderSide(
+                                          color: Colors.blue),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                          BorderRadius.circular(30.0))),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Text(
+                                          "Already joined? \nCheck to hide FAB"),
+                                      Checkbox(
+                                        value: isCheckBoxChecked,
+                                        activeColor: Colors.blue,
+                                        onChanged: (bool isChecked) {
+                                          setState(
+                                                () {
+                                              isCheckBoxChecked = isChecked;
+                                            },
+                                          );
+                                          _hideFabForever(isChecked);
+                                        },
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                ),
+              },
             ),
           ),
         ),
@@ -97,24 +179,25 @@ class _HomePageState extends State<HomePage> {
         builder: (context, snapshot) {
           return snapshot.hasData
               ? CustomScrollView(
-                  controller: _hideButtonController,
-                  //This is to contain Sliver Elements
-                  slivers: <Widget>[
-                    appBar(context),
-                    SliverPadding(
-                      padding: EdgeInsets.all(4.0),
-                    ),
-                    SliverPadding(
-                      sliver: bodyList(snapshot.data),
-                      padding: EdgeInsets.only(bottom: 12.0),
-                    ),
-                  ],
-                )
+            controller: _hideButtonController,
+            //This is to contain Sliver Elements
+            slivers: <Widget>[
+              appBar(context),
+              SliverPadding(
+                padding: EdgeInsets.all(4.0),
+              ),
+              SliverPadding(
+                sliver: bodyList(snapshot.data),
+                padding: EdgeInsets.only(bottom: 12.0),
+              ),
+            ],
+          )
               : Center(child: CircularProgressIndicator());
         });
   }
 
-  Widget appBar(BuildContext context) => SliverAppBar(
+  Widget appBar(BuildContext context) =>
+      SliverAppBar(
         backgroundColor: Colors.white,
         pinned: true,
         elevation: 3.0,
@@ -122,7 +205,7 @@ class _HomePageState extends State<HomePage> {
         expandedHeight: 80.0,
         flexibleSpace: FlexibleSpaceBar(
           titlePadding:
-              EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 14.0),
+          EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 14.0),
           centerTitle: true,
           title: Row(
             mainAxisSize: MainAxisSize.min,
@@ -136,13 +219,14 @@ class _HomePageState extends State<HomePage> {
                     colors: Colors.cyan,
                     textColor: Colors.white,
                   ),
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          WebViewWidget(url: "https://flutter.dev"),
-                    ),
-                  ),
+                  onTap: () =>
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              WebViewWidget(url: "https://flutter.dev"),
+                        ),
+                      ),
                 ),
               ),
               //To give a margin
@@ -165,8 +249,10 @@ class _HomePageState extends State<HomePage> {
                     backgroundImage: AssetImage('assets/images/dp.png'),
                   ),
                 ),
-                onTap: () => showModalBottomSheet(
-                    context: context, builder: (context) => ProfileScreen()),
+                onTap: () =>
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) => ProfileScreen()),
               ),
             ],
           ),
@@ -176,7 +262,8 @@ class _HomePageState extends State<HomePage> {
 //        ],
       );
 
-  Widget bodyList(List<ListItem> listItems) => SliverList(
+  Widget bodyList(List<ListItem> listItems) =>
+      SliverList(
         delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
           return listItemDesign(context, listItems[index], index);
         }, childCount: listItems.length),
@@ -214,5 +301,26 @@ class _HomePageState extends State<HomePage> {
         },
       ),
     ));
+  }
+
+  /// Method to call when user checks checkbox
+  _hideFabForever(bool isChecked) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('hidefab', isChecked);
+    setState(() {
+      hasJoinedSlack = isChecked;
+    });
+  }
+
+  /// Method to get value from shared preferences
+  _getValueFromSP() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      if (prefs.getBool('hidefab') != null) {
+        hasJoinedSlack = prefs.getBool('hidefab');
+      } else {
+        hasJoinedSlack = false;
+      }
+    });
   }
 }
