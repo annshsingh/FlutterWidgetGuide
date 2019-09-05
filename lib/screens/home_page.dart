@@ -1,5 +1,7 @@
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:flutter_widget_guide/bloc/list_bloc.dart';
 import 'package:flutter_widget_guide/model/list_Item.dart';
 import 'package:flutter_widget_guide/utils.dart';
@@ -16,7 +18,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   BuildContext _buildContext;
   var versionNumber;
-  String appLink = "https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide";
+  bool isFabVisible = true;
+  ScrollController _hideButtonController;
+  String appLink =
+      "https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide";
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -26,6 +31,25 @@ class _HomePageState extends State<HomePage> {
       versionNumber = value;
     });
     setupRemoteConfig();
+    isFabVisible = true;
+    _hideButtonController = new ScrollController();
+    _hideButtonController.addListener(
+      () {
+        if (_hideButtonController.position.userScrollDirection ==
+            ScrollDirection.reverse) {
+          if (isFabVisible == true) {
+            setState(() => isFabVisible = false);
+          }
+        } else {
+          if (_hideButtonController.position.userScrollDirection ==
+              ScrollDirection.forward) {
+            if (isFabVisible == false) {
+              setState(() => isFabVisible = true);
+            }
+          }
+        }
+      },
+    );
   }
 
   @override
@@ -41,6 +65,28 @@ class _HomePageState extends State<HomePage> {
         child: Scaffold(
           key: _scaffoldKey,
           body: sliverWidgetList(),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerFloat,
+          floatingActionButton: Visibility(
+            visible: isFabVisible,
+            child: FloatingActionButton.extended(
+              backgroundColor: Color(0xFFffffff),
+              icon: Container(
+                height: 24,
+                width: 24,
+                child: SvgPicture.asset(
+                  Utils.slack_img,
+                  semanticsLabel: "Join Slack",
+                ),
+              ),
+              label: Text(
+                "Get Invite",
+                style: TextStyle(
+                    color: Colors.black87, fontFamily: Utils.ubuntuRegularFont),
+              ),
+              onPressed: () => Utils.launchURL("${Utils.slack_invite}")
+            ),
+          ),
         ),
       );
 
@@ -51,6 +97,7 @@ class _HomePageState extends State<HomePage> {
         builder: (context, snapshot) {
           return snapshot.hasData
               ? CustomScrollView(
+                  controller: _hideButtonController,
                   //This is to contain Sliver Elements
                   slivers: <Widget>[
                     appBar(context),
@@ -89,11 +136,11 @@ class _HomePageState extends State<HomePage> {
                     colors: Colors.cyan,
                     textColor: Colors.white,
                   ),
-                  onTap: () =>  Navigator.push(
+                  onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => WebViewWidget(
-                          url: "https://flutter.dev"),
+                      builder: (context) =>
+                          WebViewWidget(url: "https://flutter.dev"),
                     ),
                   ),
                 ),
@@ -153,7 +200,6 @@ class _HomePageState extends State<HomePage> {
       //do nothing
     }
   }
-
 
   /// Build a snackbar to notify user that a new update is available
   buildSnakbar() {

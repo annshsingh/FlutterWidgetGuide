@@ -88,6 +88,7 @@ class Utils {
   static const String semantics = "/Semantics";
 
   static const String rateApp = "/Rate the App";
+  static const String slack_invite = "https://join.slack.com/t/flutter-worldwide/shared_invite/enQtNzMyMjM3Nzc2Njc0LTdmYWI5ZGU5YjgxNjliYzhjZTU0MWNkZTA5MjY4ZmJiMjg4ZGQ2ZDQwNDdiOTdiOWVkZDA2NjY5YjllMGQ1M2M";
 
   //strings
   static const String appName = "Flutter Widget Guide";
@@ -504,4 +505,6 @@ class Utils {
   static const String imageDir = "assets/images";
   static const String expanded_img = "$imageDir/expanded_info.svg";
   static const String medium_img = "$imageDir/medium_icon.svg";
+  static const String slack_img = "$imageDir/slack_icon.svg";
+
 }

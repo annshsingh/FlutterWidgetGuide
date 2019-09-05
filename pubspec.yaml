@@ -49,6 +49,7 @@ flutter:
       - assets/images/github.png
       - assets/images/linkedin.png
       - assets/images/twitter.png
+      - assets/images/slack_icon.svg
 
   fonts:
       - family: Ubuntu
