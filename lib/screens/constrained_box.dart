@@ -29,7 +29,7 @@ class _ConstrainedBoxWidgetState extends State<ConstrainedBoxWidget> {
               context,
               MaterialPageRoute(
                 builder: (context) =>
-                    CodeScreen(code: Code.animatedBuilderCode),
+                    CodeScreen(code: Code.constrainedBoxCode),
               ),
             ),
           )
