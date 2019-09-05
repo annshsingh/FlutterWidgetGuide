@@ -72,6 +72,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    46. [AnimatedPadding](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/animated_padding.dart)
    47. [Indexed Stack](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/indexed_stack.dart)
    48. [Semantics](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/semantics_widget.dart)
+   49. [ConstrainedBox](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/constrained_box.dart)
    
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
