@@ -73,6 +73,13 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    47. [Indexed Stack](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/indexed_stack.dart)
    48. [Semantics](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/semantics_widget.dart)
    49. [ConstrainedBox](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/constrained_box.dart)
+   50. Stack (coming soon)
+   51. AnimatedOpacity (coming soon)
+   52. FractionallySizedBox (coming soon)
+   53. ListView (coming soon)
+   54. ListTile (coming soon)
+   55. Container (coming soon)
+   56. SelectableText (coming soon)
    
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
