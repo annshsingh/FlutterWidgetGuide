@@ -73,6 +73,13 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    47. [Indexed Stack](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/indexed_stack.dart)
    48. [Semantics](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/semantics_widget.dart)
    49. [ConstrainedBox](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/constrained_box.dart)
+   50. Stack (coming soon)
+   51. AnimatedOpacity (coming soon)
+   52. FractionallySizedBox (coming soon)
+   53. ListView (coming soon)
+   54. ListTile (coming soon)
+   55. Container (coming soon)
+   56. SelectableText (coming soon)
    
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
@@ -93,6 +100,60 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
 ## App Screenshots
 <img src="https://github.com/annshsingh/flutter-widget-guide/blob/master/Screen_1.png" alt="Screen1" width="153px" height="280px"><img src="https://github.com/annshsingh/flutter-widget-guide/blob/master/screen_2.png" alt="Screen2" width="153px" height="280px"><img src="https://github.com/annshsingh/flutter-widget-guide/blob/master/screen_4.png" alt="Screen4" width="153px" height="280px"><img src="https://github.com/annshsingh/flutter-widget-guide/blob/master/screen_3.png" alt="Screen3" width="320px" height="153px">
 </br>&nbsp; &nbsp; &nbsp;List of Widgets&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Explore a Widget&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; Widget Video&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Source Code
+
+## Building the project
+
+Some files might be missing from the project because of security reasons, as they contain key values.</br>
+These are the steps you need to follow to build the project successfully.
+
+### 1. Missing Key.Properties file
+Please follow the following steps:
+
+Step 1. Go to android > app > build.gradle</br>
+
+Now,</br>
+Comment this line **keystoreProperties.load(new FileInputStream(keystorePropertiesFile))**</br>
+Next,</br>Comment everything inside __signingConfigs and buildTypes__</br>
+It should look something like this - </br>
+
+```
+//keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+signingConfigs {
+       // release {
+           // keyAlias keystoreProperties['keyAlias']
+           // keyPassword keystoreProperties['keyPassword']
+           //storeFile file(keystoreProperties['storeFile'])
+           // storePassword keystoreProperties['storePassword']
+       // }
+    }
+
+    buildTypes {
+       // release {
+           // TODO: Add your own signing config for the release build.
+           // Signing with the debug keys for now, so `flutter run --release` works.
+           // signingConfig signingConfigs.release
+           // minifyEnabled false
+           // shrinkResources false
+           // useProguard true
+           // proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+       // }
+    }
+```
+</br>
+Step 2. Go to android > local.properties</br>
+Add following lines -
+
+```
+flutter.versionName=1.0.7
+flutter.versionCode=8
+flutter.buildMode=release
+```
+### 2. Missing google-services.json file
+
+This file is used to add firebase services to the project. You might want to add your own file, or better yet, comment the code inside the project to remove the implementation.
+Go to **home_page.dart** file and comment out the code for firebase remote config to remove this error.
+
 
 ## Learn more on Flutter
 [Official Flutter documentation](https://flutter.dev/docs)</br>
