@@ -306,6 +306,12 @@ class ListViewModel {
           mediumUrl: "${Utils.constrainedBoxMediumURL}",
           videoUrl: "${Utils.constrainedBoxVideoURL}"),
       ListItem(
+          title: "${Utils.stack.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.stackDescription}",
+          url: "${Utils.stackURL}",
+          mediumUrl: "${Utils.stackMediumURL}",
+          videoUrl: "${Utils.stackVideoURL}"),
+      ListItem(
           title: "${Utils.rateApp.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.rateAppDescription}",
           url: "${Utils.rateAppURL}",

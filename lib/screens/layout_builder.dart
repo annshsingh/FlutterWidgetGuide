@@ -23,7 +23,7 @@ class LayoutBuilderWidget extends StatelessWidget {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => CodeScreen(code: Code.clipRrectCode),
+                builder: (context) => CodeScreen(code: Code.layoutBuilderCode),
               ),
             ),
           )

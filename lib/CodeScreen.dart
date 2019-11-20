@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
 import 'syntax_highlighter.dart';
@@ -17,11 +18,13 @@ class CodeScreenState extends State<CodeScreen> {
   var _actionIcon = Icons.brightness_low;
   var _isDarkThemeSet = false;
   var _bgColor = Colors.white;
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        key: _scaffoldKey,
         backgroundColor: _bgColor,
         appBar: AppBar(
           centerTitle: true,
@@ -60,6 +63,20 @@ class CodeScreenState extends State<CodeScreen> {
                 ),
               ),
             ),
+          ),
+        ),
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {
+            Clipboard.setData(new ClipboardData(text: widget.code));
+            _scaffoldKey.currentState.showSnackBar(
+              new SnackBar(
+                content: new Text("Copied to Clipboard"),
+              ),
+            );
+          },
+          label: Text("Copy"),
+          icon: Icon(
+            Icons.content_copy,
           ),
         ),
       ),

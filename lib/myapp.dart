@@ -35,6 +35,7 @@ import 'package:flutter_widget_guide/screens/sliver_app_bar.dart';
 import 'package:flutter_widget_guide/screens/sliver_grid.dart';
 import 'package:flutter_widget_guide/screens/sliver_list.dart';
 import 'package:flutter_widget_guide/screens/spacer.dart';
+import 'package:flutter_widget_guide/screens/stack_widget.dart';
 import 'package:flutter_widget_guide/screens/stream_builder.dart';
 import 'package:flutter_widget_guide/screens/table.dart';
 import 'package:flutter_widget_guide/screens/tooltip.dart';
@@ -146,6 +147,7 @@ class MyApp extends StatelessWidget {
       Utils.indexedStack: (BuildContext context) => IndexedStackWidget(),
       Utils.semantics: (BuildContext context) => SemanticsWidget(),
       Utils.constrainedBox: (BuildContext context) => ConstrainedBoxWidget(),
+      Utils.stack: (BuildContext context) => StackWidget(),
     },
   );
 
