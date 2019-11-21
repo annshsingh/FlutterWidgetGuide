@@ -41,6 +41,7 @@ class CodeScreenState extends State<CodeScreen> {
                 onPressed: () => setDarkTheme(_isDarkThemeSet ? false : true))
           ],
         ),
+
         /// Scrollbar widget to show scrollbar while scrolling
         body: Scrollbar(
           /// For horizontal scrolling
@@ -55,8 +56,11 @@ class CodeScreenState extends State<CodeScreen> {
                   itemBuilder: (BuildContext context, int i) {
                     return Container(
                       padding: EdgeInsets.all(8.0),
-                      child: RichText(
-                        text: DartSyntaxHighlighter(_style).format(widget.code),
+                      child: SelectableText.rich(
+                        DartSyntaxHighlighter(_style).format(widget.code),
+                        showCursor: true,
+                        cursorColor: Colors.blue,
+                        cursorRadius: Radius.circular(5),
                       ),
                     );
                   },
