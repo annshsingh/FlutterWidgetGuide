@@ -74,7 +74,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    48. [Semantics](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/semantics_widget.dart)
    49. [ConstrainedBox](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/constrained_box.dart)
    50. [Stack](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/stack_widget.dart)
-   51. AnimatedOpacity (coming soon)
+   51. [AnimatedOpacity](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/animated_opacity.dart)
    52. FractionallySizedBox (coming soon)
    53. ListView (coming soon)
    54. ListTile (coming soon)
