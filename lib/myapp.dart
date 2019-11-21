@@ -19,6 +19,7 @@ import 'package:flutter_widget_guide/screens/fade_transition.dart';
 import 'package:flutter_widget_guide/screens/fitted_box.dart';
 import 'package:flutter_widget_guide/screens/flexible.dart';
 import 'package:flutter_widget_guide/screens/floating_action_button.dart';
+import 'package:flutter_widget_guide/screens/fractionally_sizedbox.dart';
 import 'package:flutter_widget_guide/screens/future_builder.dart';
 import 'package:flutter_widget_guide/screens/hero.dart';
 import 'package:flutter_widget_guide/screens/hero2.dart';
@@ -149,7 +150,8 @@ class MyApp extends StatelessWidget {
       Utils.semantics: (BuildContext context) => SemanticsWidget(),
       Utils.constrainedBox: (BuildContext context) => ConstrainedBoxWidget(),
       Utils.stack: (BuildContext context) => StackWidget(),
-      Utils.animatedOpacity: (BuildContext context) => AnimatedOpacityWidget()
+      Utils.animatedOpacity: (BuildContext context) => AnimatedOpacityWidget(),
+      Utils.fractionallySizedBox: (BuildContext context) => FractionallySizedBoxWidget()
     },
   );
 

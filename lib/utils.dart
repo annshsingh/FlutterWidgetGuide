@@ -89,6 +89,7 @@ class Utils {
   static const String constrainedBox = "/ConstrainedBox";
   static const String stack = "/Stack";
   static const String animatedOpacity = "/AnimatedOpacity";
+  static const String fractionallySizedBox = "/FractionallySizedBox";
 
   static const String rateApp = "/Rate the App";
   static const String slack_invite = "https://join.slack.com/t/flutter-worldwide/shared_invite/enQtNzMyMjM3Nzc2Njc0LTdmYWI5ZGU5YjgxNjliYzhjZTU0MWNkZTA5MjY4ZmJiMjg4ZGQ2ZDQwNDdiOTdiOWVkZDA2NjY5YjllMGQ1M2M";
@@ -236,6 +237,7 @@ class Utils {
       "Wrapping widgets in a ConstrainedBox lets you specify their min and max width and heights.";
   static const String stackDescription = "Stack allows you to overlay multiple widgets on top of each other. For example, you can use a Stack to add text over an image.";
   static const String animatedOpacityDescription = "Want to change how visible a widget is with a nice animation? AnimatedOpacity can help by fading a widget into view or by making it less prominent when something is not selected";
+  static const String fractionallySizedBoxDescription = "Sometimes your design calls for dimensions that are relative. FractionallySizedBox allows you to size the child to a fraction of the total available space.";
 
   static const String rateAppDescription = ".";
 
@@ -342,6 +344,8 @@ class Utils {
       "https://api.flutter.dev/flutter/widgets/Stack-class.html";
   static const String animatedOpacityURL =
       "https://api.flutter.dev/flutter/widgets/AnimatedOpacity-class.html";
+  static const String fractionallySizedBoxURL =
+      "https://api.flutter.dev/flutter/widgets/FractionallySizedBox-class.html";
 
   static const String expandedSourceURL =
       "https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart";
@@ -451,6 +455,8 @@ class Utils {
       "https://www.youtube.com/watch?v=liEGSeD3Zt8&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=50";
   static const String animatedOpacityVideoURL =
       "https://www.youtube.com/watch?v=QZAvjqOqiLY&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=51";
+  static const String fractionallySizedBoxVideoURL =
+      "https://www.youtube.com/watch?v=PEsY654EGZ0&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=52";
 
   static const String rateAppVideoURL = ".";
 
@@ -520,6 +526,7 @@ class Utils {
   static const String constrainedBoxMediumURL = "";
   static const String stackMediumURL = "";
   static const String animatedOpacityMediumURL = "";
+  static const String fractionallySizedBoxMediumURL = "";
 
   static const String rateAppMediumURL = ".";
 

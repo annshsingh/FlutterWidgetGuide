@@ -318,6 +318,12 @@ class ListViewModel {
           mediumUrl: "${Utils.animatedOpacityMediumURL}",
           videoUrl: "${Utils.animatedOpacityVideoURL}"),
       ListItem(
+          title: "${Utils.fractionallySizedBox.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.fractionallySizedBoxDescription}",
+          url: "${Utils.fractionallySizedBoxURL}",
+          mediumUrl: "${Utils.fractionallySizedBoxMediumURL}",
+          videoUrl: "${Utils.fractionallySizedBoxVideoURL}"),
+      ListItem(
           title: "${Utils.rateApp.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.rateAppDescription}",
           url: "${Utils.rateAppURL}",
