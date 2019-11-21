@@ -6,6 +6,7 @@ import 'package:flutter_widget_guide/screens/align.dart';
 import 'package:flutter_widget_guide/screens/animated_builder.dart';
 import 'package:flutter_widget_guide/screens/animated_container.dart';
 import 'package:flutter_widget_guide/screens/animated_list.dart';
+import 'package:flutter_widget_guide/screens/animated_opacity.dart';
 import 'package:flutter_widget_guide/screens/backdrop_filter.dart';
 import 'package:flutter_widget_guide/screens/clip_r_rect.dart';
 import 'package:flutter_widget_guide/screens/constrained_box.dart';
@@ -148,6 +149,7 @@ class MyApp extends StatelessWidget {
       Utils.semantics: (BuildContext context) => SemanticsWidget(),
       Utils.constrainedBox: (BuildContext context) => ConstrainedBoxWidget(),
       Utils.stack: (BuildContext context) => StackWidget(),
+      Utils.animatedOpacity: (BuildContext context) => AnimatedOpacityWidget()
     },
   );
 
