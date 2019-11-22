@@ -76,10 +76,15 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    50. [Stack](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/stack_widget.dart)
    51. [AnimatedOpacity](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/animated_opacity.dart)
    52. [FractionallySizedBox](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/fractionally_sizedbox.dart)
-   53. ListView (coming soon)
-   54. ListTile (coming soon)
+   53. [ListView](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/list_view.dart)
+   54. [ListTile](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/list_tile.dart)
    55. Container (coming soon)
    56. SelectableText (coming soon)
+   57. DataTable (coming soon)
+   58. Slider (coming soon)
+   59. AlertDialog (coming soon)
+   60. AnimatedCrossFade (coming soon)
+   61. DraggableScrollableSheet (coming soon)
    
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
