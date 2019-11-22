@@ -5,12 +5,12 @@ import 'package:flutter_widget_guide/utils.dart';
 import '../Code.dart';
 import '../CodeScreen.dart';
 
-class ListViewWidget extends StatefulWidget {
+class ListTileWidget extends StatefulWidget {
   @override
-  _ListViewWidgetState createState() => _ListViewWidgetState();
+  _ListTileWidgetState createState() => _ListTileWidgetState();
 }
 
-class _ListViewWidgetState extends State<ListViewWidget> {
+class _ListTileWidgetState extends State<ListTileWidget> {
   final List<String> entries = <String>[
     'Item 1',
     'Item 2',
@@ -35,7 +35,7 @@ class _ListViewWidgetState extends State<ListViewWidget> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          'ListView Widget',
+          'ListTile Widget',
           style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold,
@@ -48,7 +48,7 @@ class _ListViewWidgetState extends State<ListViewWidget> {
               context,
               MaterialPageRoute(
                 builder: (context) =>
-                    CodeScreen(code: Code.listViewCode),
+                    CodeScreen(code: Code.listTileCode),
               ),
             ),
           )

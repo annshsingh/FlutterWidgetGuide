@@ -330,6 +330,12 @@ class ListViewModel {
           mediumUrl: "${Utils.listViewMediumURL}",
           videoUrl: "${Utils.listViewVideoURL}"),
       ListItem(
+          title: "${Utils.listTile.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.listTileDescription}",
+          url: "${Utils.listTileURL}",
+          mediumUrl: "${Utils.listTileMediumURL}",
+          videoUrl: "${Utils.listTileVideoURL}"),
+      ListItem(
           title: "${Utils.rateApp.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.rateAppDescription}",
           url: "${Utils.rateAppURL}",

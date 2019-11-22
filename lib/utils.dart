@@ -91,6 +91,7 @@ class Utils {
   static const String animatedOpacity = "/AnimatedOpacity";
   static const String fractionallySizedBox = "/FractionallySizedBox";
   static const String listView = "/ListView";
+  static const String listTile = "/ListTile";
 
   static const String rateApp = "/Rate the App";
   static const String slack_invite = "https://join.slack.com/t/flutter-worldwide/shared_invite/enQtNzMyMjM3Nzc2Njc0LTdmYWI5ZGU5YjgxNjliYzhjZTU0MWNkZTA5MjY4ZmJiMjg4ZGQ2ZDQwNDdiOTdiOWVkZDA2NjY5YjllMGQ1M2M";
@@ -240,6 +241,7 @@ class Utils {
   static const String animatedOpacityDescription = "Want to change how visible a widget is with a nice animation? AnimatedOpacity can help by fading a widget into view or by making it less prominent when something is not selected";
   static const String fractionallySizedBoxDescription = "Sometimes your design calls for dimensions that are relative. FractionallySizedBox allows you to size the child to a fraction of the total available space.";
   static const String listViewDescription = "Want a set of items to be viewable in a scrollable list? ListView is as simple as supplying a list of items and can be easily customized to your liking.";
+  static const String listTileDescription = "Why spend hours working out the perfect item layout with rows, columns, containers, and various amounts of spacing and styling when you could just use a ListTile! ListTile implements the material design pattern for list items for you, leaving you to just worry about what goes in it.";
 
   static const String rateAppDescription = ".";
 
@@ -350,6 +352,8 @@ class Utils {
       "https://api.flutter.dev/flutter/widgets/FractionallySizedBox-class.html";
   static const String listViewURL =
       "https://api.flutter.dev/flutter/widgets/ListView-class.html";
+  static const String listTileURL =
+      "https://api.flutter.dev/flutter/material/ListTile-class.html";
 
   static const String expandedSourceURL =
       "https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart";
@@ -463,6 +467,8 @@ class Utils {
       "https://www.youtube.com/watch?v=PEsY654EGZ0&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=52";
   static const String listViewVideoURL =
       "https://www.youtube.com/watch?v=KJpkjHGiI5A&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=53";
+  static const String listTileVideoURL =
+      "https://www.youtube.com/watch?v=l8dj0yPBvgQ&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=54";
 
   static const String rateAppVideoURL = ".";
 
@@ -534,6 +540,7 @@ class Utils {
   static const String animatedOpacityMediumURL = "";
   static const String fractionallySizedBoxMediumURL = "";
   static const String listViewMediumURL = "";
+  static const String listTileMediumURL = "";
 
   static const String rateAppMediumURL = ".";
 
