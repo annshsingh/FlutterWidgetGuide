@@ -26,6 +26,7 @@ import 'package:flutter_widget_guide/screens/hero2.dart';
 import 'package:flutter_widget_guide/screens/home_page.dart';
 import 'package:flutter_widget_guide/screens/inherited_model.dart';
 import 'package:flutter_widget_guide/screens/layout_builder.dart';
+import 'package:flutter_widget_guide/screens/list_view.dart';
 import 'package:flutter_widget_guide/screens/media_query.dart';
 import 'package:flutter_widget_guide/screens/opacity.dart';
 import 'package:flutter_widget_guide/screens/page_view.dart';
@@ -151,7 +152,8 @@ class MyApp extends StatelessWidget {
       Utils.constrainedBox: (BuildContext context) => ConstrainedBoxWidget(),
       Utils.stack: (BuildContext context) => StackWidget(),
       Utils.animatedOpacity: (BuildContext context) => AnimatedOpacityWidget(),
-      Utils.fractionallySizedBox: (BuildContext context) => FractionallySizedBoxWidget()
+      Utils.fractionallySizedBox: (BuildContext context) => FractionallySizedBoxWidget(),
+      Utils.listView: (BuildContext context) => ListViewWidget()
     },
   );
 
