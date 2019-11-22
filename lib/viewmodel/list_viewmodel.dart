@@ -336,6 +336,48 @@ class ListViewModel {
           mediumUrl: "${Utils.listTileMediumURL}",
           videoUrl: "${Utils.listTileVideoURL}"),
       ListItem(
+          title: "${Utils.container.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.containerDescription}",
+          url: "${Utils.containerURL}",
+          mediumUrl: "${Utils.containerMediumURL}",
+          videoUrl: "${Utils.containerVideoURL}"),
+      ListItem(
+          title: "${Utils.selectableText.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.selectableTextDescription}",
+          url: "${Utils.selectableTextURL}",
+          mediumUrl: "${Utils.selectableTextMediumURL}",
+          videoUrl: "${Utils.selectableTextVideoURL}"),
+      ListItem(
+          title: "${Utils.dataTable.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.dataTableDescription}",
+          url: "${Utils.dataTableURL}",
+          mediumUrl: "${Utils.dataTableMediumURL}",
+          videoUrl: "${Utils.dataTableVideoURL}"),
+      ListItem(
+          title: "${Utils.slider.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.sliderDescription}",
+          url: "${Utils.sliderURL}",
+          mediumUrl: "${Utils.sliderMediumURL}",
+          videoUrl: "${Utils.sliderVideoURL}"),
+      ListItem(
+          title: "${Utils.alertDialog.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.alertDialogDescription}",
+          url: "${Utils.alertDialogURL}",
+          mediumUrl: "${Utils.alertDialogMediumURL}",
+          videoUrl: "${Utils.alertDialogVideoURL}"),
+      ListItem(
+          title: "${Utils.animatedCrossFade.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.animatedCrossFadeDescription}",
+          url: "${Utils.animatedCrossFadeURL}",
+          mediumUrl: "${Utils.animatedCrossFadeMediumURL}",
+          videoUrl: "${Utils.animatedCrossFadeVideoURL}"),
+      ListItem(
+          title: "${Utils.draggableScrollableSheet.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.draggableScrollableSheetDescription}",
+          url: "${Utils.draggableScrollableSheetURL}",
+          mediumUrl: "${Utils.draggableScrollableSheetMediumURL}",
+          videoUrl: "${Utils.draggableScrollableSheetVideoURL}"),
+      ListItem(
           title: "${Utils.rateApp.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.rateAppDescription}",
           url: "${Utils.rateAppURL}",
