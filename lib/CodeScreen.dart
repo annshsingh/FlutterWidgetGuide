@@ -58,7 +58,7 @@ class CodeScreenState extends State<CodeScreen> {
                       padding: EdgeInsets.all(8.0),
                       child: SelectableText.rich(
                         DartSyntaxHighlighter(_style).format(widget.code),
-                        showCursor: true,
+                        showCursor: false,
                         cursorColor: Colors.blue,
                         cursorRadius: Radius.circular(5),
                       ),

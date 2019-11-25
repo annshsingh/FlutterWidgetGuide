@@ -259,7 +259,7 @@ class Utils {
       "Want a set of items to be viewable in a scrollable list? ListView is as simple as supplying a list of items and can be easily customized to your liking.";
   static const String listTileDescription =
       "Why spend hours working out the perfect item layout with rows, columns, containers, and various amounts of spacing and styling when you could just use a ListTile! ListTile implements the material design pattern for list items for you, leaving you to just worry about what goes in it.";
-  static const String containerDescription = "";
+  static const String containerDescription = "Do you have a widget that needs some styling like background color, shape, or some size constraints? Try wrapping it in a Container widget! The Container widget helps you compose, decorate, and position child widgets.";
   static const String selectableTextDescription = "";
   static const String dataTableDescription = "";
   static const String sliderDescription = "";

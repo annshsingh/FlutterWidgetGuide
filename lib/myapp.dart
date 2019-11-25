@@ -10,6 +10,7 @@ import 'package:flutter_widget_guide/screens/animated_opacity.dart';
 import 'package:flutter_widget_guide/screens/backdrop_filter.dart';
 import 'package:flutter_widget_guide/screens/clip_r_rect.dart';
 import 'package:flutter_widget_guide/screens/constrained_box.dart';
+import 'package:flutter_widget_guide/screens/container.dart';
 import 'package:flutter_widget_guide/screens/custom_paint.dart';
 import 'package:flutter_widget_guide/screens/dismissible.dart';
 import 'package:flutter_widget_guide/screens/draggable.dart';
@@ -155,7 +156,8 @@ class MyApp extends StatelessWidget {
       Utils.animatedOpacity: (BuildContext context) => AnimatedOpacityWidget(),
       Utils.fractionallySizedBox: (BuildContext context) => FractionallySizedBoxWidget(),
       Utils.listView: (BuildContext context) => ListViewWidget(),
-      Utils.listTile: (BuildContext context) => ListTileWidget()
+      Utils.listTile: (BuildContext context) => ListTileWidget(),
+      Utils.container: (BuildContext context) => ContainerWidget()
     },
   );
 
