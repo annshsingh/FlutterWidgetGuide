@@ -260,7 +260,7 @@ class Utils {
   static const String listTileDescription =
       "Why spend hours working out the perfect item layout with rows, columns, containers, and various amounts of spacing and styling when you could just use a ListTile! ListTile implements the material design pattern for list items for you, leaving you to just worry about what goes in it.";
   static const String containerDescription = "Do you have a widget that needs some styling like background color, shape, or some size constraints? Try wrapping it in a Container widget! The Container widget helps you compose, decorate, and position child widgets.";
-  static const String selectableTextDescription = "";
+  static const String selectableTextDescription = "Have you ever wanted to make some display text in your app selectable? SelectableText is the widget for you!";
   static const String dataTableDescription = "";
   static const String sliderDescription = "";
   static const String alertDialogDescription = "";

@@ -34,6 +34,7 @@ import 'package:flutter_widget_guide/screens/opacity.dart';
 import 'package:flutter_widget_guide/screens/page_view.dart';
 import 'package:flutter_widget_guide/screens/positioned.dart';
 import 'package:flutter_widget_guide/screens/safe_area.dart';
+import 'package:flutter_widget_guide/screens/selectable_text.dart';
 import 'package:flutter_widget_guide/screens/semantics_widget.dart';
 import 'package:flutter_widget_guide/screens/sized_box.dart';
 import 'package:flutter_widget_guide/screens/sliver_app_bar.dart';
@@ -157,7 +158,8 @@ class MyApp extends StatelessWidget {
       Utils.fractionallySizedBox: (BuildContext context) => FractionallySizedBoxWidget(),
       Utils.listView: (BuildContext context) => ListViewWidget(),
       Utils.listTile: (BuildContext context) => ListTileWidget(),
-      Utils.container: (BuildContext context) => ContainerWidget()
+      Utils.container: (BuildContext context) => ContainerWidget(),
+      Utils.selectableText: (BuildContext context) => SelectableTextWidget()
     },
   );
 
