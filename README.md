@@ -79,7 +79,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    53. [ListView](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/list_view.dart)
    54. [ListTile](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/list_tile.dart)
    55. [Container](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/container.dart)
-   56. SelectableText (coming soon)
+   56. [SelectableText](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/selectable_text.dart)
    57. DataTable (coming soon)
    58. Slider (coming soon)
    59. AlertDialog (coming soon)
