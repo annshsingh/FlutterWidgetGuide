@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/CodeScreen.dart';
 import 'package:flutter_widget_guide/screens/ComingSoon.dart';
+import 'package:flutter_widget_guide/screens/DataTableWidget.dart';
 import 'package:flutter_widget_guide/screens/WebViewWidget.dart';
 import 'package:flutter_widget_guide/screens/absorb_pointer.dart';
 import 'package:flutter_widget_guide/screens/align.dart';
@@ -161,7 +162,7 @@ class MyApp extends StatelessWidget {
       Utils.listTile: (BuildContext context) => ListTileWidget(),
       Utils.container: (BuildContext context) => ContainerWidget(),
       Utils.selectableText: (BuildContext context) => SelectableTextWidget(),
-      Utils.dataTable: (BuildContext context) => ComingSoon(),
+      Utils.dataTable: (BuildContext context) => DataTableWidget(),
       Utils.slider: (BuildContext context) => ComingSoon(),
       Utils.alertDialog: (BuildContext context) => ComingSoon(),
       Utils.animatedCrossFade: (BuildContext context) => ComingSoon(),
