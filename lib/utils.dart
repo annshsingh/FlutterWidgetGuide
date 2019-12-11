@@ -262,7 +262,7 @@ class Utils {
   static const String containerDescription = "Do you have a widget that needs some styling like background color, shape, or some size constraints? Try wrapping it in a Container widget! The Container widget helps you compose, decorate, and position child widgets.";
   static const String selectableTextDescription = "Have you ever wanted to make some display text in your app selectable? SelectableText is the widget for you!";
   static const String dataTableDescription = "Do you have some important data to show to the user in a table? Define your columns, rows, and automatically size cells with DataTable!";
-  static const String sliderDescription = "";
+  static const String sliderDescription = "Need a quick way to select from a range of values? The Slider widget selects a single value from a range. ";
   static const String alertDialogDescription = "";
   static const String animatedCrossFadeDescription = "";
   static const String draggableScrollableSheetDescription = "";

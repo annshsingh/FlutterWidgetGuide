@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/CodeScreen.dart';
 import 'package:flutter_widget_guide/screens/ComingSoon.dart';
-import 'package:flutter_widget_guide/screens/DataTableWidget.dart';
+import 'package:flutter_widget_guide/screens/datatable_widget.dart';
 import 'package:flutter_widget_guide/screens/WebViewWidget.dart';
 import 'package:flutter_widget_guide/screens/absorb_pointer.dart';
 import 'package:flutter_widget_guide/screens/align.dart';
@@ -39,6 +39,7 @@ import 'package:flutter_widget_guide/screens/safe_area.dart';
 import 'package:flutter_widget_guide/screens/selectable_text.dart';
 import 'package:flutter_widget_guide/screens/semantics_widget.dart';
 import 'package:flutter_widget_guide/screens/sized_box.dart';
+import 'package:flutter_widget_guide/screens/slider_widget.dart';
 import 'package:flutter_widget_guide/screens/sliver_app_bar.dart';
 import 'package:flutter_widget_guide/screens/sliver_grid.dart';
 import 'package:flutter_widget_guide/screens/sliver_list.dart';
@@ -163,7 +164,7 @@ class MyApp extends StatelessWidget {
       Utils.container: (BuildContext context) => ContainerWidget(),
       Utils.selectableText: (BuildContext context) => SelectableTextWidget(),
       Utils.dataTable: (BuildContext context) => DataTableWidget(),
-      Utils.slider: (BuildContext context) => ComingSoon(),
+      Utils.slider: (BuildContext context) => SliderWidget(),
       Utils.alertDialog: (BuildContext context) => ComingSoon(),
       Utils.animatedCrossFade: (BuildContext context) => ComingSoon(),
       Utils.draggableScrollableSheet: (BuildContext context) => ComingSoon()
