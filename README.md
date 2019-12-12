@@ -80,11 +80,13 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    54. [ListTile](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/list_tile.dart)
    55. [Container](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/container.dart)
    56. [SelectableText](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/selectable_text.dart)
-   57. DataTable (coming soon)
-   58. Slider (coming soon)
-   59. AlertDialog (coming soon)
-   60. AnimatedCrossFade (coming soon)
+   57. [DataTable](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/datatable_widget.dart)
+   58. [Slider](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/slider_widget.dart)
+   59. [AlertDialog](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/alert_dialog_widget.dart)
+   60. [AnimatedCrossFade](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/animated_crossfade_widget.dart)
    61. DraggableScrollableSheet (coming soon)
+   62. ColorFiltered (coming soon)
+   63. ToggleButtons (coming soon)
    
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
@@ -93,6 +95,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    2. Youtube Video Player
    3. Firebase RemoteConfig
    4. View Code inside the app.
+   5. Copy code or part of code.
    
 ## Things to work on in the Future
    1. Save favourite widgets in "Favourites" section - Using SQFlite.
