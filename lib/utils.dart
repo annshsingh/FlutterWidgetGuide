@@ -264,7 +264,7 @@ class Utils {
   static const String dataTableDescription = "Do you have some important data to show to the user in a table? Define your columns, rows, and automatically size cells with DataTable!";
   static const String sliderDescription = "Need a quick way to select from a range of values? The Slider widget selects a single value from a range. ";
   static const String alertDialogDescription = "Do you want to alert someone about something or maybe get their input? Does your app have a critical junction where users need to make an important decision? AlertDialog is the widget for you!";
-  static const String animatedCrossFadeDescription = "";
+  static const String animatedCrossFadeDescription = "Cross fade is a cinematic term in which one thing gradually fades into another. Wouldn't it be useful to have something similar, but for Flutter widgets? AnimatedCrossFade to the rescue!";
   static const String draggableScrollableSheetDescription = "";
 
   static const String rateAppDescription = ".";
