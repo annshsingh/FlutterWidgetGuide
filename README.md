@@ -85,7 +85,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    59. [AlertDialog](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/alert_dialog_widget.dart)
    60. [AnimatedCrossFade](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/animated_crossfade_widget.dart)
    61. [DraggableScrollableSheet](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/draggable_scrollable_sheet.dart)
-   62. ColorFiltered (coming soon)
+   62. [ColorFiltered](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/color_filtered.dart)
    63. ToggleButtons (coming soon)
    
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
