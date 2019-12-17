@@ -378,6 +378,18 @@ class ListViewModel {
           mediumUrl: "${Utils.draggableScrollableSheetMediumURL}",
           videoUrl: "${Utils.draggableScrollableSheetVideoURL}"),
       ListItem(
+          title: "${Utils.colorFiltered.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.colorFilteredDescription}",
+          url: "${Utils.colorFilteredURL}",
+          mediumUrl: "${Utils.colorFilteredMediumURL}",
+          videoUrl: "${Utils.colorFilteredVideoURL}"),
+      ListItem(
+          title: "${Utils.toggleButtons.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.toggleButtonsDescription}",
+          url: "${Utils.toggleButtonsURL}",
+          mediumUrl: "${Utils.toggleButtonsMediumURL}",
+          videoUrl: "${Utils.toggleButtonsVideoURL}"),
+      ListItem(
           title: "${Utils.rateApp.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.rateAppDescription}",
           url: "${Utils.rateAppURL}",

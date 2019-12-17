@@ -18,6 +18,7 @@ import 'package:flutter_widget_guide/screens/container.dart';
 import 'package:flutter_widget_guide/screens/custom_paint.dart';
 import 'package:flutter_widget_guide/screens/dismissible.dart';
 import 'package:flutter_widget_guide/screens/draggable.dart';
+import 'package:flutter_widget_guide/screens/draggable_scrollable_sheet.dart';
 import 'package:flutter_widget_guide/screens/expanded.dart';
 import 'package:flutter_widget_guide/screens/fade_in_image.dart';
 import 'package:flutter_widget_guide/screens/fade_transition.dart';
@@ -169,7 +170,9 @@ class MyApp extends StatelessWidget {
       Utils.slider: (BuildContext context) => SliderWidget(),
       Utils.alertDialog: (BuildContext context) => AlertDialogWidget(),
       Utils.animatedCrossFade: (BuildContext context) => AnimatedCrossFadeWidget(),
-      Utils.draggableScrollableSheet: (BuildContext context) => ComingSoon()
+      Utils.draggableScrollableSheet: (BuildContext context) => DraggableScrollableSheetWidget(),
+      Utils.colorFiltered: (BuildContext context) => ComingSoon(),
+      Utils.toggleButtons: (BuildContext context) => ComingSoon()
     },
   );
 

@@ -99,6 +99,8 @@ class Utils {
   static const String alertDialog = "/AlertDialog";
   static const String animatedCrossFade = "/AnimatedCrossFade";
   static const String draggableScrollableSheet = "/DraggableScrollableSheet";
+  static const String colorFiltered = "/ColorFiltered";
+  static const String toggleButtons = "/ToggleButtons";
 
   static const String rateApp = "/Rate the App";
   static const String slack_invite =
@@ -259,13 +261,22 @@ class Utils {
       "Want a set of items to be viewable in a scrollable list? ListView is as simple as supplying a list of items and can be easily customized to your liking.";
   static const String listTileDescription =
       "Why spend hours working out the perfect item layout with rows, columns, containers, and various amounts of spacing and styling when you could just use a ListTile! ListTile implements the material design pattern for list items for you, leaving you to just worry about what goes in it.";
-  static const String containerDescription = "Do you have a widget that needs some styling like background color, shape, or some size constraints? Try wrapping it in a Container widget! The Container widget helps you compose, decorate, and position child widgets.";
-  static const String selectableTextDescription = "Have you ever wanted to make some display text in your app selectable? SelectableText is the widget for you!";
-  static const String dataTableDescription = "Do you have some important data to show to the user in a table? Define your columns, rows, and automatically size cells with DataTable!";
-  static const String sliderDescription = "Need a quick way to select from a range of values? The Slider widget selects a single value from a range. ";
-  static const String alertDialogDescription = "Do you want to alert someone about something or maybe get their input? Does your app have a critical junction where users need to make an important decision? AlertDialog is the widget for you!";
-  static const String animatedCrossFadeDescription = "Cross fade is a cinematic term in which one thing gradually fades into another. Wouldn't it be useful to have something similar, but for Flutter widgets? AnimatedCrossFade to the rescue!";
-  static const String draggableScrollableSheetDescription = "";
+  static const String containerDescription =
+      "Do you have a widget that needs some styling like background color, shape, or some size constraints? Try wrapping it in a Container widget! The Container widget helps you compose, decorate, and position child widgets.";
+  static const String selectableTextDescription =
+      "Have you ever wanted to make some display text in your app selectable? SelectableText is the widget for you!";
+  static const String dataTableDescription =
+      "Do you have some important data to show to the user in a table? Define your columns, rows, and automatically size cells with DataTable!";
+  static const String sliderDescription =
+      "Need a quick way to select from a range of values? The Slider widget selects a single value from a range. ";
+  static const String alertDialogDescription =
+      "Do you want to alert someone about something or maybe get their input? Does your app have a critical junction where users need to make an important decision? AlertDialog is the widget for you!";
+  static const String animatedCrossFadeDescription =
+      "Cross fade is a cinematic term in which one thing gradually fades into another. Wouldn't it be useful to have something similar, but for Flutter widgets? AnimatedCrossFade to the rescue!";
+  static const String draggableScrollableSheetDescription =
+      "Are you looking to drag a widget onto the screen? Does that widget have scrollable content? DraggableScrollableSheet has you covered!";
+  static const String colorFilteredDescription = "";
+  static const String toggleButtonsDescription = "";
 
   static const String rateAppDescription = ".";
 
@@ -392,6 +403,10 @@ class Utils {
       "https://api.flutter.dev/flutter/widgets/AnimatedCrossFade-class.html";
   static const String draggableScrollableSheetURL =
       "https://api.flutter.dev/flutter/widgets/DraggableScrollableSheet-class.html";
+  static const String colorFilteredURL =
+      "https://api.flutter.dev/flutter/widgets/ColorFiltered-class.html";
+  static const String toggleButtonsURL =
+      "https://api.flutter.dev/flutter/material/ToggleButtons-class.html";
 
   static const String expandedSourceURL =
       "https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart";
@@ -522,6 +537,10 @@ class Utils {
       "https://www.youtube.com/watch?v=PGK2UUAyE54&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=60";
   static const String draggableScrollableSheetVideoURL =
       "https://www.youtube.com/watch?v=Hgw819mL_78&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=61";
+  static const String colorFilteredVideoURL =
+      "https://www.youtube.com/watch?v=F7Cll22Dno8&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=62";
+  static const String toggleButtonsVideoURL =
+      "https://www.youtube.com/watch?v=kVEguaQWGAY&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=63";
 
   static const String rateAppVideoURL = ".";
 
@@ -601,6 +620,8 @@ class Utils {
   static const String alertDialogMediumURL = "";
   static const String animatedCrossFadeMediumURL = "";
   static const String draggableScrollableSheetMediumURL = "";
+  static const String colorFilteredMediumURL = "";
+  static const String toggleButtonsMediumURL = "";
 
   static const String rateAppMediumURL = ".";
 
