@@ -275,7 +275,7 @@ class Utils {
       "Cross fade is a cinematic term in which one thing gradually fades into another. Wouldn't it be useful to have something similar, but for Flutter widgets? AnimatedCrossFade to the rescue!";
   static const String draggableScrollableSheetDescription =
       "Are you looking to drag a widget onto the screen? Does that widget have scrollable content? DraggableScrollableSheet has you covered!";
-  static const String colorFilteredDescription = "";
+  static const String colorFilteredDescription = "It's easy to play around with color in Flutter widgets, and not just by modifying a color parameter. ColorFiltered widget will let you change and morph colors in weird and wonderful ways!";
   static const String toggleButtonsDescription = "";
 
   static const String rateAppDescription = ".";

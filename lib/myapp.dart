@@ -3,6 +3,7 @@ import 'package:flutter_widget_guide/CodeScreen.dart';
 import 'package:flutter_widget_guide/screens/ComingSoon.dart';
 import 'package:flutter_widget_guide/screens/alert_dialog_widget.dart';
 import 'package:flutter_widget_guide/screens/animated_crossfade_widget.dart';
+import 'package:flutter_widget_guide/screens/color_filtered.dart';
 import 'package:flutter_widget_guide/screens/datatable_widget.dart';
 import 'package:flutter_widget_guide/screens/WebViewWidget.dart';
 import 'package:flutter_widget_guide/screens/absorb_pointer.dart';
@@ -171,7 +172,7 @@ class MyApp extends StatelessWidget {
       Utils.alertDialog: (BuildContext context) => AlertDialogWidget(),
       Utils.animatedCrossFade: (BuildContext context) => AnimatedCrossFadeWidget(),
       Utils.draggableScrollableSheet: (BuildContext context) => DraggableScrollableSheetWidget(),
-      Utils.colorFiltered: (BuildContext context) => ComingSoon(),
+      Utils.colorFiltered: (BuildContext context) => ColorFilteredWidget(),
       Utils.toggleButtons: (BuildContext context) => ComingSoon()
     },
   );
