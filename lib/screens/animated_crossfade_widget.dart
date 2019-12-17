@@ -43,9 +43,7 @@ class _AnimatedCrossFadeWidgetState extends State<AnimatedCrossFadeWidget> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             AnimatedCrossFade(
-              crossFadeState: crossFadeView == CrossFadeState.showFirst
-                  ? CrossFadeState.showSecond
-                  : CrossFadeState.showFirst,
+              crossFadeState: crossFadeView,
               duration: Duration(milliseconds: 1000),
               firstChild: Container(
                 width: 300,
