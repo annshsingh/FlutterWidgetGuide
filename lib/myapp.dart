@@ -51,6 +51,7 @@ import 'package:flutter_widget_guide/screens/spacer.dart';
 import 'package:flutter_widget_guide/screens/stack_widget.dart';
 import 'package:flutter_widget_guide/screens/stream_builder.dart';
 import 'package:flutter_widget_guide/screens/table.dart';
+import 'package:flutter_widget_guide/screens/toggle_buttons.dart';
 import 'package:flutter_widget_guide/screens/tooltip.dart';
 import 'package:flutter_widget_guide/screens/transform.dart';
 import 'package:flutter_widget_guide/screens/value_listenable_builder.dart';
@@ -173,7 +174,7 @@ class MyApp extends StatelessWidget {
       Utils.animatedCrossFade: (BuildContext context) => AnimatedCrossFadeWidget(),
       Utils.draggableScrollableSheet: (BuildContext context) => DraggableScrollableSheetWidget(),
       Utils.colorFiltered: (BuildContext context) => ColorFilteredWidget(),
-      Utils.toggleButtons: (BuildContext context) => ComingSoon()
+      Utils.toggleButtons: (BuildContext context) => ToggleButtonsWidget()
     },
   );
 
