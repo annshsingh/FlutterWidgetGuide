@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/CodeScreen.dart';
-import 'package:flutter_widget_guide/screens/ComingSoon.dart';
 import 'package:flutter_widget_guide/screens/alert_dialog_widget.dart';
 import 'package:flutter_widget_guide/screens/animated_crossfade_widget.dart';
 import 'package:flutter_widget_guide/screens/color_filtered.dart';

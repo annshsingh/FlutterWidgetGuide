@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -26,10 +27,12 @@ class _HomePageState extends State<HomePage> {
   String appLink =
       "https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide";
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  FirebaseMessaging _fcm;
 
   @override
   void initState() {
     super.initState();
+    _fcm = FirebaseMessaging();
     Utils.getVersion().then((value) {
       versionNumber = value;
     });
@@ -38,7 +41,7 @@ class _HomePageState extends State<HomePage> {
     isFabVisible = true;
     _hideButtonController = new ScrollController();
     _hideButtonController.addListener(
-          () {
+      () {
         if (_hideButtonController.position.userScrollDirection ==
             ScrollDirection.reverse) {
           if (isFabVisible == true) {
@@ -54,6 +57,62 @@ class _HomePageState extends State<HomePage> {
         }
       },
     );
+
+    /// To check if the user is already subscribed to the topic
+    _getIsSubscribed().then((isSubscribed) {
+      if (!isSubscribed) {
+        _fcm.subscribeToTopic("learn").then((value) {
+          _setIsSubscribed(true);
+        }, onError: (e) {
+          _setIsSubscribed(false);
+        });
+      }
+    });
+
+    _fcm.configure(
+      onMessage: (Map<String, dynamic> message) async {
+        /// Called whenever the app is in foreground and receives a notification
+        /// A dialog box is shown to the user in this case
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            content: ListTile(
+              title: Text("A new message from the developer!"),
+              subtitle: Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Text("Click open to visit the link"),
+              ),
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text(
+                  'Cancel',
+                  style: TextStyle(color: Colors.grey[500]),
+                ),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+              FlatButton(
+                child: Text('Open'),
+                onPressed: () => {
+                  Navigator.of(context).pop(),
+                  _takeNotificationAction(message, context, true),
+                },
+              ),
+            ],
+          ),
+        );
+      },
+      onBackgroundMessage: _myBackgroundMessageHandler,
+      onLaunch: (Map<String, dynamic> message) async {
+        /// Called whenever the app is killed and receives a notification
+        _takeNotificationAction(message, context, false);
+      },
+      onResume: (Map<String, dynamic> message) async {
+        /// Called whenever the app is running in background
+        /// and receives a notification
+        _takeNotificationAction(message, context, false);
+      },
+    );
   }
 
   @override
@@ -62,8 +121,7 @@ class _HomePageState extends State<HomePage> {
     return homePageScaffold(context);
   }
 
-  Widget homePageScaffold(BuildContext context) =>
-      Theme(
+  Widget homePageScaffold(BuildContext context) => Theme(
         data: Theme.of(context).copyWith(
           canvasColor: Colors.transparent,
         ),
@@ -71,7 +129,7 @@ class _HomePageState extends State<HomePage> {
           key: _scaffoldKey,
           body: sliverWidgetList(),
           floatingActionButtonLocation:
-          FloatingActionButtonLocation.centerFloat,
+              FloatingActionButtonLocation.centerFloat,
           floatingActionButton: Visibility(
             visible: isFabVisible && !hasJoinedSlack,
             child: FloatingActionButton.extended(
@@ -89,82 +147,77 @@ class _HomePageState extends State<HomePage> {
                 style: TextStyle(
                     color: Colors.black87, fontFamily: Utils.ubuntuRegularFont),
               ),
-              onPressed: () =>
-              {
+              onPressed: () => {
                 showDialog(
                   context: context,
 
                   /// StatefulBuilder is used here to make setState work on AlertDialog
                   /// For checkbox state functionality
-                  builder: (context) =>
-                      StatefulBuilder(
-                        builder: (context, setState) {
-                          return AlertDialog(
-                            title: Center(
-                              child: Text(
-                                "Join us at\nFlutter Worldwide",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: Utils.ubuntuRegularFont),
+                  builder: (context) => StatefulBuilder(
+                    builder: (context, setState) {
+                      return AlertDialog(
+                        title: Center(
+                          child: Text(
+                            "Join us at\nFlutter Worldwide",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: Utils.ubuntuRegularFont),
+                          ),
+                        ),
+                        content: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              "My main motive here is to create a community of flutter developers"
+                              " from all around the world. Join us to expand your knowledge on Flutter"
+                              " with the rest of the world.",
+                              style: TextStyle(
+                                fontSize: 14.0,
+                                fontFamily: Utils.ubuntuRegularFont,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: OutlineButton(
+                                  child: Text("Get an Invite"),
+                                  onPressed: () =>
+                                      Utils.launchURL("${Utils.slack_invite}"),
+                                  borderSide: BorderSide(color: Colors.blue),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(30.0))),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Text("Already joined? \nCheck to hide FAB"),
+                                  Checkbox(
+                                    value: isCheckBoxChecked,
+                                    activeColor: Colors.blue,
+                                    onChanged: (bool isChecked) {
+                                      setState(
+                                        () {
+                                          isCheckBoxChecked = isChecked;
+                                        },
+                                      );
+                                      _hideFabForever(isChecked);
+                                    },
+                                  ),
+                                ],
                               ),
                             ),
-                            content: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Text(
-                                  "My main motive here is to create a community of flutter developers"
-                                      " from all around the world. Join us to expand your knowledge on Flutter"
-                                      " with the rest of the world.",
-                                  style: TextStyle(
-                                    fontSize: 14.0,
-                                    fontFamily: Utils.ubuntuRegularFont,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: OutlineButton(
-                                      child: Text("Get an Invite"),
-                                      onPressed: () =>
-                                          Utils.launchURL(
-                                              "${Utils.slack_invite}"),
-                                      borderSide: BorderSide(
-                                          color: Colors.blue),
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                          BorderRadius.circular(30.0))),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Text(
-                                          "Already joined? \nCheck to hide FAB"),
-                                      Checkbox(
-                                        value: isCheckBoxChecked,
-                                        activeColor: Colors.blue,
-                                        onChanged: (bool isChecked) {
-                                          setState(
-                                                () {
-                                              isCheckBoxChecked = isChecked;
-                                            },
-                                          );
-                                          _hideFabForever(isChecked);
-                                        },
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          );
-                        },
-                      ),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
                 ),
               },
             ),
@@ -179,25 +232,24 @@ class _HomePageState extends State<HomePage> {
         builder: (context, snapshot) {
           return snapshot.hasData
               ? CustomScrollView(
-            controller: _hideButtonController,
-            //This is to contain Sliver Elements
-            slivers: <Widget>[
-              appBar(context),
-              SliverPadding(
-                padding: EdgeInsets.all(4.0),
-              ),
-              SliverPadding(
-                sliver: bodyList(snapshot.data),
-                padding: EdgeInsets.only(bottom: 12.0),
-              ),
-            ],
-          )
+                  controller: _hideButtonController,
+                  //This is to contain Sliver Elements
+                  slivers: <Widget>[
+                    appBar(context),
+                    SliverPadding(
+                      padding: EdgeInsets.all(4.0),
+                    ),
+                    SliverPadding(
+                      sliver: bodyList(snapshot.data),
+                      padding: EdgeInsets.only(bottom: 12.0),
+                    ),
+                  ],
+                )
               : Center(child: CircularProgressIndicator());
         });
   }
 
-  Widget appBar(BuildContext context) =>
-      SliverAppBar(
+  Widget appBar(BuildContext context) => SliverAppBar(
         backgroundColor: Colors.white,
         pinned: true,
         elevation: 3.0,
@@ -205,7 +257,7 @@ class _HomePageState extends State<HomePage> {
         expandedHeight: 80.0,
         flexibleSpace: FlexibleSpaceBar(
           titlePadding:
-          EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 14.0),
+              EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 14.0),
           centerTitle: true,
           title: Row(
             mainAxisSize: MainAxisSize.min,
@@ -219,14 +271,13 @@ class _HomePageState extends State<HomePage> {
                     colors: Colors.cyan,
                     textColor: Colors.white,
                   ),
-                  onTap: () =>
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              WebViewWidget(url: "https://flutter.dev"),
-                        ),
-                      ),
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          WebViewWidget(url: "https://flutter.dev"),
+                    ),
+                  ),
                 ),
               ),
               //To give a margin
@@ -249,10 +300,8 @@ class _HomePageState extends State<HomePage> {
                     backgroundImage: AssetImage('assets/images/dp.png'),
                   ),
                 ),
-                onTap: () =>
-                    showModalBottomSheet(
-                        context: context,
-                        builder: (context) => ProfileScreen()),
+                onTap: () => showModalBottomSheet(
+                    context: context, builder: (context) => ProfileScreen()),
               ),
             ],
           ),
@@ -262,8 +311,7 @@ class _HomePageState extends State<HomePage> {
 //        ],
       );
 
-  Widget bodyList(List<ListItem> listItems) =>
-      SliverList(
+  Widget bodyList(List<ListItem> listItems) => SliverList(
         delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
           return listItemDesign(context, listItems[index], index);
         }, childCount: listItems.length),
@@ -322,5 +370,108 @@ class _HomePageState extends State<HomePage> {
         hasJoinedSlack = false;
       }
     });
+  }
+
+  _setIsSubscribed(bool isSubscribed) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool("subscribed", isSubscribed);
+  }
+
+  Future<bool> _getIsSubscribed() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (prefs.getBool("subscribed") == null ||
+        prefs.getBool("subscribed") == false) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+}
+
+/// Use this method to define some kind of a background task
+/// We are not using it, only here for learning purpose
+Future<dynamic> _myBackgroundMessageHandler(Map<String, dynamic> message) {
+  if (message.containsKey('data')) {
+    // Handle data message
+  }
+
+  if (message.containsKey('notification')) {
+    // Handle notification message
+  }
+
+  // Or do other work.
+}
+
+/// Method to be called whenever the app receives a notification
+_takeNotificationAction(
+    Map<String, dynamic> message, BuildContext context, bool isInside) {
+  /// If the notification was opened when app was in background/closed
+  if (!isInside) {
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10.0))),
+        content: Builder(
+          builder: (context) {
+            return Container(
+              height: 100,
+              width: 100,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        CircularProgressIndicator(
+                            valueColor:
+                                AlwaysStoppedAnimation<Color>(Colors.blue)),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 12.0),
+                          child: Text("Loading..."),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+      ),
+    );
+
+    /// To display alert dialog for 3 seconds and take necessary action
+    /// after that
+    Future.delayed(
+      Duration(seconds: 3),
+      () {
+        //remove the loading dialog box
+        Navigator.of(context, rootNavigator: true).pop();
+        if (message['data']['type'] == 'update') {
+          Utils.launchURL(message['data']['url']);
+        } else {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => WebViewWidget(url: message['data']['url']),
+            ),
+          );
+        }
+      },
+    );
+  } else {
+    /// If the notification was opened from inside the app
+    if (message['data']['type'] == 'update') {
+      Utils.launchURL(message['data']['url']);
+    } else {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => WebViewWidget(url: message['data']['url']),
+        ),
+      );
+    }
   }
 }
