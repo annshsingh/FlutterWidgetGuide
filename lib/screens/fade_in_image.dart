@@ -67,14 +67,17 @@ class _FadeInImageWidgetState extends State<FadeInImageWidget> {
             ),
           ),
         ]),
-        onWillPop: () {
-          ///clear image cache and exit screen
-          ///this is done so that the image loads every time you open the
-          ///screen. (it is cached otherwise)
-          painting.imageCache.clear();
-          Navigator.of(context).pop(true);
-        },
+        onWillPop: _willPopCallback,
       ),
     );
   }
 }
+
+Future<bool> _willPopCallback() async {
+  ///clear image cache and exit screen
+  ///this is done so that the image loads every time you open the
+  ///screen. (it is cached otherwise)
+  painting.imageCache.clear();
+  return true; // return true if the route to be popped
+}
+

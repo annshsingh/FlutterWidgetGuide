@@ -12,12 +12,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../profile_screen.dart';
 import 'WebViewWidget.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatefulWidget  {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+
+/// WidgetsBindingObserver helps to keep track of the app lifecycle state
+class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   BuildContext _buildContext;
   var versionNumber;
   bool isFabVisible = true;
@@ -30,8 +32,26 @@ class _HomePageState extends State<HomePage> {
   FirebaseMessaging _fcm;
 
   @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    //print("The state is $state");
+    /// do something here to release FCM instance so that it doesn't configure
+    /// again when user comes back to the app from Recent Apps
+    /// Nothing can be done as of now.
+    /// Link to the issue:
+    /// https://github.com/FirebaseExtended/flutterfire/issues/1060
+    super.didChangeAppLifecycleState(state);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _fcm = FirebaseMessaging();
     Utils.getVersion().then((value) {
       versionNumber = value;
@@ -69,50 +89,54 @@ class _HomePageState extends State<HomePage> {
       }
     });
 
-    _fcm.configure(
-      onMessage: (Map<String, dynamic> message) async {
-        /// Called whenever the app is in foreground and receives a notification
-        /// A dialog box is shown to the user in this case
-        showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            content: ListTile(
-              title: Text("A new message from the developer!"),
-              subtitle: Padding(
-                padding: const EdgeInsets.only(top: 8.0),
-                child: Text("Click open to visit the link"),
-              ),
-            ),
-            actions: <Widget>[
-              FlatButton(
-                child: Text(
-                  'Cancel',
-                  style: TextStyle(color: Colors.grey[500]),
+    //_getIsFcmConfigured().then((value) {
+     // if (!value) {
+        _fcm.configure(
+          onMessage: (Map<String, dynamic> message) async {
+            /// Called whenever the app is in foreground and receives a notification
+            /// A dialog box is shown to the user in this case
+            showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                content: ListTile(
+                  title: Text("A new message from the developer!"),
+                  subtitle: Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: Text("Click open to visit the link"),
+                  ),
                 ),
-                onPressed: () => Navigator.of(context).pop(),
+                actions: <Widget>[
+                  FlatButton(
+                    child: Text(
+                      'Cancel',
+                      style: TextStyle(color: Colors.grey[500]),
+                    ),
+                    onPressed: () => Navigator.of(context).pop(),
+                  ),
+                  FlatButton(
+                    child: Text('Open'),
+                    onPressed: () => {
+                      Navigator.of(context).pop(),
+                      _takeNotificationAction(message, context, true),
+                    },
+                  ),
+                ],
               ),
-              FlatButton(
-                child: Text('Open'),
-                onPressed: () => {
-                  Navigator.of(context).pop(),
-                  _takeNotificationAction(message, context, true),
-                },
-              ),
-            ],
-          ),
+            );
+          },
+          onBackgroundMessage: _myBackgroundMessageHandler,
+          onLaunch: (Map<String, dynamic> message) async {
+            /// Called whenever the app is killed and receives a notification
+            _takeNotificationAction(message, context, false);
+          },
+          onResume: (Map<String, dynamic> message) async {
+            /// Called whenever the app is running in background
+            /// and receives a notification
+            _takeNotificationAction(message, context, false);
+          },
         );
-      },
-      onBackgroundMessage: _myBackgroundMessageHandler,
-      onLaunch: (Map<String, dynamic> message) async {
-        /// Called whenever the app is killed and receives a notification
-        _takeNotificationAction(message, context, false);
-      },
-      onResume: (Map<String, dynamic> message) async {
-        /// Called whenever the app is running in background
-        /// and receives a notification
-        _takeNotificationAction(message, context, false);
-      },
-    );
+     // }
+    //});
   }
 
   @override
@@ -125,103 +149,107 @@ class _HomePageState extends State<HomePage> {
         data: Theme.of(context).copyWith(
           canvasColor: Colors.transparent,
         ),
-        child: Scaffold(
-          key: _scaffoldKey,
-          body: sliverWidgetList(),
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerFloat,
-          floatingActionButton: Visibility(
-            visible: isFabVisible && !hasJoinedSlack,
-            child: FloatingActionButton.extended(
-              backgroundColor: Color(0xFFffffff),
-              icon: Container(
-                height: 24,
-                width: 24,
-                child: SvgPicture.asset(
-                  Utils.slack_img,
-                  semanticsLabel: "Join Slack",
-                ),
-              ),
-              label: Text(
-                "Join us",
-                style: TextStyle(
-                    color: Colors.black87, fontFamily: Utils.ubuntuRegularFont),
-              ),
-              onPressed: () => {
-                showDialog(
-                  context: context,
-
-                  /// StatefulBuilder is used here to make setState work on AlertDialog
-                  /// For checkbox state functionality
-                  builder: (context) => StatefulBuilder(
-                    builder: (context, setState) {
-                      return AlertDialog(
-                        title: Center(
-                          child: Text(
-                            "Join us at\nFlutter Worldwide",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: Utils.ubuntuRegularFont),
-                          ),
-                        ),
-                        content: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              "My main motive here is to create a community of flutter developers"
-                              " from all around the world. Join us to expand your knowledge on Flutter"
-                              " with the rest of the world.",
-                              style: TextStyle(
-                                fontSize: 14.0,
-                                fontFamily: Utils.ubuntuRegularFont,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: OutlineButton(
-                                  child: Text("Get an Invite"),
-                                  onPressed: () =>
-                                      Utils.launchURL("${Utils.slack_invite}"),
-                                  borderSide: BorderSide(color: Colors.blue),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(30.0))),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Text("Already joined? \nCheck to hide FAB"),
-                                  Checkbox(
-                                    value: isCheckBoxChecked,
-                                    activeColor: Colors.blue,
-                                    onChanged: (bool isChecked) {
-                                      setState(
-                                        () {
-                                          isCheckBoxChecked = isChecked;
-                                        },
-                                      );
-                                      _hideFabForever(isChecked);
-                                    },
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
+        child: WillPopScope(
+          child: Scaffold(
+            key: _scaffoldKey,
+            body: sliverWidgetList(),
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerFloat,
+            floatingActionButton: Visibility(
+              visible: isFabVisible && !hasJoinedSlack,
+              child: FloatingActionButton.extended(
+                backgroundColor: Color(0xFFffffff),
+                icon: Container(
+                  height: 24,
+                  width: 24,
+                  child: SvgPicture.asset(
+                    Utils.slack_img,
+                    semanticsLabel: "Join Slack",
                   ),
                 ),
-              },
+                label: Text(
+                  "Join us",
+                  style: TextStyle(
+                      color: Colors.black87,
+                      fontFamily: Utils.ubuntuRegularFont),
+                ),
+                onPressed: () => {
+                  showDialog(
+                    context: context,
+
+                    /// StatefulBuilder is used here to make setState work on AlertDialog
+                    /// For checkbox state functionality
+                    builder: (context) => StatefulBuilder(
+                      builder: (context, setState) {
+                        return AlertDialog(
+                          title: Center(
+                            child: Text(
+                              "Join us at\nFlutter Worldwide",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: Utils.ubuntuRegularFont),
+                            ),
+                          ),
+                          content: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                "My main motive here is to create a community of flutter developers"
+                                " from all around the world. Join us to expand your knowledge on Flutter"
+                                " with the rest of the world.",
+                                style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontFamily: Utils.ubuntuRegularFont,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: OutlineButton(
+                                    child: Text("Get an Invite"),
+                                    onPressed: () => Utils.launchURL(
+                                        "${Utils.slack_invite}"),
+                                    borderSide: BorderSide(color: Colors.blue),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(30.0))),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text("Already joined? \nCheck to hide FAB"),
+                                    Checkbox(
+                                      value: isCheckBoxChecked,
+                                      activeColor: Colors.blue,
+                                      onChanged: (bool isChecked) {
+                                        setState(
+                                          () {
+                                            isCheckBoxChecked = isChecked;
+                                          },
+                                        );
+                                        _hideFabForever(isChecked);
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                },
+              ),
             ),
           ),
+          onWillPop: _willPopCallback,
         ),
       );
 
@@ -474,4 +502,29 @@ _takeNotificationAction(
       );
     }
   }
+  //_setIsFcmConfigured(true);
 }
+
+Future<bool> _willPopCallback() async {
+  /// do something here to release FCM instance so that it doesn't configure
+  /// again when user comes back to the app from Recent Apps
+  /// Nothing can be done as of now.
+  /// Link to the issue:
+  /// https://github.com/FirebaseExtended/flutterfire/issues/1060
+  return true; // return true if the route to be popped
+}
+
+//_setIsFcmConfigured(bool isConfigured) async {
+//  SharedPreferences prefs = await SharedPreferences.getInstance();
+//  prefs.setBool("isConfigured", isConfigured);
+//}
+//
+//Future<bool> _getIsFcmConfigured() async {
+//  SharedPreferences prefs = await SharedPreferences.getInstance();
+//  if (prefs.getBool("isConfigured") == null ||
+//      prefs.getBool("isConfigured") == false) {
+//    return false;
+//  } else {
+//    return true;
+//  }
+//}
