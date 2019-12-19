@@ -94,8 +94,9 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    1. Flutter webview implementation
    2. Youtube Video Player
    3. Firebase RemoteConfig
-   4. View Code inside the app.
-   5. Copy code or part of code.
+   4. Firebase Cloud Messaging
+   5. View Code inside the app.
+   6. Copy code or part of code.
    
 ## Things to work on in the Future
    1. Save favourite widgets in "Favourites" section - Using SQFlite.
