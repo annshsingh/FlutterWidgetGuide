@@ -22,28 +22,28 @@ class CodeScreenState extends State<CodeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        key: _scaffoldKey,
-        backgroundColor: _bgColor,
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            'Code',
-            style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-                fontFamily: Utils.ubuntuRegularFont),
-          ),
-          actions: <Widget>[
-            IconButton(
-                icon: Icon(_actionIcon),
-                onPressed: () => setDarkTheme(_isDarkThemeSet ? false : true))
-          ],
+    return Scaffold(
+      key: _scaffoldKey,
+      backgroundColor: _bgColor,
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'Code',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
         ),
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(_actionIcon),
+              onPressed: () => setDarkTheme(_isDarkThemeSet ? false : true))
+        ],
+      ),
 
-        /// Scrollbar widget to show scrollbar while scrolling
-        body: Scrollbar(
+      /// Scrollbar widget to show scrollbar while scrolling
+      body: SafeArea(
+        child: Scrollbar(
           /// For horizontal scrolling
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
@@ -69,19 +69,19 @@ class CodeScreenState extends State<CodeScreen> {
             ),
           ),
         ),
-        floatingActionButton: FloatingActionButton.extended(
-          onPressed: () {
-            Clipboard.setData(new ClipboardData(text: widget.code));
-            _scaffoldKey.currentState.showSnackBar(
-              new SnackBar(
-                content: new Text("Copied to Clipboard"),
-              ),
-            );
-          },
-          label: Text("Copy"),
-          icon: Icon(
-            Icons.content_copy,
-          ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Clipboard.setData(new ClipboardData(text: widget.code));
+          _scaffoldKey.currentState.showSnackBar(
+            new SnackBar(
+              content: new Text("Copied to Clipboard"),
+            ),
+          );
+        },
+        label: Text("Copy"),
+        icon: Icon(
+          Icons.content_copy,
         ),
       ),
     );
