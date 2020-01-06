@@ -21,6 +21,10 @@ My experience with flutter has been great thus far.</br>
 I hope you like it too.
 </br>The project is developed in [Dart](https://www.dartlang.org/) language.</br>
 All the files are listed in the [/lib](https://github.com/annshsingh/flutter-widget-guide/tree/master/lib) folder.</br>
+
+[![GitHub stars](https://img.shields.io/github/stars/annshsingh/FlutterWidgetGuide?style=social)](https://github.com/annshsingh/FlutterWidgetGuide) [![GitHub forks](https://img.shields.io/github/forks/annshsingh/FlutterWidgetGuide?style=social)](https://github.com/annshsingh/FlutterWidgetGuide/fork) [![GitHub watchers](https://img.shields.io/github/watchers/annshsingh/FlutterWidgetGuide?style=social&label=Watch)](https://github.com/annshsingh/FlutterWidgetGuide) [![GitHub followers](https://img.shields.io/github/followers/annshsingh?style=social&label=Follow)](https://github.com/annshsingh)
+[![Twitter Follow](https://img.shields.io/twitter/follow/annsh2013?style=social)](https://twitter.com/annsh2013)
+
 #### :star: the repo to show some :heart: and motivate me to work on the project :smiley:
 
 ## Widget List
