@@ -19,13 +19,13 @@ class _InheritedModelWidgetState extends State<InheritedModelWidget> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title:Text(
-              'InheritedModel Widget',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
+        title: Text(
+          'InheritedModel Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.code),
@@ -66,22 +66,22 @@ class _InheritedModelWidgetState extends State<InheritedModelWidget> {
                   Container(
                     margin: EdgeInsets.all(16.0),
                     child: RaisedButton(
-                      textColor: Colors.white,
-                      color: Colors.black87,
+                      textColor: Theme.of(context).primaryColor,
+                      color: Theme.of(context).backgroundColor,
                       onPressed: () => setState(() {
-                            _colorOne = Utils.getRandomColor();
-                          }),
+                        _colorOne = Utils.getRandomColor();
+                      }),
                       child: Text('RESET Child 1'),
                     ),
                   ),
                   Container(
                     margin: EdgeInsets.all(16.0),
                     child: RaisedButton(
-                      textColor: Colors.white,
-                      color: Colors.black87,
+                      textColor: Theme.of(context).primaryColor,
+                      color: Theme.of(context).backgroundColor,
                       onPressed: () => setState(() {
-                            _colorTwo = Utils.getRandomColor();
-                          }),
+                        _colorTwo = Utils.getRandomColor();
+                      }),
                       child: Text('RESET Child 2'),
                     ),
                   ),

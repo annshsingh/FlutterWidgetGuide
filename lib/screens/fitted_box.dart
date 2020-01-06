@@ -20,12 +20,12 @@ class _FittedBoxWidgetState extends State<FittedBoxWidget> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-              'FittedBox Widget',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
+          'FittedBox Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.code),
@@ -77,7 +77,7 @@ class _FittedBoxWidgetState extends State<FittedBoxWidget> {
                 padding: EdgeInsets.only(left: 12, right: 12, bottom: 12),
                 child: Text(
                   'Slide the slider widget to change the value of height\n'
-                      'to observe how the widget adjusts itself',
+                  'to observe how the widget adjusts itself',
                   style: TextStyle(
                       color: Colors.grey[400],
                       fontSize: 14.0,

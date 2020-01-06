@@ -29,11 +29,11 @@ class _PositionedWidgetState extends State<PositionedWidget> {
           IconButton(
             icon: Icon(Icons.code),
             onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CodeScreen(code: Code.positionedCode),
-                  ),
-                ),
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.positionedCode),
+              ),
+            ),
           )
         ],
       ),

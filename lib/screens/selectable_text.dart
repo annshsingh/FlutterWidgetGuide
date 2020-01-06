@@ -49,6 +49,7 @@ class _SelectableTextWidgetState extends State<SelectableTextWidget> {
                 colors: bgColor,
               ),
             ),
+
             /// Selectable text
             Container(
               margin: EdgeInsets.all(24.0),

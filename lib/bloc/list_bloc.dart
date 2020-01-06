@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:flutter_widget_guide/viewmodel/list_viewmodel.dart';
 import 'package:flutter_widget_guide/model/list_Item.dart';
+import 'package:flutter_widget_guide/viewmodel/list_viewmodel.dart';
 
 class ListBloc {
   final _listViewModel = ListViewModel();

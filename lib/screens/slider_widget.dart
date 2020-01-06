@@ -11,7 +11,6 @@ class SliderWidget extends StatefulWidget {
 }
 
 class _SliderWidgetState extends State<SliderWidget> {
-
   ///Initial Slider widget value
   var _value = 1.0;
 
@@ -37,8 +36,7 @@ class _SliderWidgetState extends State<SliderWidget> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) =>
-                    CodeScreen(code: Code.sliderWidgetCode),
+                builder: (context) => CodeScreen(code: Code.sliderWidgetCode),
               ),
             ),
           )
@@ -113,7 +111,8 @@ class _SliderWidgetState extends State<SliderWidget> {
                   divisions: 100,
 
                   ///Value indicator above the slider
-                  labels: RangeLabels("${_rangeValues.start.round()}", "${_rangeValues.end.round()}"),
+                  labels: RangeLabels("${_rangeValues.start.round()}",
+                      "${_rangeValues.end.round()}"),
                   onChanged: (RangeValues values) {
                     setState(() {
                       _rangeValues = values;

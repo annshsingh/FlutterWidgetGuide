@@ -318,7 +318,8 @@ class ListViewModel {
           mediumUrl: "${Utils.animatedOpacityMediumURL}",
           videoUrl: "${Utils.animatedOpacityVideoURL}"),
       ListItem(
-          title: "${Utils.fractionallySizedBox.replaceAll(new RegExp(r'/'), '')}",
+          title:
+              "${Utils.fractionallySizedBox.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.fractionallySizedBoxDescription}",
           url: "${Utils.fractionallySizedBoxURL}",
           mediumUrl: "${Utils.fractionallySizedBoxMediumURL}",
@@ -372,7 +373,8 @@ class ListViewModel {
           mediumUrl: "${Utils.animatedCrossFadeMediumURL}",
           videoUrl: "${Utils.animatedCrossFadeVideoURL}"),
       ListItem(
-          title: "${Utils.draggableScrollableSheet.replaceAll(new RegExp(r'/'), '')}",
+          title:
+              "${Utils.draggableScrollableSheet.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.draggableScrollableSheetDescription}",
           url: "${Utils.draggableScrollableSheetURL}",
           mediumUrl: "${Utils.draggableScrollableSheetMediumURL}",

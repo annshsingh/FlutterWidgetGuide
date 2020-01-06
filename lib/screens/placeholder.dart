@@ -72,6 +72,7 @@ class _PlaceholderWidgetState extends State<PlaceholderWidget> {
                         ),
                       ),
                     ),
+
                     /// Placeholder for user social media links
                     Padding(
                       padding: const EdgeInsets.all(8.0),

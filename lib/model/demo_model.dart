@@ -37,12 +37,11 @@ class Demo {
   ///Here key is always a String type and value can be of any type
   ///so we create a map of String and dynamic.
   factory Demo.fromJson(Map<String, dynamic> json) => new Demo(
-    userId: json["userId"],
-    id: json["id"],
-    title: json["title"],
-    body: json["body"],
-  );
-
+        userId: json["userId"],
+        id: json["id"],
+        title: json["title"],
+        body: json["body"],
+      );
 
   ///Converting String to JSON
 //  Map<String, dynamic> toJson() => {

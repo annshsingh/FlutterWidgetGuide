@@ -52,7 +52,7 @@ class _ToggleButtonsWidgetState extends State<ToggleButtonsWidget> {
               padding: const EdgeInsets.all(8.0),
               child: TextField(
                 style: TextStyle(
-                  color: Colors.black87,
+                  color: Theme.of(context).backgroundColor,
                   fontWeight: _fontWeight,
                   fontStyle: _fontStyle,
                 ),
@@ -79,6 +79,7 @@ class _ToggleButtonsWidgetState extends State<ToggleButtonsWidget> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ToggleButtons(
+                    selectedColor: Colors.blue,
                     selectedBorderColor: Colors.blue[200],
                     children: <Widget>[
                       Icon(Icons.format_bold),
@@ -112,6 +113,7 @@ class _ToggleButtonsWidgetState extends State<ToggleButtonsWidget> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ToggleButtons(
+                    selectedColor: Colors.blue,
                     selectedBorderColor: Colors.blue[200],
                     children: <Widget>[
                       Icon(Icons.format_align_center),

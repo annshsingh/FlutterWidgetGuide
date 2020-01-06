@@ -57,8 +57,10 @@ class _FractionallySizedBoxWidgetState
           ),
           Container(
             margin: EdgeInsets.only(top: 12.0),
-            child: Text("Covering ${(_value * 100).toStringAsFixed(0)}% of device width"),
+            child: Text(
+                "Covering ${(_value * 100).toStringAsFixed(0)}% of device width"),
           ),
+
           ///Slider widget to set opacity value
           Container(
             margin: EdgeInsets.only(top: 24),

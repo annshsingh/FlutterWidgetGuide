@@ -12,12 +12,12 @@ class HeroWidget extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-              'Hero Widget',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
+          'Hero Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.code),

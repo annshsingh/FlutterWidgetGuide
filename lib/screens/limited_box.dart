@@ -57,14 +57,14 @@ Widget portraitLayout(context) => ListView(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   "I am wrapped inside a Limited Box with maxHeight set to 200\n"
-                      "This is necessary as my parent (ListView) is unconstrained\n"
-                      "Flip screen to see the other case",
+                  "This is necessary as my parent (ListView) is unconstrained\n"
+                  "Flip screen to see the other case",
                   style: TextStyle(color: Colors.black),
                   textAlign: TextAlign.center,
                 ),
               ),
+            ),
           ),
-        ),
         ),
       ],
     );

@@ -70,25 +70,27 @@ class _StackWidgetState extends State<StackWidget> {
               child: Text(
                 'Select Alignment',
                 style: TextStyle(
-                    color: Colors.black87,
+                    color: Theme.of(context).backgroundColor,
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
                     fontFamily: Utils.ubuntuRegularFont),
               ),
             ),
           ),
+
           ///Container containing all the Radio buttons
           Container(
             margin: EdgeInsets.all(18),
             child: Wrap(
               children: <Widget>[
-                _OptionItem(AlignmentDirectional.topStart, _alignment, _onAlignmentChange, 'Top Start'),
-
-                _OptionItem(AlignmentDirectional.bottomEnd, _alignment, _onAlignmentChange, 'Bottom End'),
-
-                _OptionItem(AlignmentDirectional.center, _alignment, _onAlignmentChange, 'Center'),
-
-                _OptionItem(AlignmentDirectional.topCenter, _alignment, _onAlignmentChange, 'Top Center'),
+                _OptionItem(AlignmentDirectional.topStart, _alignment,
+                    _onAlignmentChange, 'Top Start'),
+                _OptionItem(AlignmentDirectional.bottomEnd, _alignment,
+                    _onAlignmentChange, 'Bottom End'),
+                _OptionItem(AlignmentDirectional.center, _alignment,
+                    _onAlignmentChange, 'Center'),
+                _OptionItem(AlignmentDirectional.topCenter, _alignment,
+                    _onAlignmentChange, 'Top Center'),
               ],
             ),
           ),
@@ -96,11 +98,11 @@ class _StackWidgetState extends State<StackWidget> {
       ),
     );
   }
+
   ///method called whenever you want to change alignment of stacked elements
   _onAlignmentChange(AlignmentDirectional value) => setState(() {
-    _alignment = value;
-  });
-
+        _alignment = value;
+      });
 }
 
 class _OptionItem<T> extends StatelessWidget {
@@ -121,16 +123,15 @@ class _OptionItem<T> extends StatelessWidget {
             value: value,
             groupValue: groupValue,
             activeColor: Colors.lightBlue,
-            onChanged: onChanged
-        ),
+            onChanged: onChanged),
         GestureDetector(
           onTap: () {
             onChanged(value);
           },
           child: Text(
             title,
-            style: TextStyle(
-                fontSize: 14.0, fontFamily: Utils.ubuntuRegularFont),
+            style:
+                TextStyle(fontSize: 14.0, fontFamily: Utils.ubuntuRegularFont),
           ),
         ),
       ],

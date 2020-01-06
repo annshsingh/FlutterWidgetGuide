@@ -16,12 +16,14 @@ class SliverAppBarWidget extends StatelessWidget {
             ///Properties of app bar
             ///
             /// Color of app bar when it is collapsed
-            backgroundColor: Colors.white,
+            backgroundColor: Theme.of(context).primaryColor,
+
             /// Set to false so that appbar is always invisible after
             /// collapsing
             /// If set to true here, the app bar will expand as soon as you
             /// start scrolling up even if you haven't reached the top
             floating: false,
+
             /// To make the app bar visible at all times after collapsing
             /// we set pinned to true
             pinned: true,
@@ -33,7 +35,7 @@ class SliverAppBarWidget extends StatelessWidget {
               title: Text(
                 "SliverAppBar Widget",
                 style: TextStyle(
-                    color: Colors.black87,
+                    color: Theme.of(context).backgroundColor,
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                     fontFamily: Utils.ubuntuRegularFont),
@@ -48,7 +50,8 @@ class SliverAppBarWidget extends StatelessWidget {
                 onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => CodeScreen(code: Code.sliverAppBarCode),
+                    builder: (context) =>
+                        CodeScreen(code: Code.sliverAppBarCode),
                   ),
                 ),
               )
@@ -62,46 +65,16 @@ class SliverAppBarWidget extends StatelessWidget {
             itemExtent: 100.0,
             delegate: SliverChildListDelegate(
               [
-                listItem(
-                  Colors.white,
-                  "List item 1",
-                ),
-                listItem(
-                  Colors.white,
-                  "List item 2",
-                ),
-                listItem(
-                  Colors.white,
-                  "List item 3",
-                ),
-                listItem(
-                  Colors.white,
-                  "List item 4",
-                ),
-                listItem(
-                  Colors.white,
-                  "List item 5",
-                ),
-                listItem(
-                  Colors.white,
-                  "List item 6",
-                ),
-                listItem(
-                  Colors.white,
-                  "List item 7",
-                ),
-                listItem(
-                  Colors.white,
-                  "List item 8",
-                ),
-                listItem(
-                  Colors.white,
-                  "List item 9",
-                ),
-                listItem(
-                  Colors.white,
-                  "List item 10",
-                ),
+                listItem("List item 1", context),
+                listItem("List item 2", context),
+                listItem("List item 3", context),
+                listItem("List item 4", context),
+                listItem("List item 5", context),
+                listItem("List item 6", context),
+                listItem("List item 7", context),
+                listItem("List item 8", context),
+                listItem("List item 9", context),
+                listItem("List item 10", context),
               ],
             ),
           ),
@@ -110,11 +83,11 @@ class SliverAppBarWidget extends StatelessWidget {
     );
   }
 
-  Widget listItem(Color color, String title) => Container(
+  Widget listItem(String title, BuildContext context) => Container(
         decoration: BoxDecoration(
           border: Border(
             top: BorderSide(
-              color: Colors.black26,
+              color: Theme.of(context).backgroundColor,
               width: 1.0,
             ),
           ),
@@ -124,7 +97,7 @@ class SliverAppBarWidget extends StatelessWidget {
             "$title",
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: Colors.black87,
+                color: Theme.of(context).backgroundColor,
                 fontSize: 14.0,
                 fontWeight: FontWeight.bold,
                 fontFamily: Utils.ubuntuRegularFont),

@@ -44,7 +44,7 @@ class _RichTextWidgetState extends State<RichTextWidget> {
             style: TextStyle(
               fontWeight: FontWeight.normal,
               fontSize: 14.0,
-              color: Colors.black,
+              color: Theme.of(context).backgroundColor,
               height: 1.5,
             ),
             children: <TextSpan>[

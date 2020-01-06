@@ -18,6 +18,7 @@ class _AspectRatioWidgetState extends State<AspectRatioWidget> {
   @override
   void initState() {
     super.initState();
+
     /// Fix portrait mode
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
@@ -53,6 +54,7 @@ class _AspectRatioWidgetState extends State<AspectRatioWidget> {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
+
               /// Aspect Ratio widget sizes itself freely
               /// depending on available space
               child: AspectRatio(
@@ -67,10 +69,10 @@ class _AspectRatioWidgetState extends State<AspectRatioWidget> {
               margin: EdgeInsets.only(left: 12, right: 12),
               child: Wrap(
                 children: <Widget>[
+                  _OptionItem(aspectRatio1, aspectRatio, _onRatioChanged,
+                      'Ratio: 16/9'),
                   _OptionItem(
-                      aspectRatio1, aspectRatio, _onRatioChanged, 'Ratio: 16/9'),
-                  _OptionItem(aspectRatio2, aspectRatio, _onRatioChanged,
-                      'Ratio: 3/2'),
+                      aspectRatio2, aspectRatio, _onRatioChanged, 'Ratio: 3/2'),
                 ],
               ),
             )

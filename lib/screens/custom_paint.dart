@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Code.dart';
 import '../CodeScreen.dart';
@@ -11,6 +12,13 @@ class CustomPaintWidget extends StatefulWidget {
 
 class _CustomPaintWidgetState extends State<CustomPaintWidget> {
   var _bgColor = Colors.white;
+  var _isDarkThemeSet = false;
+
+  @override
+  void initState() {
+    _getValueFromSP(context);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +36,10 @@ class _CustomPaintWidgetState extends State<CustomPaintWidget> {
             IconButton(
               icon: Icon(Icons.format_color_fill),
               onPressed: () => setState(() {
-                    _bgColor == Colors.white
-                        ? _bgColor = Colors.black87
-                        : _bgColor = Colors.white;
-                  }),
+                _bgColor == Colors.white
+                    ? _bgColor = Colors.black87
+                    : _bgColor = Colors.white;
+              }),
             ),
             IconButton(
               icon: Icon(Icons.code),
@@ -49,6 +57,24 @@ class _CustomPaintWidgetState extends State<CustomPaintWidget> {
         painter: MyPainter(_bgColor),
       ),
     );
+  }
+
+  /// Method to get value from shared preferences
+  _getValueFromSP(BuildContext context) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      if (prefs.getBool('isDarkMode') != null) {
+        _isDarkThemeSet = prefs.getBool('isDarkMode');
+        _isDarkThemeSet == true
+            ? _bgColor = Colors.black87
+            : _bgColor = Colors.white;
+      } else {
+        _isDarkThemeSet = false;
+        _isDarkThemeSet == true
+            ? _bgColor = Colors.black87
+            : _bgColor = Colors.white;
+      }
+    });
   }
 }
 

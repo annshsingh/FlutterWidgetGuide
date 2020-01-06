@@ -28,8 +28,7 @@ class _ConstrainedBoxWidgetState extends State<ConstrainedBoxWidget> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) =>
-                    CodeScreen(code: Code.constrainedBoxCode),
+                builder: (context) => CodeScreen(code: Code.constrainedBoxCode),
               ),
             ),
           )

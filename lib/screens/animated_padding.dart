@@ -30,7 +30,8 @@ class _AnimatedPaddingWidgetState extends State<AnimatedPaddingWidget> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => CodeScreen(code: Code.animatedPaddingCode),
+                builder: (context) =>
+                    CodeScreen(code: Code.animatedPaddingCode),
               ),
             ),
           )

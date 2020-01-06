@@ -47,8 +47,7 @@ class _ListTileWidgetState extends State<ListTileWidget> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) =>
-                    CodeScreen(code: Code.listTileCode),
+                builder: (context) => CodeScreen(code: Code.listTileCode),
               ),
             ),
           )

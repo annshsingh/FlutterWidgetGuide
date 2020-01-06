@@ -71,7 +71,11 @@ class _AnimatedCrossFadeWidgetState extends State<AnimatedCrossFadeWidget> {
             Padding(
               padding: const EdgeInsets.only(top: 12.0),
               child: RaisedButton(
-                child: Text("Cross Fade"),
+                color: Theme.of(context).backgroundColor,
+                child: Text(
+                  "Cross Fade",
+                  style: TextStyle(color: Theme.of(context).primaryColor),
+                ),
                 onPressed: () => setState(() {
                   crossFadeView = crossFadeView == CrossFadeState.showFirst
                       ? CrossFadeState.showSecond

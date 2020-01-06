@@ -18,12 +18,12 @@ class _DismissibleWidgetState extends State<DismissibleWidget> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-              'Dismissible Widget',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
+          'Dismissible Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.code),

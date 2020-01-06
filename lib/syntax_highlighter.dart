@@ -62,17 +62,66 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
   SyntaxHighlighterStyle _style;
 
   static const List<String> _keywords = <String>[
-    'abstract', 'as', 'assert', 'async', 'await', 'break', 'case', 'catch',
-    'class', 'const', 'continue', 'default', 'deferred', 'do', 'dynamic', 'else',
-    'enum', 'export', 'external', 'extends', 'factory', 'false', 'final',
-    'finally', 'for', 'get', 'if', 'implements', 'import', 'in', 'is', 'library',
-    'new', 'null', 'operator', 'part', 'rethrow', 'return', 'set', 'static',
-    'super', 'switch', 'sync', 'this', 'throw', 'true', 'try', 'typedef', 'var',
-    'void', 'while', 'with', 'yield',
+    'abstract',
+    'as',
+    'assert',
+    'async',
+    'await',
+    'break',
+    'case',
+    'catch',
+    'class',
+    'const',
+    'continue',
+    'default',
+    'deferred',
+    'do',
+    'dynamic',
+    'else',
+    'enum',
+    'export',
+    'external',
+    'extends',
+    'factory',
+    'false',
+    'final',
+    'finally',
+    'for',
+    'get',
+    'if',
+    'implements',
+    'import',
+    'in',
+    'is',
+    'library',
+    'new',
+    'null',
+    'operator',
+    'part',
+    'rethrow',
+    'return',
+    'set',
+    'static',
+    'super',
+    'switch',
+    'sync',
+    'this',
+    'throw',
+    'true',
+    'try',
+    'typedef',
+    'var',
+    'void',
+    'while',
+    'with',
+    'yield',
   ];
 
   static const List<String> _builtInTypes = <String>[
-    'int', 'double', 'num', 'bool',
+    'int',
+    'double',
+    'num',
+    'bool',
   ];
 
   String _src;
@@ -92,15 +141,18 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
 
       for (_HighlightSpan span in _spans) {
         if (currentPosition != span.start)
-          formattedText.add(TextSpan(text: _src.substring(currentPosition, span.start)));
+          formattedText
+              .add(TextSpan(text: _src.substring(currentPosition, span.start)));
 
-        formattedText.add(TextSpan(style: span.textStyle(_style), text: span.textForSpan(_src)));
+        formattedText.add(TextSpan(
+            style: span.textStyle(_style), text: span.textForSpan(_src)));
 
         currentPosition = span.end;
       }
 
       if (currentPosition != _src.length)
-        formattedText.add(TextSpan(text: _src.substring(currentPosition, _src.length)));
+        formattedText
+            .add(TextSpan(text: _src.substring(currentPosition, _src.length)));
 
       return TextSpan(style: _style.baseStyle, children: formattedText);
     } else {
@@ -145,8 +197,7 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
           endComment,
         ));
 
-        if (eof)
-          break;
+        if (eof) break;
 
         continue;
       }
@@ -223,11 +274,8 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
 
       // Integer
       if (_scanner.scan(RegExp(r'\d+'))) {
-        _spans.add(_HighlightSpan(
-            _HighlightType.number,
-            _scanner.lastMatch.start,
-            _scanner.lastMatch.end)
-        );
+        _spans.add(_HighlightSpan(_HighlightType.number,
+            _scanner.lastMatch.start, _scanner.lastMatch.end));
         continue;
       }
 
@@ -256,8 +304,7 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
         _HighlightType type;
 
         String word = _scanner.lastMatch[0];
-        if (word.startsWith('_'))
-          word = word.substring(1);
+        if (word.startsWith('_')) word = word.substring(1);
 
         if (_keywords.contains(word))
           type = _HighlightType.keyword;
@@ -265,7 +312,9 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
           type = _HighlightType.keyword;
         else if (_firstLetterIsUpperCase(word))
           type = _HighlightType.klass;
-        else if (word.length >= 2 && word.startsWith('k') && _firstLetterIsUpperCase(word.substring(1)))
+        else if (word.length >= 2 &&
+            word.startsWith('k') &&
+            _firstLetterIsUpperCase(word.substring(1)))
           type = _HighlightType.constant;
 
         if (type != null) {
@@ -291,7 +340,8 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
 
   void _simplify() {
     for (int i = _spans.length - 2; i >= 0; i -= 1) {
-      if (_spans[i].type == _spans[i + 1].type && _spans[i].end == _spans[i + 1].start) {
+      if (_spans[i].type == _spans[i + 1].type &&
+          _spans[i].end == _spans[i + 1].start) {
         _spans[i] = _HighlightSpan(
           _spans[i].type,
           _spans[i].start,
@@ -323,6 +373,7 @@ enum _HighlightType {
 
 class _HighlightSpan {
   _HighlightSpan(this.type, this.start, this.end);
+
   final _HighlightType type;
   final int start;
   final int end;

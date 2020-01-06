@@ -24,7 +24,7 @@ class _SafeAreaWidgetState extends State<SafeAreaWidget> {
               color: Colors.blue,
               child: Text(
                 "This widget is below safe area. If you remove the SafeArea "
-                    "widget then this text will be behind the notch.",
+                "widget then this text will be behind the notch.",
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.white),
               ),
@@ -35,8 +35,8 @@ class _SafeAreaWidgetState extends State<SafeAreaWidget> {
               textColor: Colors.white,
               color: Colors.indigo,
               onPressed: () => setState(() {
-                    _isEnabled == true ? _isEnabled = false : _isEnabled = true;
-                  }),
+                _isEnabled == true ? _isEnabled = false : _isEnabled = true;
+              }),
               child: Text(_isEnabled ? "Disable SafeArea" : "Enable SafeArea"),
             ),
 

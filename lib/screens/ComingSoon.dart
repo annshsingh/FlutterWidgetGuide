@@ -27,11 +27,10 @@ class _ComingSoonState extends State<ComingSoon> {
               "Coming soon....",
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontFamily: Utils.ubuntuRegularFont,
-                fontWeight: FontWeight.bold,
-                fontSize: 16.0,
-                color: Colors.black87
-              ),
+                  fontFamily: Utils.ubuntuRegularFont,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16.0,
+                  color: Colors.black87),
             )
           ],
         ),

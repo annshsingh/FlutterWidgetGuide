@@ -11,7 +11,7 @@ class AbsorbPointerWidget extends StatefulWidget {
 
 class _AbsorbPointerWidgetState extends State<AbsorbPointerWidget> {
   static final GlobalKey<ScaffoldState> _scaffoldKey =
-  GlobalKey<ScaffoldState>();
+      GlobalKey<ScaffoldState>();
   var _actionIcon = Icons.blur_on;
   var _isAbsorbing = false;
 
@@ -32,21 +32,21 @@ class _AbsorbPointerWidgetState extends State<AbsorbPointerWidget> {
           IconButton(
             icon: Icon(_actionIcon),
             onPressed: () => setState(() {
-                  _isAbsorbing == false
-                      ? _isAbsorbing = true
-                      : _isAbsorbing = false;
+              _isAbsorbing == false
+                  ? _isAbsorbing = true
+                  : _isAbsorbing = false;
 
-                  _isAbsorbing
-                      ? _actionIcon = Icons.blur_off
-                      : _actionIcon = Icons.blur_on;
+              _isAbsorbing
+                  ? _actionIcon = Icons.blur_off
+                  : _actionIcon = Icons.blur_on;
 
-                  _scaffoldKey.currentState.showSnackBar(
-                    SnackBar(
-                      content: Text("Absorbing Property changed to $_isAbsorbing"),
-                      duration: Duration(milliseconds: 1000),
-                    ),
-                  );
-                }),
+              _scaffoldKey.currentState.showSnackBar(
+                SnackBar(
+                  content: Text("Absorbing Property changed to $_isAbsorbing"),
+                  duration: Duration(milliseconds: 1000),
+                ),
+              );
+            }),
           ),
           IconButton(
             icon: Icon(Icons.code),
@@ -76,7 +76,7 @@ class _AbsorbPointerWidgetState extends State<AbsorbPointerWidget> {
                 child: Text(
                   "Absorb Pointer Enabled: $_isAbsorbing",
                   style: TextStyle(
-                      color: Colors.black87,
+                      color: Theme.of(context).backgroundColor,
                       fontSize: 14.0,
                       fontFamily: Utils.ubuntuRegularFont),
                   textAlign: TextAlign.center,

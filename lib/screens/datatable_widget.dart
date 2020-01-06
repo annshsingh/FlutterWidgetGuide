@@ -10,7 +10,6 @@ class DataTableWidget extends StatefulWidget {
 }
 
 class _DataTableWidgetState extends State<DataTableWidget> {
-
   /// True since we want our list to be in ascending order initially
   bool sort = true;
 

@@ -28,6 +28,7 @@ dependencies:
   webview_flutter: ^0.3.11+2
   shared_preferences: ^0.5.3+4
   firebase_messaging: ^6.0.9
+  provider: ^4.0.1
 
 dev_dependencies:
   flutter_test:

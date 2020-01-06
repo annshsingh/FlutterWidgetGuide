@@ -71,11 +71,11 @@ class _FadeTransitionWidgetState extends State<FadeTransitionWidget>
           IconButton(
             icon: Icon(Icons.code),
             onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CodeScreen(code: Code.fadeTransitionCode),
-                  ),
-                ),
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.fadeTransitionCode),
+              ),
+            ),
           )
         ],
       ),
@@ -94,9 +94,9 @@ class _FadeTransitionWidgetState extends State<FadeTransitionWidget>
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: Colors.lightBlue,
         onPressed: () => setState(() {
-              ///We start the animation by calling this
-              _controller.forward();
-            }),
+          ///We start the animation by calling this
+          _controller.forward();
+        }),
         icon: Icon(
           Icons.movie_filter,
           color: Colors.white,

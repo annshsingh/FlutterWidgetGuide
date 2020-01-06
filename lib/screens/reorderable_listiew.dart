@@ -48,7 +48,8 @@ class _ReorderableListViewWidgetState extends State<ReorderableListViewWidget> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => CodeScreen(code: Code.reorderableListviewCode),
+                builder: (context) =>
+                    CodeScreen(code: Code.reorderableListviewCode),
               ),
             ),
           )
@@ -67,11 +68,11 @@ class _ReorderableListViewWidgetState extends State<ReorderableListViewWidget> {
               decoration: BoxDecoration(
                 border: Border(
                   top: BorderSide(
-                    color: Colors.black26,
+                    color: Theme.of(context).dividerColor,
                     width: 0.5,
                   ),
                   bottom: BorderSide(
-                    color: Colors.black26,
+                    color: Theme.of(context).dividerColor,
                     width: 0.5,
                   ),
                 ),

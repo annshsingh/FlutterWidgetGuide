@@ -12,11 +12,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../profile_screen.dart';
 import 'WebViewWidget.dart';
 
-class HomePage extends StatefulWidget  {
+class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-
 
 /// WidgetsBindingObserver helps to keep track of the app lifecycle state
 class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
@@ -90,52 +89,52 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
     });
 
     //_getIsFcmConfigured().then((value) {
-     // if (!value) {
-        _fcm.configure(
-          onMessage: (Map<String, dynamic> message) async {
-            /// Called whenever the app is in foreground and receives a notification
-            /// A dialog box is shown to the user in this case
-            showDialog(
-              context: context,
-              builder: (context) => AlertDialog(
-                content: ListTile(
-                  title: Text("A new message from the developer!"),
-                  subtitle: Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: Text("Click open to visit the link"),
-                  ),
-                ),
-                actions: <Widget>[
-                  FlatButton(
-                    child: Text(
-                      'Cancel',
-                      style: TextStyle(color: Colors.grey[500]),
-                    ),
-                    onPressed: () => Navigator.of(context).pop(),
-                  ),
-                  FlatButton(
-                    child: Text('Open'),
-                    onPressed: () => {
-                      Navigator.of(context).pop(),
-                      _takeNotificationAction(message, context, true),
-                    },
-                  ),
-                ],
+    // if (!value) {
+    _fcm.configure(
+      onMessage: (Map<String, dynamic> message) async {
+        /// Called whenever the app is in foreground and receives a notification
+        /// A dialog box is shown to the user in this case
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            content: ListTile(
+              title: Text("A new message from the developer!"),
+              subtitle: Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Text("Click open to visit the link"),
               ),
-            );
-          },
-          onBackgroundMessage: _myBackgroundMessageHandler,
-          onLaunch: (Map<String, dynamic> message) async {
-            /// Called whenever the app is killed and receives a notification
-            _takeNotificationAction(message, context, false);
-          },
-          onResume: (Map<String, dynamic> message) async {
-            /// Called whenever the app is running in background
-            /// and receives a notification
-            _takeNotificationAction(message, context, false);
-          },
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text(
+                  'Cancel',
+                  style: TextStyle(color: Colors.grey[500]),
+                ),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+              FlatButton(
+                child: Text('Open'),
+                onPressed: () => {
+                  Navigator.of(context).pop(),
+                  _takeNotificationAction(message, context, true),
+                },
+              ),
+            ],
+          ),
         );
-     // }
+      },
+      onBackgroundMessage: _myBackgroundMessageHandler,
+      onLaunch: (Map<String, dynamic> message) async {
+        /// Called whenever the app is killed and receives a notification
+        _takeNotificationAction(message, context, false);
+      },
+      onResume: (Map<String, dynamic> message) async {
+        /// Called whenever the app is running in background
+        /// and receives a notification
+        _takeNotificationAction(message, context, false);
+      },
+    );
+    // }
     //});
   }
 
@@ -278,7 +277,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   }
 
   Widget appBar(BuildContext context) => SliverAppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).primaryColorDark,
         pinned: true,
         elevation: 3.0,
         forceElevated: false,

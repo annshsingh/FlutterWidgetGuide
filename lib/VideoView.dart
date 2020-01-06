@@ -6,7 +6,8 @@ class VideoView extends StatefulWidget {
   final String videoUrl;
   final String title;
 
-  VideoView({Key key, @required this.videoUrl, @required this.title}) : super(key: key);
+  VideoView({Key key, @required this.videoUrl, @required this.title})
+      : super(key: key);
 
   @override
   _VideoViewState createState() => _VideoViewState();

@@ -73,12 +73,12 @@ class _AnimatedBuilderWidgetState extends State<AnimatedBuilderWidget>
           IconButton(
             icon: Icon(Icons.code),
             onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        CodeScreen(code: Code.animatedBuilderCode),
-                  ),
-                ),
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    CodeScreen(code: Code.animatedBuilderCode),
+              ),
+            ),
           )
         ],
       ),
@@ -164,11 +164,11 @@ class _AnimatedBuilderWidgetState extends State<AnimatedBuilderWidget>
                   animation: widthAnimation,
                   child: null,
                   builder: (context, child) => Container(
-                        height: 100,
-                        width: widthAnimation.value,
-                        color: Colors.indigo,
-                        child: child,
-                      ),
+                    height: 100,
+                    width: widthAnimation.value,
+                    color: Colors.indigo,
+                    child: child,
+                  ),
                 ),
               ),
             ],
@@ -179,10 +179,10 @@ class _AnimatedBuilderWidgetState extends State<AnimatedBuilderWidget>
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: Colors.green,
         onPressed: () => setState(() {
-              _controller1.repeat();
-              _controller2.forward();
-              _controller3.forward();
-            }),
+          _controller1.repeat();
+          _controller2.forward();
+          _controller3.forward();
+        }),
         icon: Icon(
           Icons.movie_filter,
           color: Colors.white,

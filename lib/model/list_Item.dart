@@ -11,10 +11,10 @@ class ListItem {
 
   ListItem(
       {this.title,
-        this.context,
-        this.description,
-        this.url,
-        this.mediumUrl,
-        this.videoUrl,
-        this.menuColor = Colors.white});
+      this.context,
+      this.description,
+      this.url,
+      this.mediumUrl,
+      this.videoUrl,
+      this.menuColor = Colors.white});
 }

@@ -33,11 +33,11 @@ class _FutureBuilderWidgetState extends State<FutureBuilderWidget> {
           IconButton(
             icon: Icon(Icons.code),
             onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CodeScreen(code: Code.futurBuilderCode),
-                  ),
-                ),
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.futurBuilderCode),
+              ),
+            ),
           )
         ],
       ),
@@ -65,6 +65,7 @@ class _FutureBuilderWidgetState extends State<FutureBuilderWidget> {
                     valueColor: AlwaysStoppedAnimation<Color>(Colors.blue));
 
               case ConnectionState.done:
+
                 ///task is complete with an error (eg. When you
                 ///are offline)
                 if (snapshot.hasError)

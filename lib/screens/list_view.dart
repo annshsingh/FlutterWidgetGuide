@@ -47,8 +47,7 @@ class _ListViewWidgetState extends State<ListViewWidget> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) =>
-                    CodeScreen(code: Code.listViewCode),
+                builder: (context) => CodeScreen(code: Code.listViewCode),
               ),
             ),
           )

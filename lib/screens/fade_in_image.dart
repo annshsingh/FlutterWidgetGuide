@@ -31,12 +31,11 @@ class _FadeInImageWidgetState extends State<FadeInImageWidget> {
           IconButton(
             icon: Icon(Icons.code),
             onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        CodeScreen(code: Code.fadeInImageCode),
-                  ),
-                ),
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.fadeInImageCode),
+              ),
+            ),
           )
         ],
       ),
@@ -80,4 +79,3 @@ Future<bool> _willPopCallback() async {
   painting.imageCache.clear();
   return true; // return true if the route to be popped
 }
-

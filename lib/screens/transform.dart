@@ -83,7 +83,7 @@ class _TransformWidgetState extends State<TransformWidget> {
                 margin: EdgeInsets.all(12),
                 child: Text(
                   'Drag the slider above to change the scale.\nObserve how the'
-                               'size of the widget varies',
+                  'size of the widget varies',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Colors.grey[400],
@@ -125,12 +125,11 @@ class _TransformWidgetState extends State<TransformWidget> {
                   });
                 },
               ),
-
               Container(
                 margin: EdgeInsets.all(12),
                 child: Text(
                   'Drag the slider above to change the angle.\nObserve how the'
-                                  'widget rotates',
+                  'widget rotates',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Colors.grey[400],
@@ -139,7 +138,6 @@ class _TransformWidgetState extends State<TransformWidget> {
                       fontFamily: Utils.ubuntuRegularFont),
                 ),
               ),
-
               Transform.translate(
                 child: Container(
                   margin: EdgeInsets.all(12),
@@ -177,7 +175,7 @@ class _TransformWidgetState extends State<TransformWidget> {
                 margin: EdgeInsets.all(12),
                 child: Text(
                   'Drag the slider above to change the horizontal component [dx].\nObserve how the'
-                      'widget slides along the horizontal axis',
+                  'widget slides along the horizontal axis',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Colors.grey[400],

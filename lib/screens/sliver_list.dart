@@ -13,7 +13,7 @@ class SliverListWidget extends StatelessWidget {
           ///First sliver is the App Bar
           SliverAppBar(
             ///Properties of app bar
-            backgroundColor: Colors.white,
+            backgroundColor: Theme.of(context).primaryColor,
             floating: false,
             pinned: true,
             expandedHeight: 200.0,
@@ -24,7 +24,7 @@ class SliverListWidget extends StatelessWidget {
               title: Text(
                 "SliverList Widget",
                 style: TextStyle(
-                    color: Colors.black87,
+                    color: Theme.of(context).backgroundColor,
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                     fontFamily: Utils.ubuntuRegularFont),
@@ -62,8 +62,10 @@ class SliverListWidget extends StatelessWidget {
                 /// To convert this infinite list to a list with "n" no of items,
                 /// uncomment the following line:
                 /// if (index > n) return null;
-                return listItem(Utils.getRandomColor(), "Sliver List item: $index");
+                return listItem(
+                    Utils.getRandomColor(), "Sliver List item: $index");
               },
+
               /// Set childCount to limit no.of items
               /// childCount: 100,
             ),
@@ -74,18 +76,18 @@ class SliverListWidget extends StatelessWidget {
   }
 
   Widget listItem(Color color, String title) => Container(
-    height: 100.0,
-    color: color,
-    child: Center(
-      child: Text(
-        "$title",
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            color: Colors.white,
-            fontSize: 14.0,
-            fontWeight: FontWeight.bold,
-            fontFamily: Utils.ubuntuRegularFont),
-      ),
-    ),
-  );
+        height: 100.0,
+        color: color,
+        child: Center(
+          child: Text(
+            "$title",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 14.0,
+                fontWeight: FontWeight.bold,
+                fontFamily: Utils.ubuntuRegularFont),
+          ),
+        ),
+      );
 }

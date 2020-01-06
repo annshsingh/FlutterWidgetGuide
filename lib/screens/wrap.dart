@@ -28,11 +28,11 @@ class _WrapWidgetState extends State<WrapWidget> {
           IconButton(
             icon: Icon(Icons.code),
             onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CodeScreen(code: Code.wrapCode),
-                  ),
-                ),
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.wrapCode),
+              ),
+            ),
           )
         ],
       ),
@@ -48,7 +48,7 @@ class _WrapWidgetState extends State<WrapWidget> {
                       Text(
                         'Without Wrap widget',
                         style: TextStyle(
-                            color: Colors.black87,
+                            color: Theme.of(context).backgroundColor,
                             fontSize: 18.0,
                             fontWeight: FontWeight.bold,
                             fontFamily: Utils.ubuntuRegularFont),
@@ -97,7 +97,7 @@ class _WrapWidgetState extends State<WrapWidget> {
                       Text(
                         'With Wrap widget',
                         style: TextStyle(
-                            color: Colors.black87,
+                            color: Theme.of(context).backgroundColor,
                             fontSize: 18.0,
                             fontWeight: FontWeight.bold,
                             fontFamily: Utils.ubuntuRegularFont),

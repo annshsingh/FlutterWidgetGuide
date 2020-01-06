@@ -58,7 +58,11 @@ class _AnimatedOpacityWidgetState extends State<AnimatedOpacityWidget> {
             ),
             Container(
               child: RaisedButton(
-                child: Text(buttonText),
+                color: Theme.of(context).backgroundColor,
+                child: Text(
+                  buttonText,
+                  style: TextStyle(color: Theme.of(context).primaryColor),
+                ),
                 onPressed: _changeOpacity,
               ),
             ),

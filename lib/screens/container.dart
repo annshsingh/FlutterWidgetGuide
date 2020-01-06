@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_widget_guide/screens/media_query.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
 import '../Code.dart';
@@ -54,6 +53,7 @@ class _ContainerWidgetState extends State<ContainerWidget> {
                       fontSize: 16.0),
                 ),
               ),
+
               /// Container with Padding
               Container(
                 padding: EdgeInsets.all(24.0),
@@ -67,6 +67,7 @@ class _ContainerWidgetState extends State<ContainerWidget> {
                       fontSize: 16.0),
                 ),
               ),
+
               /// Container with a Shape and border
               Container(
                 padding: EdgeInsets.all(12.0),
@@ -88,6 +89,7 @@ class _ContainerWidgetState extends State<ContainerWidget> {
                       fontSize: 16.0),
                 ),
               ),
+
               /// Container with a different shape
               Container(
                 padding: EdgeInsets.all(12.0),
@@ -105,6 +107,7 @@ class _ContainerWidgetState extends State<ContainerWidget> {
                       fontSize: 16.0),
                 ),
               ),
+
               /// Container with fixed size
               Container(
                 margin: EdgeInsets.all(24.0),
@@ -125,6 +128,7 @@ class _ContainerWidgetState extends State<ContainerWidget> {
                       fontSize: 16.0),
                 ),
               ),
+
               /// Container with fixed size, rotated a bit
               Container(
                 margin: EdgeInsets.all(24.0),

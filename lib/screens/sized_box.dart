@@ -33,11 +33,11 @@ class _SizedBoxWidgetState extends State<SizedBoxWidget> {
           IconButton(
             icon: Icon(Icons.code),
             onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CodeScreen(code: Code.sizedCode),
-                  ),
-                ),
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.sizedCode),
+              ),
+            ),
           )
         ],
       ),

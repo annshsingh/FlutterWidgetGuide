@@ -39,7 +39,8 @@ class _AnimatedSwitcherWidgetState extends State<AnimatedSwitcherWidget> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => CodeScreen(code: Code.animatedSwitcherCode),
+                builder: (context) =>
+                    CodeScreen(code: Code.animatedSwitcherCode),
               ),
             ),
           )

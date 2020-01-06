@@ -8,7 +8,8 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   var versionNumber;
-  String appLink = "https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide";
+  String appLink =
+      "https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide";
 
   @override
   void initState() {
@@ -21,7 +22,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: Theme.of(context).primaryColor,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -35,7 +36,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 flex: 1,
                 child: Container(
                   height: 1,
-                  color: Colors.black12,
+                  color: Theme.of(context).dividerColor,
                 ),
               ),
               Flexible(
@@ -48,7 +49,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         fontSize: 14.0,
                         fontWeight: FontWeight.bold,
                         fontFamily: Utils.ubuntuRegularFont,
-                        color: Colors.black45),
+                        color: Theme.of(context).backgroundColor),
                   ),
                 ),
               ),
@@ -56,7 +57,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 flex: 1,
                 child: Container(
                   height: 1,
-                  color: Colors.black12,
+                  color: Theme.of(context).dividerColor,
                 ),
               ),
             ],
@@ -105,9 +106,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Container(
-                            margin: EdgeInsets.only(right: 10.0),
-                            child: Icon(Icons.star, color: Colors.amber,)
-                          ),
+                              margin: EdgeInsets.only(right: 10.0),
+                              child: Icon(
+                                Icons.star,
+                                color: Colors.amber,
+                              )),
                           Text(
                             "Rate the app",
                             style: TextStyle(
@@ -139,7 +142,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       fontSize: 14.0,
                       fontWeight: FontWeight.bold,
                       fontFamily: Utils.ubuntuRegularFont,
-                      color: Colors.black45),
+                      color: Theme.of(context).backgroundColor),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 12.0),
@@ -153,7 +156,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             fontSize: 14.0,
                             fontWeight: FontWeight.bold,
                             fontFamily: Utils.ubuntuRegularFont,
-                            color: Colors.black45),
+                            color: Theme.of(context).backgroundColor),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 6.0, right: 6.0),
@@ -169,7 +172,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             fontSize: 14.0,
                             fontWeight: FontWeight.bold,
                             fontFamily: Utils.ubuntuRegularFont,
-                            color: Colors.black45),
+                            color: Theme.of(context).backgroundColor),
                       ),
                     ],
                   ),
@@ -203,7 +206,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         style: TextStyle(
                             fontSize: 16.0,
                             fontWeight: FontWeight.bold,
-                            color: Colors.black87,
+                            color: Theme.of(context).backgroundColor,
                             fontFamily: Utils.ubuntuRegularFont),
                       ),
                     ),

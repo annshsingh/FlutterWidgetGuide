@@ -16,7 +16,8 @@ class _FloatingActionButtonWidgetState
   FloatingActionButtonLocation _fabLocation =
       FloatingActionButtonLocation.centerDocked;
 
-  static final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  static final GlobalKey<ScaffoldState> _scaffoldKey =
+      GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +25,13 @@ class _FloatingActionButtonWidgetState
       key: _scaffoldKey,
       appBar: AppBar(
         centerTitle: true,
-        title:Text(
-              'FAB Widget',
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: Utils.ubuntuRegularFont),
-            ),
+        title: Text(
+          'FAB Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.code),
@@ -52,7 +53,7 @@ class _FloatingActionButtonWidgetState
               child: Text(
                 'Select Fab Size',
                 style: TextStyle(
-                    color: Colors.black87,
+                    color: Theme.of(context).backgroundColor,
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
                     fontFamily: Utils.ubuntuRegularFont),
@@ -65,7 +66,6 @@ class _FloatingActionButtonWidgetState
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 _OptionItem(false, _isMini, _onSizeChange, 'Normal'),
-
                 _OptionItem(true, _isMini, _onSizeChange, 'Mini'),
               ],
             ),
@@ -79,7 +79,7 @@ class _FloatingActionButtonWidgetState
               child: Text(
                 'Select Fab Position',
                 style: TextStyle(
-                    color: Colors.black87,
+                    color: Theme.of(context).backgroundColor,
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
                     fontFamily: Utils.ubuntuRegularFont),
@@ -92,20 +92,22 @@ class _FloatingActionButtonWidgetState
             margin: EdgeInsets.all(18),
             child: Wrap(
               children: <Widget>[
-                _OptionItem(FloatingActionButtonLocation.centerDocked, _fabLocation, _onLocationChanged, 'Center (Docked)'),
-
-                _OptionItem(FloatingActionButtonLocation.endDocked, _fabLocation, _onLocationChanged, 'End (Docked)'),
-
-                _OptionItem(FloatingActionButtonLocation.centerFloat, _fabLocation, _onLocationChanged, 'Center (Float)'),
-
-                _OptionItem(FloatingActionButtonLocation.endFloat, _fabLocation, _onLocationChanged, 'End (Float)'),
+                _OptionItem(FloatingActionButtonLocation.centerDocked,
+                    _fabLocation, _onLocationChanged, 'Center (Docked)'),
+                _OptionItem(FloatingActionButtonLocation.endDocked,
+                    _fabLocation, _onLocationChanged, 'End (Docked)'),
+                _OptionItem(FloatingActionButtonLocation.centerFloat,
+                    _fabLocation, _onLocationChanged, 'Center (Float)'),
+                _OptionItem(FloatingActionButtonLocation.endFloat, _fabLocation,
+                    _onLocationChanged, 'End (Float)'),
               ],
             ),
           )
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text("You clicked on the FAB"))),
+        onPressed: () => _scaffoldKey.currentState
+            .showSnackBar(SnackBar(content: Text("You clicked on the FAB"))),
         child: Icon(Icons.add),
         foregroundColor: Colors.white,
         backgroundColor: Colors.orange,
@@ -126,14 +128,13 @@ class _FloatingActionButtonWidgetState
 
   ///method called whenever a radio button is clicked on to change position
   _onLocationChanged(FloatingActionButtonLocation value) => setState(() {
-    _fabLocation = value;
-  });
+        _fabLocation = value;
+      });
 
   ///method called whenever you want to change size
   _onSizeChange(bool value) => setState(() {
-    _isMini = value;
-  });
-
+        _isMini = value;
+      });
 }
 
 /// Class to create an option for the user to select for any <T> type.
@@ -163,16 +164,15 @@ class _OptionItem<T> extends StatelessWidget {
             value: value,
             groupValue: groupValue,
             activeColor: Colors.lightBlue,
-            onChanged: onChanged
-        ),
+            onChanged: onChanged),
         GestureDetector(
           onTap: () {
             onChanged(value);
           },
           child: Text(
             title,
-            style: TextStyle(
-                fontSize: 14.0, fontFamily: Utils.ubuntuRegularFont),
+            style:
+                TextStyle(fontSize: 14.0, fontFamily: Utils.ubuntuRegularFont),
           ),
         ),
       ],
@@ -181,8 +181,6 @@ class _OptionItem<T> extends StatelessWidget {
 }
 
 Container divider(BuildContext context) => Container(
-  child: Divider(),
-  margin: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
-);
-
-
+      child: Divider(),
+      margin: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
+    );

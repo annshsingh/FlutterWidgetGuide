@@ -28,11 +28,11 @@ class _AlignWidgetState extends State<AlignWidget> {
           IconButton(
             icon: Icon(Icons.code),
             onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CodeScreen(code: Code.alignCode),
-                  ),
-                ),
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.alignCode),
+              ),
+            ),
           )
         ],
       ),

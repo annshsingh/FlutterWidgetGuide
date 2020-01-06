@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widget_guide/utils.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_widget_guide/utils.dart';
 
 import '../Code.dart';
 import '../CodeScreen.dart';
@@ -11,7 +11,6 @@ class FlexibleWidget extends StatefulWidget {
 }
 
 class _FlexibleWidgetState extends State<FlexibleWidget> {
-
   @override
   void initState() {
     super.initState();
@@ -142,7 +141,8 @@ class _FlexibleWidgetState extends State<FlexibleWidget> {
                             fontSize: 28.0),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 8.0, right: 8.0, left: 8.0),
+                        padding: const EdgeInsets.only(
+                            top: 8.0, right: 8.0, left: 8.0),
                         child: Text(
                           "(1 Flex)",
                           style: TextStyle(

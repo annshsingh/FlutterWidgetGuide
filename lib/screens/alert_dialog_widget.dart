@@ -29,7 +29,8 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => CodeScreen(code: Code.alertDialogWidgetCode),
+                builder: (context) =>
+                    CodeScreen(code: Code.alertDialogWidgetCode),
               ),
             ),
           )
@@ -44,7 +45,11 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: RaisedButton(
-                  child: Text("Cupertino"),
+                  color: Theme.of(context).backgroundColor,
+                  child: Text(
+                    "Cupertino",
+                    style: TextStyle(color: Theme.of(context).primaryColor),
+                  ),
                   onPressed: () => {
                     showDialog(
                       context: context,
@@ -72,22 +77,36 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: RaisedButton(
-                  child: Text("Material"),
+                  color: Theme.of(context).backgroundColor,
+                  child: Text(
+                    "Material",
+                    style: TextStyle(color: Theme.of(context).primaryColor),
+                  ),
                   onPressed: () => {
                     showDialog(
                       context: context,
                       builder: (_) => AlertDialog(
                         elevation: 24.0,
-                        backgroundColor: Colors.white,
+                        backgroundColor: Theme.of(context).canvasColor,
                         title: Text("Accept Changes?"),
                         content: Text("Choose one"),
                         actions: <Widget>[
                           FlatButton(
-                            child: Text("No"),
+                            color: Theme.of(context).backgroundColor,
+                            child: Text(
+                              "No",
+                              style: TextStyle(
+                                  color: Theme.of(context).primaryColor),
+                            ),
                             onPressed: () => Navigator.pop(context),
                           ),
                           FlatButton(
-                            child: Text("Yes"),
+                            color: Theme.of(context).backgroundColor,
+                            child: Text(
+                              "Yes",
+                              style: TextStyle(
+                                  color: Theme.of(context).primaryColor),
+                            ),
                             onPressed: () => Navigator.pop(context),
                           ),
                         ],

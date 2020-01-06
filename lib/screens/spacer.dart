@@ -49,10 +49,12 @@ class _SpacerWidgetState extends State<SpacerWidget> {
             Padding(
               padding: const EdgeInsets.only(bottom: 18.0),
               child: Text(
-                  "Empty spaces between the boxes below are Spacer widgets",
-              textAlign: TextAlign.center,),
+                "Empty spaces between the boxes below are Spacer widgets",
+                textAlign: TextAlign.center,
+              ),
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 /// Empty space with flex = 2
                 isSpacerEnabled
@@ -97,7 +99,9 @@ class _SpacerWidgetState extends State<SpacerWidget> {
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: fabColor,
         onPressed: () => setState(() {
-          isSpacerEnabled == true ? isSpacerEnabled = false : isSpacerEnabled = true;
+          isSpacerEnabled == true
+              ? isSpacerEnabled = false
+              : isSpacerEnabled = true;
           isSpacerEnabled ? fabColor = Colors.red : fabColor = Colors.green;
           isSpacerEnabled ? fabIcon = Icons.cancel : fabIcon = Icons.add_circle;
           isSpacerEnabled ? fabText = "Remove Spacer" : fabText = "Add Spacer";

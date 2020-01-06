@@ -61,12 +61,18 @@ class _DraggableScrollableSheetWidgetState
                     controller: scrollController,
                     itemCount: 25,
                     itemBuilder: (BuildContext context, int index) {
-                      return ListTile(title: Text('Item $index'));
+                      return ListTile(
+                        title: Text(
+                          'Item $index',
+                          style: TextStyle(
+                              color: Theme.of(context).backgroundColor),
+                        ),
+                      );
                     },
                   ),
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
-                    color: Colors.white,
+                    color: Theme.of(context).primaryColor,
 
                     /// To set a shadow behind the parent container
                     boxShadow: [

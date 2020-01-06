@@ -33,7 +33,8 @@ class _ValueListenableBuilderWidgetState
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => CodeScreen(code: Code.valueListenableBuilderCode),
+                builder: (context) =>
+                    CodeScreen(code: Code.valueListenableBuilderCode),
               ),
             ),
           )

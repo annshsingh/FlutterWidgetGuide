@@ -45,7 +45,8 @@ class _AnimatedPositionedWidgetState extends State<AnimatedPositionedWidget> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => CodeScreen(code: Code.animatedPositionedCode),
+                builder: (context) =>
+                    CodeScreen(code: Code.animatedPositionedCode),
               ),
             ),
           )

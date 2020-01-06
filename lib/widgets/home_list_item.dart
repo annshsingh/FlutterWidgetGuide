@@ -16,7 +16,9 @@ Widget listItemDesign(BuildContext context, ListItem item, int index) => Card(
       shape: BeveledRectangleBorder(
         borderRadius: BorderRadius.circular(8.0),
       ),
-      color: item.title == "Rate the App" ? Colors.blue : Colors.white,
+      color: item.title == "Rate the App"
+          ? Colors.blue
+          : Theme.of(context).primaryColor,
       child: InkWell(
         onTap: () => item.title == "Rate the App"
             ? Utils.launchURL(appLink)
@@ -44,7 +46,9 @@ Widget listItemDesign(BuildContext context, ListItem item, int index) => Card(
               : item.description.isNotEmpty
                   ? Text(
                       '${index + 1}. ${item.title}',
-                      style: TextStyle(color: Colors.black, fontSize: 16.0),
+                      style: TextStyle(
+                          color: Theme.of(context).backgroundColor,
+                          fontSize: 16.0),
                     )
                   : RichText(
                       text: TextSpan(
@@ -52,7 +56,7 @@ Widget listItemDesign(BuildContext context, ListItem item, int index) => Card(
                         style: TextStyle(
                           fontWeight: FontWeight.normal,
                           fontSize: 16.0,
-                          color: Colors.black,
+                          color: Theme.of(context).backgroundColor,
                         ),
                         children: <TextSpan>[
                           TextSpan(text: "${index + 1}. ${item.title} "),
@@ -132,10 +136,11 @@ Widget listItemDesign(BuildContext context, ListItem item, int index) => Card(
                               ),
                               item.mediumUrl.length != 0
                                   ? Container(
-                                      width: 200.0,
+                                      width: 203.0,
                                       child: OutlineButton(
-                                        borderSide:
-                                            BorderSide(color: Colors.black87),
+                                        borderSide: BorderSide(
+                                            color: Theme.of(context)
+                                                .backgroundColor),
                                         highlightedBorderColor: Colors.black12,
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
@@ -157,6 +162,8 @@ Widget listItemDesign(BuildContext context, ListItem item, int index) => Card(
                                                     Utils.medium_img,
                                                     semanticsLabel:
                                                         "Medium Icon",
+                                                    color: Theme.of(context)
+                                                        .backgroundColor,
                                                   ),
                                                 ),
                                                 width: 48.0,
@@ -169,7 +176,8 @@ Widget listItemDesign(BuildContext context, ListItem item, int index) => Card(
                                                           FontWeight.w600,
                                                       fontFamily: Utils
                                                           .crimsonRegularFont,
-                                                      color: Colors.black87)),
+                                                      color: Theme.of(context)
+                                                          .backgroundColor)),
                                             ],
                                           ),
                                         ),

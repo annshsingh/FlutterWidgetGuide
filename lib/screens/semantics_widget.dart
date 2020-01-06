@@ -61,8 +61,8 @@ class _SemanticsWidgetState extends State<SemanticsWidget> {
               "If you enable Talkback feature from your devices Accessibility settings"
               "and click on the Flutter Logo, the device will announce whatever you have"
               "written on the label tag in Semantics widget",
-              style:
-                  TextStyle(fontFamily: Utils.ubuntuRegularFont, fontSize: 16.0),
+              style: TextStyle(
+                  fontFamily: Utils.ubuntuRegularFont, fontSize: 16.0),
               textAlign: TextAlign.center,
             ),
           )

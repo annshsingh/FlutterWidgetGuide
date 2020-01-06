@@ -20,11 +20,11 @@ class TooltipWidget extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.code),
             onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CodeScreen(code: Code.tooltipCode),
-                  ),
-                ),
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.tooltipCode),
+              ),
+            ),
           )
         ],
       ),

@@ -19,35 +19,35 @@ class _AnimatedListWidgetState extends State<AnimatedListWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            'AnimatedList Widget',
-            style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-                fontFamily: Utils.ubuntuRegularFont),
-          ),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.code),
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => CodeScreen(code: Code.animatedListCode),
-                ),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'AnimatedList Widget',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: Utils.ubuntuRegularFont),
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.code),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.animatedListCode),
               ),
-            )
-          ],
-        ),
-        body: AnimatedList(
-          /// Key to call remove and insert item methods from anywhere
-          key: _listKey,
-          initialItemCount: _data.length,
-          itemBuilder: (context, index, animation) {
-            return _buildItem(_data[index], animation, index);
-          },
-        ),
+            ),
+          )
+        ],
+      ),
+      body: AnimatedList(
+        /// Key to call remove and insert item methods from anywhere
+        key: _listKey,
+        initialItemCount: _data.length,
+        itemBuilder: (context, index, animation) {
+          return _buildItem(_data[index], animation, index);
+        },
+      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.playlist_add),
         backgroundColor: Colors.blue,
@@ -72,7 +72,7 @@ class _AnimatedListWidgetState extends State<AnimatedListWidget> {
               Icons.remove_circle,
               color: Colors.red,
             ),
-            onTap: (){
+            onTap: () {
               _removeSingleItems(index);
             },
           ),
@@ -81,13 +81,12 @@ class _AnimatedListWidgetState extends State<AnimatedListWidget> {
     );
   }
 
-
   /// Method to add an item to an index in a list
   void _insertSingleItem() {
     int insertIndex;
-    if(_data.length > 0 ) {
+    if (_data.length > 0) {
       insertIndex = _data.length;
-    }else{
+    } else {
       insertIndex = 0;
     }
     String item = "Item ${insertIndex + 1}";

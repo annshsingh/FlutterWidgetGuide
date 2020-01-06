@@ -30,12 +30,11 @@ class _BackdropFilterWidgetState extends State<BackdropFilterWidget> {
           IconButton(
             icon: Icon(Icons.code),
             onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        CodeScreen(code: Code.backDropFilterCode),
-                  ),
-                ),
+              context,
+              MaterialPageRoute(
+                builder: (context) => CodeScreen(code: Code.backDropFilterCode),
+              ),
+            ),
           )
         ],
       ),
