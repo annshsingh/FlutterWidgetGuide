@@ -101,6 +101,7 @@ class Utils {
   static const String draggableScrollableSheet = "/DraggableScrollableSheet";
   static const String colorFiltered = "/ColorFiltered";
   static const String toggleButtons = "/ToggleButtons";
+  static const String cupertinoActionSheet = "/CupertinoActionSheet";
 
   static const String rateApp = "/Rate the App";
   static const String slack_invite =
@@ -279,6 +280,8 @@ class Utils {
       "It's easy to play around with color in Flutter widgets, and not just by modifying a color parameter. ColorFiltered widget will let you change and morph colors in weird and wonderful ways!";
   static const String toggleButtonsDescription =
       "Do you want to let your users select from a number of related options? Adding ToggleButtons to your app can help!  ";
+  static const String cupertinoActionSheetDescription =
+      "Are you building an iOS-style app that needs to present the user with a list of options for what to do next? CupertinoActionSheet is the widget for you!";
 
   static const String rateAppDescription = ".";
 
@@ -409,6 +412,8 @@ class Utils {
       "https://api.flutter.dev/flutter/widgets/ColorFiltered-class.html";
   static const String toggleButtonsURL =
       "https://api.flutter.dev/flutter/material/ToggleButtons-class.html";
+  static const String cupertinoActionSheetURL =
+      "https://api.flutter.dev/flutter/cupertino/CupertinoActionSheet-class.html";
 
   static const String expandedSourceURL =
       "https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart";
@@ -543,6 +548,8 @@ class Utils {
       "https://www.youtube.com/watch?v=F7Cll22Dno8&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=62";
   static const String toggleButtonsVideoURL =
       "https://www.youtube.com/watch?v=kVEguaQWGAY&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=63";
+  static const String cupertinoActionSheetVideoURL =
+      "https://www.youtube.com/watch?v=U-ao8p4A82k&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=64";
 
   static const String rateAppVideoURL = ".";
 
@@ -624,6 +631,7 @@ class Utils {
   static const String draggableScrollableSheetMediumURL = "";
   static const String colorFilteredMediumURL = "";
   static const String toggleButtonsMediumURL = "";
+  static const String cupertinoActionSheetMediumURL = "";
 
   static const String rateAppMediumURL = ".";
 

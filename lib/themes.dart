@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// Ref: https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/gallery/themes.dart
@@ -28,6 +29,12 @@ ThemeData _buildLightTheme() {
     dividerColor: Colors.black12,
     scaffoldBackgroundColor: Colors.white,
     errorColor: const Color(0xFFB00020),
+
+    ///For Cupertino elements in Light theme
+    cupertinoOverrideTheme: CupertinoThemeData(
+      primaryColor: primaryColor,
+      brightness: Brightness.light
+    ),
 
     ///For tooltip
     brightness: Brightness.light,
@@ -79,6 +86,10 @@ ThemeData _buildDarkTheme() {
     ///For slider label
     accentTextTheme: TextTheme(
       body2: TextStyle(color: Colors.white, backgroundColor: Colors.lightBlue),
+    ),
+
+    cupertinoOverrideTheme: CupertinoThemeData(
+      primaryColor: primaryColor,
     ),
   );
   return base.copyWith(

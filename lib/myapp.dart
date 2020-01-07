@@ -19,6 +19,7 @@ import 'package:flutter_widget_guide/screens/clip_r_rect.dart';
 import 'package:flutter_widget_guide/screens/color_filtered.dart';
 import 'package:flutter_widget_guide/screens/constrained_box.dart';
 import 'package:flutter_widget_guide/screens/container.dart';
+import 'package:flutter_widget_guide/screens/cupertino_action_sheet.dart';
 import 'package:flutter_widget_guide/screens/custom_paint.dart';
 import 'package:flutter_widget_guide/screens/datatable_widget.dart';
 import 'package:flutter_widget_guide/screens/dismissible.dart';
@@ -188,7 +189,8 @@ class _MyApp extends StatelessWidget {
         Utils.draggableScrollableSheet: (BuildContext context) =>
             DraggableScrollableSheetWidget(),
         Utils.colorFiltered: (BuildContext context) => ColorFilteredWidget(),
-        Utils.toggleButtons: (BuildContext context) => ToggleButtonsWidget()
+        Utils.toggleButtons: (BuildContext context) => ToggleButtonsWidget(),
+        Utils.cupertinoActionSheet: (BuildContext context) => CupertinoActionSheetWidget()
       },
     );
   }

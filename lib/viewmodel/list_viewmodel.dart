@@ -392,6 +392,12 @@ class ListViewModel {
           mediumUrl: "${Utils.toggleButtonsMediumURL}",
           videoUrl: "${Utils.toggleButtonsVideoURL}"),
       ListItem(
+          title: "${Utils.cupertinoActionSheet.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.cupertinoActionSheetDescription}",
+          url: "${Utils.cupertinoActionSheetURL}",
+          mediumUrl: "${Utils.cupertinoActionSheetMediumURL}",
+          videoUrl: "${Utils.cupertinoActionSheetVideoURL}"),
+      ListItem(
           title: "${Utils.rateApp.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.rateAppDescription}",
           url: "${Utils.rateAppURL}",
