@@ -64,6 +64,7 @@ import 'package:flutter_widget_guide/screens/table.dart';
 import 'package:flutter_widget_guide/screens/toggle_buttons.dart';
 import 'package:flutter_widget_guide/screens/tooltip.dart';
 import 'package:flutter_widget_guide/screens/transform.dart';
+import 'package:flutter_widget_guide/screens/tween_animation_builder.dart';
 import 'package:flutter_widget_guide/screens/value_listenable_builder.dart';
 import 'package:flutter_widget_guide/screens/wrap.dart';
 import 'package:flutter_widget_guide/settings.dart';
@@ -190,7 +191,8 @@ class _MyApp extends StatelessWidget {
             DraggableScrollableSheetWidget(),
         Utils.colorFiltered: (BuildContext context) => ColorFilteredWidget(),
         Utils.toggleButtons: (BuildContext context) => ToggleButtonsWidget(),
-        Utils.cupertinoActionSheet: (BuildContext context) => CupertinoActionSheetWidget()
+        Utils.cupertinoActionSheet: (BuildContext context) => CupertinoActionSheetWidget(),
+        Utils.tweenAnimationBuilder: (BuildContext context) => TweenAnimationBuilderWidget()
       },
     );
   }

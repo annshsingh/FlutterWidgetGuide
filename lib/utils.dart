@@ -102,6 +102,7 @@ class Utils {
   static const String colorFiltered = "/ColorFiltered";
   static const String toggleButtons = "/ToggleButtons";
   static const String cupertinoActionSheet = "/CupertinoActionSheet";
+  static const String tweenAnimationBuilder = "/TweenAnimationBuilder";
 
   static const String rateApp = "/Rate the App";
   static const String slack_invite =
@@ -282,6 +283,8 @@ class Utils {
       "Do you want to let your users select from a number of related options? Adding ToggleButtons to your app can help!  ";
   static const String cupertinoActionSheetDescription =
       "Are you building an iOS-style app that needs to present the user with a list of options for what to do next? CupertinoActionSheet is the widget for you!";
+  static const String tweenAnimationBuilderDescription =
+      "Do you want a simple animation, but none of the built-in implicit animation widgets do the trick? TweenAnimationBuilder is here for all your custom animation needs without having to worry about that AnimationController!";
 
   static const String rateAppDescription = ".";
 
@@ -414,6 +417,8 @@ class Utils {
       "https://api.flutter.dev/flutter/material/ToggleButtons-class.html";
   static const String cupertinoActionSheetURL =
       "https://api.flutter.dev/flutter/cupertino/CupertinoActionSheet-class.html";
+  static const String tweenAnimationBuilderURL =
+      "https://api.flutter.dev/flutter/widgets/TweenAnimationBuilder-class.html";
 
   static const String expandedSourceURL =
       "https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart";
@@ -550,6 +555,8 @@ class Utils {
       "https://www.youtube.com/watch?v=kVEguaQWGAY&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=63";
   static const String cupertinoActionSheetVideoURL =
       "https://www.youtube.com/watch?v=U-ao8p4A82k&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=64";
+  static const String tweenAnimationBuilderVideoURL =
+      "https://www.youtube.com/watch?v=l9uHB8VXZOg&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=65";
 
   static const String rateAppVideoURL = ".";
 
@@ -632,6 +639,7 @@ class Utils {
   static const String colorFilteredMediumURL = "";
   static const String toggleButtonsMediumURL = "";
   static const String cupertinoActionSheetMediumURL = "";
+  static const String tweenAnimationBuilderMediumURL = "";
 
   static const String rateAppMediumURL = ".";
 
