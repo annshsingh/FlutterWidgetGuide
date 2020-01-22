@@ -110,7 +110,7 @@ class AncestorWidget extends InheritedModel<String> {
     return InheritedModel.inheritFrom<AncestorWidget>(context, aspect: aspect);
   }
 
-  ///Runs once for reach widget to determine if that widget should be rebuild
+  ///Runs once for each widget to determine if that widget should be rebuild
   ///Checks the aspect for a dependent widget and returns true if that
   ///widget should be rebuild depending on a certain condition.
   @override

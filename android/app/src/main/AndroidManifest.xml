@@ -24,6 +24,10 @@
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/noti" />
 
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4000328104346549~8164868587"/>
+
         <activity
             android:name = ".MainActivity"
             android:configChanges = "orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"

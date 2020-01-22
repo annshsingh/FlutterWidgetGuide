@@ -1,3 +1,4 @@
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_widget_guide/settings.dart';
@@ -22,11 +23,31 @@ class CodeScreenState extends State<CodeScreen> {
   var _isDarkThemeSet = false;
   var _bgColor = Colors.white;
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+  BannerAd _bannerAd;
+  final ValueNotifier<bool> padding = ValueNotifier<bool>(false);
+
+  //TODO: Add valid app id
+  String appid = "ca-app-pub-4000328104346549~8164868587";
+  static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
+    testDevices: <String>["DBC78393FB0E71331AF178ACE0873FC1"],
+    nonPersonalizedAds: true,
+    keywords: <String>["Game", "Utility", "Social"],
+  );
 
   @override
   void initState() {
     _getValueFromSP(context);
+    FirebaseAdMob.instance.initialize(appId: appid);
+    _bannerAd = createBannerAd()
+      ..load()
+      ..show();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _bannerAd.dispose();
+    super.dispose();
   }
 
   @override
@@ -51,6 +72,8 @@ class CodeScreenState extends State<CodeScreen> {
               if (_isDarkThemeSet) {
                 _scaffoldKey.currentState.showSnackBar(
                   SnackBar(
+                    elevation: 6.0,
+                    behavior: SnackBarBehavior.floating,
                     content: Text("System wide Dark Theme applied"),
                     duration: Duration(milliseconds: 3000),
                   ),
@@ -58,6 +81,8 @@ class CodeScreenState extends State<CodeScreen> {
               } else {
                 _scaffoldKey.currentState.showSnackBar(
                   SnackBar(
+                    elevation: 6.0,
+                    behavior: SnackBarBehavior.floating,
                     content: Text("System wide Light Theme applied"),
                     duration: Duration(milliseconds: 3000),
                   ),
@@ -70,51 +95,73 @@ class CodeScreenState extends State<CodeScreen> {
 
       /// Scrollbar widget to show scrollbar while scrolling
       body: SafeArea(
-        child: Scrollbar(
-          /// For horizontal scrolling
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: SizedBox(
-              width: 800.0,
+        child: ValueListenableBuilder(
+          builder: (BuildContext context, bool value, Widget child) {
+            return Padding(
+              padding: value
+                  ? const EdgeInsets.only(bottom: 48.0)
+                  : const EdgeInsets.only(bottom: 0.0),
               child: Scrollbar(
-                /// For vertical scrolling
-                child: ListView.builder(
-                  itemCount: 1,
-                  itemBuilder: (BuildContext context, int i) {
-                    return Container(
-                      padding: EdgeInsets.all(8.0),
-                      child: SelectableText.rich(
-                        DartSyntaxHighlighter(_style).format(widget.code),
-                        showCursor: false,
-                        cursorColor: Colors.blue,
-                        cursorRadius: Radius.circular(5),
+                /// For horizontal scrolling
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: SizedBox(
+                    width: 800.0,
+                    child: Scrollbar(
+                      /// For vertical scrolling
+                      child: ListView.builder(
+                        itemCount: 1,
+                        itemBuilder: (BuildContext context, int i) {
+                          return Container(
+                            padding: EdgeInsets.all(8.0),
+                            child: SelectableText.rich(
+                              DartSyntaxHighlighter(_style).format(widget.code),
+                              showCursor: false,
+                              cursorColor: Colors.blue,
+                              cursorRadius: Radius.circular(5),
+                            ),
+                          );
+                        },
                       ),
-                    );
-                  },
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
+            );
+          },
+          valueListenable: padding,
         ),
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        backgroundColor: Colors.white,
-        onPressed: () {
-          Clipboard.setData(new ClipboardData(text: widget.code));
-          _scaffoldKey.currentState.showSnackBar(
-            new SnackBar(
-              content: new Text("Copied to Clipboard"),
+      floatingActionButton: ValueListenableBuilder(
+        builder: (BuildContext context, bool value, Widget child) {
+          return Padding(
+            padding: value
+                ? const EdgeInsets.only(bottom: 48.0)
+                : const EdgeInsets.only(bottom: 0.0),
+            child: FloatingActionButton.extended(
+              backgroundColor: Colors.white,
+              onPressed: () {
+                Clipboard.setData(new ClipboardData(text: widget.code));
+                _scaffoldKey.currentState.showSnackBar(
+                  SnackBar(
+                    elevation: 6.0,
+                    behavior: SnackBarBehavior.floating,
+                    content: Text("Copied to Clipboard"),
+                  ),
+                );
+              },
+              label: Text(
+                "Copy",
+                style: TextStyle(color: Colors.black87),
+              ),
+              icon: Icon(
+                Icons.content_copy,
+                color: Colors.black87,
+              ),
             ),
           );
         },
-        label: Text(
-          "Copy",
-          style: TextStyle(color: Colors.black87),
-        ),
-        icon: Icon(
-          Icons.content_copy,
-          color: Colors.black87,
-        ),
+        valueListenable: padding,
       ),
     );
   }
@@ -151,5 +198,21 @@ class CodeScreenState extends State<CodeScreen> {
         setDarkTheme(_isDarkThemeSet, context);
       }
     });
+  }
+
+  BannerAd createBannerAd() {
+    return BannerAd(
+      //TODO: Add valid adUnitId
+      adUnitId: BannerAd.testAdUnitId,
+      size: AdSize.banner,
+      targetingInfo: targetingInfo,
+      listener: (MobileAdEvent event) {
+        if (event == MobileAdEvent.loaded) {
+          padding.value = true;
+        } else if (event == MobileAdEvent.failedToLoad) {
+          padding.value = false;
+        }
+      },
+    );
   }
 }

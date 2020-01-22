@@ -71,6 +71,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "7.1.0"
+  firebase_admob:
+    dependency: "direct main"
+    description:
+      name: firebase_admob
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.9.0+10"
   firebase_analytics:
     dependency: "direct main"
     description:
@@ -254,13 +261,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.5"
-  share:
-    dependency: transitive
-    description:
-      name: share
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.6.3+5"
   shared_preferences:
     dependency: "direct main"
     description:
@@ -399,13 +399,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.5.0"
-  youtube_player:
+  youtube_player_flutter:
     dependency: "direct main"
     description:
-      name: youtube_player
+      name: youtube_player_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.5.0"
+    version: "6.0.3+2"
 sdks:
-  dart: ">=2.4.0 <3.0.0"
+  dart: ">=2.5.0 <3.0.0"
   flutter: ">=1.12.13+hotfix.4 <2.0.0"

@@ -589,8 +589,10 @@ class Utils {
       "https://medium.com/flutter-community/flutter-widget-guide-slivergrid-widget-in-5-mins-or-less-e6a95d6c4e76";
   static const String fadeInImageMediumUrl =
       "https://medium.com/flutter-community/flutter-widget-guide-fadeinimage-widget-in-5-mins-or-less-2659a9aa5bfd";
-  static const String streamBuilderMediumUrl = "";
-  static const String inheritedModelMediumUrl = "";
+  static const String streamBuilderMediumUrl =
+      "https://medium.com/flutter-community/flutter-widget-guide-streambuilder-widget-in-5-mins-or-less-9f6a34f7ed2f";
+  static const String inheritedModelMediumUrl =
+      "https://medium.com/@annsh/flutter-widget-guide-inheritedmodel-widget-in-5-mins-or-less-a2b0dd8beb43";
   static const String clipRrectMediumUrl = "";
   static const String heroMediumUrl = "";
   static const String customPaintMediumUrl = "";
