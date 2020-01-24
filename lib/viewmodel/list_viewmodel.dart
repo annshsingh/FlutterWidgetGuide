@@ -404,6 +404,18 @@ class ListViewModel {
           mediumUrl: "${Utils.tweenAnimationBuilderMediumURL}",
           videoUrl: "${Utils.tweenAnimationBuilderVideoURL}"),
       ListItem(
+          title: "${Utils.image.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.imageDescription}",
+          url: "${Utils.imageURL}",
+          mediumUrl: "${Utils.imageMediumURL}",
+          videoUrl: "${Utils.imageVideoURL}"),
+      ListItem(
+          title: "${Utils.tabs.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.tabsDescription}",
+          url: "${Utils.tabsURL}",
+          mediumUrl: "${Utils.tabsMediumURL}",
+          videoUrl: "${Utils.tabsVideoURL}"),
+      ListItem(
           title: "${Utils.rateApp.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.rateAppDescription}",
           url: "${Utils.rateAppURL}",

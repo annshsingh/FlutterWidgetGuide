@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Ads.dart';
 import '../Code.dart';
 import '../CodeScreen.dart';
 
@@ -12,6 +13,14 @@ class AnimatedOpacityWidget extends StatefulWidget {
 class _AnimatedOpacityWidgetState extends State<AnimatedOpacityWidget> {
   double opacityLevel = 1.0;
   String buttonText = "Fade Out";
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
+
 
   @override
   Widget build(BuildContext context) {

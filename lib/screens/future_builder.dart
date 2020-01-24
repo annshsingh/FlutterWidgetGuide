@@ -3,6 +3,7 @@ import 'package:flutter_widget_guide/model/demo_model.dart';
 import 'package:flutter_widget_guide/network/api.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Ads.dart';
 import '../Code.dart';
 import '../CodeScreen.dart';
 
@@ -16,6 +17,13 @@ class _FutureBuilderWidgetState extends State<FutureBuilderWidget> {
   var _buttonIcon = Icons.cloud_download;
   var _buttonText = "Fetch Data";
   var _buttonColor = Colors.green;
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

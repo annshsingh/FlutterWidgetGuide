@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Ads.dart';
 import '../Code.dart';
 import '../CodeScreen.dart';
 
@@ -13,6 +14,14 @@ class _FittedBoxWidgetState extends State<FittedBoxWidget> {
   var _boxFit = BoxFit.contain;
 
   var _heightValue = 400.0;
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
+
 
   @override
   Widget build(BuildContext context) {

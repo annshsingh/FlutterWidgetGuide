@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Ads.dart';
 import '../Code.dart';
 import '../CodeScreen.dart';
 
@@ -11,6 +12,13 @@ class DismissibleWidget extends StatefulWidget {
 
 class _DismissibleWidgetState extends State<DismissibleWidget> {
   final items = List<String>.generate(30, (i) => "Item ${i + 1}");
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

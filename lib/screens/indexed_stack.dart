@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Ads.dart';
 import '../Code.dart';
 import '../CodeScreen.dart';
 
@@ -13,6 +14,13 @@ class _IndexedStackWidgetState extends State<IndexedStackWidget> {
   int count = 0;
   int _widgetIndex = 0;
   Color _imageColor = Colors.blue;
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

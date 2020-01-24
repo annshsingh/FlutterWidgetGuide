@@ -93,7 +93,7 @@ class HeroWidget extends StatelessWidget {
         onWillPop: () {
           ///Reset timeDilation since it is a Global property
           timeDilation = 1.0;
-          Navigator.of(context).pop(true);
+          return Future.value(true);
         },
       ),
     );

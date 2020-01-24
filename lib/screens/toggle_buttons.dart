@@ -3,6 +3,8 @@ import 'package:flutter_widget_guide/Code.dart';
 import 'package:flutter_widget_guide/CodeScreen.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Ads.dart';
+
 class ToggleButtonsWidget extends StatefulWidget {
   @override
   _ToggleButtonsWidgetState createState() => _ToggleButtonsWidgetState();
@@ -18,6 +20,13 @@ class _ToggleButtonsWidgetState extends State<ToggleButtonsWidget> {
 
   /// To manage selection states of 2nd toggle buttons group
   List<bool> _selections2 = List.generate(3, (_) => false);
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

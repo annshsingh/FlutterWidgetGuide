@@ -59,7 +59,7 @@ class Hero2Widget extends StatelessWidget {
         ),
         onWillPop: () {
           timeDilation = 4.0;
-          Navigator.of(context).pop(true);
+          return Future.value(true);
         },
       ),
     );

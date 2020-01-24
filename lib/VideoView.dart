@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
+import 'Ads.dart';
+
 class VideoView extends StatefulWidget {
   final String videoUrl;
   final String title;
@@ -16,14 +18,6 @@ class VideoView extends StatefulWidget {
 
 class _VideoViewState extends State<VideoView> {
   YoutubePlayerController _controller;
-  BannerAd _bannerAd;
-  //TODO: Add valid app id
-  String appid = "ca-app-pub-4000328104346549~8164868587";
-  static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
-    testDevices: <String>["DBC78393FB0E71331AF178ACE0873FC1"],
-    nonPersonalizedAds: true,
-    keywords: <String>["Game", "Utility", "Social"],
-  );
 
   @override
   void initState() {
@@ -35,10 +29,7 @@ class _VideoViewState extends State<VideoView> {
           forceHideAnnotation: true,
           enableCaption: false),
     );
-    FirebaseAdMob.instance.initialize(appId: appid);
-    _bannerAd = createBannerAd()
-      ..load()
-      ..show();
+    Ads.showBannerAd(BannerAd.testAdUnitId);
     super.initState();
   }
 
@@ -61,50 +52,43 @@ class _VideoViewState extends State<VideoView> {
         elevation: 0.0,
         backgroundColor: const Color(0x000000).withOpacity(1),
       ),
-      body: Stack(
-        children: <Widget>[
-          Container(
-            padding: const EdgeInsets.only(bottom: 8.0),
-            color: Colors.black,
-            height: double.infinity,
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 56.0),
-              child: YoutubePlayer(
-                controller: _controller,
-                showVideoProgressIndicator: true,
-                bottomActions: <Widget>[
-                  const SizedBox(width: 14.0),
-                  CurrentPosition(),
-                  const SizedBox(width: 8.0),
-                  ProgressBar(isExpanded: true),
-                  RemainingDuration(),
-                ],
-                aspectRatio: 4 / 3,
-                progressIndicatorColor: Colors.white,
-                onReady: () {
-                  print('Player is ready.');
-                },
+      body: WillPopScope(
+        child: Stack(
+          children: <Widget>[
+            Container(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              color: Colors.black,
+              height: double.infinity,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 56.0),
+                child: YoutubePlayer(
+                  controller: _controller,
+                  showVideoProgressIndicator: true,
+                  bottomActions: <Widget>[
+                    const SizedBox(width: 14.0),
+                    CurrentPosition(),
+                    const SizedBox(width: 8.0),
+                    ProgressBar(isExpanded: true),
+                    RemainingDuration(),
+                  ],
+                  aspectRatio: 4 / 3,
+                  progressIndicatorColor: Colors.white,
+                  onReady: () {
+                    print('Player is ready.');
+                  },
+                ),
               ),
             ),
-          ),
-
-        ],
+          ],
+        ),
+        onWillPop: _willPopCallback,
       ),
     );
   }
 
-  @override
-  void dispose() {
-    _bannerAd.dispose();
-    super.dispose();
-  }
-
-  BannerAd createBannerAd() {
-    return BannerAd(
-      //TODO: Add valid adUnitId
-      adUnitId: BannerAd.testAdUnitId,
-      size: AdSize.banner,
-      targetingInfo: targetingInfo,
-    );
+  //Hide add if back is pressed
+  Future<bool> _willPopCallback() async {
+    Ads.hideBannerAd();
+    return true; // return true if the route to be popped
   }
 }

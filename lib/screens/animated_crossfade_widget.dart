@@ -3,6 +3,8 @@ import 'package:flutter_widget_guide/Code.dart';
 import 'package:flutter_widget_guide/CodeScreen.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Ads.dart';
+
 class AnimatedCrossFadeWidget extends StatefulWidget {
   @override
   _AnimatedCrossFadeWidgetState createState() =>
@@ -11,6 +13,13 @@ class AnimatedCrossFadeWidget extends StatefulWidget {
 
 class _AnimatedCrossFadeWidgetState extends State<AnimatedCrossFadeWidget> {
   var crossFadeView = CrossFadeState.showFirst;
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

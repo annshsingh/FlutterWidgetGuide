@@ -3,6 +3,7 @@ import 'package:flutter/painting.dart' as painting;
 import 'package:flutter_widget_guide/utils.dart';
 import 'package:transparent_image/transparent_image.dart';
 
+import '../Ads.dart';
 import '../Code.dart';
 import '../CodeScreen.dart';
 
@@ -14,6 +15,13 @@ class FadeInImageWidget extends StatefulWidget {
 class _FadeInImageWidgetState extends State<FadeInImageWidget> {
   String _url =
       "https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&h=350";
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -36,6 +36,7 @@ import 'package:flutter_widget_guide/screens/future_builder.dart';
 import 'package:flutter_widget_guide/screens/hero.dart';
 import 'package:flutter_widget_guide/screens/hero2.dart';
 import 'package:flutter_widget_guide/screens/home_page.dart';
+import 'package:flutter_widget_guide/screens/image_widget.dart';
 import 'package:flutter_widget_guide/screens/inherited_model.dart';
 import 'package:flutter_widget_guide/screens/inherited_widget.dart';
 import 'package:flutter_widget_guide/screens/layout_builder.dart';
@@ -61,6 +62,7 @@ import 'package:flutter_widget_guide/screens/spacer.dart';
 import 'package:flutter_widget_guide/screens/stack_widget.dart';
 import 'package:flutter_widget_guide/screens/stream_builder.dart';
 import 'package:flutter_widget_guide/screens/table.dart';
+import 'package:flutter_widget_guide/screens/tabs_widget.dart';
 import 'package:flutter_widget_guide/screens/toggle_buttons.dart';
 import 'package:flutter_widget_guide/screens/tooltip.dart';
 import 'package:flutter_widget_guide/screens/transform.dart';
@@ -192,7 +194,9 @@ class _MyApp extends StatelessWidget {
         Utils.colorFiltered: (BuildContext context) => ColorFilteredWidget(),
         Utils.toggleButtons: (BuildContext context) => ToggleButtonsWidget(),
         Utils.cupertinoActionSheet: (BuildContext context) => CupertinoActionSheetWidget(),
-        Utils.tweenAnimationBuilder: (BuildContext context) => TweenAnimationBuilderWidget()
+        Utils.tweenAnimationBuilder: (BuildContext context) => TweenAnimationBuilderWidget(),
+        Utils.image: (BuildContext context) => ImageWidget(),
+        Utils.tabs: (BuildContext context) => TabsWidget()
       },
     );
   }

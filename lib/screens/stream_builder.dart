@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Ads.dart';
 import '../Code.dart';
 import '../CodeScreen.dart';
 
@@ -15,6 +16,13 @@ class _StreamBuilderWidgetState extends State<StreamBuilderWidget> {
   var counterStream = Stream<double>.periodic(
       Duration(milliseconds: 100), (x) => (x * 2).toDouble()).take(101);
   bool _isButtonClicked = false;
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

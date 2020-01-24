@@ -7750,4 +7750,161 @@ class Code {
         );
       }
     }''';
+
+  static const String imageWidgetCode = ''' 
+    class ImageWidget extends StatefulWidget {
+      @override
+      _ImageWidgetState createState() => _ImageWidgetState();
+    }
+    
+    class _ImageWidgetState extends State<ImageWidget> {
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'Image Widget',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: Utils.ubuntuRegularFont),
+            ),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.code),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CodeScreen(code: Code.imageWidgetCode),
+                  ),
+                ),
+              )
+            ],
+          ),
+          body: WillPopScope(
+            child: SingleChildScrollView(
+              child: Container(
+                width: double.infinity,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.asset(
+                        'assets/images/dp.png',
+                        width: 150,
+                        height: 150,
+                        //Other available properties -
+                        //color: Colors.purple,
+                        //colorBlendMode: BlendMode.difference,
+                        //fit: BoxFit.cover,
+                        //semanticLabel: "Display Image",
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.network(
+                        'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg',
+                        width: 150,
+                        height: 150,
+                        loadingBuilder: (context, child, progress) {
+                          return progress == null
+                              ? child
+                              : Container(
+                                  width: 150,
+                                  height: 150,
+                                  child: Center(
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                          Colors.blue),
+                                    ),
+                                  ),
+                                );
+                        },
+                      ),
+                    )
+    
+                    //Other Image sources -
+    
+                    //Image.file('path/to/imageSrc.png');
+    
+                    //Image.memory(bytes);
+                  ],
+                ),
+              ),
+            ),
+            onWillPop: _willPopCallback,
+          ),
+        );
+      }
+    }
+    
+    Future<bool> _willPopCallback() async {
+      ///clear image cache and exit screen
+      ///this is done so that the image loads every time you open the
+      ///screen. (it is cached otherwise)
+      painting.imageCache.clear();
+      return true; // return true if the route to be popped
+    }''';
+
+  static const String tabsWidgetCode = ''' 
+    class TabsWidget extends StatefulWidget {
+      @override
+      _TabsWidgetState createState() => _TabsWidgetState();
+    }
+    
+    class _TabsWidgetState extends State<TabsWidget> {
+      final List<Tab> myTabs = <Tab>[
+        Tab(text: "Tab 1", icon: Icon(Icons.looks_one)),
+        Tab(text: "Tab 2", icon: Icon(Icons.looks_two)),
+      ];
+    
+      @override
+      Widget build(BuildContext context) {
+        //Wrap everything in DefaultTabController
+        return DefaultTabController(
+          length: 2,
+          child: Scaffold(
+            appBar: AppBar(
+              centerTitle: true,
+              title: Text(
+                'Tabs Widget',
+                style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: Utils.ubuntuRegularFont),
+              ),
+              actions: <Widget>[
+                IconButton(
+                  icon: Icon(Icons.code),
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CodeScreen(code: Code.tabsWidgetCode),
+                    ),
+                  ),
+                )
+              ],
+              //Specify the tabs for your view
+              bottom: TabBar(
+                tabs: myTabs,
+                indicatorColor: Theme.of(context).backgroundColor,
+              ),
+            ),
+            //Provide each tab with its own content
+            body: TabBarView(
+              children: myTabs.map((Tab tab) {
+                return Center(
+                  child: Text(
+                    'This is the tab.text',
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                );
+              }).toList(),
+            ),
+          ),
+        );
+      }
+    }''';
 }

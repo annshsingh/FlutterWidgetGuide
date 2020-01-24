@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_widget_guide/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../Ads.dart';
 import '../Code.dart';
 import '../CodeScreen.dart';
 
@@ -25,6 +26,8 @@ class _AnimatedPositionedWidgetState extends State<AnimatedPositionedWidget> {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
   }
 
   @override

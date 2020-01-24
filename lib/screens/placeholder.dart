@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/CodeScreen.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Ads.dart';
 import '../Code.dart';
 
 class PlaceholderWidget extends StatefulWidget {
@@ -10,6 +11,14 @@ class PlaceholderWidget extends StatefulWidget {
 }
 
 class _PlaceholderWidgetState extends State<PlaceholderWidget> {
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

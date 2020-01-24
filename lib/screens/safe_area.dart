@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Ads.dart';
+
 class SafeAreaWidget extends StatefulWidget {
   @override
   _SafeAreaWidgetState createState() => _SafeAreaWidgetState();
@@ -8,6 +10,13 @@ class SafeAreaWidget extends StatefulWidget {
 class _SafeAreaWidgetState extends State<SafeAreaWidget> {
   ///Bool value to control the behaviour of SafeArea widget.
   bool _isEnabled = true;
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

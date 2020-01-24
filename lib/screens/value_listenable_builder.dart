@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Ads.dart';
 import '../Code.dart';
 import '../CodeScreen.dart';
 
@@ -14,6 +15,13 @@ class _ValueListenableBuilderWidgetState
     extends State<ValueListenableBuilderWidget> {
   /// This is the value you want your widgets to listen to.
   final ValueNotifier<int> _counter = ValueNotifier<int>(2);
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

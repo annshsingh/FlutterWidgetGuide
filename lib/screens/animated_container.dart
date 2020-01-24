@@ -3,6 +3,8 @@ import 'package:flutter_widget_guide/Code.dart';
 import 'package:flutter_widget_guide/CodeScreen.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Ads.dart';
+
 class AnimatedContainerWidget extends StatefulWidget {
   @override
   _AnimatedContainerWidgetState createState() =>
@@ -17,6 +19,13 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
   double _iconWidth = 180.0;
   Color _animatedColor = Colors.red;
   bool _isAnimated = false;
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

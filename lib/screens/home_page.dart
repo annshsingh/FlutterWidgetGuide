@@ -9,6 +9,7 @@ import 'package:flutter_widget_guide/utils.dart';
 import 'package:flutter_widget_guide/widgets/home_list_item.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../Ads.dart';
 import '../profile_screen.dart';
 import 'WebViewWidget.dart';
 
@@ -44,6 +45,8 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
+    //Dispose the Ad if it isn't already
+    Ads.hideBannerAd();
     super.dispose();
   }
 
@@ -51,6 +54,8 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    //Initialize Firebase Admob
+    Ads.initialize();
     _fcm = FirebaseMessaging();
     Utils.getVersion().then((value) {
       versionNumber = value;

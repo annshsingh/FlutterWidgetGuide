@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Ads.dart';
 import '../Code.dart';
 import '../CodeScreen.dart';
 
@@ -15,6 +16,13 @@ class _AnimatedListWidgetState extends State<AnimatedListWidget> {
 
   // backing data
   List<String> _data = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Last Item'];
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

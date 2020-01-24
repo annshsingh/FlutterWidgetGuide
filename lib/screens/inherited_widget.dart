@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Ads.dart';
+
 class InheritedWidgett extends StatefulWidget {
   @override
   _InheritedWidgettState createState() => _InheritedWidgettState();
 }
 
 class _InheritedWidgettState extends State<InheritedWidgett> {
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -103,6 +103,8 @@ class Utils {
   static const String toggleButtons = "/ToggleButtons";
   static const String cupertinoActionSheet = "/CupertinoActionSheet";
   static const String tweenAnimationBuilder = "/TweenAnimationBuilder";
+  static const String image = "/Image";
+  static const String tabs = "/Tabs";
 
   static const String rateApp = "/Rate the App";
   static const String slack_invite =
@@ -285,6 +287,12 @@ class Utils {
       "Are you building an iOS-style app that needs to present the user with a list of options for what to do next? CupertinoActionSheet is the widget for you!";
   static const String tweenAnimationBuilderDescription =
       "Do you want a simple animation, but none of the built-in implicit animation widgets do the trick? TweenAnimationBuilder is here for all your custom animation needs without having to worry about that AnimationController!";
+  static const String imageDescription =
+      "Need your app to display images? Flutter has you covered! Use the Image widget to render an image to the screen, wherever it may come from: assets, network, file system, RAM and more!";
+  static const String tabsDescription =
+      "Do you need to organize your widgets into tabs? The DefaultTabController, TabBar, and TabBarView widgets are for you.";
+
+
 
   static const String rateAppDescription = ".";
 
@@ -419,6 +427,10 @@ class Utils {
       "https://api.flutter.dev/flutter/cupertino/CupertinoActionSheet-class.html";
   static const String tweenAnimationBuilderURL =
       "https://api.flutter.dev/flutter/widgets/TweenAnimationBuilder-class.html";
+  static const String imageURL =
+      "https://api.flutter.dev/flutter/widgets/Image-class.html";
+  static const String tabsURL =
+      "https://api.flutter.dev/flutter/material/DefaultTabController-class.html";
 
   static const String expandedSourceURL =
       "https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart";
@@ -557,6 +569,10 @@ class Utils {
       "https://www.youtube.com/watch?v=U-ao8p4A82k&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=64";
   static const String tweenAnimationBuilderVideoURL =
       "https://www.youtube.com/watch?v=l9uHB8VXZOg&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=65";
+  static const String imageVideoURL =
+      "https://www.youtube.com/watch?v=7oIAs-0G4mw&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=66";
+  static const String tabsVideoURL =
+      "https://www.youtube.com/watch?v=POtoEH-5l40&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=67";
 
   static const String rateAppVideoURL = ".";
 
@@ -642,6 +658,8 @@ class Utils {
   static const String toggleButtonsMediumURL = "";
   static const String cupertinoActionSheetMediumURL = "";
   static const String tweenAnimationBuilderMediumURL = "";
+  static const String imageMediumURL = "";
+  static const String tabsMediumURL = "";
 
   static const String rateAppMediumURL = ".";
 

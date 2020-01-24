@@ -6,6 +6,7 @@ import 'package:flutter_widget_guide/utils.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'Ads.dart';
 import 'syntax_highlighter.dart';
 
 class CodeScreen extends StatefulWidget {
@@ -23,31 +24,13 @@ class CodeScreenState extends State<CodeScreen> {
   var _isDarkThemeSet = false;
   var _bgColor = Colors.white;
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
-  BannerAd _bannerAd;
   final ValueNotifier<bool> padding = ValueNotifier<bool>(false);
-
-  //TODO: Add valid app id
-  String appid = "ca-app-pub-4000328104346549~8164868587";
-  static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
-    testDevices: <String>["DBC78393FB0E71331AF178ACE0873FC1"],
-    nonPersonalizedAds: true,
-    keywords: <String>["Game", "Utility", "Social"],
-  );
 
   @override
   void initState() {
     _getValueFromSP(context);
-    FirebaseAdMob.instance.initialize(appId: appid);
-    _bannerAd = createBannerAd()
-      ..load()
-      ..show();
+    Ads.showBannerAd(BannerAd.testAdUnitId);
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    _bannerAd.dispose();
-    super.dispose();
   }
 
   @override
@@ -94,43 +77,46 @@ class CodeScreenState extends State<CodeScreen> {
       ),
 
       /// Scrollbar widget to show scrollbar while scrolling
-      body: SafeArea(
-        child: ValueListenableBuilder(
-          builder: (BuildContext context, bool value, Widget child) {
-            return Padding(
-              padding: value
-                  ? const EdgeInsets.only(bottom: 48.0)
-                  : const EdgeInsets.only(bottom: 0.0),
-              child: Scrollbar(
-                /// For horizontal scrolling
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: SizedBox(
-                    width: 800.0,
-                    child: Scrollbar(
-                      /// For vertical scrolling
-                      child: ListView.builder(
-                        itemCount: 1,
-                        itemBuilder: (BuildContext context, int i) {
-                          return Container(
-                            padding: EdgeInsets.all(8.0),
-                            child: SelectableText.rich(
-                              DartSyntaxHighlighter(_style).format(widget.code),
-                              showCursor: false,
-                              cursorColor: Colors.blue,
-                              cursorRadius: Radius.circular(5),
-                            ),
-                          );
-                        },
+      body: WillPopScope(
+        child: SafeArea(
+          child: ValueListenableBuilder(
+            builder: (BuildContext context, bool value, Widget child) {
+              return Padding(
+                padding: value
+                    ? const EdgeInsets.only(bottom: 48.0)
+                    : const EdgeInsets.only(bottom: 0.0),
+                child: Scrollbar(
+                  /// For horizontal scrolling
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: SizedBox(
+                      width: 800.0,
+                      child: Scrollbar(
+                        /// For vertical scrolling
+                        child: ListView.builder(
+                          itemCount: 1,
+                          itemBuilder: (BuildContext context, int i) {
+                            return Container(
+                              padding: EdgeInsets.all(8.0),
+                              child: SelectableText.rich(
+                                DartSyntaxHighlighter(_style).format(widget.code),
+                                showCursor: false,
+                                cursorColor: Colors.blue,
+                                cursorRadius: Radius.circular(5),
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            );
-          },
-          valueListenable: padding,
+              );
+            },
+            valueListenable: Ads.getIsAdShown(),
+          ),
         ),
+        onWillPop: _willPopCallback,
       ),
       floatingActionButton: ValueListenableBuilder(
         builder: (BuildContext context, bool value, Widget child) {
@@ -161,7 +147,7 @@ class CodeScreenState extends State<CodeScreen> {
             ),
           );
         },
-        valueListenable: padding,
+        valueListenable: Ads.getIsAdShown(),
       ),
     );
   }
@@ -200,19 +186,9 @@ class CodeScreenState extends State<CodeScreen> {
     });
   }
 
-  BannerAd createBannerAd() {
-    return BannerAd(
-      //TODO: Add valid adUnitId
-      adUnitId: BannerAd.testAdUnitId,
-      size: AdSize.banner,
-      targetingInfo: targetingInfo,
-      listener: (MobileAdEvent event) {
-        if (event == MobileAdEvent.loaded) {
-          padding.value = true;
-        } else if (event == MobileAdEvent.failedToLoad) {
-          padding.value = false;
-        }
-      },
-    );
+  ///Hide banner ad if back is pressed
+  Future<bool> _willPopCallback() async {
+    Ads.hideBannerAd();
+    return true; // return true if the route to be popped
   }
 }

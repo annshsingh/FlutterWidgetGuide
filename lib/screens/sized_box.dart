@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_guide/utils.dart';
 
+import '../Ads.dart';
 import '../Code.dart';
 import '../CodeScreen.dart';
 
@@ -16,6 +17,13 @@ class _SizedBoxWidgetState extends State<SizedBoxWidget> {
   List<double> _dimentions2 = [300.0, 100.0];
   List<double> _dimentions3 = [200.0, double.infinity];
   List<double> _dimentions4 = [300.0, 300.0];
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

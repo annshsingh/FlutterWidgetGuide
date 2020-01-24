@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+import '../Ads.dart';
 import '../Code.dart';
 import '../CodeScreen.dart';
 import '../utils.dart';
@@ -16,6 +17,13 @@ class WebViewWidget extends StatefulWidget {
 
 class _WebViewWidgetState extends State<WebViewWidget> {
   final _key = UniqueKey();
+
+  @override
+  void initState() {
+    //Hide banner ad if it isn't already hidden
+    Ads.hideBannerAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
