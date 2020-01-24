@@ -93,6 +93,8 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    63. [ToggleButtons](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/toggle_buttons.dart)
    64. [CupertinoActionSheet](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/cupertino_action_sheet.dart)
    65. [TweenAnimationBuilder](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/tween_animation_builder.dart)
+   66. [Image](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/image_widget.dart)
+   67. [Tab View](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/tabs_widget.dart)
    
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
