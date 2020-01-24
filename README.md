@@ -101,11 +101,13 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    2. Youtube Video Player
    3. Firebase RemoteConfig
    4. Firebase Cloud Messaging
-   5. View Code inside the app.
-   6. Copy code or part of code.
+   5. Firebase AdMob
+   6. View Code inside the app.
+   7. Copy code or part of code.
+   8. Dark Mode
    
 ## Things to work on in the Future
-   1. Save favourite widgets in "Favourites" section - Using SQFlite.
+   1. Save favourite widgets in "Favourites" section - Using SQFlite/Hive.
    2. Collection based view insted of a list - Change Home Page layout. 
    3. Search functionality in list - Add "Search" action on Home Page.
    4. Mark your favourite widget - Firebase cloudstore functionality.
