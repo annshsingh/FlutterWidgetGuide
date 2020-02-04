@@ -45,7 +45,7 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    15. [Stream Builder](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/stream_builder.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-streambuilder-widget-in-5-mins-or-less-9f6a34f7ed2f)
    16. [Inherited Model](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/inherited_model.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-inheritedmodel-widget-in-5-mins-or-less-a2b0dd8beb43)
    17. [ClipRRect](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/clip_r_rect.dart)
-   18. [Hero](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/hero.dart)
+   18. [Hero](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/hero.dart) | [![read](medium_icon.png)](https://medium.com/flutter-community/flutter-widget-guide-hero-widget-in-5-mins-or-less-3a8d0b479d4a)
    19. [Custom Paint](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/custom_paint.dart)
    20. [Tooltip](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/tooltip.dart)
    21. [Fitted Box](https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/fitted_box.dart)
