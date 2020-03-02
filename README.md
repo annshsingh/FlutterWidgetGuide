@@ -95,6 +95,10 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    65. [TweenAnimationBuilder](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/tween_animation_builder.dart)
    66. [Image](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/image_widget.dart)
    67. [Tab View](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/tabs_widget.dart)
+   68. [Drawer](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/drawer_widget.dart)
+   69. [SnackBar](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/snackbar_widget.dart)
+   70. [ListWheelScrollView](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/listwheelscrollview_widget.dart)
+   71. [ShaderMask](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/shadermask_widget.dart)       
    
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
