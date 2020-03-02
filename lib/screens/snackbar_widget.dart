@@ -11,6 +11,8 @@ class SnackBarWidget extends StatefulWidget {
 }
 
 class _SnackBarWidgetState extends State<SnackBarWidget> {
+  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
+
   @override
   void initState() {
     //Hide banner ad if it isn't already hidden
@@ -21,6 +23,7 @@ class _SnackBarWidgetState extends State<SnackBarWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         centerTitle: true,
         title: Text(
@@ -42,9 +45,67 @@ class _SnackBarWidgetState extends State<SnackBarWidget> {
           )
         ],
       ),
-      body: Container(
-        width: double.infinity,
-        child: Column(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: RaisedButton(
+                child: Text('Show simple SnackBar'),
+                color: Theme.of(context).backgroundColor,
+                textColor: Theme.of(context).accentColor,
+                onPressed: () => _scaffoldKey.currentState.showSnackBar(
+                  SnackBar(
+                    duration: Duration(milliseconds: 500),
+                    content: Text("Simple SnackBar"),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: RaisedButton(
+                child: Text('Show elevated SnackBar'),
+                color: Theme.of(context).backgroundColor,
+                textColor: Theme.of(context).accentColor,
+                onPressed: () => _scaffoldKey.currentState.showSnackBar(
+                  SnackBar(
+                    duration: Duration(milliseconds: 500),
+                    elevation: 6.0,
+                    behavior: SnackBarBehavior.floating,
+                    content: Text("Elevated SnackBar"),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: RaisedButton(
+                child: Text('Show custom layout SnackBar'),
+                color: Theme.of(context).backgroundColor,
+                textColor: Theme.of(context).accentColor,
+                onPressed: () => _scaffoldKey.currentState.showSnackBar(
+                  SnackBar(
+                    duration: Duration(milliseconds: 500),
+                    elevation: 6.0,
+                    behavior: SnackBarBehavior.floating,
+                    content: Row(
+                      children: <Widget>[
+                        Icon(Icons.thumb_up),
+                        SizedBox(width: 20.0),
+                        Expanded(
+                          child: Text("Hello!"),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
