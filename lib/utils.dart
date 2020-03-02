@@ -105,6 +105,10 @@ class Utils {
   static const String tweenAnimationBuilder = "/TweenAnimationBuilder";
   static const String image = "/Image";
   static const String tabs = "/Tabs";
+  static const String drawer = "/Drawer";
+  static const String snackBar = "/SnackBar";
+  static const String listWheelScrollView = "/ListWheelScrollView";
+  static const String shaderMask = "/ShaderMask";
 
   static const String rateApp = "/Rate the App";
   static const String slack_invite =
@@ -291,8 +295,14 @@ class Utils {
       "Need your app to display images? Flutter has you covered! Use the Image widget to render an image to the screen, wherever it may come from: assets, network, file system, RAM and more!";
   static const String tabsDescription =
       "Do you need to organize your widgets into tabs? The DefaultTabController, TabBar, and TabBarView widgets are for you.";
-
-
+  static const String drawerDescription =
+      "Need to provide navigation to other pages? Try using a Drawer!";
+  static const String snackBarDescription =
+      "Ever wanted to show a quick message in your app? Then SnackBar is for you! SnackBar lets you pop up a message for a few seconds at the bottom of your app.";
+  static const String listWheelScrollViewDescription =
+      "ListViews let the user see or choose from a number of items that wouldn't normally fit on the screen, but sometimes, an ordinary ListView is too flat and boring. Fortunately, there's ListWheelScrollView";
+  static const String shaderMaskDescription =
+      "ShaderMasks are one of Flutter’s hidden gems! ShaderMasks let you apply a shader to one or more widgets in the tree. There’s tons of cool effects you can achieve with shaders.";
 
   static const String rateAppDescription = ".";
 
@@ -431,6 +441,14 @@ class Utils {
       "https://api.flutter.dev/flutter/widgets/Image-class.html";
   static const String tabsURL =
       "https://api.flutter.dev/flutter/material/DefaultTabController-class.html";
+  static const String drawerURL =
+      "https://api.flutter.dev/flutter/material/Drawer-class.html";
+  static const String snackBarURL =
+      "https://api.flutter.dev/flutter/material/SnackBar-class.html";
+  static const String listWheelScrollViewURL =
+      "https://api.flutter.dev/flutter/widgets/ListWheelScrollView-class.html";
+  static const String shaderMaskURL =
+      "https://api.flutter.dev/flutter/widgets/ShaderMask-class.html";
 
   static const String expandedSourceURL =
       "https://github.com/annshsingh/flutter-widget-guide/blob/master/lib/screens/expanded.dart";
@@ -573,6 +591,14 @@ class Utils {
       "https://www.youtube.com/watch?v=7oIAs-0G4mw&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=66";
   static const String tabsVideoURL =
       "https://www.youtube.com/watch?v=POtoEH-5l40&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=67";
+  static const String drawerVideoURL =
+      "https://www.youtube.com/watch?v=WRj86iHihgY&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=68";
+  static const String snackBarVideoURL =
+      "https://www.youtube.com/watch?v=zpO6n_oZWw0&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=69";
+  static const String listWheelScrollViewVideoURL =
+      "https://www.youtube.com/watch?v=dUhmWAz4C7Y&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=70";
+  static const String shaderMaskVideoURL =
+      "https://www.youtube.com/watch?v=7sUL66pTQ7Q&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&index=71";
 
   static const String rateAppVideoURL = ".";
 
@@ -610,7 +636,8 @@ class Utils {
   static const String inheritedModelMediumUrl =
       "https://medium.com/@annsh/flutter-widget-guide-inheritedmodel-widget-in-5-mins-or-less-a2b0dd8beb43";
   static const String clipRrectMediumUrl = "";
-  static const String heroMediumUrl = "";
+  static const String heroMediumUrl =
+      "https://medium.com/flutter-community/flutter-widget-guide-hero-widget-in-5-mins-or-less-3a8d0b479d4a";
   static const String customPaintMediumUrl = "";
   static const String toolTipMediumUrl = "";
   static const String fittedBoxMediumUrl = "";
@@ -660,6 +687,10 @@ class Utils {
   static const String tweenAnimationBuilderMediumURL = "";
   static const String imageMediumURL = "";
   static const String tabsMediumURL = "";
+  static const String drawerMediumURL = "";
+  static const String snackBarMediumURL = "";
+  static const String listWheelScrollViewMediumURL = "";
+  static const String shaderMaskMediumURL = "";
 
   static const String rateAppMediumURL = ".";
 

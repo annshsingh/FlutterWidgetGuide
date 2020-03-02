@@ -76,7 +76,11 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'VideoView.dart';
+import 'screens/drawer_widget.dart';
 import 'screens/indexed_stack.dart';
+import 'screens/listwheelscrollview_widget.dart';
+import 'screens/shadermask_widget.dart';
+import 'screens/snackbar_widget.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -196,7 +200,11 @@ class _MyApp extends StatelessWidget {
         Utils.cupertinoActionSheet: (BuildContext context) => CupertinoActionSheetWidget(),
         Utils.tweenAnimationBuilder: (BuildContext context) => TweenAnimationBuilderWidget(),
         Utils.image: (BuildContext context) => ImageWidget(),
-        Utils.tabs: (BuildContext context) => TabsWidget()
+        Utils.tabs: (BuildContext context) => TabsWidget(),
+        Utils.drawer: (BuildContext context) => DrawerWidget(),
+        Utils.snackBar: (BuildContext context) => SnackBarWidget(),
+        Utils.listWheelScrollView: (BuildContext context) => ListWheelScrollViewWidget(),
+        Utils.shaderMask: (BuildContext context) => ShaderMaskWidget()
       },
     );
   }

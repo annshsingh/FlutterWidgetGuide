@@ -29,6 +29,7 @@ class _VideoViewState extends State<VideoView> {
           forceHideAnnotation: true,
           enableCaption: false),
     );
+    //TODO: Add real ad unit id
     Ads.showBannerAd(BannerAd.testAdUnitId);
     super.initState();
   }

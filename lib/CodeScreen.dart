@@ -29,6 +29,7 @@ class CodeScreenState extends State<CodeScreen> {
   @override
   void initState() {
     _getValueFromSP(context);
+    //TODO: Add real ad unit id
     Ads.showBannerAd(BannerAd.testAdUnitId);
     super.initState();
   }

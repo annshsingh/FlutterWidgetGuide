@@ -416,6 +416,30 @@ class ListViewModel {
           mediumUrl: "${Utils.tabsMediumURL}",
           videoUrl: "${Utils.tabsVideoURL}"),
       ListItem(
+          title: "${Utils.drawer.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.drawerDescription}",
+          url: "${Utils.drawerURL}",
+          mediumUrl: "${Utils.drawerMediumURL}",
+          videoUrl: "${Utils.drawerVideoURL}"),
+      ListItem(
+          title: "${Utils.snackBar.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.snackBarDescription}",
+          url: "${Utils.snackBarURL}",
+          mediumUrl: "${Utils.snackBarMediumURL}",
+          videoUrl: "${Utils.snackBarVideoURL}"),
+      ListItem(
+          title: "${Utils.listWheelScrollView.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.listWheelScrollViewDescription}",
+          url: "${Utils.listWheelScrollViewURL}",
+          mediumUrl: "${Utils.listWheelScrollViewMediumURL}",
+          videoUrl: "${Utils.listWheelScrollViewVideoURL}"),
+      ListItem(
+          title: "${Utils.shaderMask.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.shaderMaskDescription}",
+          url: "${Utils.shaderMaskURL}",
+          mediumUrl: "${Utils.shaderMaskMediumURL}",
+          videoUrl: "${Utils.shaderMaskVideoURL}"),
+      ListItem(
           title: "${Utils.rateApp.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.rateAppDescription}",
           url: "${Utils.rateAppURL}",

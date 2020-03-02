@@ -41,7 +41,7 @@ class _TweenAnimationBuilderWidgetState
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => CodeScreen(code: Code.richTextCode),
+                builder: (context) => CodeScreen(code: Code.tweenAnimationBuilderWidgetCode),
               ),
             ),
           )
