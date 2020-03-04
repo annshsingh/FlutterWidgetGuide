@@ -7,7 +7,7 @@ description: A flutter appliction listing all the widgets covered in Flutter wid
 # Both the version and the builder number may be overridden in flutter
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
-version: 1.0.12+13
+version: 1.0.13+14
 
 dependencies:
   flutter:
