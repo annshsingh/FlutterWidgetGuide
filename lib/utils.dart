@@ -108,7 +108,7 @@ class Utils {
   static const String notificationListener = "/NotificationListener";
   static const String builder = "/Builder";
   static const String clipPath = "/ClipPath";
-  static const String circularProgressIndicator = "/CircularProgressIndicator";
+  static const String circularProgressIndicator = "/ProgressIndicator";
   static const String divider = "/Divider";
   static const String ignorePointer = "/IgnorePointer";
   static const String cupertinoActivityIndicator = "/CupertinoActivityIndicator";

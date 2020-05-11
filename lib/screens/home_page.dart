@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
           ),
         );
       },
-      onBackgroundMessage: _myBackgroundMessageHandler,
+      onBackgroundMessage: backgroundHandle,
       onLaunch: (Map<String, dynamic> message) async {
         /// Called whenever the app is killed and receives a notification
         _takeNotificationAction(message, context, false);
@@ -422,7 +422,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
 /// Use this method to define some kind of a background task
 /// We are not using it, only here for learning purpose
-Future<dynamic> _myBackgroundMessageHandler(Map<String, dynamic> message) {
+Future<dynamic> backgroundHandle(Map<String, dynamic> message) {
   if (message.containsKey('data')) {
     // Handle data message
   }
