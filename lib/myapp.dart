@@ -40,6 +40,7 @@ import 'package:flutter_widget_guide/screens/future_builder.dart';
 import 'package:flutter_widget_guide/screens/hero.dart';
 import 'package:flutter_widget_guide/screens/hero2.dart';
 import 'package:flutter_widget_guide/screens/home_page.dart';
+import 'package:flutter_widget_guide/screens/ignore_pointer.dart';
 import 'package:flutter_widget_guide/screens/image_widget.dart';
 import 'package:flutter_widget_guide/screens/inherited_model.dart';
 import 'package:flutter_widget_guide/screens/inherited_widget.dart';
@@ -214,7 +215,8 @@ class _MyApp extends StatelessWidget {
         Utils.builder: (BuildContext context) => BuilderWidget(),
         Utils.clipPath: (BuildContext context) => ClipPathWidget(),
         Utils.circularProgressIndicator: (BuildContext context) => CircularProgressIndicatorWidget(),
-        Utils.divider: (BuildContext context) => DividerWidget()
+        Utils.divider: (BuildContext context) => DividerWidget(),
+        Utils.ignorePointer: (BuildContext context) => IgnorePointerWidget()
       },
     );
   }

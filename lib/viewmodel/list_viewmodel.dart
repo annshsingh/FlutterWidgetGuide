@@ -465,6 +465,12 @@ class ListViewModel {
           mediumUrl: "${Utils.dividerMediumURL}",
           videoUrl: "${Utils.dividerVideoURL}"),
       ListItem(
+          title: "${Utils.ignorePointer.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.ignorePointerDescription}",
+          url: "${Utils.ignorePointerURL}",
+          mediumUrl: "${Utils.ignorePointerMediumURL}",
+          videoUrl: "${Utils.ignorePointerVideoURL}"),
+      ListItem(
           title: "${Utils.rateApp.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.rateAppDescription}",
           url: "${Utils.rateAppURL}",
