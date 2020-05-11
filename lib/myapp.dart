@@ -19,6 +19,7 @@ import 'package:flutter_widget_guide/screens/builder.dart';
 import 'package:flutter_widget_guide/screens/circularProgressIndicator.dart';
 import 'package:flutter_widget_guide/screens/clip_path.dart';
 import 'package:flutter_widget_guide/screens/clip_r_rect.dart';
+import 'package:flutter_widget_guide/screens/clipoval.dart';
 import 'package:flutter_widget_guide/screens/color_filtered.dart';
 import 'package:flutter_widget_guide/screens/constrained_box.dart';
 import 'package:flutter_widget_guide/screens/container.dart';
@@ -218,7 +219,8 @@ class _MyApp extends StatelessWidget {
         Utils.circularProgressIndicator: (BuildContext context) => CircularProgressIndicatorWidget(),
         Utils.divider: (BuildContext context) => DividerWidget(),
         Utils.ignorePointer: (BuildContext context) => IgnorePointerWidget(),
-        Utils.cupertinoActivityIndicator: (BuildContext context) => CupertinoActivityIndicatorWidget()
+        Utils.cupertinoActivityIndicator: (BuildContext context) => CupertinoActivityIndicatorWidget(),
+        Utils.clipOval: (BuildContext context) => ClipOvalWidget()
       },
     );
   }
