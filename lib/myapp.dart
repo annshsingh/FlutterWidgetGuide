@@ -15,6 +15,7 @@ import 'package:flutter_widget_guide/screens/animated_positioned.dart';
 import 'package:flutter_widget_guide/screens/animated_switcher.dart';
 import 'package:flutter_widget_guide/screens/aspect_ratio.dart';
 import 'package:flutter_widget_guide/screens/backdrop_filter.dart';
+import 'package:flutter_widget_guide/screens/builder.dart';
 import 'package:flutter_widget_guide/screens/clip_r_rect.dart';
 import 'package:flutter_widget_guide/screens/color_filtered.dart';
 import 'package:flutter_widget_guide/screens/constrained_box.dart';
@@ -206,7 +207,8 @@ class _MyApp extends StatelessWidget {
         Utils.snackBar: (BuildContext context) => SnackBarWidget(),
         Utils.listWheelScrollView: (BuildContext context) => ListWheelScrollViewWidget(),
         Utils.shaderMask: (BuildContext context) => ShaderMaskWidget(),
-        Utils.notificationListener: (BuildContext context) => NotificationListenerWidget()
+        Utils.notificationListener: (BuildContext context) => NotificationListenerWidget(),
+        Utils.builder: (BuildContext context) => BuilderWidget()
       },
     );
   }

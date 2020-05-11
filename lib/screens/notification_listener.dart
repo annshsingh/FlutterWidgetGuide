@@ -63,6 +63,7 @@ class ChangeColor extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: FlatButton(
+        textColor: Colors.white,
         color: bgColor,
         child: Text("Click to change my color"),
         onPressed: () {
