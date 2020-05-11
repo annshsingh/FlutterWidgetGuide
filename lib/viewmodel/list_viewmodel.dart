@@ -447,6 +447,12 @@ class ListViewModel {
           mediumUrl: "${Utils.builderMediumURL}",
           videoUrl: "${Utils.builderVideoURL}"),
       ListItem(
+          title: "${Utils.clipPath.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.clipPathDescription}",
+          url: "${Utils.clipPathURL}",
+          mediumUrl: "${Utils.clipPathMediumURL}",
+          videoUrl: "${Utils.clipPathVideoURL}"),
+      ListItem(
           title: "${Utils.rateApp.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.rateAppDescription}",
           url: "${Utils.rateAppURL}",
