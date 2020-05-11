@@ -23,6 +23,7 @@ import 'package:flutter_widget_guide/screens/color_filtered.dart';
 import 'package:flutter_widget_guide/screens/constrained_box.dart';
 import 'package:flutter_widget_guide/screens/container.dart';
 import 'package:flutter_widget_guide/screens/cupertino_action_sheet.dart';
+import 'package:flutter_widget_guide/screens/cupertino_activity_indicator.dart';
 import 'package:flutter_widget_guide/screens/custom_paint.dart';
 import 'package:flutter_widget_guide/screens/datatable_widget.dart';
 import 'package:flutter_widget_guide/screens/dismissible.dart';
@@ -216,7 +217,8 @@ class _MyApp extends StatelessWidget {
         Utils.clipPath: (BuildContext context) => ClipPathWidget(),
         Utils.circularProgressIndicator: (BuildContext context) => CircularProgressIndicatorWidget(),
         Utils.divider: (BuildContext context) => DividerWidget(),
-        Utils.ignorePointer: (BuildContext context) => IgnorePointerWidget()
+        Utils.ignorePointer: (BuildContext context) => IgnorePointerWidget(),
+        Utils.cupertinoActivityIndicator: (BuildContext context) => CupertinoActivityIndicatorWidget()
       },
     );
   }

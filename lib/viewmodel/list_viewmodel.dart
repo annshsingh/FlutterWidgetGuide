@@ -471,6 +471,12 @@ class ListViewModel {
           mediumUrl: "${Utils.ignorePointerMediumURL}",
           videoUrl: "${Utils.ignorePointerVideoURL}"),
       ListItem(
+          title: "${Utils.cupertinoActivityIndicator.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.cupertinoActivityIndicatorDescription}",
+          url: "${Utils.cupertinoActivityIndicatorURL}",
+          mediumUrl: "${Utils.cupertinoActivityIndicatorMediumURL}",
+          videoUrl: "${Utils.cupertinoActivityIndicatorVideoURL}"),
+      ListItem(
           title: "${Utils.rateApp.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.rateAppDescription}",
           url: "${Utils.rateAppURL}",

@@ -30,7 +30,7 @@ class _IgnorePointerWidgetState extends State<IgnorePointerWidget> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => CodeScreen(code: Code.dividerCode),
+                builder: (context) => CodeScreen(code: Code.ignorePointerCode),
               ),
             ),
           ),
