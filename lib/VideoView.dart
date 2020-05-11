@@ -26,7 +26,8 @@ class _VideoViewState extends State<VideoView> {
       flags: YoutubePlayerFlags(
           mute: false,
           autoPlay: true,
-          forceHideAnnotation: true,
+          disableDragSeek: true,
+          loop: false,
           enableCaption: false),
     );
     //TODO: Add real ad unit id

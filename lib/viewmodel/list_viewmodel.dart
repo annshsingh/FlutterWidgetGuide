@@ -51,8 +51,7 @@ class ListViewModel {
           mediumUrl: "${Utils.fadeTransitionMediumUrl}",
           videoUrl: "${Utils.fadeTransitionVideoUrl}"),
       ListItem(
-          title:
-              "${Utils.floatingActionButton.replaceAll(new RegExp(r'/'), '')}",
+          title: "${Utils.floatingActionButton.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.floatingActionButtonDescription}",
           url: "${Utils.floatingActionButtonURL}",
           mediumUrl: "${Utils.fabMediumUrl}",
@@ -190,8 +189,7 @@ class ListViewModel {
           mediumUrl: "${Utils.sizedBoxMediumUrl}",
           videoUrl: "${Utils.sizedBoxVideoUrl}"),
       ListItem(
-          title:
-              "${Utils.valueListenableBuilder.replaceAll(new RegExp(r'/'), '')}",
+          title: "${Utils.valueListenableBuilder.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.valueListenableBuilderDescription}",
           url: "${Utils.valueListenableBuilderURL}",
           mediumUrl: "${Utils.valueListenableBuilderMediumUrl}",
@@ -263,8 +261,7 @@ class ListViewModel {
           mediumUrl: "${Utils.richTextMediumUrl}",
           videoUrl: "${Utils.richTextVideoUrl}"),
       ListItem(
-          title:
-              "${Utils.reorderableListView.replaceAll(new RegExp(r'/'), '')}",
+          title: "${Utils.reorderableListView.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.reorderableListViewDescription}",
           url: "${Utils.reorderableListViewURL}",
           mediumUrl: "${Utils.reorderableListViewMediumUrl}",
@@ -318,8 +315,7 @@ class ListViewModel {
           mediumUrl: "${Utils.animatedOpacityMediumURL}",
           videoUrl: "${Utils.animatedOpacityVideoURL}"),
       ListItem(
-          title:
-              "${Utils.fractionallySizedBox.replaceAll(new RegExp(r'/'), '')}",
+          title: "${Utils.fractionallySizedBox.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.fractionallySizedBoxDescription}",
           url: "${Utils.fractionallySizedBoxURL}",
           mediumUrl: "${Utils.fractionallySizedBoxMediumURL}",
@@ -373,8 +369,7 @@ class ListViewModel {
           mediumUrl: "${Utils.animatedCrossFadeMediumURL}",
           videoUrl: "${Utils.animatedCrossFadeVideoURL}"),
       ListItem(
-          title:
-              "${Utils.draggableScrollableSheet.replaceAll(new RegExp(r'/'), '')}",
+          title: "${Utils.draggableScrollableSheet.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.draggableScrollableSheetDescription}",
           url: "${Utils.draggableScrollableSheetURL}",
           mediumUrl: "${Utils.draggableScrollableSheetMediumURL}",
@@ -439,6 +434,12 @@ class ListViewModel {
           url: "${Utils.shaderMaskURL}",
           mediumUrl: "${Utils.shaderMaskMediumURL}",
           videoUrl: "${Utils.shaderMaskVideoURL}"),
+      ListItem(
+          title: "${Utils.notificationListener.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.notificationListenerDescription}",
+          url: "${Utils.notificationListenerURL}",
+          mediumUrl: "${Utils.notificationListenerMediumURL}",
+          videoUrl: "${Utils.notificationListenerVideoURL}"),
       ListItem(
           title: "${Utils.rateApp.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.rateAppDescription}",

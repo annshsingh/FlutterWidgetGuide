@@ -9,6 +9,10 @@ build/
 .flutter-plugins
 .idea
 
+upload_certificate.pem
+
+FlutterWidgetGuide.iml
+
 # Android related
 android/**/gradle-wrapper.jar
 android/.gradle

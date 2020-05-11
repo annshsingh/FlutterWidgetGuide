@@ -44,6 +44,7 @@ import 'package:flutter_widget_guide/screens/limited_box.dart';
 import 'package:flutter_widget_guide/screens/list_tile.dart';
 import 'package:flutter_widget_guide/screens/list_view.dart';
 import 'package:flutter_widget_guide/screens/media_query.dart';
+import 'package:flutter_widget_guide/screens/notification_listener.dart';
 import 'package:flutter_widget_guide/screens/opacity.dart';
 import 'package:flutter_widget_guide/screens/page_view.dart';
 import 'package:flutter_widget_guide/screens/placeholder.dart';
@@ -204,7 +205,8 @@ class _MyApp extends StatelessWidget {
         Utils.drawer: (BuildContext context) => DrawerWidget(),
         Utils.snackBar: (BuildContext context) => SnackBarWidget(),
         Utils.listWheelScrollView: (BuildContext context) => ListWheelScrollViewWidget(),
-        Utils.shaderMask: (BuildContext context) => ShaderMaskWidget()
+        Utils.shaderMask: (BuildContext context) => ShaderMaskWidget(),
+        Utils.notificationListener: (BuildContext context) => NotificationListenerWidget()
       },
     );
   }
