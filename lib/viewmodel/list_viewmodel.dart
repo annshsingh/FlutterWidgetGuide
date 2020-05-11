@@ -459,6 +459,12 @@ class ListViewModel {
           mediumUrl: "${Utils.circularProgressIndicatorMediumURL}",
           videoUrl: "${Utils.circularProgressIndicatorVideoURL}"),
       ListItem(
+          title: "${Utils.divider.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.dividerDescription}",
+          url: "${Utils.dividerURL}",
+          mediumUrl: "${Utils.dividerMediumURL}",
+          videoUrl: "${Utils.dividerVideoURL}"),
+      ListItem(
           title: "${Utils.rateApp.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.rateAppDescription}",
           url: "${Utils.rateAppURL}",

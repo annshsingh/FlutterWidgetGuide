@@ -26,6 +26,7 @@ import 'package:flutter_widget_guide/screens/cupertino_action_sheet.dart';
 import 'package:flutter_widget_guide/screens/custom_paint.dart';
 import 'package:flutter_widget_guide/screens/datatable_widget.dart';
 import 'package:flutter_widget_guide/screens/dismissible.dart';
+import 'package:flutter_widget_guide/screens/divider.dart';
 import 'package:flutter_widget_guide/screens/draggable.dart';
 import 'package:flutter_widget_guide/screens/draggable_scrollable_sheet.dart';
 import 'package:flutter_widget_guide/screens/expanded.dart';
@@ -213,6 +214,7 @@ class _MyApp extends StatelessWidget {
         Utils.builder: (BuildContext context) => BuilderWidget(),
         Utils.clipPath: (BuildContext context) => ClipPathWidget(),
         Utils.circularProgressIndicator: (BuildContext context) => CircularProgressIndicatorWidget(),
+        Utils.divider: (BuildContext context) => DividerWidget()
       },
     );
   }
