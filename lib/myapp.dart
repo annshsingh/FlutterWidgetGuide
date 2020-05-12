@@ -54,6 +54,7 @@ import 'package:flutter_widget_guide/screens/list_view.dart';
 import 'package:flutter_widget_guide/screens/media_query.dart';
 import 'package:flutter_widget_guide/screens/notification_listener.dart';
 import 'package:flutter_widget_guide/screens/opacity.dart';
+import 'package:flutter_widget_guide/screens/padding.dart';
 import 'package:flutter_widget_guide/screens/page_view.dart';
 import 'package:flutter_widget_guide/screens/placeholder.dart';
 import 'package:flutter_widget_guide/screens/positioned.dart';
@@ -222,7 +223,8 @@ class _MyApp extends StatelessWidget {
         Utils.ignorePointer: (BuildContext context) => IgnorePointerWidget(),
         Utils.cupertinoActivityIndicator: (BuildContext context) => CupertinoActivityIndicatorWidget(),
         Utils.clipOval: (BuildContext context) => ClipOvalWidget(),
-        Utils.animatedWidget: (BuildContext context) => AnimatedWidgett()
+        Utils.animatedWidget: (BuildContext context) => AnimatedWidgett(),
+        Utils.padding: (BuildContext context) => PaddingWidget()
       },
     );
   }

@@ -489,6 +489,12 @@ class ListViewModel {
           mediumUrl: "${Utils.animatedWidgetMediumURL}",
           videoUrl: "${Utils.animatedWidgetVideoURL}"),
       ListItem(
+          title: "${Utils.padding.replaceAll(new RegExp(r'/'), '')}",
+          description: "${Utils.paddingDescription}",
+          url: "${Utils.paddingURL}",
+          mediumUrl: "${Utils.paddingMediumURL}",
+          videoUrl: "${Utils.paddingVideoURL}"),
+      ListItem(
           title: "${Utils.rateApp.replaceAll(new RegExp(r'/'), '')}",
           description: "${Utils.rateAppDescription}",
           url: "${Utils.rateAppURL}",
