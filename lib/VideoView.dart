@@ -1,5 +1,6 @@
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_widget_guide/utils.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -20,6 +21,12 @@ class _VideoViewState extends State<VideoView> {
   YoutubePlayerController _controller;
 
   @override
+  void dispose() {
+    _freePortraitLock();
+    super.dispose();
+  }
+
+  @override
   void initState() {
     _controller = YoutubePlayerController(
       initialVideoId: YoutubePlayer.convertUrlToId(widget.videoUrl),
@@ -32,7 +39,24 @@ class _VideoViewState extends State<VideoView> {
     );
     //TODO: Add real ad unit id
     Ads.showBannerAd(BannerAd.testAdUnitId);
+    _lockInPortrait();
     super.initState();
+  }
+
+  Future<void> _lockInPortrait() async {
+    await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+  }
+
+  Future<void> _freePortraitLock() async {
+    await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
   }
 
   @override
