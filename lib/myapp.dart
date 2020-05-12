@@ -13,6 +13,7 @@ import 'package:flutter_widget_guide/screens/animated_opacity.dart';
 import 'package:flutter_widget_guide/screens/animated_padding.dart';
 import 'package:flutter_widget_guide/screens/animated_positioned.dart';
 import 'package:flutter_widget_guide/screens/animated_switcher.dart';
+import 'package:flutter_widget_guide/screens/animated_widget.dart';
 import 'package:flutter_widget_guide/screens/aspect_ratio.dart';
 import 'package:flutter_widget_guide/screens/backdrop_filter.dart';
 import 'package:flutter_widget_guide/screens/builder.dart';
@@ -220,7 +221,8 @@ class _MyApp extends StatelessWidget {
         Utils.divider: (BuildContext context) => DividerWidget(),
         Utils.ignorePointer: (BuildContext context) => IgnorePointerWidget(),
         Utils.cupertinoActivityIndicator: (BuildContext context) => CupertinoActivityIndicatorWidget(),
-        Utils.clipOval: (BuildContext context) => ClipOvalWidget()
+        Utils.clipOval: (BuildContext context) => ClipOvalWidget(),
+        Utils.animatedWidget: (BuildContext context) => AnimatedWidgett()
       },
     );
   }
