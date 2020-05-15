@@ -98,7 +98,17 @@ All the files are listed in the [/lib](https://github.com/annshsingh/flutter-wid
    68. [Drawer](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/drawer_widget.dart)
    69. [SnackBar](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/snackbar_widget.dart)
    70. [ListWheelScrollView](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/listwheelscrollview_widget.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-listwheelscrollview-widget-in-5-mins-or-less-c1da452355d2)
-   71. [ShaderMask](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/shadermask_widget.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-shadermask-widget-in-5-mins-or-less-ab9954f526c7)       
+   71. [ShaderMask](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/shadermask_widget.dart) | [![read](medium_icon.png)](https://medium.com/@annsh/flutter-widget-guide-shadermask-widget-in-5-mins-or-less-ab9954f526c7)
+   72. [NotificationListener](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/notification_listener.dart)
+   73. [Builder](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/builder.dart)
+   74. [ClipPath](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/clip_path.dart)
+   75. [ProgressIndicator](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/circularProgressIndicator.dart)
+   76. [Divider](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/divider.dart)
+   77. [IgnorePointer](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/ignore_pointer.dart)
+   78. [CupertinoActivityIndicator](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/cupertino_activity_indicator.dart)
+   79. [ClipOval](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/clipoval.dart)
+   80. [AnimatedWidget](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/animated_widget.dart)
+   81. [Padding](https://github.com/annshsingh/FlutterWidgetGuide/blob/master/lib/screens/padding.dart)
    
 #### I'll try my best to keep the list in sync with the [Youtube Playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE) :thumbsup:
 
