@@ -46,7 +46,6 @@ class Hero2Widget extends StatelessWidget {
                         width: 100,
                         height: 100,
                         child: FlutterLogo(
-                          colors: Colors.lightBlue,
                           textColor: Colors.white,
                         ),
                       ),

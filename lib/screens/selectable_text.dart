@@ -54,7 +54,6 @@ class _SelectableTextWidgetState extends State<SelectableTextWidget> {
               margin: EdgeInsets.only(left: 24.0, right: 24.0, top: 24.0),
               child: FlutterLogo(
                 size: 100,
-                colors: bgColor,
               ),
             ),
 
