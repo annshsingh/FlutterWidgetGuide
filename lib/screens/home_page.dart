@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +32,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
       "https://play.google.com/store/apps/details?id=com.annsh.flutterwidgetguide";
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   FirebaseMessaging _fcm;
+  bool _isSearching;
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
@@ -139,8 +142,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         _takeNotificationAction(message, context, false);
       },
     );
-    // }
-    //});
+    _isSearching = false;
   }
 
   @override
@@ -267,7 +269,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                   controller: _hideButtonController,
                   //This is to contain Sliver Elements
                   slivers: <Widget>[
-                    appBar(context),
+                    appBar(context, listBloc),
                     SliverPadding(
                       padding: EdgeInsets.all(4.0),
                     ),
@@ -281,65 +283,113 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         });
   }
 
-  Widget appBar(BuildContext context) => SliverAppBar(
+  Widget appBar(BuildContext context, ListBloc listBloc) => SliverAppBar(
         backgroundColor: Theme.of(context).primaryColorDark,
         pinned: true,
         elevation: 3.0,
         forceElevated: false,
-        expandedHeight: 80.0,
+        expandedHeight: !_isSearching ? 80.0 : 80,
         flexibleSpace: FlexibleSpaceBar(
           titlePadding:
               EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 14.0),
           centerTitle: true,
-          title: Row(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(right: 12.0, left: 8.0),
-                child: GestureDetector(
-                  child: FlutterLogo(
-                    textColor: Colors.white,
-                  ),
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          WebViewWidget(url: "https://flutter.dev"),
+          title: !_isSearching
+              ? Row(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(right: 12.0, left: 8.0),
+                      child: GestureDetector(
+                        child: FlutterLogo(
+                          textColor: Colors.white,
+                        ),
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                WebViewWidget(url: "https://flutter.dev"),
+                          ),
+                        ),
+                      ),
+                    ),
+                    //To give a margin
+                    SizedBox(
+                      width: 0.0,
+                    ),
+                    Text(
+                      Utils.appName,
+                      style: TextStyle(
+                          fontFamily: Utils.ubuntuRegularFont, fontSize: 16),
+                    ),
+                    SizedBox(
+                      width: 0.0,
+                    ),
+                    GestureDetector(
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 10.0, right: 8.0),
+                        child: CircleAvatar(
+                          radius: 14.0,
+                          backgroundImage: AssetImage('assets/images/dp.png'),
+                        ),
+                      ),
+                      onTap: () => showModalBottomSheet(
+                        context: context,
+                        builder: (context) => ProfileScreen(),
+                      ),
+                    ),
+
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          _isSearching = true;
+                        });
+                      },
+                      child: Icon(
+                        Icons.search,
+                        size: 20,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ],
+                )
+              : Padding(
+                  padding:
+                      const EdgeInsets.only(right: 8.0, left: 8.0, top: 52),
+                  child: TextFormField(
+                    keyboardType: TextInputType.text,
+                    onChanged: (value) {
+                      listBloc.filter(value.trim());
+                    },
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                    decoration: InputDecoration(
+                      suffixIcon: InkWell(
+                        onTap: () {
+                          setState(() {
+                            _isSearching = false;
+                          });
+                        },
+                        child: Icon(
+                          Icons.clear,
+                          size: 16,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      hintText: 'Search Widget Name',
+                      hintStyle: TextStyle(
+                        fontSize: 12,
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      borderSide: BorderSide(width: .5,color: Colors.blue,)
+                      ),
                     ),
                   ),
                 ),
-              ),
-              //To give a margin
-              SizedBox(
-                width: 0.0,
-              ),
-              Text(
-                Utils.appName,
-                style: TextStyle(
-                    fontFamily: Utils.ubuntuRegularFont, fontSize: 16),
-              ),
-              SizedBox(
-                width: 0.0,
-              ),
-              GestureDetector(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 10.0, right: 8.0),
-                  child: CircleAvatar(
-                    radius: 14.0,
-                    backgroundImage: AssetImage('assets/images/dp.png'),
-                  ),
-                ),
-                onTap: () => showModalBottomSheet(
-                    context: context, builder: (context) => ProfileScreen()),
-              ),
-            ],
-          ),
         ),
-//        actions: <Widget>[
-//
-//        ],
       );
 
   Widget bodyList(List<ListItem> listItems) => SliverList(

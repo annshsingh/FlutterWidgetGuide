@@ -12,4 +12,13 @@ class ListBloc {
   ListBloc() {
     _listController.add(_listViewModel.getListItems());
   }
+
+  void filter(String searchQuery) {
+    List<ListItem> _filteredList = _listViewModel
+        .getListItems()
+        .where((ListItem listItem) =>
+            listItem.title.toLowerCase().contains(searchQuery.toLowerCase()))
+        .toList();
+    _listController.sink.add(_filteredList);
+  }
 }
