@@ -41,7 +41,8 @@ class _TweenAnimationBuilderWidgetState
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => CodeScreen(code: Code.tweenAnimationBuilderWidgetCode),
+                builder: (context) =>
+                    CodeScreen(code: Code.tweenAnimationBuilderWidgetCode),
               ),
             ),
           )
@@ -60,7 +61,6 @@ class _TweenAnimationBuilderWidgetState
           /// flutter does not build the entire widget tree during the animation
           child: FlutterLogo(
             size: 200,
-            colors: Colors.yellow,
           ),
           builder: (BuildContext _, Color value, Widget child) {
             return ColorFiltered(

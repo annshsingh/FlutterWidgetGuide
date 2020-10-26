@@ -80,7 +80,6 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
                   height: _iconHeight,
                   width: _iconWidth,
                   child: FlutterLogo(
-                    colors: Colors.amber,
                     textColor: Colors.white,
                   ),
                 ),
