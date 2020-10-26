@@ -300,7 +300,6 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                 padding: const EdgeInsets.only(right: 12.0, left: 8.0),
                 child: GestureDetector(
                   child: FlutterLogo(
-                    colors: Colors.cyan,
                     textColor: Colors.white,
                   ),
                   onTap: () => Navigator.push(

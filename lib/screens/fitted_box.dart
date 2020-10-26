@@ -22,7 +22,6 @@ class _FittedBoxWidgetState extends State<FittedBoxWidget> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +62,6 @@ class _FittedBoxWidgetState extends State<FittedBoxWidget> {
                     height: _heightValue,
                     width: 300,
                     child: FlutterLogo(
-                      colors: Colors.lightBlue,
                       textColor: Colors.white,
                     ),
                   ),

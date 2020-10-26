@@ -62,7 +62,6 @@ class _PositionedWidgetState extends State<PositionedWidget> {
                   width: 50,
                   height: 50,
                   child: FlutterLogo(
-                    colors: Colors.lightBlue,
                     textColor: Colors.white,
                   ),
                 ),

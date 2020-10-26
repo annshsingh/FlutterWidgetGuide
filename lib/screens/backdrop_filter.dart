@@ -22,7 +22,6 @@ class _BackdropFilterWidgetState extends State<BackdropFilterWidget> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +55,6 @@ class _BackdropFilterWidgetState extends State<BackdropFilterWidget> {
                 height: 200,
                 width: 200,
                 child: FlutterLogo(
-                  colors: Colors.lightBlue,
                   textColor: Colors.white,
                 ),
               ),

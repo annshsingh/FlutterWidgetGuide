@@ -111,7 +111,6 @@ class _IndexedStackWidgetState extends State<IndexedStackWidget> {
                       child: GestureDetector(
                         child: FlutterLogo(
                           duration: Duration(milliseconds: 500),
-                          colors: _imageColor,
                           curve: Curves.easeInOut,
                         ),
                         onTap: () => setState(() => _imageColor == Colors.blue

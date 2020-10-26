@@ -20,7 +20,6 @@ class _ClipRRectWidgetState extends State<ClipRRectWidget> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +70,6 @@ class _ClipRRectWidgetState extends State<ClipRRectWidget> {
                         width: 100,
                         height: 100,
                         child: FlutterLogo(
-                          colors: Colors.lightBlue,
                           textColor: Colors.white,
                         ),
                       ),
